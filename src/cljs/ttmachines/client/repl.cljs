@@ -134,12 +134,17 @@
       (fn [key a old new]
         (process new result)))
 
-    ;; Editor updates code on change
+    ;; Editor updates code on change, if the code has not changed for 200 ms
     (.setOption editor 
       "onChange" 
       (fn [e info]
-        (.setValue result "")
-        (reset! code (.getValue e))))
+        (let [editor-val (.getValue e)]
+          (js/setTimeout
+            (fn []
+              (when (= (.getValue e) editor-val)
+                (.setValue result "")
+                (reset! code editor-val)))
+            300))))
 
     ;; Editor updates info when token selected
     (.setOption editor

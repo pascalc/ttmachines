@@ -39,21 +39,21 @@ return clojure.walk.walk.call(null,cljs.core.partial.call(null,prewalk,f),cljs.c
 * Recursively transforms all map keys from strings to keywords.
 */
 clojure.walk.keywordize_keys = (function keywordize_keys(m){
-var f__20904 = (function (p__20899){
-var vec__20900__20901 = p__20899;
-var k__20902 = cljs.core.nth.call(null,vec__20900__20901,0,null);
-var v__20903 = cljs.core.nth.call(null,vec__20900__20901,1,null);
+var f__4795 = (function (p__4790){
+var vec__4791__4792 = p__4790;
+var k__4793 = cljs.core.nth.call(null,vec__4791__4792,0,null);
+var v__4794 = cljs.core.nth.call(null,vec__4791__4792,1,null);
 
-if(cljs.core.truth_(cljs.core.string_QMARK_.call(null,k__20902)))
-{return cljs.core.Vector.fromArray([cljs.core.keyword.call(null,k__20902),v__20903]);
+if(cljs.core.truth_(cljs.core.string_QMARK_.call(null,k__4793)))
+{return cljs.core.Vector.fromArray([cljs.core.keyword.call(null,k__4793),v__4794]);
 } else
-{return cljs.core.Vector.fromArray([k__20902,v__20903]);
+{return cljs.core.Vector.fromArray([k__4793,v__4794]);
 }
 });
 
 return clojure.walk.postwalk.call(null,(function (x){
 if(cljs.core.truth_(cljs.core.map_QMARK_.call(null,x)))
-{return cljs.core.into.call(null,cljs.core.ObjMap.fromObject([],{}),cljs.core.map.call(null,f__20904,x));
+{return cljs.core.into.call(null,cljs.core.ObjMap.fromObject([],{}),cljs.core.map.call(null,f__4795,x));
 } else
 {return x;
 }
@@ -63,21 +63,21 @@ if(cljs.core.truth_(cljs.core.map_QMARK_.call(null,x)))
 * Recursively transforms all map keys from keywords to strings.
 */
 clojure.walk.stringify_keys = (function stringify_keys(m){
-var f__20910 = (function (p__20905){
-var vec__20906__20907 = p__20905;
-var k__20908 = cljs.core.nth.call(null,vec__20906__20907,0,null);
-var v__20909 = cljs.core.nth.call(null,vec__20906__20907,1,null);
+var f__4801 = (function (p__4796){
+var vec__4797__4798 = p__4796;
+var k__4799 = cljs.core.nth.call(null,vec__4797__4798,0,null);
+var v__4800 = cljs.core.nth.call(null,vec__4797__4798,1,null);
 
-if(cljs.core.truth_(cljs.core.keyword_QMARK_.call(null,k__20908)))
-{return cljs.core.Vector.fromArray([cljs.core.name.call(null,k__20908),v__20909]);
+if(cljs.core.truth_(cljs.core.keyword_QMARK_.call(null,k__4799)))
+{return cljs.core.Vector.fromArray([cljs.core.name.call(null,k__4799),v__4800]);
 } else
-{return cljs.core.Vector.fromArray([k__20908,v__20909]);
+{return cljs.core.Vector.fromArray([k__4799,v__4800]);
 }
 });
 
 return clojure.walk.postwalk.call(null,(function (x){
 if(cljs.core.truth_(cljs.core.map_QMARK_.call(null,x)))
-{return cljs.core.into.call(null,cljs.core.ObjMap.fromObject([],{}),cljs.core.map.call(null,f__20910,x));
+{return cljs.core.into.call(null,cljs.core.ObjMap.fromObject([],{}),cljs.core.map.call(null,f__4801,x));
 } else
 {return x;
 }

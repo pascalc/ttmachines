@@ -8840,8 +8840,10 @@ ttmachines.client.repl.setup = function() {
     return ttmachines.client.repl.process.call(null, g, b)
   });
   a.setOption("onChange", function(a) {
-    b.setValue("");
-    return cljs.core.reset_BANG_.call(null, c, a.getValue())
+    var e = a.getValue();
+    return setTimeout.call(null, function() {
+      return cljs.core.truth_(cljs.core._EQ_.call(null, a.getValue(), e)) ? (b.setValue(""), cljs.core.reset_BANG_.call(null, c, e)) : null
+    }, 300)
   });
   a.setOption("onCursorActivity", function(a) {
     a = a.getSelection();
