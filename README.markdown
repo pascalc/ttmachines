@@ -4,7 +4,7 @@ A web app inspired by [Himera](https://github.com/fogus/himera) intended to help
 
 Right now the REPL functions, a lesson framework is in the works.
 
-[Try it on Heroku](http://talkingtomachines.herokuapp.com/)
+[Try it](http://talkingtomachines.org)
 
 ## Build
 
