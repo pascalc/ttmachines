@@ -134,7 +134,7 @@
       (fn [key a old new]
         (process new result)))
 
-    ;; Editor updates code on change, if the code has not changed for 200 ms
+    ;; Editor updates code on change, if the code has not changed for 300 ms
     (.setOption editor 
       "onChange" 
       (fn [e info]
