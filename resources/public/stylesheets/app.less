@@ -1,0 +1,82 @@
+@import 'reset.css';
+@import 'variables.less';
+@import 'grid.less';
+@import 'type.less';
+@import 'buttons.less';
+
+////////////
+// MIXINS //
+////////////
+
+.scroll(@height) {
+    max-height: @height;
+    overflow-y: scroll;
+}
+
+////////////
+// LAYOUT //
+////////////
+
+body {
+    background: url('../images/3px_pattern.png'), repeat 0 0;
+}
+
+div.container {
+    max-width: @container-width;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#main-column { .column(8) }
+#sidebar { .column(4) }
+
+/////////////
+// CONTENT //
+/////////////
+
+header#title {
+    .column(8);
+    margin-top: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+#text {
+    .scroll(100px);
+    margin-bottom: 1rem;
+}
+
+#editor {
+    margin-bottom: 0.5rem;
+}
+#editor .CodeMirror-scroll { height: 350px; }
+
+#eval-button { float: right; }
+
+#result .CodeMirror-scroll { height: 150px; }
+
+#doc { 
+    margin-top: 40px !important;
+    h2 { 
+        margin-bottom: 5px;
+    }
+}
+#doc-name, #doc-args {
+    font-family: @monoFontFamily;
+}
+#doc-name { 
+    font-weight: bold; 
+    margin-bottom: 10px !important;
+}
+#doc-args { li { margin-bottom: 10px !important; }}
+
+#footer {
+    margin-top: 175px !important;
+    .column(12);
+    p { 
+        text-align: right;
+        font-size: 12px;
+    }
+}

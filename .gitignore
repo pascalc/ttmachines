@@ -1,0 +1,5 @@
+.DS_Store
+lib/
+classes/
+.lein-plugins
+.lein-cljsbuild-repl
