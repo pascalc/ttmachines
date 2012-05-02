@@ -8843,7 +8843,7 @@ ttmachines.client.repl.setup = function() {
     var e = a.getValue();
     return setTimeout.call(null, function() {
       return cljs.core.truth_(cljs.core._EQ_.call(null, a.getValue(), e)) ? (b.setValue(""), cljs.core.reset_BANG_.call(null, c, e)) : null
-    }, 300)
+    }, 200)
   });
   a.setOption("onCursorActivity", function(a) {
     a = a.getSelection();

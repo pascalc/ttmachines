@@ -134,7 +134,7 @@
       (fn [key a old new]
         (process new result)))
 
-    ;; Editor updates code on change, if the code has not changed for 300 ms
+    ;; Editor updates code on change, if the code has not changed for 200 ms
     (.setOption editor 
       "onChange" 
       (fn [e info]
@@ -144,7 +144,7 @@
               (when (= (.getValue e) editor-val)
                 (.setValue result "")
                 (reset! code editor-val)))
-            300))))
+            200))))
 
     ;; Editor updates info when token selected
     (.setOption editor

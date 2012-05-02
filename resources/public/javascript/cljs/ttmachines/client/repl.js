@@ -175,7 +175,7 @@ return cljs.core.reset_BANG_.call(null,code__3026,editor_val__3027);
 } else
 {return null;
 }
-}),300);
+}),200);
 }));
 editor__3024.setOption("onCursorActivity",(function (e){
 var selection__3028 = e.getSelection();
