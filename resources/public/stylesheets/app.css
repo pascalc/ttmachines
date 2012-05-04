@@ -1330,32 +1330,35 @@ div.container {
   margin: 0 1.0416666666666665%;
 }
 header#title {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 10px;
+}
+#text {
   display: inline;
   float: left;
   width: 64.58333333333334%;
   margin: 0 1.0416666666666665%;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
-#text {
-  max-height: 100px;
-  overflow-y: scroll;
-  margin-bottom: 1rem;
+#text p {
+  line-height: 19px;
+  margin-bottom: 12px;
 }
 #editor {
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 #editor .CodeMirror-scroll {
-  height: 350px;
+  height: 250px;
+  overflow-y: scroll;
 }
-#eval-button {
-  float: right;
+#result header h2 {
+  margin-bottom: 5px;
 }
 #result .CodeMirror-scroll {
-  height: 150px;
-}
-#doc {
-  margin-top: 40px !important;
+  height: auto;
+  max-height: 150px;
+  overflow-y: scroll;
 }
 #doc h2 {
   margin-bottom: 5px;

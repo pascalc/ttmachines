@@ -30,7 +30,9 @@ div.container {
     padding-right: 1rem;
 }
 
-#main-column { .column(8) }
+#main-column { 
+    .column(8);
+}
 #sidebar { .column(4) }
 
 /////////////
@@ -38,27 +40,39 @@ div.container {
 /////////////
 
 header#title {
-    .column(8);
     margin-top: 1.5rem;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
+    margin-left: 10px;
 }
 
 #text {
-    .scroll(100px);
-    margin-bottom: 1rem;
+    .column(8);
+    p { 
+        line-height: 19px;
+        margin-bottom: 12px; 
+    }
+    margin-bottom: 1.2rem;
 }
 
 #editor {
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
 }
-#editor .CodeMirror-scroll { height: 350px; }
+#editor .CodeMirror-scroll { 
+    height: 250px;
+    overflow-y: scroll;
+}
 
-#eval-button { float: right; }
+#result header h2 {
+    margin-bottom: 5px;
+}
 
-#result .CodeMirror-scroll { height: 150px; }
+#result .CodeMirror-scroll { 
+    height: auto; 
+    max-height: 150px;
+    overflow-y: scroll;
+}
 
 #doc { 
-    margin-top: 40px !important;
     h2 { 
         margin-bottom: 5px;
     }
