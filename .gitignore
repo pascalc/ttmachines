@@ -3,3 +3,5 @@ lib/
 classes/
 .lein-plugins
 .lein-cljsbuild-repl
+resources/public/javascript/cljs/
+out
