@@ -20,6 +20,7 @@
                {:output-dir "resources/public/javascript/cljs",
                 :output-to "resources/public/javascript/repl.js",
                 :optimizations :simple,
+                :repl-listen-port 9000,
                 :pretty-print true}}]}
   :jvm-opts ["-Djava.security.policy=heroku.policy" "-Xmx80M"]
   :source-path "src/clj"

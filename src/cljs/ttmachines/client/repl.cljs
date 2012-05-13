@@ -24,9 +24,10 @@
             [clojure.string :as str]
             [clojure.set :as set]
             [clojure.walk :as walk]
-            [clojure.zip :as zip]))
+            [clojure.zip :as zip]
+            [clojure.browser.repl :as repl]))
 
-;; From himera.client.repl
+; From himera.client.repl
 
 (defn- map->js [m]
   (let [out (js-obj)]
@@ -53,19 +54,101 @@
     (.getElementById js/document textarea-id),
     (map->js options)))
 
-(defn- make-editor []
+(defn- set-option [codemirror k value]
+  (.setOption codemirror (name k) value))
+
+;; Exported vars
+
+(def editor
   (codemirrorify 
     "editor-textarea"
     {:theme "ambiance"
      :lineNumbers true
      :matchBrackets true}))
 
-(defn- make-result []
+(def result
   (codemirrorify 
     "result-textarea"
     {:theme "ambiance"
      :readOnly true
      :lineWrapping true}))
+
+(def code (atom (.getValue editor)))
+(set-validator! code valid-code)
+(add-watch code :process
+  (fn [key a old new]
+    (process new)))
+
+;; Codemirror callbacks
+
+(defn- update-code [e _]
+  (let [editor-val (.getValue e)]
+    (js/setTimeout
+      (fn []
+        (when (= (.getValue e) editor-val)
+          (.setValue result "")
+          (reset! code editor-val)))
+      200)))
+
+(defn- get-selection-doc [e]
+  (let [selection (.getSelection e)]
+      (when-not (= "" selection)
+        (get-doc selection))))
+
+(def change-listeners 
+  (atom {:editor {:update-code update-code}
+         :result {}}))
+
+(def activity-listeners
+  (atom {:editor {:get-selection-doc get-selection-doc}
+         :result {}}))
+
+;; Connect callbacks
+
+(set-option editor
+  :onChange
+  (fn [e info]
+    (doseq [[k fun] (@change-listeners :editor)]
+      (fun e info))))
+
+(set-option editor
+  :onCursorActivity
+  (fn [e]
+    (doseq [[k fun] (@activity-listeners :editor)]
+      (fun e))))
+
+(set-option result
+  :onChange
+  (fn [e info]
+    (doseq [[k fun] (@change-listeners :result)]
+      (fun e info))))
+
+(set-option result
+  :onCursorActivity
+  (fn [e]
+    (doseq [[k fun] (@activity-listeners :result)]
+      (fun e))))
+
+;; Add callbacks
+
+(defn- add-change-listener [codemirror-name new-listener-name new-listener-fun]
+  (swap! change-listeners assoc-in [codemirror-name new-listener-name] new-listener-fun))
+
+(defn- add-activity-listener [codemirror-name new-listener-name new-listener-fun]
+  (swap! activity-listeners assoc-in [codemirror-name new-listener-name] new-listener-fun))
+
+;; Exported functions
+
+(def add-editor-change-listener (partial add-change-listener :editor))
+(def add-result-change-listener (partial add-change-listener :result))
+(def add-editor-activity-listener (partial add-activity-listener :editor))
+(def add-result-activity-listener (partial add-activity-listener :result))
+
+(defn ^:export editor-text []
+  (.getValue editor))
+
+(defn ^:export result-text []
+  (.getValue editor))    
 
 ;; Himera integration
 
@@ -92,14 +175,14 @@
       (catch js/Error e
         (str "Compilation error: " e)))))
 
-(defn- show-result [result res]
+(defn- show-result [res]
   (.setValue result (pr-str res)))
 
 ;; Precompile -> evaluate -> display
-(defn- process [code result]
+(defn- process [code]
   (let [precompiled (pre-compile code)
         evaluated (evaluate precompiled)]
-    (show-result result evaluated)))
+    (show-result evaluated)))
 
 ;; Doc
 
@@ -121,38 +204,8 @@
       (str/join (map #(str "<li>" % "</li>") (.-arglists fun-doc))))
     (.text doc-body (.-doc fun-doc))))
 
-;; Main
+; Main
 
 (defn ^:export setup []
-  (let [editor (make-editor)
-        result (make-result)
-        code (atom (.getValue editor))]
-
-    ;; Set up code
-    (set-validator! code valid-code)
-    (add-watch code :process
-      (fn [key a old new]
-        (process new result)))
-
-    ;; Editor updates code on change, if the code has not changed for 200 ms
-    (.setOption editor 
-      "onChange" 
-      (fn [e info]
-        (let [editor-val (.getValue e)]
-          (js/setTimeout
-            (fn []
-              (when (= (.getValue e) editor-val)
-                (.setValue result "")
-                (reset! code editor-val)))
-            200))))
-
-    ;; Editor updates info when token selected
-    (.setOption editor
-      "onCursorActivity"
-      (fn [e]
-        (let [selection (.getSelection e)]
-          (when-not (= "" selection)
-            (get-doc selection)))))
-
-    ;; Initialize
-    (reset! code (.getValue editor))))
+  (reset! code (.getValue editor))
+  (repl/connect "http://localhost:9000/repl"))
