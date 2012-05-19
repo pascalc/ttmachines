@@ -31,9 +31,10 @@
 ;; Codemirror integration
 
 (defn- codemirrorify [textarea-id options]
-  (.fromTextArea js/CodeMirror
-    (.getElementById js/document textarea-id),
-    (map->js options)))
+  (when-let [textarea (.getElementById js/document textarea-id)]
+    (.fromTextArea js/CodeMirror
+      textarea,
+      (map->js options))))
 
 (defn- set-option [codemirror k value]
   (.setOption codemirror (name k) value))
@@ -54,11 +55,12 @@
      :readOnly true
      :lineWrapping true}))
 
-(def code (atom (.getValue editor)))
-(set-validator! code valid-code)
-(add-watch code :process
-  (fn [key a old new]
-    (process new)))
+(when editor
+  (def code (atom (.getValue editor)))
+  (set-validator! code valid-code)
+  (add-watch code :process
+    (fn [key a old new]
+      (process new))))
 
 ;; Codemirror callbacks
 
@@ -86,29 +88,31 @@
 
 ;; Connect callbacks
 
-(set-option editor
-  :onChange
-  (fn [e info]
-    (doseq [[k fun] (@change-listeners :editor)]
-      (fun e info))))
+(when editor
+  (set-option editor
+    :onChange
+    (fn [e info]
+      (doseq [[k fun] (@change-listeners :editor)]
+        (fun e info))))
 
-(set-option editor
-  :onCursorActivity
-  (fn [e]
-    (doseq [[k fun] (@activity-listeners :editor)]
-      (fun e))))
+  (set-option editor
+    :onCursorActivity
+    (fn [e]
+      (doseq [[k fun] (@activity-listeners :editor)]
+        (fun e)))))
 
-(set-option result
-  :onChange
-  (fn [e info]
-    (doseq [[k fun] (@change-listeners :result)]
-      (fun e info))))
+(when result
+  (set-option result
+    :onChange
+    (fn [e info]
+      (doseq [[k fun] (@change-listeners :result)]
+        (fun e info))))
 
-(set-option result
-  :onCursorActivity
-  (fn [e]
-    (doseq [[k fun] (@activity-listeners :result)]
-      (fun e))))
+  (set-option result
+    :onCursorActivity
+    (fn [e]
+      (doseq [[k fun] (@activity-listeners :result)]
+        (fun e)))))
 
 ;; Add callbacks
 
