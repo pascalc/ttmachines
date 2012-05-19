@@ -14075,18 +14075,19 @@ cljs.reader.read_string = function(a) {
 };
 ttmachines.client.repl = {};
 ttmachines.client.repl.codemirrorify = function(a, b) {
-  return CodeMirror.fromTextArea(document.getElementById(a), ttmachines.client.util.map__GT_js.call(null, b))
+  var c = document.getElementById(a);
+  return cljs.core.truth_(c) ? CodeMirror.fromTextArea(c, ttmachines.client.util.map__GT_js.call(null, b)) : null
 };
 ttmachines.client.repl.set_option = function(a, b, c) {
   return a.setOption(cljs.core.name.call(null, b), c)
 };
 ttmachines.client.repl.editor = ttmachines.client.repl.codemirrorify.call(null, "editor-textarea", cljs.core.ObjMap.fromObject(["\ufdd0'theme", "\ufdd0'lineNumbers", "\ufdd0'matchBrackets"], {"\ufdd0'theme":"ambiance", "\ufdd0'lineNumbers":!0, "\ufdd0'matchBrackets":!0}));
 ttmachines.client.repl.result = ttmachines.client.repl.codemirrorify.call(null, "result-textarea", cljs.core.ObjMap.fromObject(["\ufdd0'theme", "\ufdd0'readOnly", "\ufdd0'lineWrapping"], {"\ufdd0'theme":"ambiance", "\ufdd0'readOnly":!0, "\ufdd0'lineWrapping":!0}));
-ttmachines.client.repl.code = cljs.core.atom.call(null, ttmachines.client.repl.editor.getValue());
-cljs.core.set_validator_BANG_.call(null, ttmachines.client.repl.code, ttmachines.client.repl.valid_code);
-cljs.core.add_watch.call(null, ttmachines.client.repl.code, "\ufdd0'process", function(a, b, c, d) {
-  return ttmachines.client.repl.process.call(null, d)
-});
+if(cljs.core.truth_(ttmachines.client.repl.editor)) {
+  ttmachines.client.repl.code = cljs.core.atom.call(null, ttmachines.client.repl.editor.getValue()), cljs.core.set_validator_BANG_.call(null, ttmachines.client.repl.code, ttmachines.client.repl.valid_code), cljs.core.add_watch.call(null, ttmachines.client.repl.code, "\ufdd0'process", function(a, b, c, d) {
+    return ttmachines.client.repl.process.call(null, d)
+  })
+}
 ttmachines.client.repl.update_code = function(a) {
   var b = a.getValue();
   return setTimeout.call(null, function() {
@@ -14099,7 +14100,7 @@ ttmachines.client.repl.get_selection_doc = function(a) {
 };
 ttmachines.client.repl.change_listeners = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'editor", "\ufdd0'result"], {"\ufdd0'editor":cljs.core.ObjMap.fromObject(["\ufdd0'update-code"], {"\ufdd0'update-code":ttmachines.client.repl.update_code}), "\ufdd0'result":cljs.core.ObjMap.fromObject([], {})}));
 ttmachines.client.repl.activity_listeners = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'editor", "\ufdd0'result"], {"\ufdd0'editor":cljs.core.ObjMap.fromObject(["\ufdd0'get-selection-doc"], {"\ufdd0'get-selection-doc":ttmachines.client.repl.get_selection_doc}), "\ufdd0'result":cljs.core.ObjMap.fromObject([], {})}));
-ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.editor, "\ufdd0'onChange", function(a, b) {
+cljs.core.truth_(ttmachines.client.repl.editor) && (ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.editor, "\ufdd0'onChange", function(a, b) {
   var c = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.change_listeners).call(null, "\ufdd0'editor"));
   if(cljs.core.truth_(c)) {
     var d = cljs.core.first.call(null, c);
@@ -14114,8 +14115,7 @@ ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.editor, "\uf
   }else {
     return null
   }
-});
-ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.editor, "\ufdd0'onCursorActivity", function(a) {
+}), ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.editor, "\ufdd0'onCursorActivity", function(a) {
   var b = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.activity_listeners).call(null, "\ufdd0'editor"));
   if(cljs.core.truth_(b)) {
     var c = cljs.core.first.call(null, b);
@@ -14130,8 +14130,8 @@ ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.editor, "\uf
   }else {
     return null
   }
-});
-ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.result, "\ufdd0'onChange", function(a, b) {
+}));
+cljs.core.truth_(ttmachines.client.repl.result) && (ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.result, "\ufdd0'onChange", function(a, b) {
   var c = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.change_listeners).call(null, "\ufdd0'result"));
   if(cljs.core.truth_(c)) {
     var d = cljs.core.first.call(null, c);
@@ -14146,8 +14146,7 @@ ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.result, "\uf
   }else {
     return null
   }
-});
-ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.result, "\ufdd0'onCursorActivity", function(a) {
+}), ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.result, "\ufdd0'onCursorActivity", function(a) {
   var b = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.activity_listeners).call(null, "\ufdd0'result"));
   if(cljs.core.truth_(b)) {
     var c = cljs.core.first.call(null, b);
@@ -14162,7 +14161,7 @@ ttmachines.client.repl.set_option.call(null, ttmachines.client.repl.result, "\uf
   }else {
     return null
   }
-});
+}));
 ttmachines.client.repl.add_change_listener = function(a, b, c) {
   return cljs.core.swap_BANG_.call(null, ttmachines.client.repl.change_listeners, cljs.core.assoc_in, cljs.core.Vector.fromArray([a, b]), c)
 };

@@ -19,18 +19,9 @@
 ; OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-(ns ttmachines.server.app
-  (:use ring.middleware.clj-params)
-  (:require [noir.server :as server]))
+(ns ttmachines.server.views.index
+    (:use noir.core)
+    (:require [ttmachines.server.views.layout :as view]))
 
-;; Middleware
-(server/add-middleware wrap-clj-params)
-
-;; Load views/controllers from here
-(server/load-views "src/clj/ttmachines/server/views/")
-
-(defn -main [& args]
-  (let [mode (or (first args) :dev)
-        port (or (second args) 1337)]
-    (server/start port {:mode (keyword mode)
-                        :ns 'ttmachines.server})))
+(defpage index "/" {}
+    (view/layout [:p "YEEAH!"]))

@@ -19,25 +19,11 @@
 ; OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-(ns ttmachines.server.service
-  (:use compojure.core)
-  (:use ring.middleware.clj-params)
-  (:require [clojure.string :as string]
-            [clojure.repl :as repl])
-  (:require [himera.server.cljs :as cljs]
-            [compojure.route :as route]
-            [ring.util.response :as resp]
-            [cheshire.core :as cheshire])
-  (:require [ttmachines.server.views.layout :as view]))
-
-(defn get-meta [fun]
-  (meta (ns-resolve 'clojure.core (symbol fun))))
-
-(defn get-doc-for [fun]
-  (when-let [fun-meta (get-meta fun)]
-    {:name     (str (fun-meta :name))
-     :arglists (vec (map str (fun-meta :arglists)))
-     :doc      (string/replace (fun-meta :doc) #"\s+" " ")}))
+(ns ttmachines.server.views.repl
+    (:use noir.core)
+    (:require [clojure.string :as string]
+              [noir.response :as resp] 
+              [himera.server.cljs :as cljs]))
 
 (defn generate-response [transformer headers data & [status]]
   (let [ret-val (transformer data)]
@@ -51,27 +37,24 @@
                                                    (:result data))}))
                                    {"Content-Type" "application/clojure; charset=utf-8"}))
 
-(def generate-json-response (partial generate-response
-                                   cheshire/generate-string
-                                   {"Content-Type" "application/json; charset=utf-8"}))
+;; Compile incoming ClojureScript expressions to JavaScript
 
-(defroutes handler
-  (GET "/" [] (resp/redirect "/index.html"))
-
-  (GET "/layout" [] (view/layout [:p "Content goes here!"]))
-
-  (POST "/compile" [expr]
-        (try
-          (generate-js-response (cljs/compilation expr :simple false))
-          (catch RuntimeException e
+(defpage [:post "/compile"] {:keys [expr]}
+    (try
+        (generate-js-response (cljs/compilation expr :simple false))
+        (catch Exception e
             (generate-js-response {:result nil} 400))))
 
-  (GET ["/doc/:sym" :sym #"\S+"] [sym]
-        (generate-json-response (get-doc-for sym)))
+;; Get doc info for the given Clojure function
 
-  (route/resources "/"))
+(defn get-meta [fun]
+  (meta (ns-resolve 'clojure.core (symbol fun))))
 
-(def app
-  (-> handler
-      wrap-clj-params))
+(defn get-doc-for [fun]
+  (when-let [fun-meta (get-meta fun)]
+    {:name     (str (fun-meta :name))
+     :arglists (vec (map str (fun-meta :arglists)))
+     :doc      (string/replace (fun-meta :doc) #"\s+" " ")}))
 
+(defpage [:get ["/doc/:sym" :sym #"\S+"]] {:keys [sym]}
+    (resp/json (get-doc-for sym)))

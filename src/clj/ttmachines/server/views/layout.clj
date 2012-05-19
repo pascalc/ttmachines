@@ -20,10 +20,10 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.views.layout
-    (:use [hiccup.core]
-          [hiccup.page]
-          [hiccup.element]
-          [hiccup.def]))
+    (:use hiccup.core
+          hiccup.page
+          hiccup.element
+          hiccup.def))
 
 ;; HEAD
 
