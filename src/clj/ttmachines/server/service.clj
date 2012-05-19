@@ -27,7 +27,8 @@
   (:require [himera.server.cljs :as cljs]
             [compojure.route :as route]
             [ring.util.response :as resp]
-            [cheshire.core :as cheshire]))
+            [cheshire.core :as cheshire])
+  (:require [ttmachines.server.views.layout :as view]))
 
 (defn get-meta [fun]
   (meta (ns-resolve 'clojure.core (symbol fun))))
@@ -56,6 +57,8 @@
 
 (defroutes handler
   (GET "/" [] (resp/redirect "/index.html"))
+
+  (GET "/layout" [] (view/layout [:p "Content goes here!"]))
 
   (POST "/compile" [expr]
         (try
