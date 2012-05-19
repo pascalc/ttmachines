@@ -25,27 +25,8 @@
             [clojure.set :as set]
             [clojure.walk :as walk]
             [clojure.zip :as zip]
-            [clojure.browser.repl :as repl]))
-
-; From himera.client.repl
-
-(defn- map->js [m]
-  (let [out (js-obj)]
-    (doseq [[k v] m]
-      (aset out (name k) v))
-    out))
-
-(defn- go-compile [code]
-  (let [data (atom nil)
-        params (map->js {:url "/compile"
-                         :data (str "{:expr " code "}")
-                         :contentType "application/clojure; charset=utf-8"
-                         :async false
-                         :type "POST"
-                         :dataType "text"
-                         :success #(reset! data (reader/read-string %))})]
-    (.ajax js/jQuery params)
-    @data))
+            [clojure.browser.repl :as repl])
+  (:use [ttmachines.client.util :only [map->js dissoc]]))
 
 ;; Codemirror integration
 
@@ -137,12 +118,25 @@
 (defn- add-activity-listener [codemirror-name new-listener-name new-listener-fun]
   (swap! activity-listeners assoc-in [codemirror-name new-listener-name] new-listener-fun))
 
+;; Remove callbacks
+
+(defn- remove-change-listener [codemirror-name listener-name]
+  (swap! change-listeners dissoc-in [codemirror-name listener-name]))
+
+(defn- remove-activity-listener [codemirror-name listener-name]
+  (swap! activity-listeners dissoc-in [codemirror-name listener-name]))
+
 ;; Exported functions
 
 (def add-editor-change-listener (partial add-change-listener :editor))
 (def add-result-change-listener (partial add-change-listener :result))
 (def add-editor-activity-listener (partial add-activity-listener :editor))
 (def add-result-activity-listener (partial add-activity-listener :result))
+
+(def remove-editor-change-listener (partial remove-change-listener :editor))
+(def remove-result-change-listener (partial remove-change-listener :result))
+(def remove-editor-activity-listener (partial remove-activity-listener :editor))
+(def remove-result-activity-listener (partial remove-activity-listener :result))
 
 (defn ^:export editor-text []
   (.getValue editor))
@@ -165,6 +159,18 @@
 
 (defn- pre-compile [code]
   (str "(do " code ")"))
+
+(defn- go-compile [code]
+  (let [data (atom nil)
+        params (map->js {:url "/compile"
+                         :data (str "{:expr " code "}")
+                         :contentType "application/clojure; charset=utf-8"
+                         :async false
+                         :type "POST"
+                         :dataType "text"
+                         :success #(reset! data (reader/read-string %))})]
+    (.ajax js/jQuery params)
+    @data))
 
 (defn- evaluate [code]
   (let [compiled (go-compile code)]
