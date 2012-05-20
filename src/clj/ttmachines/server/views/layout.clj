@@ -80,7 +80,7 @@
 
 ;; LAYOUT
 
-(defn layout [& content]
+(defn layout [options & content]
     (html5
         head
         [:body
@@ -89,4 +89,6 @@
                 title-header
                 content
                 footer
-                ttmachines-js]]))
+                ttmachines-js
+                (when-let [js (options :include-js)]
+                  (include-js js))]]))

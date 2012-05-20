@@ -19,41 +19,12 @@
 ; OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-(ns ttmachines.server.views.index
-    (:use [noir.core])
-    (:require [ttmachines.server.views.layout :as view]
-              [ttmachines.server.views.strings.index :as strings]))
+(ns ttmachines.server.views.strings.core
+    (:require [markdown :as mkd]))
 
-(defn section-title [title]
-    [:header
-        [:h2.fancy title]])
+(def to-html mkd/md-to-html-string)
 
-(def intro [:section#text strings/intro])
-
-(def editor 
-    [:section#editor
-        [:textarea#editor-textarea strings/initial-editor-text]])
-
-(def result
-    [:section#result
-        (section-title strings/result-title)
-        [:textarea#result-textarea]])
-
-(def info
-    [:aside#doc
-        (section-title strings/info-title)
-        [:div#doc-text
-            [:p#doc-name]
-            [:ul#doc-args.unstyled]
-            [:p#doc-body strings/info-explanation]]])
-
-(def content
-    (view/layout {:include-js "javascript/index.js"}
-        intro
-        [:div#main-column
-            editor
-            result]
-        [:div#sidebar
-            info]))
-
-(defpage index "/" {} content)
+(defmacro defstring 
+    "Compile the given string as Markdown and def the compiled HTML string"
+    [var-name mkd-string]
+    `(def ~var-name (to-html ~mkd-string)))
