@@ -13,9 +13,11 @@ Right now the REPL functions, a lesson framework is in the works.
 
 ## Usage
 
-To start talking to machines locally using [Leiningen](https://github.com/technomancy/leiningen), type the following from the project directory.
+To start talking to machines locally using [Leiningen](https://github.com/technomancy/leiningen), type the following from the project directory:
 
-    lein run 8080
+    lein run
+    
+and then hit http://localhost:1337
 
 ## Current limitations
 
