@@ -217,5 +217,4 @@
 ; Main
 
 (defn ^:export setup []
-  (reset! code (.getValue editor))
-  (repl/connect "http://localhost:9000/repl"))
+  (reset! code (.getValue editor)))

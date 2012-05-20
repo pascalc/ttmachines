@@ -14249,8 +14249,7 @@ ttmachines.client.repl.show_doc = function(a) {
   return d.text(a.doc)
 };
 ttmachines.client.repl.setup = function() {
-  cljs.core.reset_BANG_.call(null, ttmachines.client.repl.code, ttmachines.client.repl.editor.getValue());
-  return clojure.browser.repl.connect.call(null, "http://localhost:9000/repl")
+  return cljs.core.reset_BANG_.call(null, ttmachines.client.repl.code, ttmachines.client.repl.editor.getValue())
 };
 goog.exportSymbol("ttmachines.client.repl.setup", ttmachines.client.repl.setup);
 ttmachines.client.broadcast = {};
