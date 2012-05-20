@@ -146,7 +146,7 @@
   (.getValue editor))
 
 (defn ^:export result-text []
-  (.getValue editor))    
+  (.getValue result))    
 
 ;; Himera integration
 

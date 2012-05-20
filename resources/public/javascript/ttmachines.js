@@ -14187,7 +14187,7 @@ ttmachines.client.repl.editor_text = function() {
 };
 goog.exportSymbol("ttmachines.client.repl.editor_text", ttmachines.client.repl.editor_text);
 ttmachines.client.repl.result_text = function() {
-  return ttmachines.client.repl.editor.getValue()
+  return ttmachines.client.repl.result.getValue()
 };
 goog.exportSymbol("ttmachines.client.repl.result_text", ttmachines.client.repl.result_text);
 ttmachines.client.repl.char_count = function(a, b) {
