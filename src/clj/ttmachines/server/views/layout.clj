@@ -40,7 +40,8 @@
     #{"javascript/analytics.js"
       "http://code.jquery.com/jquery-1.7.1.min.js"
       "javascript/codemirror.js"
-      "javascript/clojure.js"})
+      "javascript/clojure.js"
+      "javascript/firmin-1.0.0-min.js"})
 (def javascript-links
     (map include-js javascripts))
 
