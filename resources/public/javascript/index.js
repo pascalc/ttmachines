@@ -24,4 +24,5 @@ $(document).ready(function() {
     goog.provide('cljs.user');
 
     ttmachines.client.repl.setup();
+    one.browser.repl_client.repl();
 });
