@@ -20,7 +20,7 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.app
-  (:use ring.middleware.clj-params)
+  (:use [ring.middleware.clj-params])
   (:require [noir.server :as server]))
 
 ;; Middleware

@@ -20,6 +20,7 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.views.layout
+    (:require [clojure.string :as string])
     (:use hiccup.core
           hiccup.page
           hiccup.element
@@ -73,6 +74,24 @@
     [:header#title
         [:h1.fancy title]])
 
+(def ^:dynamic *route* "/")
+
+(defn nav-link-for [route text]
+  (let [link-classes (atom ["fancy"])]
+    (when (= route *route*)
+      (swap! link-classes conj "active"))
+    (link-to 
+      {:class (string/join " " @link-classes)} route text)))
+
+(def nav
+    [:nav#nav
+        [:ul
+            (map #(vector :li (apply nav-link-for %))
+                [["/"           "start"]
+                 ["/repl"       "repl"]
+                 ["/broadcast"  "broadcast"]
+                 ["/about"      "about"]])]])
+
 (def ttmachines-js (include-js "javascript/ttmachines.js"))
 
 (def footer
@@ -88,6 +107,7 @@
             fork-me-github
             [:div.container
                 title-header
+                nav
                 content
                 footer
                 ttmachines-js

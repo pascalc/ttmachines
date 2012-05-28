@@ -1330,9 +1330,57 @@ div.container {
   margin: 0 1.0416666666666665%;
 }
 header#title {
+  display: inline;
+  float: left;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   margin-left: 10px;
+}
+#nav {
+  display: inline;
+  float: left;
+  width: 31.25%;
+  margin: 0 1.0416666666666665%;
+  float: right;
+  position: relative;
+  top: 94px;
+}
+#nav ul {
+  list-style: none;
+  margin-left: 0;
+}
+#nav li {
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+#nav li a {
+  -webkit-transition: border-color;
+  -moz-transition: border-color;
+  -ms-transition: border-color;
+  -o-transition: border-color;
+  transition: border-color;
+  -webkit-transition: border-color;
+  -moz-transition: border-color;
+  -ms-transition: border-color;
+  -o-transition: border-color;
+  transition: border-color;
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  display: inline-block;
+  padding-left: 5px;
+  border-style: solid;
+  border-left-width: 5px;
+  border-color: #FFF;
+  letter-spacing: 1px;
+}
+#nav li a.active {
+  border-color: #000;
+}
+#nav li a:hover {
+  color: #5A5A5A;
 }
 #text {
   display: inline;
