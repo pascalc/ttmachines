@@ -100,16 +100,21 @@
 
 ;; LAYOUT
 
-(defn layout [options & content]
-    (html5
-        head
-        [:body
-            fork-me-github
-            [:div.container
-                title-header
-                nav
-                content
-                footer
-                ttmachines-js
-                (when-let [js (options :include-js)]
-                  (include-js js))]]))
+(defn layout [content]
+  (html5
+    head
+    [:body
+      fork-me-github
+      [:div.container
+        title-header
+        nav
+        (content :text)
+        [:div#main-column
+          (content :main)
+          (content :below)]
+        [:div#sidebar
+          (content :sidebar)]
+        footer
+        ttmachines-js
+        (when-let [js (content :include-js)]
+          (include-js js))]]))

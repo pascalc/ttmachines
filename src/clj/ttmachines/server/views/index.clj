@@ -28,7 +28,7 @@
     [:header
         [:h2.fancy title]])
 
-(def intro [:section#text strings/intro])
+(def text [:section#text strings/intro])
 
 (def editor 
     [:section#editor
@@ -48,12 +48,11 @@
             [:p#doc-body strings/info-explanation]]])
 
 (def content
-    (view/layout {:include-js "javascript/index.js"}
-        intro
-        [:div#main-column
-            editor
-            result]
-        [:div#sidebar
-            info]))
+    (view/layout 
+        {:include-js    "javascript/index.js"
+         :text          text
+         :main          editor
+         :sidebar       info
+         :below         result}))
 
 (defpage index "/" {} content)
