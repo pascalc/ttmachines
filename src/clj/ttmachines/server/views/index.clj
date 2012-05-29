@@ -20,39 +20,34 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.views.index
-    (:use [noir.core])
-    (:require [ttmachines.server.views.layout :as view]
-              [ttmachines.server.views.strings.index :as strings]))
+    (:use [noir.core]
+          [ttmachines.server.views.layout :only [defcontent]])
+    (:require [ttmachines.server.views.strings.index :as strings]))
 
-(defn section-title [title]
+(defpartial section-title [title]
     [:header
         [:h2.fancy title]])
 
-(def text [:section#text strings/intro])
-
-(def editor 
+(defpartial editor [editor-text] 
     [:section#editor
-        [:textarea#editor-textarea strings/initial-editor-text]])
+        [:textarea#editor-textarea editor-text]])
 
-(def result
+(defpartial result [title]
     [:section#result
-        (section-title strings/result-title)
+        (section-title title)
         [:textarea#result-textarea]])
 
-(def info
+(defpartial info [title explanation]
     [:aside#doc
-        (section-title strings/info-title)
+        (section-title title)
         [:div#doc-text
             [:p#doc-name]
             [:ul#doc-args.unstyled]
-            [:p#doc-body strings/info-explanation]]])
+            [:p#doc-body explanation]]])
 
-(def content
-    (view/layout 
-        {:include-js    "javascript/index.js"
-         :text          text
-         :main          editor
-         :sidebar       info
-         :below         result}))
-
-(defpage index "/" {} content)
+(defcontent "/"
+  {:include-js    "javascript/index.js"
+   :text          strings/intro
+   :main          (editor strings/initial-editor-text)
+   :sidebar       (info strings/info-title strings/info-explanation)
+   :below-main    (result strings/result-title)})

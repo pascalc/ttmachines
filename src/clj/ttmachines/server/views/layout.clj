@@ -20,11 +20,14 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.views.layout
-    (:require [clojure.string :as string])
-    (:use hiccup.core
+    (:require [clojure.string :as string]
+              [noir.request :as request])
+    (:use [noir.core :only [defpage]]
+          hiccup.core
           hiccup.page
           hiccup.element
-          hiccup.def))
+          hiccup.def
+          ttmachines.server.tools))
 
 ;; HEAD
 
@@ -100,6 +103,17 @@
 
 ;; LAYOUT
 
+(defmacro defcontent [route content-map]
+  `(do
+    (def ~'content
+      ~content-map)
+    (def ~'html-content
+      (layout ~'content))
+    (defpage ~route {} 
+      (if (ajax? (request/ring-request))
+        (generate-clj-response ~'content)
+        ~'html-content))))
+
 (defn layout [content]
   (html5
     head
@@ -108,10 +122,11 @@
       [:div.container
         title-header
         nav
-        (content :text)
+        [:div#text 
+          (content :text)]
         [:div#main-column
           (content :main)
-          (content :below)]
+          (content :below-main)]
         [:div#sidebar
           (content :sidebar)]
         footer
