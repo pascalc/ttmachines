@@ -20,30 +20,24 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.views.repl
-    (:use noir.core)
+    (:use [noir.core]
+          [ttmachines.server.tools])
     (:require [clojure.string :as string]
               [noir.response :as resp] 
               [himera.server.cljs :as cljs]))
 
-(defn generate-response [transformer headers data & [status]]
-  (let [ret-val (transformer data)]
-    {:status (or status 200)
-     :headers headers
-     :body ret-val}))
-
-(def generate-js-response (partial generate-response
-                                   (fn [data]
-                                     (pr-str {:js (string/trim-newline
-                                                   (:result data))}))
-                                   {"Content-Type" "application/clojure; charset=utf-8"}))
-
 ;; Compile incoming ClojureScript expressions to JavaScript
+
+(def generate-repl-response (partial generate-response
+                             (fn [data]
+                               (pr-str {:js (string/trim-newline (:result data))}))
+                               {"Content-Type" "application/clojure; charset=utf-8"}))
 
 (defpage [:post "/compile"] {:keys [expr]}
     (try
-        (generate-js-response (cljs/compilation expr :simple false))
+        (generate-repl-response (cljs/compilation expr :simple false))
         (catch Exception e
-            (generate-js-response {:result nil} 400))))
+            (generate-repl-response {:result nil} 400))))
 
 ;; Get doc info for the given Clojure function
 
