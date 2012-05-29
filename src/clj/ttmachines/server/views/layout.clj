@@ -77,7 +77,7 @@
     [:header#title
         [:h1.fancy title]])
 
-(def ^:dynamic *route* "/")
+(def ^:dynamic *route*)
 
 (defn nav-link-for [route text]
   (let [link-classes (atom ["fancy"])]
@@ -108,7 +108,8 @@
     (def ~'content
       ~content-map)
     (def ~'html-content
-      (layout ~'content))
+      (binding [*route* ~route]
+        (layout ~'content)))
     (defpage ~route {} 
       (if (ajax? (request/ring-request))
         (generate-clj-response ~'content)
