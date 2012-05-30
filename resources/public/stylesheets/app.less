@@ -42,7 +42,7 @@ div.container {
 header#title {
     .column(8);
     margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1.2rem;
     margin-left: 10px;
 }
 
@@ -50,7 +50,8 @@ header#title {
     .column(4);
     float: right;
     position: relative;
-    top: 94px;
+    top: 24px;
+    text-align: right;
     
     ul {
         list-style: none;
@@ -59,24 +60,26 @@ header#title {
     li {
         line-height: 20px;
         margin-bottom: 10px;
+        .transition(border-color);
+        border-style: solid;
+        border-right-width: 5px;
+        border-color: #F0EBEB;
+    }
+    li.active {
+        border-color: #000;
     }
     li a {
-        .transition(border-color);
         color: #000;
         text-decoration: none;
         font-size: 20px;
         display: inline-block;
-        padding-left: 5px;
-        border-style: solid;
-        border-left-width: 5px;
-        border-color: #FFF;
+        padding-right: 5px;
         letter-spacing: 1px;
+        position: relative;
+        top: 2px;
     }
-    li a.active {
+    li:hover {
         border-color: #000;
-    }
-    li a:hover {
-        color: #5A5A5A;
     }
 }
 

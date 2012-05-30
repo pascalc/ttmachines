@@ -1335,7 +1335,7 @@ header#title {
   width: 64.58333333333334%;
   margin: 0 1.0416666666666665%;
   margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   margin-left: 10px;
 }
 #nav {
@@ -1345,7 +1345,8 @@ header#title {
   margin: 0 1.0416666666666665%;
   float: right;
   position: relative;
-  top: 94px;
+  top: 24px;
+  text-align: right;
 }
 #nav ul {
   list-style: none;
@@ -1354,33 +1355,35 @@ header#title {
 #nav li {
   line-height: 20px;
   margin-bottom: 10px;
+  -webkit-transition: border-color;
+  -moz-transition: border-color;
+  -ms-transition: border-color;
+  -o-transition: border-color;
+  transition: border-color;
+  -webkit-transition: border-color;
+  -moz-transition: border-color;
+  -ms-transition: border-color;
+  -o-transition: border-color;
+  transition: border-color;
+  border-style: solid;
+  border-right-width: 5px;
+  border-color: #F0EBEB;
+}
+#nav li.active {
+  border-color: #000;
 }
 #nav li a {
-  -webkit-transition: border-color;
-  -moz-transition: border-color;
-  -ms-transition: border-color;
-  -o-transition: border-color;
-  transition: border-color;
-  -webkit-transition: border-color;
-  -moz-transition: border-color;
-  -ms-transition: border-color;
-  -o-transition: border-color;
-  transition: border-color;
   color: #000;
   text-decoration: none;
   font-size: 20px;
   display: inline-block;
-  padding-left: 5px;
-  border-style: solid;
-  border-left-width: 5px;
-  border-color: #FFF;
+  padding-right: 5px;
   letter-spacing: 1px;
+  position: relative;
+  top: 2px;
 }
-#nav li a.active {
+#nav li:hover {
   border-color: #000;
-}
-#nav li a:hover {
-  color: #5A5A5A;
 }
 #text {
   display: inline;
