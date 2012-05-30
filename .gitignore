@@ -6,6 +6,5 @@ classes/
 resources/public/javascript/cljs/*
 out
 ideas.txt
-repl.js
 .lein-deps-sum
 .repl
