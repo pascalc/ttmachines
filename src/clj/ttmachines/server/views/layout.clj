@@ -20,42 +20,47 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.views.layout
-    (:use hiccup.core
+    (:require [clojure.string :as string]
+              [noir.request :as request])
+    (:use [noir.core :only [defpage defpartial]]
+          hiccup.core
           hiccup.page
           hiccup.element
-          hiccup.def))
+          hiccup.def
+          ttmachines.server.tools))
 
 ;; HEAD
 
-(def page-title "talking to machines")
+(def ^:dynamic *page-title* "talking to machines")
 
-(def stylesheets
+(def ^:dynamic *stylesheets*
     #{"codemirror.css"
       "ambiance.css"
       "app.css"})
-(def stylesheet-links
-    (map #(include-css (str "stylesheets/" %)) stylesheets))
+(defpartial stylesheet-links []
+    (map #(include-css (str "stylesheets/" %)) *stylesheets*))
 
-(def javascripts
+(def ^:dynamic *javascripts*
     #{"javascript/analytics.js"
       "http://code.jquery.com/jquery-1.7.1.min.js"
       "javascript/codemirror.js"
-      "javascript/clojure.js"})
-(def javascript-links
-    (map include-js javascripts))
+      "javascript/clojure.js"
+      "javascript/firmin-1.0.0-min.js"})
+(defpartial javascript-links []
+    (map include-js *javascripts*))
 
 (def favicon [:link {:rel "icon" 
                      :type "image/x-icon"
                      :href "images/favicon.ico"}])
 
-(def head
+(defpartial head []
     [:head
         [:meta {:http-equiv "Content-Type"
                 :content    "text/html; charset=UTF-8"}]
-        [:title page-title]
+        [:title *page-title*]
         favicon
-        stylesheet-links
-        javascript-links])
+        (stylesheet-links)
+        (javascript-links)])
 
 ;; BODY
 
@@ -66,11 +71,29 @@
                 :src    "https://a248.e.akamai.net/camo.github.com/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
                 :alt    "Fork me on Github"}]))
 
-(def title "talking to machines")
+(def ^:dynamic *title* "talking to machines")
 
-(def title-header
+(defpartial title-header []
     [:header#title
-        [:h1.fancy title]])
+        [:h1.fancy *title*]])
+
+(def ^:dynamic *route*)
+
+(defpartial nav-link-for [route text]
+  (let [li-classes (atom ["fancy"])]
+    (when (= route *route*)
+      (swap! li-classes conj "active"))
+    [:li {:class (string/join " " @li-classes)}
+      (link-to route text)]))
+
+(defpartial nav []
+    [:nav#nav
+        [:ul
+            (map #(apply nav-link-for %)
+                [["/"           "start"]
+                 ["/repl"       "repl"]
+                 ["#"           "broadcast"]
+                 ["#"           "about"]])]])
 
 (def ttmachines-js (include-js "javascript/ttmachines.js"))
 
@@ -80,15 +103,42 @@
 
 ;; LAYOUT
 
-(defn layout [options & content]
-    (html5
-        head
-        [:body
-            fork-me-github
-            [:div.container
-                title-header
-                content
-                footer
-                ttmachines-js
-                (when-let [js (options :include-js)]
-                  (include-js js))]]))
+(defmacro defcontent [route content-map]
+  `(do
+    (def ~'content
+      ~content-map)
+    (def ~'html-content
+      (binding [*route* ~route]
+        (layout ~'content)))
+    (defpage ~route {} 
+      (if (ajax? (request/ring-request))
+        (generate-clj-response ~'content)
+        ~'html-content))))
+
+(defn layout [content]
+  (html5
+    (head)
+    [:body
+      fork-me-github
+      [:div.container
+        (title-header)
+        (nav)
+        [:div#text 
+          (content :text)]
+        [:div#main-column
+          (content :main)
+          (content :below-main)]
+        [:div#sidebar
+          (content :sidebar)]
+        footer
+        ttmachines-js
+        (when-let [js (content :include-js)]
+          (include-js js))]]))
+
+;; Loading screen
+
+; (def loading [:h2.fancy "Loading..."])
+
+; (defpage "/loading" {}
+;   (binding [*route* "/loading"]
+;     (layout {:main loading})))

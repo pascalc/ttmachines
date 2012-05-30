@@ -40,9 +40,47 @@ div.container {
 /////////////
 
 header#title {
+    .column(8);
     margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1.2rem;
     margin-left: 10px;
+}
+
+#nav {
+    .column(4);
+    float: right;
+    position: relative;
+    top: 24px;
+    text-align: right;
+    
+    ul {
+        list-style: none;
+        margin-left: 0;
+    }
+    li {
+        line-height: 20px;
+        margin-bottom: 10px;
+        .transition(border-color);
+        border-style: solid;
+        border-right-width: 5px;
+        border-color: #F0EBEB;
+    }
+    li.active {
+        border-color: #000;
+    }
+    li a {
+        color: #000;
+        text-decoration: none;
+        font-size: 20px;
+        display: inline-block;
+        padding-right: 5px;
+        letter-spacing: 1px;
+        position: relative;
+        top: 2px;
+    }
+    li:hover {
+        border-color: #000;
+    }
 }
 
 #text {

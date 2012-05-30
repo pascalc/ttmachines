@@ -19,35 +19,29 @@
 ; OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-(ns ttmachines.server.views.repl
-    (:use [noir.core]
-          [ttmachines.server.views.layout :only [defcontent]])
-    (:require [ttmachines.server.views.strings.repl :as strings]))
+(ns ttmachines.server.views.strings.repl
+    (:use ttmachines.server.views.strings.core))
 
-(defpartial section-title [title]
-    [:header
-        [:h2.fancy title]])
+(defstring text
+    "
+Welcome to the ClojureScript REPL! 
 
-(defpartial editor [editor-text] 
-    [:section#editor
-        [:textarea#editor-textarea editor-text]])
+Any forms you type in the editor will be evaluated and the results displayed below.")
 
-(defpartial result [title]
-    [:section#result
-        (section-title title)
-        [:textarea#result-textarea]])
+(defstring info-title "Info")
 
-(defpartial info [title explanation]
-    [:aside#doc
-        (section-title title)
-        [:div#doc-text
-            [:p#doc-name]
-            [:ul#doc-args.unstyled]
-            [:p#doc-body explanation]]])
+(defstring info-explanation 
+    "When you select a function on the left, information about it will be displayed here.
+")
 
-(defcontent "/repl"
-  {:include-js    "javascript/repl.js"
-   :text          strings/text
-   :main          (editor strings/initial-editor-text)
-   :sidebar       (info strings/info-title strings/info-explanation)
-   :below-main    (result strings/result-title)})
+(def initial-editor-text 
+    "(defn fizzbuzz [n]
+  (cond
+    (= 0 (mod n 15))  \"fizzbuzz\"
+    (= 0 (mod n 3))   \"fizz\"
+    (= 0 (mod n 5))   \"buzz\"
+    true              (str n)))
+
+(map (fn [n] [n (fizzbuzz n)]) (range 1 101))")
+
+(defstring result-title "Result")

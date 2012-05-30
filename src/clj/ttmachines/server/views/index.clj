@@ -20,40 +20,13 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.views.index
-    (:use [noir.core])
-    (:require [ttmachines.server.views.layout :as view]
-              [ttmachines.server.views.strings.index :as strings]))
+    (:use [noir.core]
+          [ttmachines.server.views.layout :only [defcontent]])
+    (:require [ttmachines.server.views.strings.index :as strings]))
 
-(defn section-title [title]
-    [:header
-        [:h2.fancy title]])
+(def coming-soon 
+  [:h3 strings/coming-soon])
 
-(def intro [:section#text strings/intro])
-
-(def editor 
-    [:section#editor
-        [:textarea#editor-textarea strings/initial-editor-text]])
-
-(def result
-    [:section#result
-        (section-title strings/result-title)
-        [:textarea#result-textarea]])
-
-(def info
-    [:aside#doc
-        (section-title strings/info-title)
-        [:div#doc-text
-            [:p#doc-name]
-            [:ul#doc-args.unstyled]
-            [:p#doc-body strings/info-explanation]]])
-
-(def content
-    (view/layout {:include-js "javascript/index.js"}
-        intro
-        [:div#main-column
-            editor
-            result]
-        [:div#sidebar
-            info]))
-
-(defpage index "/" {} content)
+(defcontent "/"
+  {:text strings/intro
+   :main coming-soon})

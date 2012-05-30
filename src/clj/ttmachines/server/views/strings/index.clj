@@ -37,18 +37,5 @@ The good news is that it isn't so difficult. As foreign languages go, there are 
 
 So take the initiative. Write your name between the quotation marks and say hello.")
 
-(defstring info-title "Info")
-
-(defstring info-explanation 
-    "When you select a function on the left, information about it will be displayed here.
-")
-
-(def initial-editor-text 
-    "(def me \"\")
-
-(defn greet [name]
-  (str \"Hello, \" name))
-
-(greet me)")
-
-(defstring result-title "Result")
+(defstring coming-soon
+    "*Under construction. For a taste of things to come, click [here](/repl).*")
