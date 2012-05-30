@@ -24,30 +24,9 @@
           [ttmachines.server.views.layout :only [defcontent]])
     (:require [ttmachines.server.views.strings.index :as strings]))
 
-(defpartial section-title [title]
-    [:header
-        [:h2.fancy title]])
-
-(defpartial editor [editor-text] 
-    [:section#editor
-        [:textarea#editor-textarea editor-text]])
-
-(defpartial result [title]
-    [:section#result
-        (section-title title)
-        [:textarea#result-textarea]])
-
-(defpartial info [title explanation]
-    [:aside#doc
-        (section-title title)
-        [:div#doc-text
-            [:p#doc-name]
-            [:ul#doc-args.unstyled]
-            [:p#doc-body explanation]]])
+(def coming-soon 
+  [:h3 strings/coming-soon])
 
 (defcontent "/"
-  {:include-js    "javascript/index.js"
-   :text          strings/intro
-   :main          (editor strings/initial-editor-text)
-   :sidebar       (info strings/info-title strings/info-explanation)
-   :below-main    (result strings/result-title)})
+  {:text strings/intro
+   :main coming-soon})
