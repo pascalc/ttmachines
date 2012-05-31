@@ -36,6 +36,7 @@
 (def ^:dynamic *stylesheets*
     #{"codemirror.css"
       "ambiance.css"
+      "animate.css"
       "app.css"})
 (defpartial stylesheet-links []
     (map #(include-css (str "stylesheets/" %)) *stylesheets*))
@@ -43,9 +44,10 @@
 (def ^:dynamic *javascripts*
     #{"javascript/analytics.js"
       "http://code.jquery.com/jquery-1.7.1.min.js"
+      "javascript/spin.min.js"
       "javascript/codemirror.js"
       "javascript/clojure.js"
-      "javascript/firmin-1.0.0-min.js"})
+      "javascript/loading.js"})
 (defpartial javascript-links []
     (map include-js *javascripts*))
 
@@ -137,8 +139,10 @@
 
 ;; Loading screen
 
-; (def loading [:h2.fancy "Loading..."])
+(def loading 
+  [:div#loading
+    [:h1 "Loading..."]])
 
-; (defpage "/loading" {}
-;   (binding [*route* "/loading"]
-;     (layout {:main loading})))
+(defpage "/loading" {}
+  (binding [*route* "/loading"]
+    (layout {:main loading})))
