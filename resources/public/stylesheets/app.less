@@ -32,8 +32,32 @@ div.container {
 
 #main-column { 
     .column(8);
+    min-height: 640px;
 }
 #sidebar { .column(4) }
+
+////////////////////
+// LOADING SCREEN //
+////////////////////
+
+#loading {
+    h1 {
+        margin: 0;
+    }
+
+    visibility: hidden;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    right: 40%;
+    padding: 20px 40px 20px 80px;
+
+    background-color: #383636;
+    .border-radius(15px);
+    .box-shadow(5px 5px 5px #888);
+    color: @grayLighter;
+}
+
 
 /////////////
 // CONTENT //
@@ -125,7 +149,6 @@ header#title {
 #doc-args { li { margin-bottom: 10px !important; }}
 
 #footer {
-    margin-top: 175px !important;
     .column(12);
     p { 
         text-align: right;
