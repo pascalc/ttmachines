@@ -137,9 +137,7 @@
           (content :sidebar)]
         footer
         app-js
-        ttmachines-js
-        (when-let [js (content :include-js)]
-          (include-js js))]]))
+        ttmachines-js]]))
 
 ;; Loading screen
 
