@@ -24,9 +24,11 @@
           [ttmachines.server.views.layout :only [defcontent]])
     (:require [ttmachines.server.views.strings.index :as strings]))
 
-(def coming-soon 
+(defpartial coming-soon []
   [:h3 strings/coming-soon])
 
 (defcontent "/"
-  {:text strings/intro
-   :main coming-soon})
+  {:text nil
+   :main strings/intro
+   :below-main (coming-soon)
+   :sidebar nil})
