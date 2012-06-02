@@ -46,8 +46,7 @@
       "http://code.jquery.com/jquery-1.7.1.min.js"
       "javascript/spin.min.js"
       "javascript/codemirror.js"
-      "javascript/clojure.js"
-      "javascript/loading.js"})
+      "javascript/clojure.js"})
 (defpartial javascript-links []
     (map include-js *javascripts*))
 
@@ -97,7 +96,11 @@
                  ["#"           "broadcast"]
                  ["#"           "about"]])]])
 
-(def ttmachines-js (include-js "javascript/ttmachines.js"))
+(def app-js (include-js "javascript/app.js"))
+(def ttmachines-js 
+  [:script {:src    "javascript/ttmachines.js"
+            :type   "text/javascript"
+            :defer  "defer"}])
 
 (def footer
     [:footer#footer
@@ -128,11 +131,12 @@
         [:div#text 
           (content :text)]
         [:div#main-column
-          (content :main)
-          (content :below-main)]
+          [:div#main (content :main)]
+          [:div#below-main (content :below-main)]]
         [:div#sidebar
           (content :sidebar)]
         footer
+        app-js
         ttmachines-js
         (when-let [js (content :include-js)]
           (include-js js))]]))
