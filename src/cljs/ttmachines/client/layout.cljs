@@ -24,6 +24,8 @@
             [one.dispatch :as dispatch]
             [domina.domina :as dom]
             [domina.domina.css :as css]
+            [domina.domina.events :as events]
+            [ttmachines.client.request :as request]
             [clojure.browser.repl :as repl]))
 
 ;; INITIALISE
@@ -82,3 +84,12 @@
   (fn [_ page-data]
     (.log js/console (pr-str page-data))))
 
+;; EVENT TRIGGERS
+
+;; Load page when nav link clicked 
+(events/listen! (css/sel "#nav a") :click
+  (fn [evt]
+    (events/prevent-default evt)
+    (let [clicked (events/target evt)
+          url     (dom/attr clicked :href)]
+      (request/get-page url))))
