@@ -25,7 +25,7 @@
             [clojure.set :as set]
             [clojure.walk :as walk]
             [clojure.zip :as zip]
-            [clojure.browser.repl :as repl])
+            [one.dispatch :as dispatch])
   (:use [ttmachines.client.util :only [map->js dissoc]]))
 
 ;; Codemirror integration
@@ -41,26 +41,25 @@
 
 ;; Exported vars
 
-(def editor
-  (codemirrorify 
-    "editor-textarea"
-    {:theme "ambiance"
-     :lineNumbers true
-     :matchBrackets true}))
+(def editor-textarea "editor-textarea")
+(def editor)
+(def editor-settings
+  {:theme "ambiance"
+   :lineNumbers true
+   :matchBrackets true})
 
-(def result
-  (codemirrorify 
-    "result-textarea"
-    {:theme "ambiance"
-     :readOnly true
-     :lineWrapping true}))
+(def result-textarea "result-textarea")
+(def result)
+(def result-settings
+  {:theme "ambiance"
+   :readOnly true
+   :lineWrapping true})
 
-(when editor
-  (def code (atom (.getValue editor)))
-  (set-validator! code valid-code)
-  (add-watch code :process
-    (fn [key a old new]
-      (process new))))
+(def code (atom ""))
+(set-validator! code valid-code) ; This seems to stop working??
+(add-watch code :process
+  (fn [key a old new]
+    (process new)))
 
 ;; Codemirror callbacks
 
@@ -86,33 +85,38 @@
   (atom {:editor {:get-selection-doc get-selection-doc}
          :result {}}))
 
-;; Connect callbacks
+;; Instantiate vars
 
-(when editor
-  (set-option editor
-    :onChange
-    (fn [e info]
-      (doseq [[k fun] (@change-listeners :editor)]
-        (fun e info))))
+(defn- init-editor [textarea]
+  (def editor 
+    (codemirrorify textarea editor-settings))
+  (when editor
+    (set-option editor
+      :onChange
+      (fn [e info]
+        (doseq [[k fun] (@change-listeners :editor)]
+          (fun e info))))
+    (set-option editor
+      :onCursorActivity
+      (fn [e]
+        (doseq [[k fun] (@activity-listeners :editor)]
+          (fun e))))))
 
-  (set-option editor
-    :onCursorActivity
-    (fn [e]
-      (doseq [[k fun] (@activity-listeners :editor)]
-        (fun e)))))
+(defn- init-result [textarea]
+  (def result 
+    (codemirrorify textarea result-settings))
+  (when result
+    (set-option result
+      :onChange
+      (fn [e info]
+        (doseq [[k fun] (@change-listeners :result)]
+          (fun e info))))
+    (set-option result
+      :onCursorActivity
+      (fn [e]
+        (doseq [[k fun] (@activity-listeners :result)]
+          (fun e))))))
 
-(when result
-  (set-option result
-    :onChange
-    (fn [e info]
-      (doseq [[k fun] (@change-listeners :result)]
-        (fun e info))))
-
-  (set-option result
-    :onCursorActivity
-    (fn [e]
-      (doseq [[k fun] (@activity-listeners :result)]
-        (fun e)))))
 
 ;; Add callbacks
 
@@ -153,7 +157,7 @@
 (defn- char-count [s ch] 
   (count (filter #(= % ch) s)))
 
-(defn- valid-code [code]
+(defn valid-code [code]
   (let [code-char-count (partial char-count code)]
     (and
       (= (code-char-count \() (code-char-count \)))
@@ -214,7 +218,12 @@
       (str/join (map #(str "<li>" % "</li>") (.-arglists fun-doc))))
     (.text doc-body (.-doc fun-doc))))
 
-; Main
+; EVENT LISTENERS
 
-(defn ^:export setup []
-  (reset! code (.getValue editor)))
+(dispatch/react-to #{:switch-page} {:priority 1}
+  (fn [_ _]
+    (init-editor editor-textarea)
+    (init-result result-textarea)
+    (when editor
+      (set-validator! code valid-code) ; I don't know why this needs to be reset, but it does
+      (reset! code (editor-text)))))
