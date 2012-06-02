@@ -3,6 +3,7 @@
   Adapted from Bobby Calderwood's Trail framework:
   <https://github.com/bobby/trail>"}
   one.browser.remote
+  (:use [ttmachines.client.util :only [map->js]])
   (:require [cljs.reader :as reader]
             [clojure.browser.net :as net]
             [clojure.browser.event :as event]
@@ -48,21 +49,23 @@
                     on-error]
              :or   {method   "GET"
                     retries  0}}]
-  (try
-    (add-responders id on-success on-error)
-    (.send *xhr-manager*
-           id
-           url
-           method
-           content
-           headers
-           priority
-           ;; This next one is a callback, and we could use it to get
-           ;; rid of the atom and figure out success/failure ourselves
-           nil
-           retries)
-    (catch js/Error e
-      nil)))
+
+  (let [headers-obj (map->js (merge headers {"X-Requested-With" "XMLHttpRequest"}))]
+    (try
+      (add-responders id on-success on-error)
+      (.send *xhr-manager*
+             id
+             url
+             method
+             content
+             headers-obj
+             priority
+             ;; This next one is a callback, and we could use it to get
+             ;; rid of the atom and figure out success/failure ourselves
+             nil
+             retries)
+      (catch js/Error e
+        nil))))
 
 (defn- response-success [e]
   (when-let [{success :success} (get @responders (:id e))]
