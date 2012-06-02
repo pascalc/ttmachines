@@ -46,8 +46,7 @@
             [:p#doc-body explanation]]])
 
 (defcontent "/repl"
-  {:include-js    "javascript/repl.js"
-   :text          strings/text
+  {:text          strings/text
    :main          (editor strings/initial-editor-text)
    :sidebar       (info strings/info-title strings/info-explanation)
    :below-main    (result strings/result-title)})
