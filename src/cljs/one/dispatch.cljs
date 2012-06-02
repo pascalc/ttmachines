@@ -41,12 +41,11 @@
   If `max-count` is specified, `delete-reaction` will be called
   automatically when the reaction has occurred the specified number of
   times."
-  ([event-pred reactor]
-     (react-to nil event-pred reactor))
-  ([max-count event-pred reactor]
+  ([event-pred {:keys [priority max-count] :or {priority 0 max-count nil}} reactor]
      (let [reaction {:max-count max-count
                      :event-pred event-pred
-                     :reactor reactor}]
+                     :reactor reactor
+                     :priority priority}]
        (swap! reactions assoc reaction 0)
        reaction)))
 
@@ -59,14 +58,15 @@
 (defn fire
   "Raise an event to any reactors whose event-pred returns true for
   `event-id`. The `event-id` and `event-data`, if specified, are passed to
-  the reactor."
+  the reactor. Reactors are called in order of ascending priority."
   ([event-id]
      (fire event-id nil))
   ([event-id event-data]
      (let [matching-reactions (filter (fn [[{event-pred :event-pred} run-count]]
                                         (event-pred event-id))
-                                      @reactions)]
-       (doseq [[reaction run-count] matching-reactions]
+                                      @reactions)
+          sorted-reactions (sort-by (comp :priority first) matching-reactions)]
+       (doseq [[reaction run-count] sorted-reactions]
          (let [{:keys [max-count reactor]} reaction
                run-count (inc run-count)]
            (reactor event-id event-data)
