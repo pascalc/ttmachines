@@ -220,7 +220,7 @@
 
 ; EVENT LISTENERS
 
-(dispatch/react-to #{:switch-page} {:priority 1}
+(dispatch/react-to #{:switch-page} {:priority 2}
   (fn [_ _]
     (init-editor editor-textarea)
     (init-result result-textarea)
