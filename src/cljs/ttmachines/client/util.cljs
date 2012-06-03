@@ -43,3 +43,8 @@
     (doseq [[k v] m]
       (aset out (name k) v))
     out))
+
+;; Custom
+
+(defn path-name []
+  (.-pathname (.-location js/window)))
