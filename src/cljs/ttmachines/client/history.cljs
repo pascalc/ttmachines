@@ -20,6 +20,7 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.client.history
+  (:use [ttmachines.client.util :only [map->js]])
   (:require [one.dispatch :as dispatch]))
 
 (def History (.-History js/window))
@@ -30,14 +31,14 @@
   "statechange"
   (fn []
     (let [state         (.getState History)
-          state-info    {:data  (.-data state)
+          state-info    {:data  (js->clj (.-data state))
                          :title (.-title state)
                          :url   (.-url state)}]
       (dispatch/fire :history-state-change state-info))))
 
 (defn push-state! [& {:keys [data title url]}]
   (.pushState History
-    data
+    (map->js data)
     title
     url))
 
