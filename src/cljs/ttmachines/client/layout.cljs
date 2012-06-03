@@ -27,14 +27,13 @@
             [domina.domina.css :as css]
             [domina.domina.events :as events]
             [ttmachines.client.request :as request]
-            [ttmachines.client.history :as history]
-            [clojure.browser.repl :as repl]))
+            [ttmachines.client.history :as history]))
 
 ;; INITIALISE
 
 (defn init []
-  (request/get-page (path-name))
-  (repl/connect "http://localhost:9000/repl"))
+  (request/get-page (path-name)))
+  ;(repl/connect "http://localhost:9000/repl"))
 
 ;; Alter DOM
 
