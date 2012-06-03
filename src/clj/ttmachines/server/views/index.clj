@@ -28,7 +28,7 @@
   [:h3 strings/coming-soon])
 
 (defcontent "/"
-  {:text nil
-   :main strings/intro
-   :below-main (coming-soon)
-   :sidebar nil})
+  {:layout {:text nil
+            :main strings/intro
+            :below-main (coming-soon)
+            :sidebar nil}})

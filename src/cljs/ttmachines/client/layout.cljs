@@ -26,6 +26,7 @@
             [domina.domina.css :as css]
             [domina.domina.events :as events]
             [ttmachines.client.request :as request]
+            [ttmachines.client.history :as history]
             [clojure.browser.repl :as repl]))
 
 ;; INITIALISE
@@ -70,7 +71,7 @@
   (fn [_ _ _ new-val] ((dom-watchers :sidebar) new-val)))
 
 (defn load-state [state-map]
-  (doseq [[state-key content] state-map]
+  (doseq [[state-key content] (state-map :layout)]
     (when (contains? state state-key)
       (reset! (state state-key) content))))
 
@@ -79,6 +80,10 @@
 (dispatch/react-to #{:switch-page} {:priority 0}
   (fn [_ page-data]
     (load-state (page-data :data))))
+
+(dispatch/react-to #{:switch-page} {:priority 1}
+  (fn [_ page-data]
+    (history/push-state! :url (get-in page-data [:data :route]))))
 
 (dispatch/react-to #{:switch-page} {:priority 1}
   (fn [_ page-data]

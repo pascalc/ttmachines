@@ -45,6 +45,7 @@
     #{"javascript/analytics.js"
       "http://code.jquery.com/jquery-1.7.1.min.js"
       "javascript/spin.min.js"
+      "javascript/native.history.js"
       "javascript/codemirror.js"
       "javascript/clojure.js"})
 (defpartial javascript-links []
@@ -111,7 +112,7 @@
 (defmacro defcontent [route content-map]
   `(do
     (def ~'content
-      ~content-map)
+      (assoc ~content-map :route ~route))
     (def ~'html-content
       (binding [*route* ~route]
         (layout ~'content)))
