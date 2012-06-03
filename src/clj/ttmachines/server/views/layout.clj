@@ -109,43 +109,40 @@
 
 ;; LAYOUT
 
+(def loading 
+  [:div#loading
+    [:h1 "Loading..."]])
+
 (defmacro defcontent [route content-map]
   `(do
     (def ~'content
       (assoc ~content-map :route ~route))
+
     (def ~'html-content
       (binding [*route* ~route]
-        (layout ~'content)))
+        (layout {:layout {:main loading}})))
+
     (defpage ~route {} 
       (if (ajax? (request/ring-request))
         (generate-clj-response ~'content)
         ~'html-content))))
 
-(defn layout [content]
-  (html5
-    (head)
-    [:body
-      fork-me-github
-      [:div.container
-        (title-header)
-        (nav)
-        [:div#text 
-          (content :text)]
-        [:div#main-column
-          [:div#main (content :main)]
-          [:div#below-main (content :below-main)]]
-        [:div#sidebar
-          (content :sidebar)]
-        footer
-        app-js
-        ttmachines-js]]))
-
-;; Loading screen
-
-(def loading 
-  [:div#loading
-    [:h1 "Loading..."]])
-
-(defpage "/loading" {}
-  (binding [*route* "/loading"]
-    (layout {:main loading})))
+(defn layout [content-map]
+  (let [content (content-map :layout)]
+    (html5
+      (head)
+      [:body
+        fork-me-github
+        [:div.container
+          (title-header)
+          (nav)
+          [:div#text 
+            (content :text)]
+          [:div#main-column
+            [:div#main (content :main)]
+            [:div#below-main (content :below-main)]]
+          [:div#sidebar
+            (content :sidebar)]
+          footer
+          app-js
+          ttmachines-js]])))
