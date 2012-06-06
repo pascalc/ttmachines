@@ -27,13 +27,14 @@
             [domina.domina.css :as css]
             [domina.domina.events :as events]
             [ttmachines.client.request :as request]
-            [ttmachines.client.history :as history]))
+            [ttmachines.client.history :as history]
+            [clojure.browser.repl :as repl]))
 
 ;; INITIALISE
 
 (defn init []
-  (request/get-page (path-name)))
-  ;(repl/connect "http://localhost:9000/repl"))
+  (request/get-page (path-name))
+  (repl/connect "http://localhost:9000/repl"))
 
 ;; Alter DOM
 
@@ -100,7 +101,7 @@
 
 ;; When the browser's history changes, via link navigation, programmatic 
 ;; get-page or browser forward/back, we fetch the contents of the page
-(dispatch/react-to #{:history-state-change} {:priority 0}
+(dispatch/react-to #{:history-state-change} {:priority 1}
   (fn [_ {:keys [url]}]
     (request/get-page url)))
 
@@ -121,10 +122,6 @@
 (dispatch/react-to #{:switch-page} {:priority 1}
   (fn [_ page-data]
     (load-state (page-data :data))))
-
-(dispatch/react-to #{:switch-page} {:priority 2}
-  (fn [_ page-data]
-    (.log js/console (pr-str page-data))))
 
 ;; MAIN
 
