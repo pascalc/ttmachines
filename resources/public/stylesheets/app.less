@@ -4,6 +4,9 @@
 @import 'type.less';
 @import 'buttons.less';
 
+// App stylesheet imports
+@import 'repl.less';
+
 ////////////
 // MIXINS //
 ////////////
@@ -35,6 +38,14 @@ div.container {
     min-height: 640px;
 }
 #sidebar { .column(4) }
+
+////////////////
+// ANIMATIONS //
+////////////////
+
+.fadeInLeft, .fadeOutLeft, .fadeInRight, .fadeOutRight {
+    .animation-duration(0.2s) !important;
+}
 
 ////////////////////
 // LOADING SCREEN //
@@ -89,7 +100,6 @@ header#title {
     li {
         line-height: 20px;
         margin-bottom: 10px;
-        .transition(border-color);
         border-style: solid;
         border-right-width: 5px;
         border-color: #F0EBEB;
@@ -121,37 +131,6 @@ header#title {
     margin-bottom: 1.2rem;
 }
 
-#editor {
-    margin-bottom: 2rem;
-}
-#editor .CodeMirror-scroll { 
-    height: 250px;
-    overflow-y: scroll;
-}
-
-#result header h2 {
-    margin-bottom: 5px;
-}
-
-#result .CodeMirror-scroll { 
-    height: auto; 
-    max-height: 150px;
-    overflow-y: scroll;
-}
-
-#doc { 
-    h2 { 
-        margin-bottom: 5px;
-    }
-}
-#doc-name, #doc-args {
-    font-family: @monoFontFamily;
-}
-#doc-name { 
-    font-weight: bold; 
-    margin-bottom: 10px !important;
-}
-#doc-args { li { margin-bottom: 10px !important; }}
 
 #footer {
     .column(12);
