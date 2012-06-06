@@ -215,6 +215,12 @@
           transition: @transition;
 }
 
+.animation-duration(@time) {
+  animation-duration: @time;
+  -moz-animation-duration: @time;
+  -webkit-animation-duration: @time;
+}
+
 // Transformations
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
