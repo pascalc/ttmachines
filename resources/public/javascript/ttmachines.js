@@ -15669,6 +15669,9 @@ ttmachines.client.util.map__GT_js = function(a) {
 ttmachines.client.util.path_name = function() {
   return window.location.pathname
 };
+ttmachines.client.util.after = function(a, b) {
+  return setTimeout.call(null, b, a)
+};
 var one = {dispatch:{}};
 one.dispatch.reactions = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject([], {}));
 one.dispatch.react_to = function(a, b, c) {
@@ -15745,11 +15748,11 @@ one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'history-state-change"]),
 });
 var domina = {domina:{}};
 domina.domina.support = {};
-var div__72269 = document.createElement("div"), test_html__72270 = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";
-div__72269.innerHTML = test_html__72270;
-domina.domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null, div__72269.firstChild.nodeType, 3);
-domina.domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null, div__72269.getElementsByTagName("tbody").length, 0);
-domina.domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null, div__72269.getElementsByTagName("link").length, 0);
+var div__84685 = document.createElement("div"), test_html__84686 = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";
+div__84685.innerHTML = test_html__84686;
+domina.domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null, div__84685.firstChild.nodeType, 3);
+domina.domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null, div__84685.getElementsByTagName("tbody").length, 0);
+domina.domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null, div__84685.getElementsByTagName("link").length, 0);
 var clojure = {string:{}};
 clojure.string.seq_reverse = function(a) {
   return cljs.core.reduce.call(null, cljs.core.conj, cljs.core.List.EMPTY, a)
@@ -15880,9 +15883,9 @@ domina.domina.re_xhtml_tag = /<(?!area|br|col|embed|hr|img|input|link|meta|param
 domina.domina.re_tag_name = /<([\w:]+)/;
 domina.domina.re_no_inner_html = /<(?:script|style)/i;
 domina.domina.re_tbody = /<tbody/i;
-var opt_wrapper__72288 = cljs.core.Vector.fromArray([1, "<select multiple='multiple'>", "</select>"]), table_section_wrapper__72289 = cljs.core.Vector.fromArray([1, "<table>", "</table>"]), cell_wrapper__72290 = cljs.core.Vector.fromArray([3, "<table><tbody><tr>", "</tr></tbody></table>"]);
-domina.domina.wrap_map = cljs.core.ObjMap.fromObject("col,\ufdd0'default,tfoot,caption,optgroup,legend,area,td,thead,th,option,tbody,tr,colgroup".split(","), {col:cljs.core.Vector.fromArray([2, "<table><tbody></tbody><colgroup>", "</colgroup></table>"]), "\ufdd0'default":cljs.core.Vector.fromArray([0, "", ""]), tfoot:table_section_wrapper__72289, caption:table_section_wrapper__72289, optgroup:opt_wrapper__72288, legend:cljs.core.Vector.fromArray([1, "<fieldset>", "</fieldset>"]), area:cljs.core.Vector.fromArray([1, 
-"<map>", "</map>"]), td:cell_wrapper__72290, thead:table_section_wrapper__72289, th:cell_wrapper__72290, option:opt_wrapper__72288, tbody:table_section_wrapper__72289, tr:cljs.core.Vector.fromArray([2, "<table><tbody>", "</tbody></table>"]), colgroup:table_section_wrapper__72289});
+var opt_wrapper__84704 = cljs.core.Vector.fromArray([1, "<select multiple='multiple'>", "</select>"]), table_section_wrapper__84705 = cljs.core.Vector.fromArray([1, "<table>", "</table>"]), cell_wrapper__84706 = cljs.core.Vector.fromArray([3, "<table><tbody><tr>", "</tr></tbody></table>"]);
+domina.domina.wrap_map = cljs.core.ObjMap.fromObject("col,\ufdd0'default,tfoot,caption,optgroup,legend,area,td,thead,th,option,tbody,tr,colgroup".split(","), {col:cljs.core.Vector.fromArray([2, "<table><tbody></tbody><colgroup>", "</colgroup></table>"]), "\ufdd0'default":cljs.core.Vector.fromArray([0, "", ""]), tfoot:table_section_wrapper__84705, caption:table_section_wrapper__84705, optgroup:opt_wrapper__84704, legend:cljs.core.Vector.fromArray([1, "<fieldset>", "</fieldset>"]), area:cljs.core.Vector.fromArray([1, 
+"<map>", "</map>"]), td:cell_wrapper__84706, thead:table_section_wrapper__84705, th:cell_wrapper__84706, option:opt_wrapper__84704, tbody:table_section_wrapper__84705, tr:cljs.core.Vector.fromArray([2, "<table><tbody>", "</tbody></table>"]), colgroup:table_section_wrapper__84705});
 domina.domina.remove_extraneous_tbody_BANG_ = function(a, b) {
   var c = cljs.core.not.call(null, cljs.core.re_find.call(null, domina.domina.re_tbody, b)), d = cljs.core.truth_(function() {
     var a = cljs.core._EQ_.call(null, domina.domina.tag_name, "table");
@@ -15976,24 +15979,24 @@ domina.domina.by_id = function(a) {
   return goog.dom.getElement.call(null, cljs.core.name.call(null, a))
 };
 domina.domina.by_class = function by_class(b) {
-  if(cljs.core.truth_(void 0 === domina.domina.t72326)) {
-    domina.domina.t72326 = function(b, d, e) {
+  if(cljs.core.truth_(void 0 === domina.domina.t84742)) {
+    domina.domina.t84742 = function(b, d, e) {
       this.class_name = b;
       this.by_class = d;
       this.__meta = e
-    }, domina.domina.t72326.cljs$core$IPrintable$_pr_seq = function() {
-      return cljs.core.list.call(null, "domina.domina.t72326")
-    }, domina.domina.t72326.prototype.domina$domina$DomContent$ = !0, domina.domina.t72326.prototype.domina$domina$DomContent$nodes = function() {
+    }, domina.domina.t84742.cljs$core$IPrintable$_pr_seq = function() {
+      return cljs.core.list.call(null, "domina.domina.t84742")
+    }, domina.domina.t84742.prototype.domina$domina$DomContent$ = !0, domina.domina.t84742.prototype.domina$domina$DomContent$nodes = function() {
       return domina.domina.normalize_seq.call(null, goog.dom.getElementsByClass.call(null, cljs.core.name.call(null, this.class_name)))
-    }, domina.domina.t72326.prototype.domina$domina$DomContent$single_node = function() {
+    }, domina.domina.t84742.prototype.domina$domina$DomContent$single_node = function() {
       return domina.domina.normalize_seq.call(null, goog.dom.getElementByClass.call(null, cljs.core.name.call(null, this.class_name)))
-    }, domina.domina.t72326.prototype.cljs$core$IMeta$ = !0, domina.domina.t72326.prototype.cljs$core$IMeta$_meta = function() {
+    }, domina.domina.t84742.prototype.cljs$core$IMeta$ = !0, domina.domina.t84742.prototype.cljs$core$IMeta$_meta = function() {
       return this.__meta
-    }, domina.domina.t72326.prototype.cljs$core$IWithMeta$ = !0, domina.domina.t72326.prototype.cljs$core$IWithMeta$_with_meta = function(b, d) {
-      return new domina.domina.t72326(this.class_name, this.by_class, d)
+    }, domina.domina.t84742.prototype.cljs$core$IWithMeta$ = !0, domina.domina.t84742.prototype.cljs$core$IWithMeta$_with_meta = function(b, d) {
+      return new domina.domina.t84742(this.class_name, this.by_class, d)
     }
   }
-  return new domina.domina.t72326(b, by_class, null)
+  return new domina.domina.t84742(b, by_class, null)
 };
 domina.domina.children = function(a) {
   return cljs.core.mapcat.call(null, goog.dom.getChildren, domina.domina.nodes.call(null, a))
@@ -16480,31 +16483,31 @@ domina.domina.css.root_element = function() {
 };
 domina.domina.css.sel = function() {
   var a = null, b = function(b, d) {
-    if(cljs.core.truth_(void 0 === domina.domina.css.t72141)) {
-      domina.domina.css.t72141 = function(a, b, c, d) {
+    if(cljs.core.truth_(void 0 === domina.domina.css.t84557)) {
+      domina.domina.css.t84557 = function(a, b, c, d) {
         this.expr = a;
         this.base = b;
         this.sel = c;
         this.__meta = d
-      }, domina.domina.css.t72141.cljs$core$IPrintable$_pr_seq = function() {
-        return cljs.core.list.call(null, "domina.domina.css.t72141")
-      }, domina.domina.css.t72141.prototype.domina$domina$DomContent$ = !0, domina.domina.css.t72141.prototype.domina$domina$DomContent$nodes = function() {
+      }, domina.domina.css.t84557.cljs$core$IPrintable$_pr_seq = function() {
+        return cljs.core.list.call(null, "domina.domina.css.t84557")
+      }, domina.domina.css.t84557.prototype.domina$domina$DomContent$ = !0, domina.domina.css.t84557.prototype.domina$domina$DomContent$nodes = function() {
         var a = this;
         return cljs.core.mapcat.call(null, function(b) {
           return domina.domina.normalize_seq.call(null, goog.dom.query.call(null, a.expr, b))
         }, domina.domina.nodes.call(null, a.base))
-      }, domina.domina.css.t72141.prototype.domina$domina$DomContent$single_node = function() {
+      }, domina.domina.css.t84557.prototype.domina$domina$DomContent$single_node = function() {
         var a = this;
         return cljs.core.first.call(null, cljs.core.filter.call(null, cljs.core.complement.call(null, cljs.core.nil_QMARK_), cljs.core.mapcat.call(null, function(b) {
           return domina.domina.normalize_seq.call(null, goog.dom.query.call(null, a.expr, b))
         }, domina.domina.nodes.call(null, a.base))))
-      }, domina.domina.css.t72141.prototype.cljs$core$IMeta$ = !0, domina.domina.css.t72141.prototype.cljs$core$IMeta$_meta = function() {
+      }, domina.domina.css.t84557.prototype.cljs$core$IMeta$ = !0, domina.domina.css.t84557.prototype.cljs$core$IMeta$_meta = function() {
         return this.__meta
-      }, domina.domina.css.t72141.prototype.cljs$core$IWithMeta$ = !0, domina.domina.css.t72141.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
-        return new domina.domina.css.t72141(this.expr, this.base, this.sel, b)
+      }, domina.domina.css.t84557.prototype.cljs$core$IWithMeta$ = !0, domina.domina.css.t84557.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
+        return new domina.domina.css.t84557(this.expr, this.base, this.sel, b)
       }
     }
-    return new domina.domina.css.t72141(d, b, a, null)
+    return new domina.domina.css.t84557(d, b, a, null)
   };
   return a = function(c, d) {
     switch(arguments.length) {
@@ -16655,264 +16658,330 @@ clojure.browser.event.has_listener = function() {
 clojure.browser.event.remove_all = function() {
   return null
 };
-clojure.browser.net = {};
-clojure.browser.net._STAR_timeout_STAR_ = 1E4;
-clojure.browser.net.event_types = cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, function(a) {
-  var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
-  return cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b.toLowerCase()), a])
-}, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.net.EventType))));
-clojure.browser.net.IConnection = {};
-clojure.browser.net.connect = function() {
-  var a = null;
-  return function(a, c, d, e) {
-    switch(arguments.length) {
-      case 1:
-        var f;
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$connect : a)) {
-          f = a.clojure$browser$net$IConnection$connect(a)
-        }else {
-          f = clojure.browser.net.connect[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(f) && (f = clojure.browser.net.connect._, !cljs.core.truth_(f))) {
-            throw cljs.core.missing_protocol.call(null, "IConnection.connect", a);
-          }
-          f = f.call(null, a)
-        }
-        return f;
-      case 2:
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$connect : a)) {
-          f = a.clojure$browser$net$IConnection$connect(a, c)
-        }else {
-          f = clojure.browser.net.connect[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(f) && (f = clojure.browser.net.connect._, !cljs.core.truth_(f))) {
-            throw cljs.core.missing_protocol.call(null, "IConnection.connect", a);
-          }
-          f = f.call(null, a, c)
-        }
-        return f;
-      case 3:
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$connect : a)) {
-          f = a.clojure$browser$net$IConnection$connect(a, c, d)
-        }else {
-          f = clojure.browser.net.connect[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(f) && (f = clojure.browser.net.connect._, !cljs.core.truth_(f))) {
-            throw cljs.core.missing_protocol.call(null, "IConnection.connect", a);
-          }
-          f = f.call(null, a, c, d)
-        }
-        return f;
-      case 4:
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$connect : a)) {
-          f = a.clojure$browser$net$IConnection$connect(a, c, d, e)
-        }else {
-          f = clojure.browser.net.connect[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(f) && (f = clojure.browser.net.connect._, !cljs.core.truth_(f))) {
-            throw cljs.core.missing_protocol.call(null, "IConnection.connect", a);
-          }
-          f = f.call(null, a, c, d, e)
-        }
-        return f
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-clojure.browser.net.transmit = function() {
-  var a = null;
-  return function(a, c, d, e, f, g) {
-    switch(arguments.length) {
-      case 2:
-        var h;
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$transmit : a)) {
-          h = a.clojure$browser$net$IConnection$transmit(a, c)
-        }else {
-          h = clojure.browser.net.transmit[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(h) && (h = clojure.browser.net.transmit._, !cljs.core.truth_(h))) {
-            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", a);
-          }
-          h = h.call(null, a, c)
-        }
-        return h;
-      case 3:
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$transmit : a)) {
-          h = a.clojure$browser$net$IConnection$transmit(a, c, d)
-        }else {
-          h = clojure.browser.net.transmit[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(h) && (h = clojure.browser.net.transmit._, !cljs.core.truth_(h))) {
-            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", a);
-          }
-          h = h.call(null, a, c, d)
-        }
-        return h;
-      case 4:
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$transmit : a)) {
-          h = a.clojure$browser$net$IConnection$transmit(a, c, d, e)
-        }else {
-          h = clojure.browser.net.transmit[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(h) && (h = clojure.browser.net.transmit._, !cljs.core.truth_(h))) {
-            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", a);
-          }
-          h = h.call(null, a, c, d, e)
-        }
-        return h;
-      case 5:
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$transmit : a)) {
-          h = a.clojure$browser$net$IConnection$transmit(a, c, d, e, f)
-        }else {
-          h = clojure.browser.net.transmit[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(h) && (h = clojure.browser.net.transmit._, !cljs.core.truth_(h))) {
-            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", a);
-          }
-          h = h.call(null, a, c, d, e, f)
-        }
-        return h;
-      case 6:
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$transmit : a)) {
-          h = a.clojure$browser$net$IConnection$transmit(a, c, d, e, f, g)
-        }else {
-          h = clojure.browser.net.transmit[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(h) && (h = clojure.browser.net.transmit._, !cljs.core.truth_(h))) {
-            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", a);
-          }
-          h = h.call(null, a, c, d, e, f, g)
-        }
-        return h
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-clojure.browser.net.close = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$close : a)) {
-    a = a.clojure$browser$net$IConnection$close(a)
+domina.domina.events = {};
+domina.domina.events.Event = {};
+domina.domina.events.prevent_default = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$prevent_default : a)) {
+    a = a.domina$domina$events$Event$prevent_default(a)
   }else {
     var b;
-    b = clojure.browser.net.close[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = clojure.browser.net.close._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "IConnection.close", a);
+    b = domina.domina.events.prevent_default[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.prevent_default._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.prevent-default", a);
     }
     a = b.call(null, a)
   }
   return a
 };
-goog.net.XhrIo.prototype.clojure$browser$event$EventType$ = !0;
-goog.net.XhrIo.prototype.clojure$browser$event$EventType$event_types = function() {
-  return cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, function(a) {
-    var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
-    return cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b.toLowerCase()), a])
-  }, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.net.EventType))))
+domina.domina.events.stop_propagation = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$stop_propagation : a)) {
+    a = a.domina$domina$events$Event$stop_propagation(a)
+  }else {
+    var b;
+    b = domina.domina.events.stop_propagation[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.stop_propagation._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.stop-propagation", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
 };
-goog.net.XhrIo.prototype.clojure$browser$net$IConnection$ = !0;
-goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit = function() {
+domina.domina.events.target = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$target : a)) {
+    a = a.domina$domina$events$Event$target(a)
+  }else {
+    var b;
+    b = domina.domina.events.target[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.target._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.target", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
+};
+domina.domina.events.current_target = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$current_target : a)) {
+    a = a.domina$domina$events$Event$current_target(a)
+  }else {
+    var b;
+    b = domina.domina.events.current_target[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.current_target._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.current-target", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
+};
+domina.domina.events.event_type = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$event_type : a)) {
+    a = a.domina$domina$events$Event$event_type(a)
+  }else {
+    var b;
+    b = domina.domina.events.event_type[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.event_type._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.event-type", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
+};
+domina.domina.events.raw_event = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$raw_event : a)) {
+    a = a.domina$domina$events$Event$raw_event(a)
+  }else {
+    var b;
+    b = domina.domina.events.raw_event[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.raw_event._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.raw-event", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
+};
+domina.domina.events.builtin_events = cljs.core.set.call(null, cljs.core.map.call(null, cljs.core.keyword, goog.object.getValues.call(null, goog.events.EventType)));
+domina.domina.events.root_element = window.document.documentElement;
+domina.domina.events.find_builtin_type = function(a) {
+  return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, domina.domina.events.builtin_events, a)) ? cljs.core.name.call(null, a) : a
+};
+domina.domina.events.create_listener_function = function create_listener_function(b) {
+  return function(c) {
+    b.call(null, function() {
+      if(cljs.core.truth_(void 0 === domina.domina.events.t84583)) {
+        domina.domina.events.t84583 = function(b, c, f, g) {
+          this.evt = b;
+          this.f = c;
+          this.create_listener_function = f;
+          this.__meta = g
+        }, domina.domina.events.t84583.cljs$core$IPrintable$_pr_seq = function() {
+          return cljs.core.list.call(null, "domina.domina.events.t84583")
+        }, domina.domina.events.t84583.prototype.cljs$core$ILookup$ = !0, domina.domina.events.t84583.prototype.cljs$core$ILookup$_lookup = function() {
+          var b = null;
+          return function(b, c, d) {
+            switch(arguments.length) {
+              case 2:
+                var h;
+                h = this.evt[c];
+                h = cljs.core.truth_(h) ? h : this.evt[cljs.core.name.call(null, c)];
+                return h;
+              case 3:
+                return h = cljs.core._lookup.call(null, b, c), cljs.core.truth_(h) ? h : d
+            }
+            throw"Invalid arity: " + arguments.length;
+          }
+        }(), domina.domina.events.t84583.prototype.domina$domina$events$Event$ = !0, domina.domina.events.t84583.prototype.domina$domina$events$Event$prevent_default = function() {
+          return this.evt.preventDefault()
+        }, domina.domina.events.t84583.prototype.domina$domina$events$Event$stop_propagation = function() {
+          return this.evt.stopPropagation()
+        }, domina.domina.events.t84583.prototype.domina$domina$events$Event$target = function() {
+          return this.evt.target
+        }, domina.domina.events.t84583.prototype.domina$domina$events$Event$current_target = function() {
+          return this.evt.currentTarget
+        }, domina.domina.events.t84583.prototype.domina$domina$events$Event$event_type = function() {
+          return this.evt.type
+        }, domina.domina.events.t84583.prototype.domina$domina$events$Event$raw_event = function() {
+          return this.evt
+        }, domina.domina.events.t84583.prototype.cljs$core$IMeta$ = !0, domina.domina.events.t84583.prototype.cljs$core$IMeta$_meta = function() {
+          return this.__meta
+        }, domina.domina.events.t84583.prototype.cljs$core$IWithMeta$ = !0, domina.domina.events.t84583.prototype.cljs$core$IWithMeta$_with_meta = function(b, c) {
+          return new domina.domina.events.t84583(this.evt, this.f, this.create_listener_function, c)
+        }
+      }
+      return new domina.domina.events.t84583(c, b, create_listener_function, null)
+    }());
+    return!0
+  }
+};
+domina.domina.events.listen_internal_BANG_ = function(a, b, c, d, e) {
+  var f = domina.domina.events.create_listener_function.call(null, c), g = domina.domina.events.find_builtin_type.call(null, b);
+  return cljs.core.doall.call(null, function() {
+    return function i(a) {
+      return new cljs.core.LazySeq(null, !1, function() {
+        for(;;) {
+          if(cljs.core.truth_(cljs.core.seq.call(null, a))) {
+            var b = cljs.core.first.call(null, a);
+            return cljs.core.cons.call(null, cljs.core.truth_(e) ? goog.events.listenOnce.call(null, b, g, f, d) : goog.events.listen.call(null, b, g, f, d), i.call(null, cljs.core.rest.call(null, a)))
+          }
+          return null
+        }
+      })
+    }.call(null, domina.domina.nodes.call(null, a))
+  }())
+};
+domina.domina.events.listen_BANG_ = function() {
   var a = null;
-  return function(a, c, d, e, f, g) {
+  return a = function(b, c, d) {
     switch(arguments.length) {
       case 2:
-        return clojure.browser.net.transmit.call(null, a, c, "GET", null, null, clojure.browser.net._STAR_timeout_STAR_);
+        return a.call(null, domina.domina.events.root_element, b, c);
       case 3:
-        return clojure.browser.net.transmit.call(null, a, c, d, null, null, clojure.browser.net._STAR_timeout_STAR_);
-      case 4:
-        return clojure.browser.net.transmit.call(null, a, c, d, e, null, clojure.browser.net._STAR_timeout_STAR_);
-      case 5:
-        return clojure.browser.net.transmit.call(null, a, c, d, e, f, clojure.browser.net._STAR_timeout_STAR_);
-      case 6:
-        return a.setTimeoutInterval(g), a.send(c, d, e, f)
+        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !1, !1)
     }
     throw"Invalid arity: " + arguments.length;
   }
 }();
-clojure.browser.net.xpc_config_fields = cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, function(a) {
-  var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
-  return cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b.toLowerCase()), a])
-}, cljs.core.js__GT_clj.call(null, goog.net.xpc.CfgFields)));
-clojure.browser.net.xhr_connection = function() {
-  return new goog.net.XhrIo
-};
-clojure.browser.net.ICrossPageChannel = {};
-clojure.browser.net.register_service = function() {
+domina.domina.events.capture_BANG_ = function() {
   var a = null;
-  return function(a, c, d, e) {
+  return a = function(b, c, d) {
     switch(arguments.length) {
-      case 3:
-        var f;
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$ICrossPageChannel$register_service : a)) {
-          f = a.clojure$browser$net$ICrossPageChannel$register_service(a, c, d)
-        }else {
-          f = clojure.browser.net.register_service[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(f) && (f = clojure.browser.net.register_service._, !cljs.core.truth_(f))) {
-            throw cljs.core.missing_protocol.call(null, "ICrossPageChannel.register-service", a);
-          }
-          f = f.call(null, a, c, d)
-        }
-        return f;
-      case 4:
-        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$ICrossPageChannel$register_service : a)) {
-          f = a.clojure$browser$net$ICrossPageChannel$register_service(a, c, d, e)
-        }else {
-          f = clojure.browser.net.register_service[goog.typeOf.call(null, a)];
-          if(!cljs.core.truth_(f) && (f = clojure.browser.net.register_service._, !cljs.core.truth_(f))) {
-            throw cljs.core.missing_protocol.call(null, "ICrossPageChannel.register-service", a);
-          }
-          f = f.call(null, a, c, d, e)
-        }
-        return f
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$ = !0;
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect = function() {
-  var a = null;
-  return function(a, c, d, e) {
-    switch(arguments.length) {
-      case 1:
-        return clojure.browser.net.connect.call(null, a, null);
       case 2:
-        return a.connect(c);
+        return a.call(null, domina.domina.events.root_element, b, c);
       case 3:
-        return clojure.browser.net.connect.call(null, a, c, d, document.body);
-      case 4:
-        return a.createPeerIframe(e, d), a.connect(c)
+        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !0, !1)
     }
     throw"Invalid arity: " + arguments.length;
   }
 }();
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$transmit = function(a, b, c) {
-  return a.send(cljs.core.name.call(null, b), c)
-};
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$close = function(a) {
-  return a.close(cljs.core.List.EMPTY)
-};
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$ = !0;
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$register_service = function() {
+domina.domina.events.listen_once_BANG_ = function() {
   var a = null;
-  return function(a, c, d, e) {
+  return a = function(b, c, d) {
     switch(arguments.length) {
+      case 2:
+        return a.call(null, domina.domina.events.root_element, b, c);
       case 3:
-        return clojure.browser.net.register_service.call(null, a, c, d, !1);
-      case 4:
-        return a.registerService(cljs.core.name.call(null, c), d, e)
+        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !1, !0)
     }
     throw"Invalid arity: " + arguments.length;
   }
 }();
-clojure.browser.net.xpc_connection = function() {
-  var a = null, b = function(a) {
-    return new goog.net.xpc.CrossPageChannel(cljs.core.reduce.call(null, function(a, b) {
-      var c = cljs.core.nth.call(null, b, 0, null), g = cljs.core.nth.call(null, b, 1, null), c = cljs.core.get.call(null, clojure.browser.net.xpc_config_fields, c);
-      return cljs.core.truth_(c) ? cljs.core.assoc.call(null, a, c, g) : a
-    }, cljs.core.ObjMap.fromObject([], {}), a).strobj)
-  };
-  return function(a) {
+domina.domina.events.capture_once_BANG_ = function() {
+  var a = null;
+  return a = function(b, c, d) {
+    switch(arguments.length) {
+      case 2:
+        return a.call(null, domina.domina.events.root_element, b, c);
+      case 3:
+        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !0, !0)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+domina.domina.events.unlisten_BANG_ = function() {
+  var a = null;
+  return a = function(b, c) {
     switch(arguments.length) {
       case 0:
-        var d;
-        d = (new goog.Uri(window.location.href)).getParameterValue("xpc");
-        d = cljs.core.truth_(d) ? new goog.net.xpc.CrossPageChannel(goog.json.parse.call(null, d)) : null;
-        return d;
+        return a.call(null, domina.domina.events.root_element);
       case 1:
-        return b.call(this, a)
+        var d;
+        a: {
+          var e = cljs.core.seq.call(null, domina.domina.nodes.call(null, b));
+          if(cljs.core.truth_(e)) {
+            for(var f = cljs.core.first.call(null, e);;) {
+              if(goog.events.removeAll.call(null, f), f = cljs.core.next.call(null, e), cljs.core.truth_(f)) {
+                e = f, f = cljs.core.first.call(null, e)
+              }else {
+                d = null;
+                break a
+              }
+            }
+          }else {
+            d = null
+          }
+        }
+        return d;
+      case 2:
+        return d = domina.domina.events.find_builtin_type.call(null, c), goog.events.removeAll.call(null, domina.domina.events.node, d)
     }
     throw"Invalid arity: " + arguments.length;
   }
 }();
+domina.domina.events.ancestor_nodes = function() {
+  var a = null;
+  return a = function(b, c) {
+    switch(arguments.length) {
+      case 1:
+        return a.call(null, b, cljs.core.cons.call(null, b));
+      case 2:
+        var d;
+        a: {
+          for(var e = b, f = c;;) {
+            if(e = e.parentNode, cljs.core.truth_(e)) {
+              var g = e, e = g, f = cljs.core.cons.call(null, g, f)
+            }else {
+              d = f;
+              break a
+            }
+          }
+        }
+        return d
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+domina.domina.events.dispatch_browser_BANG_ = function(a, b) {
+  var c = domina.domina.events.ancestor_nodes.call(null, domina.domina.single_node.call(null, a)), d = cljs.core.seq.call(null, c);
+  if(cljs.core.truth_(d)) {
+    for(var e = cljs.core.first.call(null, d);;) {
+      if(!cljs.core.truth_(e.propagationStopped)) {
+        b.currentTarget = e, goog.events.fireListeners.call(null, e, b.type, !0, b)
+      }
+      e = cljs.core.next.call(null, d);
+      if(cljs.core.truth_(e)) {
+        d = e, e = cljs.core.first.call(null, d)
+      }else {
+        break
+      }
+    }
+  }
+  e = cljs.core.seq.call(null, cljs.core.reverse.call(null, c));
+  if(cljs.core.truth_(e)) {
+    for(c = cljs.core.first.call(null, e);;) {
+      if(!cljs.core.truth_(c.propagationStopped)) {
+        b.currentTarget = c, goog.events.fireListeners.call(null, c, b.type, !1, b)
+      }
+      c = cljs.core.next.call(null, e);
+      if(cljs.core.truth_(c)) {
+        e = c, c = cljs.core.first.call(null, e)
+      }else {
+        break
+      }
+    }
+  }
+  return b.returnValue_
+};
+domina.domina.events.dispatch_event_target_BANG_ = function(a, b) {
+  return goog.events.dispatchEvent.call(null, a, b)
+};
+domina.domina.events.is_event_target_QMARK_ = function(a) {
+  var b = a.getParentEventTarget;
+  return cljs.core.truth_(b) ? a.dispatchEvent : b
+};
+domina.domina.events.dispatch_BANG_ = function() {
+  var a = null;
+  return a = function(b, c, d) {
+    switch(arguments.length) {
+      case 2:
+        return a.call(null, domina.domina.events.root_element, b, c);
+      case 3:
+        var e = new goog.events.Event(domina.domina.events.find_builtin_type.call(null, c)), f = cljs.core.seq.call(null, d);
+        if(cljs.core.truth_(f)) {
+          var g = cljs.core.first.call(null, f);
+          cljs.core.nth.call(null, g, 0, null);
+          for(cljs.core.nth.call(null, g, 1, null);;) {
+            var h = g, g = cljs.core.nth.call(null, h, 0, null), h = cljs.core.nth.call(null, h, 1, null);
+            e[g] = h;
+            f = cljs.core.next.call(null, f);
+            if(cljs.core.truth_(f)) {
+              g = f, f = cljs.core.first.call(null, g), h = g, g = f, f = h
+            }else {
+              break
+            }
+          }
+        }
+        return cljs.core.truth_(domina.domina.events.is_event_target_QMARK_.call(null, b)) ? domina.domina.events.dispatch_event_target_BANG_.call(null, b, e) : domina.domina.events.dispatch_browser_BANG_.call(null, b, e)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+domina.domina.events.unlisten_by_key_BANG_ = function(a) {
+  return goog.events.unlistenByKey.call(null, a)
+};
+domina.domina.events.get_listeners = function(a, b) {
+  var c = domina.domina.events.find_builtin_type.call(null, b);
+  return cljs.core.mapcat.call(null, function(a) {
+    return goog.events.getListeners.call(null, a, c, !1)
+  }, domina.domina.nodes.call(null, a))
+};
 cljs.reader = {};
 cljs.reader.PushbackReader = {};
 cljs.reader.read_char = function(a) {
@@ -17242,6 +17311,264 @@ cljs.reader.read_string = function(a) {
   a = cljs.reader.push_back_reader.call(null, a);
   return cljs.reader.read.call(null, a, !0, null, !1)
 };
+clojure.browser.net = {};
+clojure.browser.net._STAR_timeout_STAR_ = 1E4;
+clojure.browser.net.event_types = cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, function(a) {
+  var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
+  return cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b.toLowerCase()), a])
+}, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.net.EventType))));
+clojure.browser.net.IConnection = {};
+clojure.browser.net.connect = function() {
+  var a = null;
+  return function(a, c, d, e) {
+    switch(arguments.length) {
+      case 1:
+        var f;
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$connect : a)) {
+          f = a.clojure$browser$net$IConnection$connect(a)
+        }else {
+          f = clojure.browser.net.connect[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(f) && (f = clojure.browser.net.connect._, !cljs.core.truth_(f))) {
+            throw cljs.core.missing_protocol.call(null, "IConnection.connect", a);
+          }
+          f = f.call(null, a)
+        }
+        return f;
+      case 2:
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$connect : a)) {
+          f = a.clojure$browser$net$IConnection$connect(a, c)
+        }else {
+          f = clojure.browser.net.connect[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(f) && (f = clojure.browser.net.connect._, !cljs.core.truth_(f))) {
+            throw cljs.core.missing_protocol.call(null, "IConnection.connect", a);
+          }
+          f = f.call(null, a, c)
+        }
+        return f;
+      case 3:
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$connect : a)) {
+          f = a.clojure$browser$net$IConnection$connect(a, c, d)
+        }else {
+          f = clojure.browser.net.connect[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(f) && (f = clojure.browser.net.connect._, !cljs.core.truth_(f))) {
+            throw cljs.core.missing_protocol.call(null, "IConnection.connect", a);
+          }
+          f = f.call(null, a, c, d)
+        }
+        return f;
+      case 4:
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$connect : a)) {
+          f = a.clojure$browser$net$IConnection$connect(a, c, d, e)
+        }else {
+          f = clojure.browser.net.connect[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(f) && (f = clojure.browser.net.connect._, !cljs.core.truth_(f))) {
+            throw cljs.core.missing_protocol.call(null, "IConnection.connect", a);
+          }
+          f = f.call(null, a, c, d, e)
+        }
+        return f
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+clojure.browser.net.transmit = function() {
+  var a = null;
+  return function(a, c, d, e, f, g) {
+    switch(arguments.length) {
+      case 2:
+        var h;
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$transmit : a)) {
+          h = a.clojure$browser$net$IConnection$transmit(a, c)
+        }else {
+          h = clojure.browser.net.transmit[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(h) && (h = clojure.browser.net.transmit._, !cljs.core.truth_(h))) {
+            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", a);
+          }
+          h = h.call(null, a, c)
+        }
+        return h;
+      case 3:
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$transmit : a)) {
+          h = a.clojure$browser$net$IConnection$transmit(a, c, d)
+        }else {
+          h = clojure.browser.net.transmit[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(h) && (h = clojure.browser.net.transmit._, !cljs.core.truth_(h))) {
+            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", a);
+          }
+          h = h.call(null, a, c, d)
+        }
+        return h;
+      case 4:
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$transmit : a)) {
+          h = a.clojure$browser$net$IConnection$transmit(a, c, d, e)
+        }else {
+          h = clojure.browser.net.transmit[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(h) && (h = clojure.browser.net.transmit._, !cljs.core.truth_(h))) {
+            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", a);
+          }
+          h = h.call(null, a, c, d, e)
+        }
+        return h;
+      case 5:
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$transmit : a)) {
+          h = a.clojure$browser$net$IConnection$transmit(a, c, d, e, f)
+        }else {
+          h = clojure.browser.net.transmit[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(h) && (h = clojure.browser.net.transmit._, !cljs.core.truth_(h))) {
+            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", a);
+          }
+          h = h.call(null, a, c, d, e, f)
+        }
+        return h;
+      case 6:
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$transmit : a)) {
+          h = a.clojure$browser$net$IConnection$transmit(a, c, d, e, f, g)
+        }else {
+          h = clojure.browser.net.transmit[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(h) && (h = clojure.browser.net.transmit._, !cljs.core.truth_(h))) {
+            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", a);
+          }
+          h = h.call(null, a, c, d, e, f, g)
+        }
+        return h
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+clojure.browser.net.close = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$IConnection$close : a)) {
+    a = a.clojure$browser$net$IConnection$close(a)
+  }else {
+    var b;
+    b = clojure.browser.net.close[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = clojure.browser.net.close._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "IConnection.close", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
+};
+goog.net.XhrIo.prototype.clojure$browser$event$EventType$ = !0;
+goog.net.XhrIo.prototype.clojure$browser$event$EventType$event_types = function() {
+  return cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, function(a) {
+    var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
+    return cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b.toLowerCase()), a])
+  }, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.net.EventType))))
+};
+goog.net.XhrIo.prototype.clojure$browser$net$IConnection$ = !0;
+goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit = function() {
+  var a = null;
+  return function(a, c, d, e, f, g) {
+    switch(arguments.length) {
+      case 2:
+        return clojure.browser.net.transmit.call(null, a, c, "GET", null, null, clojure.browser.net._STAR_timeout_STAR_);
+      case 3:
+        return clojure.browser.net.transmit.call(null, a, c, d, null, null, clojure.browser.net._STAR_timeout_STAR_);
+      case 4:
+        return clojure.browser.net.transmit.call(null, a, c, d, e, null, clojure.browser.net._STAR_timeout_STAR_);
+      case 5:
+        return clojure.browser.net.transmit.call(null, a, c, d, e, f, clojure.browser.net._STAR_timeout_STAR_);
+      case 6:
+        return a.setTimeoutInterval(g), a.send(c, d, e, f)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+clojure.browser.net.xpc_config_fields = cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, function(a) {
+  var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
+  return cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b.toLowerCase()), a])
+}, cljs.core.js__GT_clj.call(null, goog.net.xpc.CfgFields)));
+clojure.browser.net.xhr_connection = function() {
+  return new goog.net.XhrIo
+};
+clojure.browser.net.ICrossPageChannel = {};
+clojure.browser.net.register_service = function() {
+  var a = null;
+  return function(a, c, d, e) {
+    switch(arguments.length) {
+      case 3:
+        var f;
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$ICrossPageChannel$register_service : a)) {
+          f = a.clojure$browser$net$ICrossPageChannel$register_service(a, c, d)
+        }else {
+          f = clojure.browser.net.register_service[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(f) && (f = clojure.browser.net.register_service._, !cljs.core.truth_(f))) {
+            throw cljs.core.missing_protocol.call(null, "ICrossPageChannel.register-service", a);
+          }
+          f = f.call(null, a, c, d)
+        }
+        return f;
+      case 4:
+        if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$net$ICrossPageChannel$register_service : a)) {
+          f = a.clojure$browser$net$ICrossPageChannel$register_service(a, c, d, e)
+        }else {
+          f = clojure.browser.net.register_service[goog.typeOf.call(null, a)];
+          if(!cljs.core.truth_(f) && (f = clojure.browser.net.register_service._, !cljs.core.truth_(f))) {
+            throw cljs.core.missing_protocol.call(null, "ICrossPageChannel.register-service", a);
+          }
+          f = f.call(null, a, c, d, e)
+        }
+        return f
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$ = !0;
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect = function() {
+  var a = null;
+  return function(a, c, d, e) {
+    switch(arguments.length) {
+      case 1:
+        return clojure.browser.net.connect.call(null, a, null);
+      case 2:
+        return a.connect(c);
+      case 3:
+        return clojure.browser.net.connect.call(null, a, c, d, document.body);
+      case 4:
+        return a.createPeerIframe(e, d), a.connect(c)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$transmit = function(a, b, c) {
+  return a.send(cljs.core.name.call(null, b), c)
+};
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$close = function(a) {
+  return a.close(cljs.core.List.EMPTY)
+};
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$ = !0;
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$register_service = function() {
+  var a = null;
+  return function(a, c, d, e) {
+    switch(arguments.length) {
+      case 3:
+        return clojure.browser.net.register_service.call(null, a, c, d, !1);
+      case 4:
+        return a.registerService(cljs.core.name.call(null, c), d, e)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+clojure.browser.net.xpc_connection = function() {
+  var a = null, b = function(a) {
+    return new goog.net.xpc.CrossPageChannel(cljs.core.reduce.call(null, function(a, b) {
+      var c = cljs.core.nth.call(null, b, 0, null), g = cljs.core.nth.call(null, b, 1, null), c = cljs.core.get.call(null, clojure.browser.net.xpc_config_fields, c);
+      return cljs.core.truth_(c) ? cljs.core.assoc.call(null, a, c, g) : a
+    }, cljs.core.ObjMap.fromObject([], {}), a).strobj)
+  };
+  return function(a) {
+    switch(arguments.length) {
+      case 0:
+        var d;
+        d = (new goog.Uri(window.location.href)).getParameterValue("xpc");
+        d = cljs.core.truth_(d) ? new goog.net.xpc.CrossPageChannel(goog.json.parse.call(null, d)) : null;
+        return d;
+      case 1:
+        return b.call(this, a)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
 one.browser = {};
 one.browser.remote = {};
 one.browser.remote.responders = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject([], {}));
@@ -17303,6 +17630,173 @@ ttmachines.client.request.get_page = function(a) {
     return one.dispatch.fire.call(null, "\ufdd0'switch-page", cljs.reader.read_string.call(null, a.call(null, "\ufdd0'body")))
   })
 };
+clojure.browser.repl = {};
+clojure.browser.repl.xpc_connection = cljs.core.atom.call(null, null);
+clojure.browser.repl.repl_print = function(a) {
+  var b = cljs.core.deref.call(null, clojure.browser.repl.xpc_connection);
+  return cljs.core.truth_(b) ? clojure.browser.net.transmit.call(null, b, "\ufdd0'print", cljs.core.pr_str.call(null, a)) : null
+};
+clojure.browser.repl.evaluate_javascript = function(a, b) {
+  var c = function() {
+    try {
+      return cljs.core.ObjMap.fromObject(["\ufdd0'status", "\ufdd0'value"], {"\ufdd0'status":"\ufdd0'success", "\ufdd0'value":cljs.core.str.call(null, eval(b))})
+    }catch(a) {
+      if(cljs.core.truth_(cljs.core.instance_QMARK_.call(null, Error, a))) {
+        return cljs.core.ObjMap.fromObject(["\ufdd0'status", "\ufdd0'value", "\ufdd0'stacktrace"], {"\ufdd0'status":"\ufdd0'exception", "\ufdd0'value":cljs.core.pr_str.call(null, a), "\ufdd0'stacktrace":cljs.core.truth_(a.hasOwnProperty("stack")) ? a.stack : "No stacktrace available."})
+      }
+      if(cljs.core.truth_("\ufdd0'else")) {
+        throw a;
+      }
+      return null
+    }
+  }();
+  return cljs.core.pr_str.call(null, c)
+};
+clojure.browser.repl.send_result = function(a, b, c) {
+  return clojure.browser.net.transmit.call(null, a, b, "POST", c, null, 0)
+};
+clojure.browser.repl.send_print = function() {
+  var a = null, b = function(b, d, e) {
+    var f = clojure.browser.net.xhr_connection.call(null);
+    clojure.browser.event.listen.call(null, f, "\ufdd0'error", function() {
+      return cljs.core.truth_(10 > e) ? a.call(null, b, d, e + 1) : console.log(cljs.core.str.call(null, "Could not send ", d, " after ", e, " attempts."))
+    });
+    return clojure.browser.net.transmit.call(null, f, b, "POST", d, null, 0)
+  };
+  return a = function(c, d, e) {
+    switch(arguments.length) {
+      case 2:
+        return a.call(null, c, d, 0);
+      case 3:
+        return b.call(this, c, d, e)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+clojure.browser.repl.order = cljs.core.atom.call(null, 0);
+clojure.browser.repl.wrap_message = function(a, b) {
+  return cljs.core.pr_str.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'type", "\ufdd0'content", "\ufdd0'order"], {"\ufdd0'type":a, "\ufdd0'content":b, "\ufdd0'order":cljs.core.swap_BANG_.call(null, clojure.browser.repl.order, cljs.core.inc)}))
+};
+clojure.browser.repl.start_evaluator = function(a) {
+  var b = clojure.browser.net.xpc_connection.call(null);
+  if(cljs.core.truth_(b)) {
+    var c = clojure.browser.net.xhr_connection.call(null);
+    clojure.browser.event.listen.call(null, c, "\ufdd0'success", function(a) {
+      return clojure.browser.net.transmit.call(null, b, "\ufdd0'evaluate-javascript", a.currentTarget.getResponseText(cljs.core.List.EMPTY))
+    });
+    clojure.browser.net.register_service.call(null, b, "\ufdd0'send-result", function(b) {
+      return clojure.browser.repl.send_result.call(null, c, a, clojure.browser.repl.wrap_message.call(null, "\ufdd0'result", b))
+    });
+    clojure.browser.net.register_service.call(null, b, "\ufdd0'print", function(b) {
+      return clojure.browser.repl.send_print.call(null, a, clojure.browser.repl.wrap_message.call(null, "\ufdd0'print", b))
+    });
+    clojure.browser.net.connect.call(null, b, cljs.core.constantly.call(null, null));
+    return setTimeout.call(null, function() {
+      return clojure.browser.repl.send_result.call(null, c, a, clojure.browser.repl.wrap_message.call(null, "\ufdd0'ready", "ready"))
+    }, 50)
+  }
+  return alert.call(null, "No 'xpc' param provided to child iframe.")
+};
+clojure.browser.repl.connect = function(a) {
+  var b = clojure.browser.net.xpc_connection.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'peer_uri"], {"\ufdd0'peer_uri":a}));
+  cljs.core.swap_BANG_.call(null, clojure.browser.repl.xpc_connection, cljs.core.constantly.call(null, b));
+  clojure.browser.net.register_service.call(null, b, "\ufdd0'evaluate-javascript", function(a) {
+    return clojure.browser.net.transmit.call(null, b, "\ufdd0'send-result", clojure.browser.repl.evaluate_javascript.call(null, b, a))
+  });
+  return clojure.browser.net.connect.call(null, b, cljs.core.constantly.call(null, null), function(a) {
+    return a.style.display = "none"
+  })
+};
+ttmachines.client.layout = {};
+ttmachines.client.layout.init = function() {
+  ttmachines.client.request.get_page.call(null, ttmachines.client.util.path_name.call(null));
+  return clojure.browser.repl.connect.call(null, "http://localhost:9000/repl")
+};
+ttmachines.client.layout.set_content_BANG_ = function(a, b) {
+  var c = domina.domina.css.sel.call(null, a);
+  domina.domina.destroy_children_BANG_.call(null, c);
+  return domina.domina.append_BANG_.call(null, c, b)
+};
+ttmachines.client.layout.state = cljs.core.ObjMap.fromObject(["\ufdd0'text", "\ufdd0'main", "\ufdd0'below-main", "\ufdd0'sidebar"], {"\ufdd0'text":cljs.core.atom.call(null, null), "\ufdd0'main":cljs.core.atom.call(null, null), "\ufdd0'below-main":cljs.core.atom.call(null, null), "\ufdd0'sidebar":cljs.core.atom.call(null, null)});
+ttmachines.client.layout.targets = cljs.core.ObjMap.fromObject(["\ufdd0'text", "\ufdd0'main", "\ufdd0'below-main", "\ufdd0'sidebar"], {"\ufdd0'text":"#text", "\ufdd0'main":"#main", "\ufdd0'below-main":"#below-main", "\ufdd0'sidebar":"#sidebar"});
+ttmachines.client.layout.dom_watchers = cljs.core.zipmap.call(null, cljs.core.keys.call(null, ttmachines.client.layout.state), cljs.core.map.call(null, function(a) {
+  return cljs.core.partial.call(null, ttmachines.client.layout.set_content_BANG_, a)
+}, cljs.core.vals.call(null, ttmachines.client.layout.targets)));
+cljs.core.add_watch.call(null, ttmachines.client.layout.state.call(null, "\ufdd0'text"), "\ufdd0'alter-dom", function(a, b, c, d) {
+  return ttmachines.client.layout.dom_watchers.call(null, "\ufdd0'text").call(null, d)
+});
+cljs.core.add_watch.call(null, ttmachines.client.layout.state.call(null, "\ufdd0'main"), "\ufdd0'alter-dom", function(a, b, c, d) {
+  return ttmachines.client.layout.dom_watchers.call(null, "\ufdd0'main").call(null, d)
+});
+cljs.core.add_watch.call(null, ttmachines.client.layout.state.call(null, "\ufdd0'below-main"), "\ufdd0'alter-dom", function(a, b, c, d) {
+  return ttmachines.client.layout.dom_watchers.call(null, "\ufdd0'below-main").call(null, d)
+});
+cljs.core.add_watch.call(null, ttmachines.client.layout.state.call(null, "\ufdd0'sidebar"), "\ufdd0'alter-dom", function(a, b, c, d) {
+  return ttmachines.client.layout.dom_watchers.call(null, "\ufdd0'sidebar").call(null, d)
+});
+ttmachines.client.layout.load_state = function(a) {
+  a = cljs.core.seq.call(null, a.call(null, "\ufdd0'layout"));
+  if(cljs.core.truth_(a)) {
+    var b = cljs.core.first.call(null, a);
+    cljs.core.nth.call(null, b, 0, null);
+    for(cljs.core.nth.call(null, b, 1, null);;) {
+      var c = b, b = cljs.core.nth.call(null, c, 0, null), c = cljs.core.nth.call(null, c, 1, null);
+      cljs.core.truth_(cljs.core.contains_QMARK_.call(null, ttmachines.client.layout.state, b)) && cljs.core.reset_BANG_.call(null, ttmachines.client.layout.state.call(null, b), c);
+      a = cljs.core.next.call(null, a);
+      if(cljs.core.truth_(a)) {
+        b = a, a = cljs.core.first.call(null, b), c = b, b = a, a = c
+      }else {
+        return null
+      }
+    }
+  }else {
+    return null
+  }
+};
+ttmachines.client.layout.update_nav_li = function(a) {
+  domina.domina.remove_class_BANG_.call(null, domina.domina.css.sel.call(null, "#nav li"), "active");
+  var b = cljs.core.seq.call(null, domina.domina.nodes.call(null, domina.domina.css.sel.call(null, "#nav li")));
+  if(cljs.core.truth_(b)) {
+    for(var c = cljs.core.first.call(null, b);;) {
+      var d = cljs.core.first.call(null, domina.domina.children.call(null, c));
+      cljs.core.truth_(cljs.core._EQ_.call(null, domina.domina.attr.call(null, d, "\ufdd0'href"), a)) && domina.domina.add_class_BANG_.call(null, c, "active");
+      c = cljs.core.next.call(null, b);
+      if(cljs.core.truth_(c)) {
+        b = c, c = cljs.core.first.call(null, b)
+      }else {
+        return null
+      }
+    }
+  }else {
+    return null
+  }
+};
+domina.domina.events.listen_BANG_.call(null, domina.domina.css.sel.call(null, "#nav a"), "\ufdd0'click", function(a) {
+  domina.domina.events.prevent_default.call(null, a);
+  a = domina.domina.events.target.call(null, a);
+  a = domina.domina.attr.call(null, a, "\ufdd0'href");
+  return one.dispatch.fire.call(null, "\ufdd0'link-clicked", cljs.core.ObjMap.fromObject(["\ufdd0'url"], {"\ufdd0'url":a}))
+});
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'link-clicked"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":1}), function(a, b) {
+  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'url");
+  return ttmachines.client.history.push_state_BANG_.call(null, "\ufdd0'url", c)
+});
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'history-state-change"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":1}), function(a, b) {
+  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'url");
+  return ttmachines.client.request.get_page.call(null, c)
+});
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'max-count", "\ufdd0'priority"], {"\ufdd0'max-count":1, "\ufdd0'priority":0}), function() {
+  hideLoading.call(null);
+  return domina.domina.destroy_BANG_.call(null, domina.domina.css.sel.call(null, "#loading"))
+});
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":0}), function(a, b) {
+  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data");
+  return ttmachines.client.layout.update_nav_li.call(null, c.call(null, "\ufdd0'route"))
+});
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":1}), function(a, b) {
+  return ttmachines.client.layout.load_state.call(null, b.call(null, "\ufdd0'data"))
+});
+ttmachines.client.layout.init.call(null);
 clojure.walk = {};
 clojure.walk.walk = function(a, b, c) {
   return cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? b.call(null, cljs.core.doall.call(null, cljs.core.map.call(null, a, c))) : cljs.core.truth_(cljs.core.coll_QMARK_.call(null, c)) ? b.call(null, cljs.core.into.call(null, cljs.core.empty.call(null, c), cljs.core.map.call(null, a, c))) : cljs.core.truth_("\ufdd0'else") ? b.call(null, c) : null
@@ -17341,6 +17835,9 @@ clojure.walk.postwalk_replace = function(a, b) {
     return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, a, b)) ? a.call(null, b) : b
   }, b)
 };
+ttmachines.client.animate = {};
+ttmachines.client.animate.effects = {};
+ttmachines.client.animate.effects.effects = cljs.core.set("rotateIn,rotateInUpRight,fadeIn,bounceOutUp,rotateInUpLeft,rollIn,fadeInDown,fadeInUpBig,fadeInRightBig,flipInX,shake,bounceOut,flipInY,rotateOutDownRight,fadeOutLeftBig,fadeInLeft,bounceInUp,bounceOutDown,bounce,rotateInDownLeft,fadeOutRight,tada,wiggle,hinge,fadeOutDownBig,flip,bounceOutLeft,fadeOutUp,bounceIn,rotateOutUpRight,bounceInDown,bounceInRight,flash,wobble,rollOut,fadeOut,fadeOutUpBig,rotateOut,fadeOutDown,bounceInLeft,rotateOutUpLeft,lightSpeedIn,bounceOutRight,fadeOutRightBig,flipOutX,flipOutY,fadeInLeftBig,fadeOutLeft,pulse,rotateInDownRight,fadeInRight,rotateOutDownLeft,fadeInUp,lightSpeedOut,fadeInDownBig,swing".split(","));
 clojure.zip = {};
 clojure.zip.zipper = function(a, b, c, d) {
   return cljs.core.with_meta(cljs.core.Vector.fromArray([d, null]), cljs.core.ObjMap.fromObject(["\ufdd0'zip/make-node", "\ufdd0'zip/children", "\ufdd0'zip/branch?"], {"\ufdd0'zip/make-node":c, "\ufdd0'zip/children":b, "\ufdd0'zip/branch?":a}))
@@ -17724,501 +18221,77 @@ clojure.set.superset_QMARK_ = function(a, b) {
     return cljs.core.contains_QMARK_.call(null, a, b)
   }, b) : c
 };
-domina.domina.events = {};
-domina.domina.events.Event = {};
-domina.domina.events.prevent_default = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$prevent_default : a)) {
-    a = a.domina$domina$events$Event$prevent_default(a)
-  }else {
-    var b;
-    b = domina.domina.events.prevent_default[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.prevent_default._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.prevent-default", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.stop_propagation = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$stop_propagation : a)) {
-    a = a.domina$domina$events$Event$stop_propagation(a)
-  }else {
-    var b;
-    b = domina.domina.events.stop_propagation[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.stop_propagation._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.stop-propagation", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.target = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$target : a)) {
-    a = a.domina$domina$events$Event$target(a)
-  }else {
-    var b;
-    b = domina.domina.events.target[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.target._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.target", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.current_target = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$current_target : a)) {
-    a = a.domina$domina$events$Event$current_target(a)
-  }else {
-    var b;
-    b = domina.domina.events.current_target[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.current_target._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.current-target", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.event_type = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$event_type : a)) {
-    a = a.domina$domina$events$Event$event_type(a)
-  }else {
-    var b;
-    b = domina.domina.events.event_type[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.event_type._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.event-type", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.raw_event = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$raw_event : a)) {
-    a = a.domina$domina$events$Event$raw_event(a)
-  }else {
-    var b;
-    b = domina.domina.events.raw_event[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.raw_event._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.raw-event", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.builtin_events = cljs.core.set.call(null, cljs.core.map.call(null, cljs.core.keyword, goog.object.getValues.call(null, goog.events.EventType)));
-domina.domina.events.root_element = window.document.documentElement;
-domina.domina.events.find_builtin_type = function(a) {
-  return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, domina.domina.events.builtin_events, a)) ? cljs.core.name.call(null, a) : a
-};
-domina.domina.events.create_listener_function = function create_listener_function(b) {
-  return function(c) {
-    b.call(null, function() {
-      if(cljs.core.truth_(void 0 === domina.domina.events.t72167)) {
-        domina.domina.events.t72167 = function(b, c, f, g) {
-          this.evt = b;
-          this.f = c;
-          this.create_listener_function = f;
-          this.__meta = g
-        }, domina.domina.events.t72167.cljs$core$IPrintable$_pr_seq = function() {
-          return cljs.core.list.call(null, "domina.domina.events.t72167")
-        }, domina.domina.events.t72167.prototype.cljs$core$ILookup$ = !0, domina.domina.events.t72167.prototype.cljs$core$ILookup$_lookup = function() {
-          var b = null;
-          return function(b, c, d) {
-            switch(arguments.length) {
-              case 2:
-                var h;
-                h = this.evt[c];
-                h = cljs.core.truth_(h) ? h : this.evt[cljs.core.name.call(null, c)];
-                return h;
-              case 3:
-                return h = cljs.core._lookup.call(null, b, c), cljs.core.truth_(h) ? h : d
-            }
-            throw"Invalid arity: " + arguments.length;
-          }
-        }(), domina.domina.events.t72167.prototype.domina$domina$events$Event$ = !0, domina.domina.events.t72167.prototype.domina$domina$events$Event$prevent_default = function() {
-          return this.evt.preventDefault()
-        }, domina.domina.events.t72167.prototype.domina$domina$events$Event$stop_propagation = function() {
-          return this.evt.stopPropagation()
-        }, domina.domina.events.t72167.prototype.domina$domina$events$Event$target = function() {
-          return this.evt.target
-        }, domina.domina.events.t72167.prototype.domina$domina$events$Event$current_target = function() {
-          return this.evt.currentTarget
-        }, domina.domina.events.t72167.prototype.domina$domina$events$Event$event_type = function() {
-          return this.evt.type
-        }, domina.domina.events.t72167.prototype.domina$domina$events$Event$raw_event = function() {
-          return this.evt
-        }, domina.domina.events.t72167.prototype.cljs$core$IMeta$ = !0, domina.domina.events.t72167.prototype.cljs$core$IMeta$_meta = function() {
-          return this.__meta
-        }, domina.domina.events.t72167.prototype.cljs$core$IWithMeta$ = !0, domina.domina.events.t72167.prototype.cljs$core$IWithMeta$_with_meta = function(b, c) {
-          return new domina.domina.events.t72167(this.evt, this.f, this.create_listener_function, c)
-        }
-      }
-      return new domina.domina.events.t72167(c, b, create_listener_function, null)
-    }());
-    return!0
-  }
-};
-domina.domina.events.listen_internal_BANG_ = function(a, b, c, d, e) {
-  var f = domina.domina.events.create_listener_function.call(null, c), g = domina.domina.events.find_builtin_type.call(null, b);
-  return cljs.core.doall.call(null, function() {
-    return function i(a) {
-      return new cljs.core.LazySeq(null, !1, function() {
-        for(;;) {
-          if(cljs.core.truth_(cljs.core.seq.call(null, a))) {
-            var b = cljs.core.first.call(null, a);
-            return cljs.core.cons.call(null, cljs.core.truth_(e) ? goog.events.listenOnce.call(null, b, g, f, d) : goog.events.listen.call(null, b, g, f, d), i.call(null, cljs.core.rest.call(null, a)))
-          }
-          return null
-        }
-      })
-    }.call(null, domina.domina.nodes.call(null, a))
-  }())
-};
-domina.domina.events.listen_BANG_ = function() {
-  var a = null;
-  return a = function(b, c, d) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, domina.domina.events.root_element, b, c);
-      case 3:
-        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !1, !1)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.capture_BANG_ = function() {
-  var a = null;
-  return a = function(b, c, d) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, domina.domina.events.root_element, b, c);
-      case 3:
-        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !0, !1)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.listen_once_BANG_ = function() {
-  var a = null;
-  return a = function(b, c, d) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, domina.domina.events.root_element, b, c);
-      case 3:
-        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !1, !0)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.capture_once_BANG_ = function() {
-  var a = null;
-  return a = function(b, c, d) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, domina.domina.events.root_element, b, c);
-      case 3:
-        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !0, !0)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.unlisten_BANG_ = function() {
-  var a = null;
-  return a = function(b, c) {
-    switch(arguments.length) {
-      case 0:
-        return a.call(null, domina.domina.events.root_element);
-      case 1:
-        var d;
-        a: {
-          var e = cljs.core.seq.call(null, domina.domina.nodes.call(null, b));
-          if(cljs.core.truth_(e)) {
-            for(var f = cljs.core.first.call(null, e);;) {
-              if(goog.events.removeAll.call(null, f), f = cljs.core.next.call(null, e), cljs.core.truth_(f)) {
-                e = f, f = cljs.core.first.call(null, e)
-              }else {
-                d = null;
-                break a
-              }
-            }
-          }else {
-            d = null
-          }
-        }
-        return d;
-      case 2:
-        return d = domina.domina.events.find_builtin_type.call(null, c), goog.events.removeAll.call(null, domina.domina.events.node, d)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.ancestor_nodes = function() {
-  var a = null;
-  return a = function(b, c) {
-    switch(arguments.length) {
-      case 1:
-        return a.call(null, b, cljs.core.cons.call(null, b));
-      case 2:
-        var d;
-        a: {
-          for(var e = b, f = c;;) {
-            if(e = e.parentNode, cljs.core.truth_(e)) {
-              var g = e, e = g, f = cljs.core.cons.call(null, g, f)
-            }else {
-              d = f;
-              break a
-            }
-          }
-        }
-        return d
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.dispatch_browser_BANG_ = function(a, b) {
-  var c = domina.domina.events.ancestor_nodes.call(null, domina.domina.single_node.call(null, a)), d = cljs.core.seq.call(null, c);
-  if(cljs.core.truth_(d)) {
-    for(var e = cljs.core.first.call(null, d);;) {
-      if(!cljs.core.truth_(e.propagationStopped)) {
-        b.currentTarget = e, goog.events.fireListeners.call(null, e, b.type, !0, b)
-      }
-      e = cljs.core.next.call(null, d);
-      if(cljs.core.truth_(e)) {
-        d = e, e = cljs.core.first.call(null, d)
-      }else {
-        break
-      }
+ttmachines.client.broadcast = {};
+ttmachines.client.broadcast.title = domina.domina.by_id.call(null, "title");
+var G__85107__85108 = cljs.core.seq.call(null, cljs.core.vals.call(null, ttmachines.client.layout.targets));
+if(cljs.core.truth_(G__85107__85108)) {
+  for(var t__85109 = cljs.core.first.call(null, G__85107__85108), G__85107__85110 = G__85107__85108;;) {
+    var element__85111 = domina.domina.css.sel.call(null, t__85109);
+    domina.domina.add_class_BANG_.call(null, element__85111, "animated");
+    var temp__3698__auto____85112 = cljs.core.next.call(null, G__85107__85110);
+    if(cljs.core.truth_(temp__3698__auto____85112)) {
+      var G__85107__85113 = temp__3698__auto____85112, G__85114 = cljs.core.first.call(null, G__85107__85113), G__85115 = G__85107__85113, t__85109 = G__85114, G__85107__85110 = G__85115
+    }else {
+      break
     }
   }
-  e = cljs.core.seq.call(null, cljs.core.reverse.call(null, c));
-  if(cljs.core.truth_(e)) {
-    for(c = cljs.core.first.call(null, e);;) {
-      if(!cljs.core.truth_(c.propagationStopped)) {
-        b.currentTarget = c, goog.events.fireListeners.call(null, c, b.type, !1, b)
-      }
-      c = cljs.core.next.call(null, e);
-      if(cljs.core.truth_(c)) {
-        e = c, c = cljs.core.first.call(null, e)
-      }else {
-        break
-      }
-    }
-  }
-  return b.returnValue_
-};
-domina.domina.events.dispatch_event_target_BANG_ = function(a, b) {
-  return goog.events.dispatchEvent.call(null, a, b)
-};
-domina.domina.events.is_event_target_QMARK_ = function(a) {
-  var b = a.getParentEventTarget;
-  return cljs.core.truth_(b) ? a.dispatchEvent : b
-};
-domina.domina.events.dispatch_BANG_ = function() {
-  var a = null;
-  return a = function(b, c, d) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, domina.domina.events.root_element, b, c);
-      case 3:
-        var e = new goog.events.Event(domina.domina.events.find_builtin_type.call(null, c)), f = cljs.core.seq.call(null, d);
-        if(cljs.core.truth_(f)) {
-          var g = cljs.core.first.call(null, f);
-          cljs.core.nth.call(null, g, 0, null);
-          for(cljs.core.nth.call(null, g, 1, null);;) {
-            var h = g, g = cljs.core.nth.call(null, h, 0, null), h = cljs.core.nth.call(null, h, 1, null);
-            e[g] = h;
-            f = cljs.core.next.call(null, f);
-            if(cljs.core.truth_(f)) {
-              g = f, f = cljs.core.first.call(null, g), h = g, g = f, f = h
+}
+ttmachines.client.animate.animate = function() {
+  var a = function(a, b) {
+    var e = cljs.core.seq.call(null, b);
+    if(cljs.core.truth_(e)) {
+      for(var f = cljs.core.first.call(null, e);;) {
+        var f = domina.domina.css.sel.call(null, f), g = cljs.core.seq.call(null, domina.domina.classes.call(null, f));
+        if(cljs.core.truth_(g)) {
+          for(var h = cljs.core.first.call(null, g);;) {
+            if(cljs.core.truth_(cljs.core.contains_QMARK_.call(null, ttmachines.client.animate.effects.effects, h)) && domina.domina.remove_class_BANG_.call(null, f, h), h = cljs.core.next.call(null, g), cljs.core.truth_(h)) {
+              g = h, h = cljs.core.first.call(null, g)
             }else {
               break
             }
           }
         }
-        return cljs.core.truth_(domina.domina.events.is_event_target_QMARK_.call(null, b)) ? domina.domina.events.dispatch_event_target_BANG_.call(null, b, e) : domina.domina.events.dispatch_browser_BANG_.call(null, b, e)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.unlisten_by_key_BANG_ = function(a) {
-  return goog.events.unlistenByKey.call(null, a)
-};
-domina.domina.events.get_listeners = function(a, b) {
-  var c = domina.domina.events.find_builtin_type.call(null, b);
-  return cljs.core.mapcat.call(null, function(a) {
-    return goog.events.getListeners.call(null, a, c, !1)
-  }, domina.domina.nodes.call(null, a))
-};
-clojure.browser.repl = {};
-clojure.browser.repl.xpc_connection = cljs.core.atom.call(null, null);
-clojure.browser.repl.repl_print = function(a) {
-  var b = cljs.core.deref.call(null, clojure.browser.repl.xpc_connection);
-  return cljs.core.truth_(b) ? clojure.browser.net.transmit.call(null, b, "\ufdd0'print", cljs.core.pr_str.call(null, a)) : null
-};
-clojure.browser.repl.evaluate_javascript = function(a, b) {
-  var c = function() {
-    try {
-      return cljs.core.ObjMap.fromObject(["\ufdd0'status", "\ufdd0'value"], {"\ufdd0'status":"\ufdd0'success", "\ufdd0'value":cljs.core.str.call(null, eval(b))})
-    }catch(a) {
-      if(cljs.core.truth_(cljs.core.instance_QMARK_.call(null, Error, a))) {
-        return cljs.core.ObjMap.fromObject(["\ufdd0'status", "\ufdd0'value", "\ufdd0'stacktrace"], {"\ufdd0'status":"\ufdd0'exception", "\ufdd0'value":cljs.core.pr_str.call(null, a), "\ufdd0'stacktrace":cljs.core.truth_(a.hasOwnProperty("stack")) ? a.stack : "No stacktrace available."})
+        domina.domina.add_class_BANG_.call(null, f, a);
+        e = cljs.core.next.call(null, e);
+        if(cljs.core.truth_(e)) {
+          f = e, e = cljs.core.first.call(null, f), h = f, f = e, e = h
+        }else {
+          return null
+        }
       }
-      if(cljs.core.truth_("\ufdd0'else")) {
-        throw a;
-      }
+    }else {
       return null
     }
-  }();
-  return cljs.core.pr_str.call(null, c)
-};
-clojure.browser.repl.send_result = function(a, b, c) {
-  return clojure.browser.net.transmit.call(null, a, b, "POST", c, null, 0)
-};
-clojure.browser.repl.send_print = function() {
-  var a = null, b = function(b, d, e) {
-    var f = clojure.browser.net.xhr_connection.call(null);
-    clojure.browser.event.listen.call(null, f, "\ufdd0'error", function() {
-      return cljs.core.truth_(10 > e) ? a.call(null, b, d, e + 1) : console.log(cljs.core.str.call(null, "Could not send ", d, " after ", e, " attempts."))
-    });
-    return clojure.browser.net.transmit.call(null, f, b, "POST", d, null, 0)
+  }, b = function(b, d) {
+    var e = null;
+    goog.isDef(d) && (e = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1), 0));
+    return a.call(this, b, e)
   };
-  return a = function(c, d, e) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, c, d, 0);
-      case 3:
-        return b.call(this, c, d, e)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
+  b.cljs$lang$maxFixedArity = 1;
+  b.cljs$lang$applyTo = function(b) {
+    var d = cljs.core.first(b), b = cljs.core.rest(b);
+    return a.call(this, d, b)
+  };
+  return b
 }();
-clojure.browser.repl.order = cljs.core.atom.call(null, 0);
-clojure.browser.repl.wrap_message = function(a, b) {
-  return cljs.core.pr_str.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'type", "\ufdd0'content", "\ufdd0'order"], {"\ufdd0'type":a, "\ufdd0'content":b, "\ufdd0'order":cljs.core.swap_BANG_.call(null, clojure.browser.repl.order, cljs.core.inc)}))
-};
-clojure.browser.repl.start_evaluator = function(a) {
-  var b = clojure.browser.net.xpc_connection.call(null);
-  if(cljs.core.truth_(b)) {
-    var c = clojure.browser.net.xhr_connection.call(null);
-    clojure.browser.event.listen.call(null, c, "\ufdd0'success", function(a) {
-      return clojure.browser.net.transmit.call(null, b, "\ufdd0'evaluate-javascript", a.currentTarget.getResponseText(cljs.core.List.EMPTY))
-    });
-    clojure.browser.net.register_service.call(null, b, "\ufdd0'send-result", function(b) {
-      return clojure.browser.repl.send_result.call(null, c, a, clojure.browser.repl.wrap_message.call(null, "\ufdd0'result", b))
-    });
-    clojure.browser.net.register_service.call(null, b, "\ufdd0'print", function(b) {
-      return clojure.browser.repl.send_print.call(null, a, clojure.browser.repl.wrap_message.call(null, "\ufdd0'print", b))
-    });
-    clojure.browser.net.connect.call(null, b, cljs.core.constantly.call(null, null));
-    return setTimeout.call(null, function() {
-      return clojure.browser.repl.send_result.call(null, c, a, clojure.browser.repl.wrap_message.call(null, "\ufdd0'ready", "ready"))
-    }, 50)
-  }
-  return alert.call(null, "No 'xpc' param provided to child iframe.")
-};
-clojure.browser.repl.connect = function(a) {
-  var b = clojure.browser.net.xpc_connection.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'peer_uri"], {"\ufdd0'peer_uri":a}));
-  cljs.core.swap_BANG_.call(null, clojure.browser.repl.xpc_connection, cljs.core.constantly.call(null, b));
-  clojure.browser.net.register_service.call(null, b, "\ufdd0'evaluate-javascript", function(a) {
-    return clojure.browser.net.transmit.call(null, b, "\ufdd0'send-result", clojure.browser.repl.evaluate_javascript.call(null, b, a))
-  });
-  return clojure.browser.net.connect.call(null, b, cljs.core.constantly.call(null, null), function(a) {
-    return a.style.display = "none"
-  })
-};
-ttmachines.client.broadcast = {};
-ttmachines.client.broadcast.title = domina.domina.by_id.call(null, "title");
-ttmachines.client.layout = {};
-ttmachines.client.layout.init = function() {
-  return ttmachines.client.request.get_page.call(null, ttmachines.client.util.path_name.call(null))
-};
-ttmachines.client.layout.set_content_BANG_ = function(a, b) {
-  var c = domina.domina.css.sel.call(null, a);
-  domina.domina.destroy_children_BANG_.call(null, c);
-  return domina.domina.append_BANG_.call(null, c, b)
-};
-ttmachines.client.layout.state = cljs.core.ObjMap.fromObject(["\ufdd0'text", "\ufdd0'main", "\ufdd0'below-main", "\ufdd0'sidebar"], {"\ufdd0'text":cljs.core.atom.call(null, null), "\ufdd0'main":cljs.core.atom.call(null, null), "\ufdd0'below-main":cljs.core.atom.call(null, null), "\ufdd0'sidebar":cljs.core.atom.call(null, null)});
-ttmachines.client.layout.targets = cljs.core.ObjMap.fromObject(["\ufdd0'text", "\ufdd0'main", "\ufdd0'below-main", "\ufdd0'sidebar"], {"\ufdd0'text":"#text", "\ufdd0'main":"#main", "\ufdd0'below-main":"#below-main", "\ufdd0'sidebar":"#sidebar"});
-ttmachines.client.layout.dom_watchers = cljs.core.zipmap.call(null, cljs.core.keys.call(null, ttmachines.client.layout.state), cljs.core.map.call(null, function(a) {
-  return cljs.core.partial.call(null, ttmachines.client.layout.set_content_BANG_, a)
-}, cljs.core.vals.call(null, ttmachines.client.layout.targets)));
-cljs.core.add_watch.call(null, ttmachines.client.layout.state.call(null, "\ufdd0'text"), "\ufdd0'alter-dom", function(a, b, c, d) {
-  return ttmachines.client.layout.dom_watchers.call(null, "\ufdd0'text").call(null, d)
+ttmachines.client.animate.fade_in_left = cljs.core.partial.call(null, ttmachines.client.animate.animate, "fadeInLeft");
+ttmachines.client.animate.fade_out_left = cljs.core.partial.call(null, ttmachines.client.animate.animate, "fadeOutLeft");
+ttmachines.client.animate.fade_in_right = cljs.core.partial.call(null, ttmachines.client.animate.animate, "fadeInRight");
+ttmachines.client.animate.fade_out_right = cljs.core.partial.call(null, ttmachines.client.animate.animate, "fadeOutRight");
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'history-state-change"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":0}), function() {
+  console.log("Fading out");
+  ttmachines.client.animate.fade_out_left.call(null, "#text");
+  ttmachines.client.animate.fade_out_left.call(null, "#main");
+  ttmachines.client.animate.fade_out_left.call(null, "#below-main");
+  return ttmachines.client.animate.fade_out_right.call(null, "#sidebar")
 });
-cljs.core.add_watch.call(null, ttmachines.client.layout.state.call(null, "\ufdd0'main"), "\ufdd0'alter-dom", function(a, b, c, d) {
-  return ttmachines.client.layout.dom_watchers.call(null, "\ufdd0'main").call(null, d)
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":2}), function() {
+  console.log("Fading in");
+  ttmachines.client.animate.fade_in_left.call(null, "#text");
+  ttmachines.client.animate.fade_in_left.call(null, "#main");
+  ttmachines.client.animate.fade_in_left.call(null, "#below-main");
+  return ttmachines.client.animate.fade_in_right.call(null, "#sidebar")
 });
-cljs.core.add_watch.call(null, ttmachines.client.layout.state.call(null, "\ufdd0'below-main"), "\ufdd0'alter-dom", function(a, b, c, d) {
-  return ttmachines.client.layout.dom_watchers.call(null, "\ufdd0'below-main").call(null, d)
-});
-cljs.core.add_watch.call(null, ttmachines.client.layout.state.call(null, "\ufdd0'sidebar"), "\ufdd0'alter-dom", function(a, b, c, d) {
-  return ttmachines.client.layout.dom_watchers.call(null, "\ufdd0'sidebar").call(null, d)
-});
-ttmachines.client.layout.load_state = function(a) {
-  a = cljs.core.seq.call(null, a.call(null, "\ufdd0'layout"));
-  if(cljs.core.truth_(a)) {
-    var b = cljs.core.first.call(null, a);
-    cljs.core.nth.call(null, b, 0, null);
-    for(cljs.core.nth.call(null, b, 1, null);;) {
-      var c = b, b = cljs.core.nth.call(null, c, 0, null), c = cljs.core.nth.call(null, c, 1, null);
-      cljs.core.truth_(cljs.core.contains_QMARK_.call(null, ttmachines.client.layout.state, b)) && cljs.core.reset_BANG_.call(null, ttmachines.client.layout.state.call(null, b), c);
-      a = cljs.core.next.call(null, a);
-      if(cljs.core.truth_(a)) {
-        b = a, a = cljs.core.first.call(null, b), c = b, b = a, a = c
-      }else {
-        return null
-      }
-    }
-  }else {
-    return null
-  }
-};
-ttmachines.client.layout.update_nav_li = function(a) {
-  domina.domina.remove_class_BANG_.call(null, domina.domina.css.sel.call(null, "#nav li"), "active");
-  var b = cljs.core.seq.call(null, domina.domina.nodes.call(null, domina.domina.css.sel.call(null, "#nav li")));
-  if(cljs.core.truth_(b)) {
-    for(var c = cljs.core.first.call(null, b);;) {
-      var d = cljs.core.first.call(null, domina.domina.children.call(null, c));
-      cljs.core.truth_(cljs.core._EQ_.call(null, domina.domina.attr.call(null, d, "\ufdd0'href"), a)) && domina.domina.add_class_BANG_.call(null, c, "active");
-      c = cljs.core.next.call(null, b);
-      if(cljs.core.truth_(c)) {
-        b = c, c = cljs.core.first.call(null, b)
-      }else {
-        return null
-      }
-    }
-  }else {
-    return null
-  }
-};
-domina.domina.events.listen_BANG_.call(null, domina.domina.css.sel.call(null, "#nav a"), "\ufdd0'click", function(a) {
-  domina.domina.events.prevent_default.call(null, a);
-  a = domina.domina.events.target.call(null, a);
-  a = domina.domina.attr.call(null, a, "\ufdd0'href");
-  return one.dispatch.fire.call(null, "\ufdd0'link-clicked", cljs.core.ObjMap.fromObject(["\ufdd0'url"], {"\ufdd0'url":a}))
-});
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'link-clicked"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":1}), function(a, b) {
-  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'url");
-  return ttmachines.client.history.push_state_BANG_.call(null, "\ufdd0'url", c)
-});
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'history-state-change"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":0}), function(a, b) {
-  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'url");
-  return ttmachines.client.request.get_page.call(null, c)
-});
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'max-count", "\ufdd0'priority"], {"\ufdd0'max-count":1, "\ufdd0'priority":0}), function() {
-  hideLoading.call(null);
-  return domina.domina.destroy_BANG_.call(null, domina.domina.css.sel.call(null, "#loading"))
-});
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":0}), function(a, b) {
-  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data");
-  return ttmachines.client.layout.update_nav_li.call(null, c.call(null, "\ufdd0'route"))
-});
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":1}), function(a, b) {
-  return ttmachines.client.layout.load_state.call(null, b.call(null, "\ufdd0'data"))
-});
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":2}), function(a, b) {
-  return console.log(cljs.core.pr_str.call(null, b))
-});
-ttmachines.client.layout.init.call(null);
 ttmachines.client.repl = {};
 ttmachines.client.repl.codemirrorify = function(a, b) {
   var c = document.getElementById(a);
@@ -18798,25 +18871,25 @@ domina.domina.xpath.root_element = function() {
 };
 domina.domina.xpath.xpath = function() {
   var a = null, b = function(b, d) {
-    if(cljs.core.truth_(void 0 === domina.domina.xpath.t72280)) {
-      domina.domina.xpath.t72280 = function(a, b, c, d) {
+    if(cljs.core.truth_(void 0 === domina.domina.xpath.t84696)) {
+      domina.domina.xpath.t84696 = function(a, b, c, d) {
         this.expr = a;
         this.base = b;
         this.xpath = c;
         this.__meta = d
-      }, domina.domina.xpath.t72280.cljs$core$IPrintable$_pr_seq = function() {
-        return cljs.core.list.call(null, "domina.domina.xpath.t72280")
-      }, domina.domina.xpath.t72280.prototype.domina$domina$DomContent$ = !0, domina.domina.xpath.t72280.prototype.domina$domina$DomContent$nodes = function() {
+      }, domina.domina.xpath.t84696.cljs$core$IPrintable$_pr_seq = function() {
+        return cljs.core.list.call(null, "domina.domina.xpath.t84696")
+      }, domina.domina.xpath.t84696.prototype.domina$domina$DomContent$ = !0, domina.domina.xpath.t84696.prototype.domina$domina$DomContent$nodes = function() {
         return cljs.core.mapcat.call(null, cljs.core.partial.call(null, domina.domina.xpath.select_nodes, this.expr), domina.domina.nodes.call(null, this.base))
-      }, domina.domina.xpath.t72280.prototype.domina$domina$DomContent$single_node = function() {
+      }, domina.domina.xpath.t84696.prototype.domina$domina$DomContent$single_node = function() {
         return cljs.core.first.call(null, cljs.core.filter.call(null, cljs.core.complement.call(null, cljs.core.nil_QMARK_), cljs.core.map.call(null, cljs.core.partial.call(null, domina.domina.xpath.select_node, this.expr), domina.domina.nodes.call(null, this.base))))
-      }, domina.domina.xpath.t72280.prototype.cljs$core$IMeta$ = !0, domina.domina.xpath.t72280.prototype.cljs$core$IMeta$_meta = function() {
+      }, domina.domina.xpath.t84696.prototype.cljs$core$IMeta$ = !0, domina.domina.xpath.t84696.prototype.cljs$core$IMeta$_meta = function() {
         return this.__meta
-      }, domina.domina.xpath.t72280.prototype.cljs$core$IWithMeta$ = !0, domina.domina.xpath.t72280.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
-        return new domina.domina.xpath.t72280(this.expr, this.base, this.xpath, b)
+      }, domina.domina.xpath.t84696.prototype.cljs$core$IWithMeta$ = !0, domina.domina.xpath.t84696.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
+        return new domina.domina.xpath.t84696(this.expr, this.base, this.xpath, b)
       }
     }
-    return new domina.domina.xpath.t72280(d, b, a, null)
+    return new domina.domina.xpath.t84696(d, b, a, null)
   };
   return a = function(c, d) {
     switch(arguments.length) {
