@@ -48,3 +48,6 @@
 
 (defn path-name []
   (.-pathname (.-location js/window)))
+
+(defn after [period fun]
+  (js/setTimeout fun period))
