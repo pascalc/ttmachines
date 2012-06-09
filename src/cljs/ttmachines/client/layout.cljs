@@ -33,8 +33,8 @@
 ;; INITIALISE
 
 (defn init []
-  (request/get-page (path-name))
-  (repl/connect "http://localhost:9000/repl"))
+  (request/get-page (path-name)))
+  ;(repl/connect "http://localhost:9000/repl"))
 
 ;; Alter DOM
 

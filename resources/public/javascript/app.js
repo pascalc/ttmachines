@@ -33,5 +33,5 @@ $(document).ready(function() {
     goog.require('cljs.core');
     goog.provide('cljs.user');
 
-    one.browser.repl_client.repl();
+    //one.browser.repl_client.repl();
 });
