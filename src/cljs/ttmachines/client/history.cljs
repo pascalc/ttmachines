@@ -41,7 +41,3 @@
     (map->js data)
     title
     url))
-
-(dispatch/react-to #{:history-state-change} {}
-  (fn [_ state]
-    (.log js/console (str "State change: " (pr-str state)))))
