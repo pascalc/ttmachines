@@ -1363,12 +1363,12 @@ div.container {
 .fadeOutLeft,
 .fadeInRight,
 .fadeOutRight {
-  animation-duration: 0.2s !important;
-  -moz-animation-duration: 0.2s !important;
-  -webkit-animation-duration: 0.2s !important;
-  animation-duration: 0.2s !important;
-  -moz-animation-duration: 0.2s !important;
-  -webkit-animation-duration: 0.2s !important;
+  animation-duration: 0.3s !important;
+  -moz-animation-duration: 0.3s !important;
+  -webkit-animation-duration: 0.3s !important;
+  animation-duration: 0.3s !important;
+  -moz-animation-duration: 0.3s !important;
+  -webkit-animation-duration: 0.3s !important;
 }
 #loading {
   visibility: hidden;

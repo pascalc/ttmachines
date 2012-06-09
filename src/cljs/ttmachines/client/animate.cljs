@@ -27,8 +27,8 @@
             [ttmachines.client.layout :as layout]
             [ttmachines.client.animate.effects :as effects]))
 
-(def ANIMATION-DURATION-MS 200)
-(def ANIMATION-DELAY-MS 500)
+(def ANIMATION-DURATION-MS 300)
+(def ANIMATION-DELAY-MS 200)
 (def ANIMATION-COMPLETE (+ ANIMATION-DURATION-MS ANIMATION-DELAY-MS))
 
 ;; We want to animate all our layout targets
