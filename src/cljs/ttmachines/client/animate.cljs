@@ -27,6 +27,10 @@
             [ttmachines.client.layout :as layout]
             [ttmachines.client.animate.effects :as effects]))
 
+(def ANIMATION-DURATION-MS 200)
+(def ANIMATION-DELAY-MS 50)
+(def ANIMATION-COMPLETE (+ ANIMATION-DURATION-MS ANIMATION-DELAY-MS))
+
 ;; We want to animate all our layout targets
 (doseq [t (vals layout/targets)]
   (let [element (css/sel t)]
@@ -35,10 +39,9 @@
 (defn animate [effect & selectors]
   (doseq [selector selectors]
     (let [element (css/sel selector)]
-      (doseq [c (dom/classes element)]
-        (when (contains? effects/effects c)
-          (dom/remove-class! element c)))
-      (dom/add-class! element effect))))
+      (dom/add-class! element effect)
+      (after ANIMATION-COMPLETE
+        #(dom/remove-class! element effect)))))
 
 ;; Convenience functions for popular effects
 
@@ -47,20 +50,25 @@
 (def fade-in-right (partial animate "fadeInRight"))
 (def fade-out-right (partial animate "fadeOutRight"))
 
+;; Animate layout transitions
+
+(def entrances {:text       fade-in-left
+                :main       fade-in-left
+                :below-main fade-in-left
+                :sidebar    fade-in-right})
+
+(defn incoming-keys [layout-map]
+  (keys (filter (fn [k v] (not (nil? v))) layout-map)))
+
+(defn fade-in-layout-elements [layout-map]
+  (doseq [k (incoming-keys layout-map)]
+    (let [animation (entrances k)
+          selector (layout/targets k)]
+      (animation selector))))
+
 ;; Triggers
 
-(dispatch/react-to #{:history-state-change} {:priority 0}
-  (fn [_ _]
-    (.log js/console "Fading out")
-    (fade-out-left  "#text")
-    (fade-out-left  "#main")
-    (fade-out-left  "#below-main")
-    (fade-out-right "#sidebar")))
-
 (dispatch/react-to #{:switch-page} {:priority 2}
-  (fn [_ _]
-    (.log js/console "Fading in")
-    (fade-in-left  "#text")
-    (fade-in-left  "#main")
-    (fade-in-left  "#below-main")
-    (fade-in-right "#sidebar")))
+  (fn [_ page-data]
+    (let [layout-map (get-in page-data [:data :layout])]
+      (fade-in-layout-elements layout-map))))
