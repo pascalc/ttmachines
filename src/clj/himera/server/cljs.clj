@@ -14,24 +14,26 @@
 
 (declare exp)
 
-(defn build [action locals expr opt pp]
+(defn build [action locals expr & {:keys [opt pp] :or {opt :simple pp false}}]
   {:result
-   (binding [comp/*cljs-ns* 'cljs.user]
-     (let [env {:ns (@comp/namespaces comp/*cljs-ns*)
-                :uses #{'cljs.core}
-                :context :expr
-                :locals locals}]
-       (with-redefs [comp/get-expander exp]
-         (action env expr))))
-   :status 200})
+   (let [env {:ns {:name comp/*cljs-ns*}
+              :uses #{'cljs.core}
+              :context :expr
+              :locals locals}]
+     (with-redefs [comp/get-expander exp]
+       (action env expr)))
+ :status 200})
 
-(def compilation (partial build
-                          #(comp/emits (comp/analyze % %2))
-                          (setup/load-core-names)))
+(defn compilation [expr & {:keys [cljs-ns]}] 
+  (binding [comp/*cljs-ns* cljs-ns]
+    (build
+      #(comp/emits (comp/analyze % %2))
+      (setup/load-core-names)
+      expr)))
 
-(def analyze (partial build
-                      #(comp/analyze % %2)
-                      {}))
+; (def analyze (partial build
+;                       #(comp/analyze % %2)
+;                       {}))
 
 
 ;; privates
