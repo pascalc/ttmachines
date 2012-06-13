@@ -34,11 +34,12 @@
                                {"Content-Type" "application/clojure; charset=utf-8"}))
 
 (defpage [:post "/compile"] {:keys [expr cljs-ns] :or {cljs-ns "cljs.user"}}
-    (let [cljs-ns (symbol cljs-ns)]
-      (try
-          (generate-repl-response (cljs/compilation expr :cljs-ns cljs-ns))
-          (catch RuntimeException e
-              (generate-repl-response {:result nil} 400)))))
+  (println "Compiling in ns: " cljs-ns)
+  (let [cljs-ns (symbol cljs-ns)]
+    (try
+        (generate-repl-response (cljs/compilation expr :cljs-ns cljs-ns))
+        (catch RuntimeException e
+            (generate-repl-response {:result nil} 400)))))
 
 ;; Get doc info for the given Clojure function
 

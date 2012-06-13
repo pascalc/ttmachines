@@ -168,10 +168,10 @@
 (defn- pre-compile [code]
   (str "(do " code ")"))
 
-(defn- go-compile [code]
+(defn- go-compile [code & {:keys [cljs-ns] :or {cljs-ns "ttmachines.client.user"}}]
   (let [data (atom nil)
         params (map->js {:url "/compile"
-                         :data (str "{:expr " code "}")
+                         :data (str "{:expr " code " :cljs-ns " cljs-ns "}")
                          :contentType "application/clojure; charset=utf-8"
                          :async false
                          :type "POST"
