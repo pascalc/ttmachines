@@ -1345,13 +1345,14 @@ div.container {
   background-color: #fff;
   padding-left: 1rem;
   padding-right: 1rem;
+  min-height: 750px;
+  position: relative;
 }
 #main-column {
   display: inline;
   float: left;
   width: 64.58333333333334%;
   margin: 0 1.0416666666666665%;
-  min-height: 640px;
 }
 #sidebar {
   display: inline;
@@ -1460,6 +1461,9 @@ header#title {
   float: left;
   width: 97.91666666666666%;
   margin: 0 1.0416666666666665%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 #footer p {
   text-align: right;
