@@ -22,6 +22,8 @@
 (ns ttmachines.server.views.strings.index
     (:use ttmachines.server.views.strings.core))
 
+(defstring tagline "Have you ever had a *conversation* with your computer?")
+
 (defstring intro
     "
 Machines are our faithful companions. More and more of our lives is spent in the company

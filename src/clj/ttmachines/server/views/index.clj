@@ -22,13 +22,20 @@
 (ns ttmachines.server.views.index
     (:use [noir.core]
           [ttmachines.server.views.layout :only [defcontent]])
-    (:require [ttmachines.server.views.strings.index :as strings]))
+    (:require [hiccup.element :as el]
+              [ttmachines.server.views.strings.index :as strings]))
+
+(defpartial tagline []
+  [:h2#tagline strings/tagline])
 
 (defpartial coming-soon []
   [:h3 strings/coming-soon])
 
+(defpartial lost-robot []
+  (el/image {:id "lost-robot"} "/images/lost_robot.jpg" "Lost robot by natdatnl"))
+
 (defcontent "/"
-  {:layout {:text strings/intro
-            :main (coming-soon)
-            :below-main nil
-            :sidebar nil}})
+  {:layout {:text (tagline)
+            :main strings/intro
+            :below-main (coming-soon)
+            :sidebar (lost-robot)}})
