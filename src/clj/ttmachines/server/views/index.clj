@@ -28,14 +28,20 @@
 (defpartial tagline []
   [:h2#tagline strings/tagline])
 
-(defpartial coming-soon []
-  [:h3 strings/coming-soon])
+(defpartial intro []
+  [:section#intro strings/intro])
+
+(defpartial enter-name []
+  [:div#start-chapter
+    [:div#enter-name.cm-s-ambiance strings/enter-name]
+    [:br]
+    [:button#start.btn.btn-large.btn-primary strings/introduce-me]])
 
 (defpartial lost-robot []
   (el/image {:id "lost-robot"} "/images/lost_robot.jpg" "Lost robot by natdatnl"))
 
 (defcontent "/"
   {:layout {:text (tagline)
-            :main strings/intro
-            :below-main (coming-soon)
+            :main (intro)
+            :below-main (enter-name)
             :sidebar (lost-robot)}})
