@@ -47,7 +47,8 @@
       "javascript/spin.min.js"
       "javascript/native.history.js"
       "javascript/codemirror.js"
-      "javascript/clojure.js"})
+      "javascript/clojure.js"
+      "javascript/runmode.js"})
 (defpartial javascript-links []
     (map include-js *javascripts*))
 
