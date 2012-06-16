@@ -51,3 +51,8 @@
 
 (defn after [period fun]
   (js/setTimeout fun period))
+
+(defn code-highlight [code-str target-id]
+  (.runMode js/CodeMirror 
+    code-str "clojure" (.getElementById js/document target-id)))
+
