@@ -26,18 +26,19 @@
 
 (defstring intro
     "
-Machines are our faithful companions. More and more of our lives is spent in the company
- of our laptops, tablets and phones. But during this time, we've all been very rude.
- Computers are servants we depend on but never acknowledge. Most of us have never 
-*introduced* ourselves to our machines, let alone engaged them in a conversation.
+Not many of us have. But we spend so much of our lives in the company
+ of our laptops, tablets and phones that this silence is deafening.
 
-We can't go on like this. The best relationships are founded on communication, so we'd 
-better start talking to each other.
+We can't go on like this. 
 
-The good news is that it isn't so difficult. As foreign languages go, there are far worse
-. In fact, the hardest step might just be to break the awkward silence.
+The best relationships are founded on communication, so we'd 
+better start talking to our machines.
 
-So take the initiative. Write your name between the quotation marks and say hello.")
+The good news is that it isn't so difficult. As foreign languages go, there are far worse.
 
-(defstring coming-soon
-    "*Under construction. For a taste of things to come, click [here](/repl).*")
+So break the ice. Write your name between the quotation marks and say hello.")
+
+(defstring enter-name
+    "(def my-name \"      \")")
+
+(defstring introduce-me "Introduce me!")
