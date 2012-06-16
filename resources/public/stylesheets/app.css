@@ -2849,6 +2849,21 @@ img#lost-robot {
   font-family: "Droid sans" "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 30px;
 }
+#intro p {
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+#start-chapter {
+  margin-top: 40px;
+  text-align: center;
+}
+button#start {
+  margin-top: 10px;
+}
+#enter-name {
+  display: inline-block;
+  padding: 10px;
+}
 body {
   background: url('../images/3px_pattern.png'), repeat 0 0;
 }
