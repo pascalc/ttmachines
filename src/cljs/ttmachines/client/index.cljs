@@ -35,7 +35,8 @@
     (dom/set-attr! enter-name :contenteditable true)
     (events/listen! enter-name :blur 
       (fn [evt]
-        (highlight-enter-name (dom/text enter-name))))))
+        (highlight-enter-name (dom/text enter-name))))
+    (.focus (.getElementById js/document "enter-name"))))
 
 (dispatch/react-to #{:switch-page} {:priority 3}
   (fn [_ _]
