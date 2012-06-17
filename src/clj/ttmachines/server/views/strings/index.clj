@@ -42,3 +42,5 @@ So break the ice. Write your name between the quotation marks and say hello.")
     "(def my-name \"      \")")
 
 (defstring introduce-me "Introduce me!")
+
+(defstring lost-robot-credit "&copy; Jochem van Wetten")

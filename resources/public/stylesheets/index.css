@@ -31,6 +31,11 @@ img#lost-robot {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
+span#lost-robot-credit {
+  float: right;
+  font-size: 12px;
+  margin-top: 5px;
+}
 #tagline {
   font-family: "Droid sans" "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 30px;

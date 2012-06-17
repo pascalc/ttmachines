@@ -38,7 +38,8 @@
     [:button#start.btn.btn-large.btn-primary strings/introduce-me]])
 
 (defpartial lost-robot []
-  (el/image {:id "lost-robot"} "/images/lost_robot.jpg" "Lost robot by natdatnl"))
+  (el/image {:id "lost-robot"} "/images/lost_robot.jpg" "Lost robot by Jochem van Wetten")
+  [:span#lost-robot-credit strings/lost-robot-credit])
 
 (defcontent "/"
   {:layout {:text (tagline)
