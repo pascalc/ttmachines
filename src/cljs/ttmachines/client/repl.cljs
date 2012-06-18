@@ -196,10 +196,12 @@
 
 ;; Compilation
 
-(defn- go-compile [code & {:keys [cljs-ns] :or {cljs-ns "ttmachines.client.user"}}]
+(def *cljs-ns* (atom "ttmachines.client.user"))
+
+(defn- go-compile [code]
   (let [data (atom nil)
         params (map->js {:url "/compile"
-                         :data (str "{:expr " code " :cljs-ns " cljs-ns "}")
+                         :data (str "{:expr " code " :cljs-ns " @*cljs-ns* "}")
                          :contentType "application/clojure; charset=utf-8"
                          :async false
                          :type "POST"
@@ -252,7 +254,9 @@
 ; EVENT LISTENERS
 
 (dispatch/react-to #{:switch-page} {:priority 2}
-  (fn [_ _]
+  (fn [_ {:keys [data]}]
+    (when-let [cljs-eval-ns (data :cljs-ns)]
+      (reset! *cljs-ns* cljs-eval-ns))
     (init-editor editor-textarea)
     (init-result result-textarea)
     (when editor
