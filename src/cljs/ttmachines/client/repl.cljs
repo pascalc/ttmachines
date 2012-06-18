@@ -26,7 +26,7 @@
             [clojure.walk :as walk]
             [clojure.zip :as zip]
             [one.dispatch :as dispatch])
-  (:use [ttmachines.client.util :only [map->js dissoc]]))
+  (:use [ttmachines.client.util :only [map->js dissoc finite-pr-str]]))
 
 ;; Codemirror integration
 
@@ -190,7 +190,7 @@
         (str "Compilation error: " e)))))
 
 (defn- show-result [res]
-  (.setValue result (pr-str res)))
+  (.setValue result (finite-pr-str res)))
 
 ;; Precompile -> evaluate -> display
 (defn- process [code]
