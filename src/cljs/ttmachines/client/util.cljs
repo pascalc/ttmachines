@@ -60,14 +60,14 @@
 
 (def LAZY-SEQ-LIMIT 100)
 
-(defn append-to-inf [s]
+(defn append-and-more [s]
   (let [beginning (subs s 0 (- (count s) 1))
         end       "... & more)"]
     (str beginning end)))
 
 (defn finite-pr-str [x]
   (if (and (not (nil? x)) (satisfies? ISeq x))
-    (append-to-inf (pr-str (take LAZY-SEQ-LIMIT x)))
+    (append-and-more (pr-str (take LAZY-SEQ-LIMIT x)))
     (pr-str x)))
 
 ; (defmulti finite-pr-str class)
