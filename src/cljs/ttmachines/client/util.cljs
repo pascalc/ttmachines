@@ -66,6 +66,9 @@
     (str beginning end)))
 
 (defn finite-pr-str [x]
-  (if (and (not (nil? x)) (satisfies? ISeq x))
+  (if (and 
+        (not (nil? x)) 
+        (satisfies? ISeq x) 
+        (> (count x) LAZY-SEQ-LIMIT))
     (append-and-more (pr-str (take LAZY-SEQ-LIMIT x)))
     (pr-str x)))
