@@ -2833,8 +2833,13 @@ input[type="submit"].btn.btn-mini {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
-img#lost-robot {
-  float: right;
+#lost-robot {
+  position: relative;
+}
+img#lost-robot-img {
+  position: absolute;
+  top: 0;
+  right: 0;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -2846,9 +2851,37 @@ img#lost-robot {
   border-radius: 10px;
 }
 span#lost-robot-credit {
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform-origin: right 0;
+  -moz-transform-origin: right 0;
+  -ms-transform-origin: right 0;
+  -o-transform-origin: right 0;
+  -webkit-transform-origin: right 0;
+  -moz-transform-origin: right 0;
+  -ms-transform-origin: right 0;
+  -o-transform-origin: right 0;
+  -webkit-transform-origin: right 0;
+  -moz-transform-origin: right 0;
+  -ms-transform-origin: right 0;
+  -o-transform-origin: right 0;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
   font-size: 12px;
-  margin-top: 5px;
 }
 #tagline {
   font-family: "Droid sans" "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2862,7 +2895,7 @@ span#lost-robot-credit {
   margin-top: 40px;
   text-align: center;
 }
-button#start {
+button#introduce-me {
   margin-top: 10px;
 }
 #enter-name {

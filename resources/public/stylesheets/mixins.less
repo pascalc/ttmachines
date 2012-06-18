@@ -222,6 +222,13 @@
 }
 
 // Transformations
+.transform-origin(@x, @y) {
+  -webkit-transform-origin: @x @y;
+  -moz-transform-origin:    @x @y;
+  -ms-transform-origin:     @x @y;
+  -o-transform-origin:      @x @y;
+}
+
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
      -moz-transform: rotate(@degrees);
