@@ -154,6 +154,8 @@
 
 ;; Himera integration
 
+;; Code-str validation
+
 (defn- char-count [s ch] 
   (count (filter #(= % ch) s)))
 
@@ -165,8 +167,34 @@
       (= (code-char-count \[) (code-char-count \]))
       (even? (code-char-count \")))))
 
-(defn- pre-compile [code]
-  (str "(do " code ")"))
+;; Pre compilation
+
+(def ns-alias-expansions
+  { "string"  "clojure.string"
+    "dom"     "domina.domina"
+    "css"     "domina.domina.css" })
+
+(defn ns-from-str [s]
+  (when-let [match (re-find #"^([\w.\-\?\!]+)/[\w.\-\?\!]+$" s)]
+    (match 1)))
+
+(defn expand-ns-aliases [sym]
+  (let [sym-str (str sym)
+        ns-str  (ns-from-str sym-str)
+        alias   (ns-alias-expansions ns-str)]
+    (if (and ns-str alias)
+    (-> sym-str
+        (str/replace ns-str alias)
+        (symbol))
+      sym)))
+
+(defn- pre-compile [code-str]
+  (->> (str "(do " code-str ")")
+    (reader/read-string)
+    (walk/postwalk expand-ns-aliases)
+    (pr-str)))
+
+;; Compilation
 
 (defn- go-compile [code & {:keys [cljs-ns] :or {cljs-ns "ttmachines.client.user"}}]
   (let [data (atom nil)
@@ -179,6 +207,8 @@
                          :success #(reset! data (reader/read-string %))})]
     (.ajax js/jQuery params)
     @data))
+
+;; Evaluation
 
 (defn- evaluate [code]
   (let [compiled (go-compile code)]
@@ -193,6 +223,7 @@
   (.setValue result (finite-pr-str res)))
 
 ;; Precompile -> evaluate -> display
+
 (defn- process [code]
   (let [precompiled (pre-compile code)
         evaluated (evaluate precompiled)]
