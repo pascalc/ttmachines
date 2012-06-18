@@ -24,8 +24,7 @@
             [one.dispatch :as dispatch]
             [domina.domina :as dom]
             [domina.domina.css :as css]
-            [domina.domina.events :as events]
-            [ttmachines.client.util :as util]))
+            [domina.domina.events :as events]))
 
 (defn trim-element-text [el]
   (let [current-text (dom/text el)]
