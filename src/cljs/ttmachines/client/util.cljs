@@ -69,9 +69,3 @@
   (if (and (not (nil? x)) (satisfies? ISeq x))
     (append-and-more (pr-str (take LAZY-SEQ-LIMIT x)))
     (pr-str x)))
-
-; (defmulti finite-pr-str class)
-; (defmethod finite-pr-str :default [x]
-;   (pr-str x))
-; (defmethod finite-pr-str clojure.lang.LazySeq [x]
-;   (append-to-inf (pr-str (take LAZY-SEQ-LIMIT x))))

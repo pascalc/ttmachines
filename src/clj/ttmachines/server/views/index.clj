@@ -31,15 +31,24 @@
 (defpartial intro []
   [:section#intro strings/intro])
 
+(defpartial highlighted-def-name []
+  [:span.cm-bracket "("]
+  [:span.cm-keyword "def "]
+  "my-name "
+  [:span.cm-string 
+    "\"" [:span#my-name { :contenteditable "true" } "&nbsp;&nbsp;&nbsp;"] "\""]
+  [:span.cm-bracket ")"])
+
 (defpartial enter-name []
   [:div#start-chapter
-    [:div#enter-name.cm-s-ambiance strings/enter-name]
+    [:div#enter-name.cm-s-ambiance (highlighted-def-name)]
     [:br]
-    [:button#start.btn.btn-large.btn-primary strings/introduce-me]])
+    [:button#introduce-me.btn.btn-large.btn-primary.disabled strings/introduce-me]])
 
 (defpartial lost-robot []
-  (el/image {:id "lost-robot"} "/images/lost_robot.jpg" "Lost robot by Jochem van Wetten")
-  [:span#lost-robot-credit strings/lost-robot-credit])
+  [:div#lost-robot
+    (el/image {:id "lost-robot-img"} "/images/lost_robot.jpg" "Lost robot by Jochem van Wetten")
+    [:span#lost-robot-credit strings/lost-robot-credit]])
 
 (defcontent "/"
   {:layout {:text (tagline)

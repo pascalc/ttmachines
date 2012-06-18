@@ -20,24 +20,29 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.client.index
-  (:require [one.dispatch :as dispatch]
+  (:require [clojure.string :as string]
+            [one.dispatch :as dispatch]
             [domina.domina :as dom]
             [domina.domina.css :as css]
             [domina.domina.events :as events]
             [ttmachines.client.util :as util]))
 
-(defn highlight-enter-name [text]
-  (util/code-highlight text "enter-name"))
+(defn trim-element-text [el]
+  (let [current-text (dom/text el)]
+    (dom/set-text! el (string/trim current-text))))
 
-(defn setup-enter-name []
-  (when-let [enter-name (css/sel "#enter-name")]
-    (highlight-enter-name (dom/text enter-name))
-    (dom/set-attr! enter-name :contenteditable true)
-    (events/listen! enter-name :blur 
+(defn enable-introduce-me! []
+  (dom/remove-class! (css/sel "#introduce-me") "disabled"))
+
+(defn setup-my-name []
+  (when-let [my-name (css/sel "#my-name")]
+    (events/listen! my-name :blur
       (fn [evt]
-        (highlight-enter-name (dom/text enter-name))))
-    (.focus (.getElementById js/document "enter-name"))))
+        (when-not (= "" (string/trim (dom/text my-name)))
+          (trim-element-text my-name)
+          (enable-introduce-me!))))
+    (.focus (.getElementById js/document "my-name"))))
 
 (dispatch/react-to #{:switch-page} {:priority 3}
   (fn [_ _]
-    (setup-enter-name)))
+    (setup-my-name)))
