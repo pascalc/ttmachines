@@ -56,3 +56,22 @@
   (.runMode js/CodeMirror 
     code-str "clojure" (.getElementById js/document target-id)))
 
+;; Truncate lazy-seqs when printng if they exceed LAZY-SEQ-LIMIT
+
+(def LAZY-SEQ-LIMIT 100)
+
+(defn append-to-inf [s]
+  (let [beginning (subs s 0 (- (count s) 1))
+        end       "... & more)"]
+    (str beginning end)))
+
+(defn finite-pr-str [x]
+  (if (and (not (nil? x)) (satisfies? ISeq x))
+    (append-to-inf (pr-str (take LAZY-SEQ-LIMIT x)))
+    (pr-str x)))
+
+; (defmulti finite-pr-str class)
+; (defmethod finite-pr-str :default [x]
+;   (pr-str x))
+; (defmethod finite-pr-str clojure.lang.LazySeq [x]
+;   (append-to-inf (pr-str (take LAZY-SEQ-LIMIT x))))
