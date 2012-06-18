@@ -27,7 +27,7 @@
 (defstring intro
     "
 Not many of us have. But we spend so much of our lives in the company
- of our laptops, tablets and phones that this silence is deafening.
+ of our laptops, tablets and phones that the silence is deafening.
 
 We can't go on like this. 
 
