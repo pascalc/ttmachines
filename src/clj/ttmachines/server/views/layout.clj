@@ -39,16 +39,16 @@
       "animate.css"
       "app.css"})
 (defpartial stylesheet-links []
-    (map #(include-css (str "stylesheets/" %)) *stylesheets*))
+    (map #(include-css (str "/stylesheets/" %)) *stylesheets*))
 
 (def ^:dynamic *javascripts*
-    #{"javascript/analytics.js"
-      "javascript/jquery.min.js"
-      "javascript/spin.min.js"
-      "javascript/native.history.js"
-      "javascript/codemirror.js"
-      "javascript/clojure.js"
-      "javascript/runmode.js"})
+     ["/javascript/analytics.js" 
+      "/javascript/jquery.min.js"
+      "/javascript/spin.min.js"
+      "/javascript/native.history.js"
+      "/javascript/codemirror.js"
+      "/javascript/clojure.js"
+      "/javascript/runmode.js"])
 (defpartial javascript-links []
     (map include-js *javascripts*))
 
@@ -98,9 +98,9 @@
                  ["#"           "broadcast"]
                  ["#"           "about"]])]])
 
-(def app-js (include-js "javascript/app.js"))
+(def app-js (include-js "/javascript/app.js"))
 (def ttmachines-js 
-  [:script {:src    "javascript/ttmachines.js"
+  [:script {:src    "/javascript/ttmachines.js"
             :type   "text/javascript"
             :defer  "defer"}])
 
