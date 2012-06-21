@@ -19,33 +19,10 @@
 ; OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-(ns ttmachines.client.index
-  (:require [clojure.string :as string]
-            [one.dispatch :as dispatch]
-            [domina.domina :as dom]
-            [domina.domina.css :as css]
-            [domina.domina.events :as events]
-            [ttmachines.client.chapter.one :as chapter.one])
-  (:require-macros [ttmachines.client.macros :as macro]))
+(ns ttmachines.client.macros)
 
-(defn trim-element-text [el]
-  (let [current-text (dom/text el)]
-    (dom/set-text! el (string/trim current-text))))
-
-(defn enable-introduce-me! []
-  (dom/remove-class! (css/sel "#introduce-me") "disabled"))
-
-(macro/set-up-element "my-name"
-  (events/listen! my-name :blur
-    (fn [evt]
-      (when-not (= "" (string/trim (dom/text my-name)))
-        (trim-element-text my-name)
-        (enable-introduce-me!))))
-  (.focus (.getElementById js/document "my-name")))
-
-(macro/set-up-element "introduce-me"
-  (let [my-name (css/sel "#my-name")]
-    (events/listen! introduce-me :click
-      (fn [evt]
-        (when-not (dom/has-class? introduce-me "disabled")
-          (reset! chapter.one/my-name (dom/text my-name)))))))
+(defmacro set-up-element [element-id & body]
+  `(one.dispatch/react-to #{:switch-page} {:priority 3}
+    (fn [_# ~'page-data]
+      (when-let [~(symbol element-id) (domina.domina.css/sel ~(str "#" element-id))]
+        ~@body))))
