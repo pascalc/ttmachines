@@ -25,7 +25,8 @@
             [domina.domina :as dom]
             [domina.domina.css :as css]
             [domina.domina.events :as events]
-            [ttmachines.client.chapter.one :as chapter.one])
+            [ttmachines.client.chapter.one :as chapter.one]
+            [ttmachines.client.history :as history])
   (:require-macros [ttmachines.client.macros :as macro]))
 
 (defn trim-element-text [el]
@@ -48,4 +49,5 @@
     (events/listen! introduce-me :click
       (fn [evt]
         (when-not (dom/has-class? introduce-me "disabled")
-          (reset! chapter.one/my-name (dom/text my-name)))))))
+          (reset! chapter.one/my-name (dom/text my-name))
+          (history/push-state! :url "/chapter/1"))))))
