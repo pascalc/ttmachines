@@ -21,3 +21,41 @@
 
 (ns ttmachines.server.views.strings.chapter.one
     (:use ttmachines.server.views.strings.core))
+
+(defstring great-job
+  "
+  Great job! You just spoke your first words to your machine!
+
+  Let's take a look at what you said and why that worked as an introduction.")
+
+(defstring brackets
+  "### Brackets
+
+  The first thing you should notice are the brackets. Every time you want your machine to *do*
+  something, you need to surround your command in brackets.")
+
+(defstring explain-def
+  "### def
+
+  Here, the command you're giving your machine is <span class=\"cm-s-ambiance clojure-code\">def</span>.
+  Naturally, this tells your machine that you're *defining* something. Following this command are the inputs
+  the command will work with, so let's look at those now.")
+
+(defstring explain-my-name
+  "### my-name
+
+  The first of these inputs, or <strong>arguments</strong>, is <span class=\"cm-s-ambiance clojure-code\">my-name</span>.
+  This is a <strong>symbol</strong> - a word that is a name for something else. Conveniently, the name we
+  give here is *my-name*.")
+
+(defstring explain-your-name
+  "### Your name
+
+  The final argument is, of course, your name. The quotation marks around it tell the computer that it is
+  text, or, in machinespeak, a <strong>string</strong>. The <span class=\"cm-s-ambiance clojure-code\">def</span>
+  command associates the symbol <span class=\"cm-s-ambiance clojure-code\">my-name</span> with this string.
+
+  <br/>
+
+  In other words, you have told your machine that <span class=\"cm-s-ambiance clojure-code\">my-name</span> is
+  <span id=\"insert-name\" class=\"cm-s-ambiance clojure-code\"></span>.")

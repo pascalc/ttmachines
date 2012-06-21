@@ -25,11 +25,21 @@
   (:require [ttmachines.server.views.strings.chapter.one :as strings]))
 
 (defpartial hello []
-  [:h2 "Hello, "])
+  [:h2#hello-user])
+
+(defpartial main []
+  [:div 
+    strings/great-job
+    [:div.code-wrapper
+      [:div#def-my-name-again.cm-s-ambiance]]
+    strings/brackets
+    strings/explain-def
+    strings/explain-my-name
+    strings/explain-your-name])
 
 (defcontent "/chapter/1"
   {:layout {:headline     (hello)
             :text         nil
-            :main         nil
+            :main         (main)
             :below-main   nil
             :sidebar      nil}})

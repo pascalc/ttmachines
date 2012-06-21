@@ -19,6 +19,23 @@
 ; OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-(ns ttmachines.client.chapter.one)
+(ns ttmachines.client.chapter.one
+  (:require [domina.domina :as dom]
+            [ttmachines.client.util :as util])
+  (:require-macros [ttmachines.client.macros :as macro]))
 
 (def my-name (atom "User"))
+
+(defn greeting [] 
+  (str "It's nice to finally meet you, " @my-name "!"))
+
+(macro/set-up-element "hello-user"
+  (dom/set-text! hello-user (greeting)))
+
+(macro/set-up-element "def-my-name-again"
+  (util/code-highlight 
+    (str "(def my-name \"" @my-name "\")")
+    "def-my-name-again"))
+
+(macro/set-up-element "insert-name"
+  (dom/set-text! insert-name (str "\"" @my-name "\"")))
