@@ -46,7 +46,8 @@
             [:p#doc-body explanation]]])
 
 (defcontent "/repl"
-  {:layout {:text          strings/text
+  {:layout {:headline      nil
+            :text          strings/text
             :main          (editor strings/initial-editor-text)
             :sidebar       (info strings/info-title strings/info-explanation)
             :below-main    (result strings/result-title)}})

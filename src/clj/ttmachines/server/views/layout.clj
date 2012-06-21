@@ -43,7 +43,7 @@
 
 (def ^:dynamic *javascripts*
     #{"javascript/analytics.js"
-      "http://code.jquery.com/jquery-1.7.1.min.js"
+      "javascript/jquery.min.js"
       "javascript/spin.min.js"
       "javascript/native.history.js"
       "javascript/codemirror.js"
@@ -137,6 +137,8 @@
         [:div.container
           (title-header)
           (nav)
+          [:div#headline
+            (content :headline)]
           [:div#text 
             (content :text)]
           [:div#main-column

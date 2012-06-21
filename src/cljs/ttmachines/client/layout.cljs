@@ -47,13 +47,15 @@
 ;; Whenever an atom in layout/state is changed, the dom is updated
 
 (def state 
-  {:text        (atom nil)
+  {:headline    (atom nil)
+   :text        (atom nil)
    :main        (atom nil)
    :below-main  (atom nil)
    :sidebar     (atom nil)})
 
 (def targets
-  {:text        "#text"
+  {:headline    "#headline"
+   :text        "#text"
    :main        "#main"
    :below-main  "#below-main"
    :sidebar     "#sidebar"})
@@ -62,6 +64,8 @@
   (zipmap (keys state) (map #(partial set-content! %) (vals targets))))
 
 ;; Doing this in a doseq doesn't seem to work...
+(add-watch (state :headline) :alter-dom
+  (fn [_ _ _ new-val] ((dom-watchers :headline) new-val)))
 (add-watch (state :text) :alter-dom
   (fn [_ _ _ new-val] ((dom-watchers :text) new-val)))
 (add-watch (state :main) :alter-dom

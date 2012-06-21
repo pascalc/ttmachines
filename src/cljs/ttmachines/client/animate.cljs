@@ -52,7 +52,8 @@
 
 ;; Animate layout transitions
 
-(def entrances {:text       fade-in-left
+(def entrances {:headline   fade-in-left
+                :text       fade-in-left
                 :main       fade-in-left
                 :below-main fade-in-left
                 :sidebar    fade-in-right})

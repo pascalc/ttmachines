@@ -26,7 +26,7 @@
               [ttmachines.server.views.strings.index :as strings]))
 
 (defpartial tagline []
-  [:h2#tagline strings/tagline])
+  [:h2 strings/tagline])
 
 (defpartial intro []
   [:section#intro strings/intro])
@@ -51,7 +51,8 @@
     [:span#lost-robot-credit strings/lost-robot-credit]])
 
 (defcontent "/"
-  {:layout {:text (tagline)
-            :main (intro)
-            :below-main (enter-name)
-            :sidebar (lost-robot)}})
+  {:layout {:headline     (tagline)
+            :text         nil
+            :main         (intro)       
+            :below-main   (enter-name)
+            :sidebar      (lost-robot)}})

@@ -2883,10 +2883,6 @@ span#lost-robot-credit {
   transform: rotate(-90deg);
   font-size: 12px;
 }
-#tagline {
-  font-family: "Droid sans" "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 30px;
-}
 #intro p {
   line-height: 20px;
   margin-bottom: 12px;
@@ -3020,6 +3016,16 @@ header#title {
 }
 #nav li:hover {
   border-color: #000;
+}
+#headline {
+  display: inline;
+  float: left;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
+}
+#headline h2 {
+  font-family: "Droid sans" "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 30px;
 }
 #text {
   display: inline;

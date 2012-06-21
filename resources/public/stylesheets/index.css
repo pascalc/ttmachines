@@ -51,10 +51,6 @@ span#lost-robot-credit {
   transform: rotate(-90deg);
   font-size: 12px;
 }
-#tagline {
-  font-family: "Droid sans" "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 30px;
-}
 #intro p {
   line-height: 20px;
   margin-bottom: 12px;
