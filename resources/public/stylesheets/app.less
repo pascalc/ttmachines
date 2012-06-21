@@ -7,6 +7,7 @@
 // App stylesheet imports
 @import 'repl.less';
 @import 'index.less';
+@import 'chapter/one.less';
 
 ////////////
 // MIXINS //
@@ -38,8 +39,28 @@ div.container {
 
 #main-column { 
     .column(8);
+    margin-bottom: 100px;
 }
 #sidebar { .column(4) }
+
+// Highlighted code
+
+.code-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.clojure-code {
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    margin: 0 5px 0 5px;
+}
+
+p {
+    line-height: 20px;
+}
 
 ////////////////
 // ANIMATIONS //

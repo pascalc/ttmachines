@@ -2898,6 +2898,11 @@ button#introduce-me {
   display: inline-block;
   padding: 10px;
 }
+#def-my-name-again {
+  text-align: center;
+  display: inline-block;
+  padding: 10px;
+}
 body {
   background: url('../images/3px_pattern.png'), repeat 0 0;
 }
@@ -2916,12 +2921,27 @@ div.container {
   float: left;
   width: 64.58333333333334%;
   margin: 0 1.0416666666666665%;
+  margin-bottom: 100px;
 }
 #sidebar {
   display: inline;
   float: left;
   width: 31.25%;
   margin: 0 1.0416666666666665%;
+}
+.code-wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.clojure-code {
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+  margin: 0 5px 0 5px;
+}
+p {
+  line-height: 20px;
 }
 .fadeInLeft,
 .fadeOutLeft,

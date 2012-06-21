@@ -19,7 +19,10 @@
 ; OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-(ns ttmachines.client.util)
+(ns ttmachines.client.util
+  (:require [one.dispatch :as dispatch]
+            [domina.domina :as dom]
+            [domina.domina.css :as css]))
 
 ; From clojure.contrib
 (defn dissoc-in
@@ -52,9 +55,24 @@
 (defn after [period fun]
   (js/setTimeout fun period))
 
+;; Code highlighting
+
 (defn code-highlight [code-str target-id]
-  (.runMode js/CodeMirror 
-    code-str "clojure" (.getElementById js/document target-id)))
+  (when-let [element (.getElementById js/document target-id)]
+    (.runMode js/CodeMirror 
+      code-str "clojure" element)))
+
+(defn highlight-code-nodes []
+  (doseq [code-node (dom/nodes (css/sel ".clojure-code"))]
+    (dom/set-attr! code-node :id "_clojure_code_")  
+    (code-highlight 
+      (dom/text code-node) 
+      "_clojure_code_")
+    (dom/remove-attr! code-node :id)))
+
+(dispatch/react-to #{:switch-page} {:priority 5}
+  (fn [_ _] 
+    (highlight-code-nodes)))
 
 ;; Truncate lazy-seqs when printng if they exceed LAZY-SEQ-LIMIT
 
