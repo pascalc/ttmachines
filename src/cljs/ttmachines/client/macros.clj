@@ -24,5 +24,5 @@
 (defmacro set-up-element [element-id & body]
   `(one.dispatch/react-to #{:switch-page} {:priority 3}
     (fn [_# ~'page-data]
-      (when-let [~(symbol element-id) (domina.domina.css/sel ~(str "#" element-id))]
+      (when-let [~(symbol element-id) (domina.domina/by-id ~element-id)]
         ~@body))))
