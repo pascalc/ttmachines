@@ -43,45 +43,29 @@
 
 (def ^:dynamic *base-url*)
 
-(defn insert-chapter-nav [index content-map]
-  (assoc 
-    content-map 
-    :chapter-nav
-    {:next      (str *base-url* "/" (+ index 2))
-     :previous  (str *base-url* "/" index)}))
+(defn generate-url [chapter-num]
+  (str *base-url* "/" chapter-num))
 
-(defn generate-url [index]
-  (str *base-url* "/" (+ index 1)))
+(defn next-link [chapter-num chapter-length]
+  (let [target (inc chapter-num)]
+    (when (<= target chapter-length)
+      (str *base-url* "/" target))))
 
-(defn fix-first-links [content-maps]
-  (let [first-content (first content-maps)
-        rest-content  (rest content-maps)]
-    (conj
-      rest-content
-      (dissoc-in first-content [:chapter-nav :previous]))))
-
-(defn fix-last-links [content-maps]
-  (let [last-content  (last content-maps)
-        rest-content  (drop-last content-maps)]
-    (conj 
-      (vec rest-content)
-      (dissoc-in last-content [:chapter-nav :next]))))
-
-(defn insert-navigation [content-maps]
-  (->> content-maps
-    (map insert-chapter-nav (range (count content-maps)))
-    (fix-first-links)
-    (fix-last-links)))
+(defn previous-link [chapter-num]
+  (let [target (dec chapter-num)]
+    (when (>= target 1)
+      (str *base-url* "/" target))))  
 
 (defn expand-defcontent [content-maps]
-  (doall
-    (map 
-      (fn [index content-map] 
-        `(binding [*chapter-next*     ~(get-in content-map [:chapter-nav :next])
-                   *chapter-previous* ~(get-in content-map [:chapter-nav :previous])]
-            (defcontent ~(generate-url index) ~content-map)))
-      (range (count content-maps))
-      (insert-navigation content-maps))))
+  (let [chapter-length (count content-maps)]
+    (doall
+      (map 
+        (fn [chapter-num content-map] 
+          `(binding [*chapter-next*     ~(next-link chapter-num chapter-length)
+                     *chapter-previous* ~(previous-link chapter-num)]
+              (defcontent ~(generate-url chapter-num) ~content-map)))
+        (range 1 (inc chapter-length))
+        content-maps))))
 
 ;; defchapter takes a sequence of content-maps and calls defcontent
 ;; on each in turn, with the appropriate navigation inserted
