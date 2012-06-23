@@ -21,13 +21,13 @@
 
 (ns ttmachines.server.views.chapter.one
   (:use [noir.core]
-        [ttmachines.server.views.layout :only [defcontent]])
+        [ttmachines.server.views.chapter :only [defchapter chapter-nav]])
   (:require [ttmachines.server.views.strings.chapter.one :as strings]))
 
-(defpartial hello []
+(defpartial hello-user []
   [:h2#hello-user])
 
-(defpartial main []
+(defpartial explain-def-my-name []
   [:div 
     strings/great-job
     [:div.code-wrapper
@@ -37,9 +37,15 @@
     strings/explain-my-name
     strings/explain-your-name])
 
-(defcontent "/chapter/1"
-  {:layout {:headline     (hello)
+(defchapter "/chapter/1"
+  {:layout {:headline     (hello-user)
             :text         nil
-            :main         (main)
-            :below-main   nil
-            :sidebar      nil}})
+            :main         (explain-def-my-name)
+            :below-main   (chapter-nav)
+            :sidebar      nil}}
+
+  {:layout {:headline     "Functions!"
+            :text         nil
+            :main         "Commands are actually functions!"
+            :below-main   (chapter-nav)}})
+

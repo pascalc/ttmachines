@@ -50,4 +50,4 @@
       (fn [evt]
         (when-not (dom/has-class? introduce-me "disabled")
           (reset! chapter.one/my-name (dom/text my-name))
-          (history/push-state! :url "/chapter/1"))))))
+          (history/push-state! :url "/chapter/1/1"))))))
