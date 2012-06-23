@@ -32,12 +32,14 @@
     [:section#editor
         [:textarea#editor-textarea editor-text]])
 
-(defpartial result [title]
+(defpartial result [& {:keys [title] :or {title strings/result-title}}]
     [:section#result
         (section-title title)
         [:textarea#result-textarea]])
 
-(defpartial info [title explanation]
+(defpartial info [& {:keys [title explanation] 
+                     :or   {title strings/info-title 
+                            explanation strings/info-explanation}}]
     [:aside#doc
         (section-title title)
         [:div#doc-text
@@ -49,5 +51,5 @@
   {:layout {:headline      nil
             :text          strings/text
             :main          (editor strings/initial-editor-text)
-            :sidebar       (info strings/info-title strings/info-explanation)
-            :below-main    (result strings/result-title)}})
+            :sidebar       (info)
+            :below-main    (result)}})
