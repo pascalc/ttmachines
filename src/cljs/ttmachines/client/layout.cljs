@@ -80,7 +80,7 @@
     (when (contains? state state-key)
       (reset! (state state-key) content))))
 
-(defn update-nav-li [route]
+(defn set-up-nav-li [route]
   (dom/remove-class! (css/sel "#nav li") "active")
   (doseq [li-node (dom/nodes (css/sel "#nav li"))]
     (let [a-node (first (dom/children li-node))]
@@ -89,12 +89,15 @@
 
 ;; EVENT TRIGGERS
 
-(events/listen! (css/sel "#nav a") :click
-  (fn [evt]
-    (events/prevent-default evt)
-    (let [link  (events/target evt)
-          url   (dom/attr link :href)]
-      (dispatch/fire :link-clicked {:url url}))))
+(defn ajax-link [link-nodes]
+  (events/listen! link-nodes :click
+    (fn [evt]
+      (events/prevent-default evt)
+      (let [link  (events/target evt)
+            url   (dom/attr link :href)]
+        (dispatch/fire :link-clicked {:url url})))))
+
+(ajax-link (css/sel "#nav a"))
 
 ;; EVENT LISTENERS
 
@@ -117,15 +120,20 @@
     (js/hideLoading)
     (dom/destroy! (css/sel "#loading"))))
 
-;; Update the nav li CSS classes if appropriate
+;; Set up the nav li CSS classes
 (dispatch/react-to #{:switch-page} {:priority 0}
   (fn [_ {:keys [data]}]
-    (update-nav-li (data :route))))
+    (set-up-nav-li (data :route))))
 
 ;; Load the new page's layout
 (dispatch/react-to #{:switch-page} {:priority 1}
   (fn [_ page-data]
     (load-state (page-data :data))))
+
+;; Set up chapter navigation
+(dispatch/react-to #{:switch-page} {:priority 2}
+  (fn [_ _]
+    (ajax-link (css/sel ".chapter-nav a"))))
 
 ;; MAIN
 
