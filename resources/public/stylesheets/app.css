@@ -341,6 +341,7 @@ cite {
   box-sizing: border-box;
 }
 .btn {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
@@ -712,6 +713,9 @@ cite {
 }
 .btn:first-child {
   *margin-left: 0;
+}
+a.btn {
+  text-decoration: none;
 }
 .btn:hover {
   color: #333333;
@@ -2942,6 +2946,17 @@ div.container {
 }
 p {
   line-height: 20px;
+}
+.chapter-nav {
+  margin-top: 30px;
+}
+.chapter-nav #next {
+  float: right;
+}
+.chapter-nav hr {
+  border-style: solid;
+  border-bottom-width: 3px;
+  border-color: #F0EBEB;
 }
 .fadeInLeft,
 .fadeOutLeft,

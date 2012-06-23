@@ -26,6 +26,7 @@
   box-sizing: border-box;
 }
 .btn {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
@@ -81,6 +82,9 @@
 }
 .btn:first-child {
   *margin-left: 0;
+}
+a.btn {
+  text-decoration: none;
 }
 .btn:hover {
   color: #333333;

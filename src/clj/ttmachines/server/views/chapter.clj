@@ -34,10 +34,19 @@
 
 (defpartial chapter-nav []
   [:div.chapter-nav
+    [:hr]
     (when *chapter-next*
-      (link-to {:id "next"} *chapter-next* "Next"))
+      (link-to 
+        {:id    "next"
+         :class "btn btn-large btn-success"} 
+        *chapter-next* 
+        "Next"))
     (when *chapter-previous*
-      (link-to {:id "previous"} *chapter-previous* "Previous"))])
+      (link-to 
+        {:id    "previous"
+         :class "btn btn-large"} 
+        *chapter-previous* 
+        "Previous"))])
 
 ;; private
 
