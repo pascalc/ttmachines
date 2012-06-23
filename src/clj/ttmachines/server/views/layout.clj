@@ -110,23 +110,19 @@
 
 ;; LAYOUT
 
-(def loading 
+(def loading
   [:div#loading
-    [:h1 "Loading..."]])
+    [:h1 "Loading..."]])  
 
 (defmacro defcontent [route content-map]
-  `(do
-    (def ~'content
-      (assoc ~content-map :route ~route))
-
-    (def ~'html-content
-      (binding [*route* ~route]
-        (layout {:layout {:main loading}})))
-
+  `(let [content#       (assoc ~content-map :route ~route)
+         html-content#  (binding [*route* ~route]
+                          (layout {:layout {:main loading}}))]
+    
     (defpage ~route {} 
       (if (ajax? (request/ring-request))
-        (generate-clj-response ~'content)
-        ~'html-content))))
+        (generate-clj-response content#)
+        html-content#))))
 
 (defn layout [content-map]
   (let [content (content-map :layout)]
