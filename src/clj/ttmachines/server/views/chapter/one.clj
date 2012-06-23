@@ -22,7 +22,8 @@
 (ns ttmachines.server.views.chapter.one
   (:use [noir.core]
         [ttmachines.server.views.chapter :only [defchapter chapter-nav]])
-  (:require [ttmachines.server.views.strings.chapter.one :as strings]))
+  (:require [ttmachines.server.views.strings.chapter.one :as strings]
+            [ttmachines.server.views.repl :as repl]))
 
 (defpartial hello-user []
   [:h2#hello-user])
@@ -37,6 +38,12 @@
     strings/explain-my-name
     strings/explain-your-name])
 
+(defpartial functions []
+  [:h2 strings/functions])
+
+(defpartial result-and-nav []
+  [:div (repl/result) (chapter-nav)])
+
 (defchapter "/chapter/1"
   {:layout {:headline     (hello-user)
             :text         nil
@@ -44,8 +51,9 @@
             :below-main   (chapter-nav)
             :sidebar      nil}}
 
-  {:layout {:headline     "Functions!"
-            :text         nil
-            :main         "Commands are actually functions!"
-            :below-main   (chapter-nav)}})
+  {:layout {:headline     nil
+            :text         strings/explain-str
+            :main         (repl/editor strings/repl-str-example)
+            :below-main   (result-and-nav)
+            :sidebar      (repl/info)}})
 

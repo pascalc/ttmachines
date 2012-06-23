@@ -59,3 +59,21 @@
 
   In other words, you have told your machine that <span class=\"cm-s-ambiance clojure-code\">my-name</span> is
   <span id=\"insert-name\" class=\"cm-s-ambiance clojure-code\"></span>.")
+
+(defstring functions "Commands are functions")
+
+(defstring explain-str "
+  So now you know how to define things, what can we *do* with them?
+  
+  The answer is anything you can imagine, as long as you know the right commands, or <strong>functions</strong>
+  as we usually call them.
+
+  One of the most used functions is <span class=\"cm-s-ambiance clojure-code\">str</span>, which takes
+  any number of strings as arguments and combines them into one.
+
+  Try out different arguments to <span class=\"cm-s-ambiance clojure-code\">str</span> below and see
+  how it affects the result")
+
+(def repl-str-example 
+  "(str \"Hello, \" \"world!\")")
+
