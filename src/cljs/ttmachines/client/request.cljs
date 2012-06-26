@@ -26,10 +26,12 @@
 
 (def request-id (atom 0))
 
-(defn get-page [url]
+(defn get-page [url & {:keys [initialize?] :or {initialize? false}}]
   (remote/request 
     (str "request-" (swap! request-id inc))
-    url
+    (if initialize?
+      (str url "?initialize=true")
+      url)
     :method "GET"
     :on-success (fn [data] 
                   (dispatch/fire 
