@@ -63,9 +63,10 @@
 
 (defn fade-in-layout-elements [layout-map]
   (doseq [k (incoming-keys layout-map)]
-    (let [animation (entrances k)
-          selector (layout/targets k)]
-      (animation selector))))
+    (when (contains? entrances k)
+      (let [animation (entrances k)
+            selector (layout/targets k)]
+        (animation selector)))))
 
 ;; Triggers
 
