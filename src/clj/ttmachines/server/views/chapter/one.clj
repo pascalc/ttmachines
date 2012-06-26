@@ -41,19 +41,19 @@
 (defpartial functions []
   [:h2 strings/functions])
 
-(defpartial result-and-nav []
-  [:div (repl/result) (chapter-nav)])
-
 (defchapter "/chapter/1"
   {:layout {:headline     (hello-user)
             :text         nil
             :main         (explain-def-my-name)
-            :below-main   (chapter-nav)
+            :below-main   nil
             :sidebar      nil}}
 
   {:layout {:headline     nil
             :text         strings/explain-str
             :main         (repl/editor strings/repl-str-example)
-            :below-main   (result-and-nav)
-            :sidebar      (repl/info)}})
+            :below-main   (repl/result)
+            :sidebar      (repl/info)}}
+
+  {:layout      {:text strings/str-with-symbols}
+   :repl-text   strings/repl-str-with-symbols}) ; <-- set this dynamically using @my-name in one.cljs
 

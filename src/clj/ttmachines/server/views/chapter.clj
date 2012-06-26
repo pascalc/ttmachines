@@ -20,35 +20,67 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.views.chapter
-  (:use [noir.core :only [defpartial]]
+  (:require [noir.request :as request]
+            [ttmachines.server.views.layout :as view])
+  (:use [noir.core :only [defpartial defpage]]
         hiccup.core
         hiccup.element
-        [ttmachines.server.tools :only [dissoc-in]]
-        [ttmachines.server.views.layout :only [defcontent]]))
+        ttmachines.server.tools))
 
-(def ^:dynamic *chapter-next* nil)
-(def ^:dynamic *chapter-previous* nil)
+(defpartial chapter-nav [& {:keys [chapter-next chapter-previous] 
+                            :or   {chapter-next nil chapter-previous nil}}]
+  [:hr]
+  (when chapter-next
+    (link-to 
+      {:id    "next"
+       :class "btn btn-large btn-success"} 
+      chapter-next
+      "Next"))
+  (when chapter-previous
+    (link-to 
+      {:id    "previous"
+       :class "btn btn-large"} 
+      chapter-previous
+      "Previous")))
 
-;; (chapter-nav) will insert the appropriate navigation links
-;; in a content-map
+;; Handle requests
 
-(defpartial chapter-nav []
-  [:div.chapter-nav
-    [:hr]
-    (when *chapter-next*
-      (link-to 
-        {:id    "next"
-         :class "btn btn-large btn-success"} 
-        *chapter-next* 
-        "Next"))
-    (when *chapter-previous*
-      (link-to 
-        {:id    "previous"
-         :class "btn btn-large"} 
-        *chapter-previous* 
-        "Previous"))])
+(defmulti handle-request
+  (fn [initialize? _]
+    (cond 
+      (not (ajax? (request/ring-request)))  :http
+      initialize?                           :ajax-initialize
+      :else                                 :ajax)))
 
-;; private
+(defmethod handle-request :http [_ content-map]
+  (binding [view/*route* (content-map :route)]
+    (view/layout {:layout {:main view/loading}})))
+
+(defmethod handle-request :ajax [_ content-map]
+  (generate-clj-response content-map))
+
+;; Merge previous chapter content if we're jumping in
+;; mid-chapter
+
+(def ^:dynamic *previous-chapter-content*)
+
+(defmethod handle-request :ajax-initialize [_ content-map]
+  (let [previous-content-ascending 
+          (into (sorted-map-by <) 
+                *previous-chapter-content*)]
+    (generate-clj-response
+      (apply (partial deep-merge-with (fn [l r] r)) 
+        (vals previous-content-ascending)))))
+
+;; def-chapter-content expands to defpage that calls handle request
+
+(defn def-chapter-content [route content-map & {:keys [previous-chapters]}]
+  (let [content (assoc content-map :route route)]
+    `(defpage ~route {:keys [~'initialize] :or {~'initialize false}} 
+      (binding [*previous-chapter-content* ~previous-chapters]
+        (handle-request ~'initialize ~content)))))
+
+;; Generate chapter links
 
 (def ^:dynamic *base-url*)
 
@@ -65,20 +97,28 @@
     (when (>= target 1)
       (str *base-url* "/" target))))  
 
-(defn expand-defcontent [content-maps]
+(defn expand-def-chapter-content [content-maps & {:keys [chapter-acc]}]
   (let [chapter-length (count content-maps)]
     (doall
       (map 
-        (fn [chapter-num content-map] 
-          `(binding [*chapter-next*     ~(next-link chapter-num chapter-length)
-                     *chapter-previous* ~(previous-link chapter-num)]
-              (defcontent ~(generate-url chapter-num) ~content-map)))
+        (fn [chapter-num content-map]
+          (let [content-map-with-nav (assoc-in 
+                                        content-map 
+                                        [:layout :chapter-nav]
+                                        (chapter-nav 
+                                          :chapter-next (next-link chapter-num chapter-length)
+                                          :chapter-previous (previous-link chapter-num)))]
+            (swap! chapter-acc assoc chapter-num content-map-with-nav)
+            (def-chapter-content 
+              (generate-url chapter-num) 
+              content-map-with-nav
+              :previous-chapters @chapter-acc)))
         (range 1 (inc chapter-length))
         content-maps))))
 
-;; defchapter takes a sequence of content-maps and calls defcontent
+;; defchapter takes a sequence of content-maps and calls def-chapter-content
 ;; on each in turn, with the appropriate navigation inserted
 
 (defmacro defchapter [base-url & content-maps]
   (binding [*base-url* base-url]
-    `(do ~@(expand-defcontent content-maps))))
+    `(do ~@(expand-def-chapter-content content-maps :chapter-acc (atom {})))))
