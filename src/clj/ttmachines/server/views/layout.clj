@@ -114,16 +114,6 @@
   [:div#loading
     [:h1 "Loading..."]])  
 
-(defmacro defcontent [route content-map]
-  `(let [content#       (assoc ~content-map :route ~route)
-         html-content#  (binding [*route* ~route]
-                          (layout {:layout {:main loading}}))]
-    
-    (defpage ~route {} 
-      (if (ajax? (request/ring-request))
-        (generate-clj-response content#)
-        html-content#))))
-
 (defn layout [content-map]
   (let [content (content-map :layout)]
     (html5
@@ -139,9 +129,24 @@
             (content :text)]
           [:div#main-column
             [:div#main (content :main)]
-            [:div#below-main (content :below-main)]]
+            [:div#below-main (content :below-main)]
+            [:div#chapter-nav
+              (when-let [chapter-nav (content :chapter-nav)]
+                chapter-nav)]]
           [:div#sidebar
             (content :sidebar)]
           footer
           app-js
           ttmachines-js]])))
+
+(defmacro defcontent [route content-map]
+  (let [content       (-> content-map
+                        (assoc :route route)
+                        (assoc-in [:layout :chapter-nav] nil))
+        html-content  (binding [*route* route]
+                        (layout {:layout {:main loading}}))]
+    
+    `(defpage ~route {} 
+      (if (ajax? (request/ring-request))
+        (generate-clj-response ~content)
+        ~html-content))))

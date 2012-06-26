@@ -2947,13 +2947,13 @@ div.container {
 p {
   line-height: 20px;
 }
-.chapter-nav {
+#chapter-nav {
   margin-top: 30px;
 }
-.chapter-nav #next {
+#chapter-nav #next {
   float: right;
 }
-.chapter-nav hr {
+#chapter-nav hr {
   border-style: solid;
   border-bottom-width: 3px;
   border-color: #F0EBEB;

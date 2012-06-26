@@ -51,6 +51,7 @@
    :text        (atom nil)
    :main        (atom nil)
    :below-main  (atom nil)
+   :chapter-nav (atom nil)
    :sidebar     (atom nil)})
 
 (def targets
@@ -58,6 +59,7 @@
    :text        "#text"
    :main        "#main"
    :below-main  "#below-main"
+   :chapter-nav "#chapter-nav"
    :sidebar     "#sidebar"})
 
 (def dom-watchers
@@ -72,6 +74,8 @@
   (fn [_ _ _ new-val] ((dom-watchers :main) new-val)))
 (add-watch (state :below-main) :alter-dom
   (fn [_ _ _ new-val] ((dom-watchers :below-main) new-val)))
+(add-watch (state :chapter-nav) :alter-dom
+  (fn [_ _ _ new-val] ((dom-watchers :chapter-nav) new-val)))
 (add-watch (state :sidebar) :alter-dom
   (fn [_ _ _ new-val] ((dom-watchers :sidebar) new-val)))
 
@@ -133,7 +137,7 @@
 ;; Set up chapter navigation
 (dispatch/react-to #{:switch-page} {:priority 2}
   (fn [_ _]
-    (ajax-link (css/sel ".chapter-nav a"))))
+    (ajax-link (css/sel "#chapter-nav a"))))
 
 ;; MAIN
 
