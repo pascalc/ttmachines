@@ -75,10 +75,9 @@
 ;; def-chapter-content expands to defpage that calls handle request
 
 (defn def-chapter-content [route content-map & {:keys [previous-chapters]}]
-  (let [content (assoc content-map :route route)]
-    `(defpage ~route {:keys [~'initialize] :or {~'initialize false}} 
-      (binding [*previous-chapter-content* ~previous-chapters]
-        (handle-request ~'initialize ~content)))))
+  `(defpage ~route {:keys [~'initialize] :or {~'initialize false}} 
+    (binding [*previous-chapter-content* ~previous-chapters]
+      (handle-request ~'initialize ~content-map))))
 
 ;; Generate chapter links
 
@@ -97,21 +96,28 @@
     (when (>= target 1)
       (str *base-url* "/" target))))  
 
+(defn add-keys [content-map & {:keys[route chapter-num chapter-length]}]
+  (-> content-map
+    (assoc-in 
+      [:layout :chapter-nav]
+      (chapter-nav 
+        :chapter-next (next-link chapter-num chapter-length)
+        :chapter-previous (previous-link chapter-num)))
+    (assoc :route route)))
+
 (defn expand-def-chapter-content [content-maps & {:keys [chapter-acc]}]
   (let [chapter-length (count content-maps)]
     (doall
       (map 
         (fn [chapter-num content-map]
-          (let [content-map-with-nav (assoc-in 
-                                        content-map 
-                                        [:layout :chapter-nav]
-                                        (chapter-nav 
-                                          :chapter-next (next-link chapter-num chapter-length)
-                                          :chapter-previous (previous-link chapter-num)))]
-            (swap! chapter-acc assoc chapter-num content-map-with-nav)
+          (let [route             (generate-url chapter-num)
+                full-content-map  (add-keys content-map :route route 
+                                                        :chapter-num chapter-num
+                                                        :chapter-length chapter-length)]
+            (swap! chapter-acc assoc chapter-num full-content-map)
             (def-chapter-content 
-              (generate-url chapter-num) 
-              content-map-with-nav
+              route
+              full-content-map
               :previous-chapters @chapter-acc)))
         (range 1 (inc chapter-length))
         content-maps))))
