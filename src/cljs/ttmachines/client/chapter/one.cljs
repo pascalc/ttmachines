@@ -21,7 +21,9 @@
 
 (ns ttmachines.client.chapter.one
   (:require [domina.domina :as dom]
-            [ttmachines.client.util :as util])
+            [one.dispatch :as dispatch]
+            [ttmachines.client.util :as util]
+            [ttmachines.client.repl :as repl])
   (:require-macros [ttmachines.client.macros :as macro]))
 
 (def my-name (atom "User"))
@@ -39,3 +41,8 @@
 
 (macro/set-up-element "insert-name"
   (dom/set-text! insert-name (str "\"" @my-name "\"")))
+
+; (dispatch/react-to #{:switch-page} {:priority 3}
+;   (fn [_ {:keys [data]}]
+;     (when (= (data :route) "/chapter/1/3")
+;       (repl/set-editor-text! "foo bar"))))
