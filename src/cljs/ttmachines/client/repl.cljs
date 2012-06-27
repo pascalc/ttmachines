@@ -25,16 +25,19 @@
             [clojure.set :as set]
             [clojure.walk :as walk]
             [clojure.zip :as zip]
-            [one.dispatch :as dispatch])
+            [one.dispatch :as dispatch]
+            [domina.domina :as dom])
   (:use [ttmachines.client.util :only [map->js dissoc finite-pr-str]]))
 
 ;; Codemirror integration
 
-(defn- codemirrorify [textarea-id options]
-  (when-let [textarea (.getElementById js/document textarea-id)]
-    (.fromTextArea js/CodeMirror
-      textarea,
-      (map->js options))))
+(defn- codemirrorify! [textarea options atm]
+  (when-not (dom/get-data textarea :codemirrorified)
+    (dom/set-data! textarea :codemirrorified true)
+    (reset! atm
+      (.fromTextArea js/CodeMirror
+        textarea,
+        (map->js options)))))
 
 (defn- set-option [codemirror k value]
   (.setOption codemirror (name k) value))
@@ -42,14 +45,14 @@
 ;; Exported vars
 
 (def editor-textarea "editor-textarea")
-(def editor)
+(def editor (atom nil))
 (def editor-settings
   {:theme "ambiance"
    :lineNumbers true
    :matchBrackets true})
 
 (def result-textarea "result-textarea")
-(def result)
+(def result (atom nil))
 (def result-settings
   {:theme "ambiance"
    :readOnly true
@@ -68,7 +71,7 @@
     (js/setTimeout
       (fn []
         (when (= (.getValue e) editor-val)
-          (.setValue result "")
+          (.setValue @result "")
           (reset! code editor-val)))
       200)))
 
@@ -87,35 +90,31 @@
 
 ;; Instantiate vars
 
-(defn- init-editor [textarea]
-  (def editor 
-    (codemirrorify textarea editor-settings))
-  (when editor
-    (set-option editor
-      :onChange
-      (fn [e info]
-        (doseq [[k fun] (@change-listeners :editor)]
-          (fun e info))))
-    (set-option editor
-      :onCursorActivity
-      (fn [e]
-        (doseq [[k fun] (@activity-listeners :editor)]
-          (fun e))))))
+(defn- init-editor! [textarea]
+  (codemirrorify! textarea editor-settings editor)
+  (set-option @editor
+    :onChange
+    (fn [e info]
+      (doseq [[k fun] (@change-listeners :editor)]
+        (fun e info))))
+  (set-option @editor
+    :onCursorActivity
+    (fn [e]
+      (doseq [[k fun] (@activity-listeners :editor)]
+        (fun e)))))
 
-(defn- init-result [textarea]
-  (def result 
-    (codemirrorify textarea result-settings))
-  (when result
-    (set-option result
-      :onChange
-      (fn [e info]
-        (doseq [[k fun] (@change-listeners :result)]
-          (fun e info))))
-    (set-option result
-      :onCursorActivity
-      (fn [e]
-        (doseq [[k fun] (@activity-listeners :result)]
-          (fun e))))))
+(defn- init-result! [textarea]
+  (codemirrorify! textarea result-settings result)
+  (set-option @result
+    :onChange
+    (fn [e info]
+      (doseq [[k fun] (@change-listeners :result)]
+        (fun e info))))
+  (set-option @result
+    :onCursorActivity
+    (fn [e]
+      (doseq [[k fun] (@activity-listeners :result)]
+        (fun e)))))
 
 
 ;; Add callbacks
@@ -147,10 +146,13 @@
 (def remove-result-activity-listener (partial remove-activity-listener :result))
 
 (defn ^:export editor-text []
-  (.getValue editor))
+  (.getValue @editor))
+
+(defn ^:export set-editor-text! [text]
+  (.setValue @editor text))
 
 (defn ^:export result-text []
-  (.getValue result))    
+  (.getValue @result))    
 
 ;; Himera integration
 
@@ -222,7 +224,7 @@
         (str "Compilation error: " e)))))
 
 (defn- show-result [res]
-  (.setValue result (finite-pr-str res)))
+  (.setValue @result (finite-pr-str res)))
 
 ;; Precompile -> evaluate -> display
 
@@ -253,12 +255,23 @@
 
 ; EVENT LISTENERS
 
-(dispatch/react-to #{:switch-page} {:priority 2}
+(dispatch/react-to #{:switch-page} {:priority 1}
   (fn [_ {:keys [data]}]
     (when-let [cljs-eval-ns (data :cljs-ns)]
-      (reset! *cljs-ns* cljs-eval-ns))
-    (init-editor editor-textarea)
-    (init-result result-textarea)
-    (when editor
-      (set-validator! code valid-code) ; I don't know why this needs to be reset, but it does
-      (reset! code (editor-text)))))
+      (reset! *cljs-ns* cljs-eval-ns))))
+
+(dispatch/react-to #{:switch-page} {:priority 2}
+  (fn [_ {:keys [data]}]
+    (when (and 
+            (dom/by-id editor-textarea)
+            (dom/by-id result-textarea))
+      (do
+        (init-editor! (dom/by-id editor-textarea))
+        (init-result! (dom/by-id result-textarea))
+        (set-validator! code valid-code) ; I don't know why this needs to be reset, but it does
+        (reset! code (editor-text))))))
+
+(dispatch/react-to #{:switch-page} {:priority 3}
+  (fn [_ {:keys[data]}]
+    (when-let [text (data :repl-text)]
+      (set-editor-text! text))))
