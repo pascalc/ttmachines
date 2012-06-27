@@ -80,8 +80,3 @@
 (defstring str-with-symbols
   "
   You can also use symbols you've defined earlier as arguments to functions.")
-
-(def repl-str-with-symbols
-  "(def my-name \"User\")
-
-(str \"My name is \" my-name)")

@@ -42,7 +42,12 @@
 (macro/set-up-element "insert-name"
   (dom/set-text! insert-name (str "\"" @my-name "\"")))
 
-; (dispatch/react-to #{:switch-page} {:priority 3}
-;   (fn [_ {:keys [data]}]
-;     (when (= (data :route) "/chapter/1/3")
-;       (repl/set-editor-text! "foo bar"))))
+(defn str-with-symbols []
+  (str "(def my-name \"" @my-name "\")
+
+(str \"My name is \" my-name)"))
+
+(dispatch/react-to #{:switch-page} {:priority 3}
+  (fn [_ {:keys [data]}]
+    (when (= (data :route) "/chapter/1/3")
+      (repl/set-editor-text! (str-with-symbols)))))

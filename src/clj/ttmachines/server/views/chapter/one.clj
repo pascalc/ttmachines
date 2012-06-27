@@ -54,6 +54,5 @@
             :below-main   (repl/result)
             :sidebar      (repl/info)}}
 
-  {:layout      {:text strings/str-with-symbols}
-   :repl-text   strings/repl-str-with-symbols}) ; <-- set this dynamically using @my-name in one.cljs
+  {:layout {:text strings/str-with-symbols}})
 
