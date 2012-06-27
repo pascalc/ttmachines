@@ -20,11 +20,29 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.views.strings.core
-    (:require [markdown :as mkd]))
+    (:require [clojure.string :as string]
+              [markdown :as mkd]))
 
 (def to-html mkd/md-to-html-string)
+
+(def code-pattern #"`(\S+)`")
+
+(defn expand-code-snippets [match]
+  (str 
+    "<span class=\"cm-s-ambiance clojure-code\">"
+    (match 1)
+    "</span>"))
+
+(def bold-pattern #"\*\*(\S+)\*\*")
+
+(defn boldify [match]
+  (str "<strong>" (match 1) "</strong>"))
 
 (defmacro defstring 
     "Compile the given string as Markdown and def the compiled HTML string"
     [var-name mkd-string]
-    `(def ~var-name (to-html ~mkd-string)))
+    (let [out-str (-> mkd-string
+                    (string/replace code-pattern expand-code-snippets)
+                    (string/replace bold-pattern boldify)
+                    (to-html))]
+      `(def ~var-name ~out-str)))

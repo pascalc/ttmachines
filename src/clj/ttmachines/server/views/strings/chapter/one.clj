@@ -37,27 +37,26 @@
 (defstring explain-def
   "### def
 
-  Here, the command you're giving your machine is <span class=\"cm-s-ambiance clojure-code\">def</span>.
+  Here, the command you're giving your machine is `def`.
   Naturally, this tells your machine that you're *defining* something. Following this command are the inputs
   the command will work with, so let's look at those now.")
 
 (defstring explain-my-name
   "### my-name
 
-  The first of these inputs, or <strong>arguments</strong>, is <span class=\"cm-s-ambiance clojure-code\">my-name</span>.
-  This is a <strong>symbol</strong> - a word that is a name for something else. Conveniently, the name we
+  The first of these inputs, or **arguments**, is `my-name`.
+  This is a **symbol** - a word that is a name for something else. Conveniently, the name we
   give here is *my-name*.")
 
 (defstring explain-your-name
   "### Your name
 
   The final argument is, of course, your name. The quotation marks around it tell the computer that it is
-  text, or, in machinespeak, a <strong>string</strong>. The <span class=\"cm-s-ambiance clojure-code\">def</span>
-  command associates the symbol <span class=\"cm-s-ambiance clojure-code\">my-name</span> with this string.
+  text, or, in machinespeak, a **string**. The `def` command associates the symbol `my-name` with this string.
 
   <br/>
 
-  In other words, you have told your machine that <span class=\"cm-s-ambiance clojure-code\">my-name</span> is
+  In other words, you have told your machine that `my-name` is
   <span id=\"insert-name\" class=\"cm-s-ambiance clojure-code\"></span>.")
 
 (defstring functions "Commands are functions")
@@ -65,14 +64,12 @@
 (defstring explain-str "
   So now you know how to define things, what can we *do* with them?
   
-  The answer is anything you can imagine, as long as you know the right commands, or <strong>functions</strong>
+  The answer is anything you can imagine, as long as you know the right commands, or **functions**
   as we usually call them.
 
-  One of the most used functions is <span class=\"cm-s-ambiance clojure-code\">str</span>, which takes
-  any number of strings as arguments and combines them into one.
+  One of the most used functions is `str`, which takes any number of strings as arguments and combines them into one.
 
-  Try out different arguments to <span class=\"cm-s-ambiance clojure-code\">str</span> below and see
-  how it affects the result")
+  Try out different arguments to `str` below and see how it affects the result:")
 
 (def repl-str-example 
   "(str \"Hello, \" \"world!\")")
