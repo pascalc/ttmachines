@@ -94,7 +94,7 @@
 (defn previous-link [chapter-num]
   (let [target (dec chapter-num)]
     (when (>= target 1)
-      (str *base-url* "/" target))))  
+      (str *base-url* "/" target "?initialize=true"))))  
 
 (defn add-keys [content-map & {:keys[route chapter-num chapter-length]}]
   (-> content-map
