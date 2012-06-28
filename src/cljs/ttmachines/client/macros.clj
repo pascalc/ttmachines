@@ -26,3 +26,9 @@
     (fn [_# ~'page-data]
       (when-let [~(symbol element-id) (domina.domina/by-id ~element-id)]
         ~@body))))
+
+(defmacro set-up-route [route & body]
+  `(one.dispatch/react-to #{:switch-page} {:priority 3}
+    (fn [_# {:keys [~'data]}]
+      (when (= (~'data :route) ~route)
+        ~@body))))
