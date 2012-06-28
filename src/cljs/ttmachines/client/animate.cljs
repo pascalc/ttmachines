@@ -75,7 +75,7 @@
 
 ;; Triggers
 
-(dispatch/react-to #{:switch-page} {:priority 1}
+(dispatch/react-to #{:switch-page} {:priority 0}
   (fn [_ _]
     (scroll-window-to-top!)))
 
