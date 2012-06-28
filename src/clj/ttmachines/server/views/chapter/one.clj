@@ -38,8 +38,20 @@
     strings/explain-my-name
     strings/explain-your-name])
 
-(defpartial functions []
-  [:h2 strings/functions])
+(defpartial custom-functions []
+  [:h2 strings/custom-functions])
+
+(defpartial explain-custom-functions []
+  [:div
+    strings/intro-custom-functions
+    [:div.code-wrapper  
+      strings/example-defn]
+    strings/explain-custom-functions
+    strings/explain-args
+    strings/explain-body])
+
+(defpartial outro-title []
+  [:h2 strings/outro-title])
 
 (defchapter "/chapter/1"
   {:layout {:headline     (hello-user)
@@ -54,5 +66,31 @@
             :below-main   (repl/result)
             :sidebar      (repl/info)}}
 
-  {:layout {:text strings/str-with-symbols}})
+  {:layout {:headline     nil
+            :text         strings/str-with-symbols}}
+
+  {:layout {:headline     nil
+            :text         strings/nested-str}}
+
+  {:layout {:headline     (custom-functions)
+            :text         nil
+            :main         (explain-custom-functions)
+            :below-main   nil
+            :sidebar      nil}}
+
+  {:layout {:headline     nil
+            :text         strings/goodbye-ada
+            :main         (repl/editor strings/repl-goodbye-ada)
+            :below-main   (repl/result)
+            :sidebar      (repl/info)}}
+
+  {:layout {:headline     nil
+            :text         strings/introducing-defn}
+   :repl-text strings/repl-goodbye-defn}
+
+  {:layout {:headline     (outro-title)
+            :text         nil
+            :main         strings/outro-main
+            :below-main   nil
+            :sidebar      nil}})
 
