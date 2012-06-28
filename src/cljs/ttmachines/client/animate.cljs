@@ -20,7 +20,7 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.client.animate
-  (:use [ttmachines.client.util :only [after]])
+  (:use [ttmachines.client.util :only [after map->js]])
   (:require [one.dispatch :as dispatch]
             [domina.domina :as dom]
             [domina.domina.css :as css]
@@ -68,7 +68,16 @@
             selector (layout/targets k)]
         (animation selector)))))
 
+(defn scroll-window-to-top! []
+  (.animate (js/$ "body, html")
+      (map->js {:scrollTop 0})
+      500))
+
 ;; Triggers
+
+(dispatch/react-to #{:switch-page} {:priority 1}
+  (fn [_ _]
+    (scroll-window-to-top!)))
 
 (dispatch/react-to #{:switch-page} {:priority 2}
   (fn [_ page-data]

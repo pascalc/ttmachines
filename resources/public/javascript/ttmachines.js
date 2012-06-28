@@ -9195,13 +9195,13 @@ cljs.core._invoke = function() {
           H = a.cljs$core$IFn$_invoke(a, c, d, e)
         }else {
           var A;
-          var ra = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(ra)) {
-            A = ra
+          var sa = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(sa)) {
+            A = sa
           }else {
-            var sa = cljs.core._invoke._;
-            if(cljs.core.truth_(sa)) {
-              A = sa
+            var ta = cljs.core._invoke._;
+            if(cljs.core.truth_(ta)) {
+              A = ta
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
@@ -9215,13 +9215,13 @@ cljs.core._invoke = function() {
           K = a.cljs$core$IFn$_invoke(a, c, d, e, f)
         }else {
           var N;
-          var ta = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(ta)) {
-            N = ta
+          var ua = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(ua)) {
+            N = ua
           }else {
-            var ua = cljs.core._invoke._;
-            if(cljs.core.truth_(ua)) {
-              N = ua
+            var va = cljs.core._invoke._;
+            if(cljs.core.truth_(va)) {
+              N = va
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
@@ -9235,13 +9235,13 @@ cljs.core._invoke = function() {
           O = a.cljs$core$IFn$_invoke(a, c, d, e, f, g)
         }else {
           var P;
-          var va = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(va)) {
-            P = va
+          var wa = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(wa)) {
+            P = wa
           }else {
-            var wa = cljs.core._invoke._;
-            if(cljs.core.truth_(wa)) {
-              P = wa
+            var xa = cljs.core._invoke._;
+            if(cljs.core.truth_(xa)) {
+              P = xa
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
@@ -9255,13 +9255,13 @@ cljs.core._invoke = function() {
           Q = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h)
         }else {
           var R;
-          var xa = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(xa)) {
-            R = xa
+          var ya = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(ya)) {
+            R = ya
           }else {
-            var ya = cljs.core._invoke._;
-            if(cljs.core.truth_(ya)) {
-              R = ya
+            var za = cljs.core._invoke._;
+            if(cljs.core.truth_(za)) {
+              R = za
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
@@ -9275,13 +9275,13 @@ cljs.core._invoke = function() {
           S = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i)
         }else {
           var T;
-          var za = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(za)) {
-            T = za
+          var Aa = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Aa)) {
+            T = Aa
           }else {
-            var Aa = cljs.core._invoke._;
-            if(cljs.core.truth_(Aa)) {
-              T = Aa
+            var Ba = cljs.core._invoke._;
+            if(cljs.core.truth_(Ba)) {
+              T = Ba
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
@@ -9295,13 +9295,13 @@ cljs.core._invoke = function() {
           L = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j)
         }else {
           var M;
-          var Ba = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Ba)) {
-            M = Ba
+          var Ca = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Ca)) {
+            M = Ca
           }else {
-            var Ca = cljs.core._invoke._;
-            if(cljs.core.truth_(Ca)) {
-              M = Ca
+            var Da = cljs.core._invoke._;
+            if(cljs.core.truth_(Da)) {
+              M = Da
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
@@ -9315,13 +9315,13 @@ cljs.core._invoke = function() {
           U = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k)
         }else {
           var V;
-          var Da = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Da)) {
-            V = Da
+          var Ea = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Ea)) {
+            V = Ea
           }else {
-            var Ea = cljs.core._invoke._;
-            if(cljs.core.truth_(Ea)) {
-              V = Ea
+            var Fa = cljs.core._invoke._;
+            if(cljs.core.truth_(Fa)) {
+              V = Fa
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
@@ -9335,13 +9335,13 @@ cljs.core._invoke = function() {
           W = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l)
         }else {
           var X;
-          var Fa = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Fa)) {
-            X = Fa
+          var Ga = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Ga)) {
+            X = Ga
           }else {
-            var Ga = cljs.core._invoke._;
-            if(cljs.core.truth_(Ga)) {
-              X = Ga
+            var Ha = cljs.core._invoke._;
+            if(cljs.core.truth_(Ha)) {
+              X = Ha
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
@@ -9355,13 +9355,13 @@ cljs.core._invoke = function() {
           Y = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m)
         }else {
           var Z;
-          var Ha = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Ha)) {
-            Z = Ha
+          var Ia = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Ia)) {
+            Z = Ia
           }else {
-            var Ia = cljs.core._invoke._;
-            if(cljs.core.truth_(Ia)) {
-              Z = Ia
+            var Ja = cljs.core._invoke._;
+            if(cljs.core.truth_(Ja)) {
+              Z = Ja
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
@@ -9370,185 +9370,185 @@ cljs.core._invoke = function() {
         }
         return Y;
       case 13:
-        var $;
+        var aa;
         if(cljs.core.truth_(cljs.core.truth_(a) ? a.cljs$core$IFn$_invoke : a)) {
-          $ = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p)
+          aa = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p)
         }else {
-          var aa;
-          var Ja = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Ja)) {
-            aa = Ja
+          var ba;
+          var Ka = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Ka)) {
+            ba = Ka
           }else {
-            var Ka = cljs.core._invoke._;
-            if(cljs.core.truth_(Ka)) {
-              aa = Ka
+            var La = cljs.core._invoke._;
+            if(cljs.core.truth_(La)) {
+              ba = La
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
           }
-          $ = aa.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p)
+          aa = ba.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p)
         }
-        return $;
+        return aa;
       case 14:
-        var ba;
+        var ca;
         if(cljs.core.truth_(cljs.core.truth_(a) ? a.cljs$core$IFn$_invoke : a)) {
-          ba = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n)
+          ca = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n)
         }else {
-          var ca;
-          var La = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(La)) {
-            ca = La
+          var da;
+          var Ma = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Ma)) {
+            da = Ma
           }else {
-            var Ma = cljs.core._invoke._;
-            if(cljs.core.truth_(Ma)) {
-              ca = Ma
+            var Na = cljs.core._invoke._;
+            if(cljs.core.truth_(Na)) {
+              da = Na
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
           }
-          ba = ca.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n)
+          ca = da.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n)
         }
-        return ba;
+        return ca;
       case 15:
-        var da;
+        var ea;
         if(cljs.core.truth_(cljs.core.truth_(a) ? a.cljs$core$IFn$_invoke : a)) {
-          da = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q)
+          ea = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q)
         }else {
-          var ea;
-          var Na = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Na)) {
-            ea = Na
+          var fa;
+          var Oa = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Oa)) {
+            fa = Oa
           }else {
-            var Oa = cljs.core._invoke._;
-            if(cljs.core.truth_(Oa)) {
-              ea = Oa
+            var Pa = cljs.core._invoke._;
+            if(cljs.core.truth_(Pa)) {
+              fa = Pa
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
           }
-          da = ea.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q)
+          ea = fa.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q)
         }
-        return da;
+        return ea;
       case 16:
-        var fa;
+        var ga;
         if(cljs.core.truth_(cljs.core.truth_(a) ? a.cljs$core$IFn$_invoke : a)) {
-          fa = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o)
+          ga = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o)
         }else {
-          var ga;
-          var Pa = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Pa)) {
-            ga = Pa
+          var ha;
+          var Qa = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Qa)) {
+            ha = Qa
           }else {
-            var Qa = cljs.core._invoke._;
-            if(cljs.core.truth_(Qa)) {
-              ga = Qa
+            var Ra = cljs.core._invoke._;
+            if(cljs.core.truth_(Ra)) {
+              ha = Ra
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
           }
-          fa = ga.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o)
+          ga = ha.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o)
         }
-        return fa;
+        return ga;
       case 17:
-        var ha;
+        var ia;
         if(cljs.core.truth_(cljs.core.truth_(a) ? a.cljs$core$IFn$_invoke : a)) {
-          ha = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s)
+          ia = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s)
         }else {
-          var ia;
-          var Ra = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Ra)) {
-            ia = Ra
+          var ja;
+          var Sa = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Sa)) {
+            ja = Sa
           }else {
-            var Sa = cljs.core._invoke._;
-            if(cljs.core.truth_(Sa)) {
-              ia = Sa
+            var Ta = cljs.core._invoke._;
+            if(cljs.core.truth_(Ta)) {
+              ja = Ta
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
           }
-          ha = ia.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s)
+          ia = ja.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s)
         }
-        return ha;
+        return ia;
       case 18:
-        var ja;
+        var ka;
         if(cljs.core.truth_(cljs.core.truth_(a) ? a.cljs$core$IFn$_invoke : a)) {
-          ja = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t)
+          ka = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t)
         }else {
-          var ka;
-          var Ta = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Ta)) {
-            ka = Ta
+          var la;
+          var Ua = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Ua)) {
+            la = Ua
           }else {
-            var Ua = cljs.core._invoke._;
-            if(cljs.core.truth_(Ua)) {
-              ka = Ua
+            var Va = cljs.core._invoke._;
+            if(cljs.core.truth_(Va)) {
+              la = Va
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
           }
-          ja = ka.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t)
+          ka = la.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t)
         }
-        return ja;
+        return ka;
       case 19:
-        var la;
+        var ma;
         if(cljs.core.truth_(cljs.core.truth_(a) ? a.cljs$core$IFn$_invoke : a)) {
-          la = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r)
+          ma = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r)
         }else {
-          var ma;
-          var Va = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Va)) {
-            ma = Va
+          var na;
+          var Wa = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Wa)) {
+            na = Wa
           }else {
-            var Wa = cljs.core._invoke._;
-            if(cljs.core.truth_(Wa)) {
-              ma = Wa
+            var Xa = cljs.core._invoke._;
+            if(cljs.core.truth_(Xa)) {
+              na = Xa
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
           }
-          la = ma.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r)
+          ma = na.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r)
         }
-        return la;
+        return ma;
       case 20:
-        var na;
+        var oa;
         if(cljs.core.truth_(cljs.core.truth_(a) ? a.cljs$core$IFn$_invoke : a)) {
-          na = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r, v)
+          oa = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r, v)
         }else {
-          var oa;
-          var Xa = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Xa)) {
-            oa = Xa
+          var pa;
+          var Ya = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_(Ya)) {
+            pa = Ya
           }else {
-            var Ya = cljs.core._invoke._;
-            if(cljs.core.truth_(Ya)) {
-              oa = Ya
+            var Za = cljs.core._invoke._;
+            if(cljs.core.truth_(Za)) {
+              pa = Za
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
           }
-          na = oa.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r, v)
+          oa = pa.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r, v)
         }
-        return na;
+        return oa;
       case 21:
-        var pa;
+        var qa;
         if(cljs.core.truth_(cljs.core.truth_(a) ? a.cljs$core$IFn$_invoke : a)) {
-          pa = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r, v, I)
+          qa = a.cljs$core$IFn$_invoke(a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r, v, I)
         }else {
-          var qa;
-          var Za = cljs.core._invoke[goog.typeOf.call(null, a)];
-          if(cljs.core.truth_(Za)) {
-            qa = Za
+          var ra;
+          var $a = cljs.core._invoke[goog.typeOf.call(null, a)];
+          if(cljs.core.truth_($a)) {
+            ra = $a
           }else {
-            var $a = cljs.core._invoke._;
-            if(cljs.core.truth_($a)) {
-              qa = $a
+            var ab = cljs.core._invoke._;
+            if(cljs.core.truth_(ab)) {
+              ra = ab
             }else {
               throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
             }
           }
-          pa = qa.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r, v, I)
+          qa = ra.call(null, a, c, d, e, f, g, h, i, j, k, l, m, p, n, q, o, s, t, r, v, I)
         }
-        return pa
+        return qa
     }
     throw"Invalid arity: " + arguments.length;
   }
@@ -15640,11 +15640,11 @@ cljs.core.prefers = function(a) {
 };
 var domina = {domina:{}};
 domina.domina.support = {};
-var div__171654 = document.createElement("div"), test_html__171655 = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";
-div__171654.innerHTML = test_html__171655;
-domina.domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null, div__171654.firstChild.nodeType, 3);
-domina.domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null, div__171654.getElementsByTagName("tbody").length, 0);
-domina.domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null, div__171654.getElementsByTagName("link").length, 0);
+var div__178715 = document.createElement("div"), test_html__178716 = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";
+div__178715.innerHTML = test_html__178716;
+domina.domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null, div__178715.firstChild.nodeType, 3);
+domina.domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null, div__178715.getElementsByTagName("tbody").length, 0);
+domina.domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null, div__178715.getElementsByTagName("link").length, 0);
 var clojure = {string:{}};
 clojure.string.seq_reverse = function(a) {
   return cljs.core.reduce.call(null, cljs.core.conj, cljs.core.List.EMPTY, a)
@@ -15775,9 +15775,9 @@ domina.domina.re_xhtml_tag = /<(?!area|br|col|embed|hr|img|input|link|meta|param
 domina.domina.re_tag_name = /<([\w:]+)/;
 domina.domina.re_no_inner_html = /<(?:script|style)/i;
 domina.domina.re_tbody = /<tbody/i;
-var opt_wrapper__171673 = cljs.core.Vector.fromArray([1, "<select multiple='multiple'>", "</select>"]), table_section_wrapper__171674 = cljs.core.Vector.fromArray([1, "<table>", "</table>"]), cell_wrapper__171675 = cljs.core.Vector.fromArray([3, "<table><tbody><tr>", "</tr></tbody></table>"]);
-domina.domina.wrap_map = cljs.core.ObjMap.fromObject("col,\ufdd0'default,tfoot,caption,optgroup,legend,area,td,thead,th,option,tbody,tr,colgroup".split(","), {col:cljs.core.Vector.fromArray([2, "<table><tbody></tbody><colgroup>", "</colgroup></table>"]), "\ufdd0'default":cljs.core.Vector.fromArray([0, "", ""]), tfoot:table_section_wrapper__171674, caption:table_section_wrapper__171674, optgroup:opt_wrapper__171673, legend:cljs.core.Vector.fromArray([1, "<fieldset>", "</fieldset>"]), area:cljs.core.Vector.fromArray([1, 
-"<map>", "</map>"]), td:cell_wrapper__171675, thead:table_section_wrapper__171674, th:cell_wrapper__171675, option:opt_wrapper__171673, tbody:table_section_wrapper__171674, tr:cljs.core.Vector.fromArray([2, "<table><tbody>", "</tbody></table>"]), colgroup:table_section_wrapper__171674});
+var opt_wrapper__178734 = cljs.core.Vector.fromArray([1, "<select multiple='multiple'>", "</select>"]), table_section_wrapper__178735 = cljs.core.Vector.fromArray([1, "<table>", "</table>"]), cell_wrapper__178736 = cljs.core.Vector.fromArray([3, "<table><tbody><tr>", "</tr></tbody></table>"]);
+domina.domina.wrap_map = cljs.core.ObjMap.fromObject("col,\ufdd0'default,tfoot,caption,optgroup,legend,area,td,thead,th,option,tbody,tr,colgroup".split(","), {col:cljs.core.Vector.fromArray([2, "<table><tbody></tbody><colgroup>", "</colgroup></table>"]), "\ufdd0'default":cljs.core.Vector.fromArray([0, "", ""]), tfoot:table_section_wrapper__178735, caption:table_section_wrapper__178735, optgroup:opt_wrapper__178734, legend:cljs.core.Vector.fromArray([1, "<fieldset>", "</fieldset>"]), area:cljs.core.Vector.fromArray([1, 
+"<map>", "</map>"]), td:cell_wrapper__178736, thead:table_section_wrapper__178735, th:cell_wrapper__178736, option:opt_wrapper__178734, tbody:table_section_wrapper__178735, tr:cljs.core.Vector.fromArray([2, "<table><tbody>", "</tbody></table>"]), colgroup:table_section_wrapper__178735});
 domina.domina.remove_extraneous_tbody_BANG_ = function(a, b) {
   var c = cljs.core.not.call(null, cljs.core.re_find.call(null, domina.domina.re_tbody, b)), d = cljs.core.truth_(function() {
     var a = cljs.core._EQ_.call(null, domina.domina.tag_name, "table");
@@ -15871,24 +15871,24 @@ domina.domina.by_id = function(a) {
   return goog.dom.getElement.call(null, cljs.core.name.call(null, a))
 };
 domina.domina.by_class = function by_class(b) {
-  if(cljs.core.truth_(void 0 === domina.domina.t171711)) {
-    domina.domina.t171711 = function(b, d, e) {
+  if(cljs.core.truth_(void 0 === domina.domina.t178772)) {
+    domina.domina.t178772 = function(b, d, e) {
       this.class_name = b;
       this.by_class = d;
       this.__meta = e
-    }, domina.domina.t171711.cljs$core$IPrintable$_pr_seq = function() {
-      return cljs.core.list.call(null, "domina.domina.t171711")
-    }, domina.domina.t171711.prototype.domina$domina$DomContent$ = !0, domina.domina.t171711.prototype.domina$domina$DomContent$nodes = function() {
+    }, domina.domina.t178772.cljs$core$IPrintable$_pr_seq = function() {
+      return cljs.core.list.call(null, "domina.domina.t178772")
+    }, domina.domina.t178772.prototype.domina$domina$DomContent$ = !0, domina.domina.t178772.prototype.domina$domina$DomContent$nodes = function() {
       return domina.domina.normalize_seq.call(null, goog.dom.getElementsByClass.call(null, cljs.core.name.call(null, this.class_name)))
-    }, domina.domina.t171711.prototype.domina$domina$DomContent$single_node = function() {
+    }, domina.domina.t178772.prototype.domina$domina$DomContent$single_node = function() {
       return domina.domina.normalize_seq.call(null, goog.dom.getElementByClass.call(null, cljs.core.name.call(null, this.class_name)))
-    }, domina.domina.t171711.prototype.cljs$core$IMeta$ = !0, domina.domina.t171711.prototype.cljs$core$IMeta$_meta = function() {
+    }, domina.domina.t178772.prototype.cljs$core$IMeta$ = !0, domina.domina.t178772.prototype.cljs$core$IMeta$_meta = function() {
       return this.__meta
-    }, domina.domina.t171711.prototype.cljs$core$IWithMeta$ = !0, domina.domina.t171711.prototype.cljs$core$IWithMeta$_with_meta = function(b, d) {
-      return new domina.domina.t171711(this.class_name, this.by_class, d)
+    }, domina.domina.t178772.prototype.cljs$core$IWithMeta$ = !0, domina.domina.t178772.prototype.cljs$core$IWithMeta$_with_meta = function(b, d) {
+      return new domina.domina.t178772(this.class_name, this.by_class, d)
     }
   }
-  return new domina.domina.t171711(b, by_class, null)
+  return new domina.domina.t178772(b, by_class, null)
 };
 domina.domina.children = function(a) {
   return cljs.core.mapcat.call(null, goog.dom.getChildren, domina.domina.nodes.call(null, a))
@@ -16375,31 +16375,31 @@ domina.domina.css.root_element = function() {
 };
 domina.domina.css.sel = function() {
   var a = null, b = function(b, d) {
-    if(cljs.core.truth_(void 0 === domina.domina.css.t171526)) {
-      domina.domina.css.t171526 = function(a, b, c, d) {
+    if(cljs.core.truth_(void 0 === domina.domina.css.t178587)) {
+      domina.domina.css.t178587 = function(a, b, c, d) {
         this.expr = a;
         this.base = b;
         this.sel = c;
         this.__meta = d
-      }, domina.domina.css.t171526.cljs$core$IPrintable$_pr_seq = function() {
-        return cljs.core.list.call(null, "domina.domina.css.t171526")
-      }, domina.domina.css.t171526.prototype.domina$domina$DomContent$ = !0, domina.domina.css.t171526.prototype.domina$domina$DomContent$nodes = function() {
+      }, domina.domina.css.t178587.cljs$core$IPrintable$_pr_seq = function() {
+        return cljs.core.list.call(null, "domina.domina.css.t178587")
+      }, domina.domina.css.t178587.prototype.domina$domina$DomContent$ = !0, domina.domina.css.t178587.prototype.domina$domina$DomContent$nodes = function() {
         var a = this;
         return cljs.core.mapcat.call(null, function(b) {
           return domina.domina.normalize_seq.call(null, goog.dom.query.call(null, a.expr, b))
         }, domina.domina.nodes.call(null, a.base))
-      }, domina.domina.css.t171526.prototype.domina$domina$DomContent$single_node = function() {
+      }, domina.domina.css.t178587.prototype.domina$domina$DomContent$single_node = function() {
         var a = this;
         return cljs.core.first.call(null, cljs.core.filter.call(null, cljs.core.complement.call(null, cljs.core.nil_QMARK_), cljs.core.mapcat.call(null, function(b) {
           return domina.domina.normalize_seq.call(null, goog.dom.query.call(null, a.expr, b))
         }, domina.domina.nodes.call(null, a.base))))
-      }, domina.domina.css.t171526.prototype.cljs$core$IMeta$ = !0, domina.domina.css.t171526.prototype.cljs$core$IMeta$_meta = function() {
+      }, domina.domina.css.t178587.prototype.cljs$core$IMeta$ = !0, domina.domina.css.t178587.prototype.cljs$core$IMeta$_meta = function() {
         return this.__meta
-      }, domina.domina.css.t171526.prototype.cljs$core$IWithMeta$ = !0, domina.domina.css.t171526.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
-        return new domina.domina.css.t171526(this.expr, this.base, this.sel, b)
+      }, domina.domina.css.t178587.prototype.cljs$core$IWithMeta$ = !0, domina.domina.css.t178587.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
+        return new domina.domina.css.t178587(this.expr, this.base, this.sel, b)
       }
     }
-    return new domina.domina.css.t171526(d, b, a, null)
+    return new domina.domina.css.t178587(d, b, a, null)
   };
   return a = function(c, d) {
     switch(arguments.length) {
@@ -17779,15 +17779,15 @@ domina.domina.events.find_builtin_type = function(a) {
 domina.domina.events.create_listener_function = function create_listener_function(b) {
   return function(c) {
     b.call(null, function() {
-      if(cljs.core.truth_(void 0 === domina.domina.events.t171552)) {
-        domina.domina.events.t171552 = function(b, c, f, g) {
+      if(cljs.core.truth_(void 0 === domina.domina.events.t178613)) {
+        domina.domina.events.t178613 = function(b, c, f, g) {
           this.evt = b;
           this.f = c;
           this.create_listener_function = f;
           this.__meta = g
-        }, domina.domina.events.t171552.cljs$core$IPrintable$_pr_seq = function() {
-          return cljs.core.list.call(null, "domina.domina.events.t171552")
-        }, domina.domina.events.t171552.prototype.cljs$core$ILookup$ = !0, domina.domina.events.t171552.prototype.cljs$core$ILookup$_lookup = function() {
+        }, domina.domina.events.t178613.cljs$core$IPrintable$_pr_seq = function() {
+          return cljs.core.list.call(null, "domina.domina.events.t178613")
+        }, domina.domina.events.t178613.prototype.cljs$core$ILookup$ = !0, domina.domina.events.t178613.prototype.cljs$core$ILookup$_lookup = function() {
           var b = null;
           return function(b, c, d) {
             switch(arguments.length) {
@@ -17801,25 +17801,25 @@ domina.domina.events.create_listener_function = function create_listener_functio
             }
             throw"Invalid arity: " + arguments.length;
           }
-        }(), domina.domina.events.t171552.prototype.domina$domina$events$Event$ = !0, domina.domina.events.t171552.prototype.domina$domina$events$Event$prevent_default = function() {
+        }(), domina.domina.events.t178613.prototype.domina$domina$events$Event$ = !0, domina.domina.events.t178613.prototype.domina$domina$events$Event$prevent_default = function() {
           return this.evt.preventDefault()
-        }, domina.domina.events.t171552.prototype.domina$domina$events$Event$stop_propagation = function() {
+        }, domina.domina.events.t178613.prototype.domina$domina$events$Event$stop_propagation = function() {
           return this.evt.stopPropagation()
-        }, domina.domina.events.t171552.prototype.domina$domina$events$Event$target = function() {
+        }, domina.domina.events.t178613.prototype.domina$domina$events$Event$target = function() {
           return this.evt.target
-        }, domina.domina.events.t171552.prototype.domina$domina$events$Event$current_target = function() {
+        }, domina.domina.events.t178613.prototype.domina$domina$events$Event$current_target = function() {
           return this.evt.currentTarget
-        }, domina.domina.events.t171552.prototype.domina$domina$events$Event$event_type = function() {
+        }, domina.domina.events.t178613.prototype.domina$domina$events$Event$event_type = function() {
           return this.evt.type
-        }, domina.domina.events.t171552.prototype.domina$domina$events$Event$raw_event = function() {
+        }, domina.domina.events.t178613.prototype.domina$domina$events$Event$raw_event = function() {
           return this.evt
-        }, domina.domina.events.t171552.prototype.cljs$core$IMeta$ = !0, domina.domina.events.t171552.prototype.cljs$core$IMeta$_meta = function() {
+        }, domina.domina.events.t178613.prototype.cljs$core$IMeta$ = !0, domina.domina.events.t178613.prototype.cljs$core$IMeta$_meta = function() {
           return this.__meta
-        }, domina.domina.events.t171552.prototype.cljs$core$IWithMeta$ = !0, domina.domina.events.t171552.prototype.cljs$core$IWithMeta$_with_meta = function(b, c) {
-          return new domina.domina.events.t171552(this.evt, this.f, this.create_listener_function, c)
+        }, domina.domina.events.t178613.prototype.cljs$core$IWithMeta$ = !0, domina.domina.events.t178613.prototype.cljs$core$IWithMeta$_with_meta = function(b, c) {
+          return new domina.domina.events.t178613(this.evt, this.f, this.create_listener_function, c)
         }
       }
-      return new domina.domina.events.t171552(c, b, create_listener_function, null)
+      return new domina.domina.events.t178613(c, b, create_listener_function, null)
     }());
     return!0
   }
@@ -18534,14 +18534,14 @@ ttmachines.client.broadcast.title = domina.domina.by_id.call(null, "title");
 ttmachines.client.animate.ANIMATION_DURATION_MS = 300;
 ttmachines.client.animate.ANIMATION_DELAY_MS = 1E3;
 ttmachines.client.animate.ANIMATION_COMPLETE = ttmachines.client.animate.ANIMATION_DURATION_MS + ttmachines.client.animate.ANIMATION_DELAY_MS;
-var G__172076__172077 = cljs.core.seq.call(null, cljs.core.vals.call(null, ttmachines.client.layout.targets));
-if(cljs.core.truth_(G__172076__172077)) {
-  for(var t__172078 = cljs.core.first.call(null, G__172076__172077), G__172076__172079 = G__172076__172077;;) {
-    var element__172080 = domina.domina.css.sel.call(null, t__172078);
-    domina.domina.add_class_BANG_.call(null, element__172080, "animated");
-    var temp__3698__auto____172081 = cljs.core.next.call(null, G__172076__172079);
-    if(cljs.core.truth_(temp__3698__auto____172081)) {
-      var G__172076__172082 = temp__3698__auto____172081, G__172083 = cljs.core.first.call(null, G__172076__172082), G__172084 = G__172076__172082, t__172078 = G__172083, G__172076__172079 = G__172084
+var G__179137__179138 = cljs.core.seq.call(null, cljs.core.vals.call(null, ttmachines.client.layout.targets));
+if(cljs.core.truth_(G__179137__179138)) {
+  for(var t__179139 = cljs.core.first.call(null, G__179137__179138), G__179137__179140 = G__179137__179138;;) {
+    var element__179141 = domina.domina.css.sel.call(null, t__179139);
+    domina.domina.add_class_BANG_.call(null, element__179141, "animated");
+    var temp__3698__auto____179142 = cljs.core.next.call(null, G__179137__179140);
+    if(cljs.core.truth_(temp__3698__auto____179142)) {
+      var G__179137__179143 = temp__3698__auto____179142, G__179144 = cljs.core.first.call(null, G__179137__179143), G__179145 = G__179137__179143, t__179139 = G__179144, G__179137__179140 = G__179145
     }else {
       break
     }
@@ -18610,6 +18610,12 @@ ttmachines.client.animate.fade_in_layout_elements = function(a) {
     return null
   }
 };
+ttmachines.client.animate.scroll_window_to_top_BANG_ = function() {
+  return $.call(null, "body, html").animate(ttmachines.client.util.map__GT_js.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'scrollTop"], {"\ufdd0'scrollTop":0})), 500)
+};
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":1}), function() {
+  return ttmachines.client.animate.scroll_window_to_top_BANG_.call(null)
+});
 one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":2}), function(a, b) {
   var c = cljs.core.get_in.call(null, b, cljs.core.Vector.fromArray(["\ufdd0'data", "\ufdd0'layout"]));
   return ttmachines.client.animate.fade_in_layout_elements.call(null, c)
@@ -19041,25 +19047,25 @@ domina.domina.xpath.root_element = function() {
 };
 domina.domina.xpath.xpath = function() {
   var a = null, b = function(b, d) {
-    if(cljs.core.truth_(void 0 === domina.domina.xpath.t171665)) {
-      domina.domina.xpath.t171665 = function(a, b, c, d) {
+    if(cljs.core.truth_(void 0 === domina.domina.xpath.t178726)) {
+      domina.domina.xpath.t178726 = function(a, b, c, d) {
         this.expr = a;
         this.base = b;
         this.xpath = c;
         this.__meta = d
-      }, domina.domina.xpath.t171665.cljs$core$IPrintable$_pr_seq = function() {
-        return cljs.core.list.call(null, "domina.domina.xpath.t171665")
-      }, domina.domina.xpath.t171665.prototype.domina$domina$DomContent$ = !0, domina.domina.xpath.t171665.prototype.domina$domina$DomContent$nodes = function() {
+      }, domina.domina.xpath.t178726.cljs$core$IPrintable$_pr_seq = function() {
+        return cljs.core.list.call(null, "domina.domina.xpath.t178726")
+      }, domina.domina.xpath.t178726.prototype.domina$domina$DomContent$ = !0, domina.domina.xpath.t178726.prototype.domina$domina$DomContent$nodes = function() {
         return cljs.core.mapcat.call(null, cljs.core.partial.call(null, domina.domina.xpath.select_nodes, this.expr), domina.domina.nodes.call(null, this.base))
-      }, domina.domina.xpath.t171665.prototype.domina$domina$DomContent$single_node = function() {
+      }, domina.domina.xpath.t178726.prototype.domina$domina$DomContent$single_node = function() {
         return cljs.core.first.call(null, cljs.core.filter.call(null, cljs.core.complement.call(null, cljs.core.nil_QMARK_), cljs.core.map.call(null, cljs.core.partial.call(null, domina.domina.xpath.select_node, this.expr), domina.domina.nodes.call(null, this.base))))
-      }, domina.domina.xpath.t171665.prototype.cljs$core$IMeta$ = !0, domina.domina.xpath.t171665.prototype.cljs$core$IMeta$_meta = function() {
+      }, domina.domina.xpath.t178726.prototype.cljs$core$IMeta$ = !0, domina.domina.xpath.t178726.prototype.cljs$core$IMeta$_meta = function() {
         return this.__meta
-      }, domina.domina.xpath.t171665.prototype.cljs$core$IWithMeta$ = !0, domina.domina.xpath.t171665.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
-        return new domina.domina.xpath.t171665(this.expr, this.base, this.xpath, b)
+      }, domina.domina.xpath.t178726.prototype.cljs$core$IWithMeta$ = !0, domina.domina.xpath.t178726.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
+        return new domina.domina.xpath.t178726(this.expr, this.base, this.xpath, b)
       }
     }
-    return new domina.domina.xpath.t171665(d, b, a, null)
+    return new domina.domina.xpath.t178726(d, b, a, null)
   };
   return a = function(c, d) {
     switch(arguments.length) {
