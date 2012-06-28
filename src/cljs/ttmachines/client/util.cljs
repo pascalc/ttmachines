@@ -63,7 +63,7 @@
       code-str "clojure" element)))
 
 (defn highlight-code-nodes []
-  (doseq [code-node (dom/nodes (css/sel ".clojure-code"))]
+  (doseq [code-node (dom/nodes (css/sel ".clojure"))]
     (dom/set-attr! code-node :id "_clojure_code_")  
     (code-highlight 
       (dom/text code-node) 
