@@ -2938,11 +2938,12 @@ div.container {
   margin-bottom: 30px;
   text-align: center;
 }
-.clojure-code {
+.clojure,
+.code {
   display: inline-block;
-  text-align: center;
+  text-align: left;
   padding: 5px;
-  margin: 0 5px 0 5px;
+  margin: 2px 5px 2px 5px;
 }
 p {
   line-height: 20px;
@@ -3072,6 +3073,9 @@ header#title {
 #text p {
   line-height: 19px;
   margin-bottom: 12px;
+}
+#main h3 {
+  margin-top: 20px;
 }
 #footer {
   display: inline;
