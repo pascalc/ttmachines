@@ -20,20 +20,31 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.server.views.strings.core
-    (:require [clojure.string :as string]
-              [markdown :as mkd]))
+  (:require [clojure.string :as string]
+            [markdown :as mkd]))
 
 (def to-html mkd/md-to-html-string)
 
-(def code-pattern #"`(\S+)`")
+(def code-pattern #"`(.+?)`")
+
+(def ascii-codes
+  {"[" "&#91;"
+   "]" "&#93;"})
+
+(defmacro escape-html [s]
+  `(-> ~s
+    ~@(map 
+        (fn [[chr replacement]] 
+          `(string/replace ~chr ~replacement)) 
+        ascii-codes)))
 
 (defn expand-code-snippets [match]
   (str 
-    "<span class=\"cm-s-ambiance clojure-code\">"
-    (match 1)
+    "<span class=\"cm-s-ambiance clojure code\">"
+    (escape-html (match 1))
     "</span>"))
 
-(def bold-pattern #"\*\*(\S+)\*\*")
+(def bold-pattern #"\*\*(.+?)\*\*")
 
 (defn boldify [match]
   (str "<strong>" (match 1) "</strong>"))
