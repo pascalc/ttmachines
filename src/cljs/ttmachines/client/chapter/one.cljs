@@ -47,7 +47,14 @@
 
 (str \"My name is \" my-name)"))
 
-(dispatch/react-to #{:switch-page} {:priority 3}
-  (fn [_ {:keys [data]}]
-    (when (= (data :route) "/chapter/1/3")
-      (repl/set-editor-text! (str-with-symbols)))))
+(macro/set-up-route "/chapter/1/3"  
+  (repl/set-editor-text! (str-with-symbols)))
+
+(defn nested-str []
+  (str "(def my-name \"" @my-name "\")
+
+(str (str \"My \" \"name \" \"is \") my-name)"))
+
+(macro/set-up-route "/chapter/1/4"  
+  (repl/set-editor-text! (nested-str)))
+
