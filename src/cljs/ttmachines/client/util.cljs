@@ -55,6 +55,15 @@
 (defn after [period fun]
   (js/setTimeout fun period))
 
+(defn current-time-millis []
+  (js* "new Date().getTime()"))
+
+(defn parse-int [int-str]
+  (js/parseInt int-str))
+
+(defn parse-float [float-str]
+  (js/parseFloat float-str))
+
 ;; Code highlighting
 
 (defn code-highlight [code-str target-id]
