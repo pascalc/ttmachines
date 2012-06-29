@@ -113,8 +113,10 @@
 ;; When the browser's history changes, via link navigation, programmatic 
 ;; get-page or browser forward/back, we fetch the contents of the page
 (dispatch/react-to #{:history-state-change} {:priority 1}
-  (fn [_ {:keys [url]}]
-    (request/get-page url)))
+  (fn [_ {:keys [url browser-navigation]}]
+    (if browser-navigation
+      (request/get-page url :initialize? true)
+      (request/get-page url))))
 
 ;; Handle incoming page content
 

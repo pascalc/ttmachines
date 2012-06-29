@@ -20,24 +20,37 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.client.history
-  (:use [ttmachines.client.util :only [map->js]])
+  (:use [ttmachines.client.util :only [map->js current-time-millis parse-float]])
   (:require [one.dispatch :as dispatch]))
 
 (def History (.-History js/window))
+
+(defn browser-navigation? [push-timestamp pop-timestamp]
+  (let [elapsed-ms (- pop-timestamp push-timestamp)]
+    (> elapsed-ms 500)))
 
 ;; Bind to StateChange Event
 (.bind (.-Adapter History)
   js/window
   "statechange"
   (fn []
-    (let [state         (.getState History)
-          state-info    {:data  (js->clj (.-data state))
-                         :title (.-title state)
-                         :url   (.-url state)}]
-      (dispatch/fire :history-state-change state-info))))
+    (let [state           (.getState History)
+          state-info      (atom 
+                            {:data  (js->clj (.-data state))
+                             :title (.-title state)
+                             :url   (.-url state)})
+          pushed          (parse-float (get-in @state-info [:data "timestamp"]))
+          popped          (current-time-millis)]
+      (swap! 
+        state-info 
+        assoc :browser-navigation (browser-navigation? pushed popped))
+      (dispatch/fire :history-state-change @state-info))))
 
 (defn push-state! [& {:keys [data title url]}]
-  (.pushState History
-    (map->js data)
-    title
-    url))
+  (let [js-data (-> data
+                  (assoc :timestamp (current-time-millis))
+                  (map->js))]
+    (.pushState History
+      js-data
+      title
+      url)))
