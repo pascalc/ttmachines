@@ -2915,6 +2915,15 @@ div.container {
   margin: 0 auto;
   overflow: hidden;
   background-color: #fff;
+  -webkit-box-shadow: 3px 3px 70px 20px #000000;
+  -moz-box-shadow: 3px 3px 70px 20px #000000;
+  box-shadow: 3px 3px 70px 20px #000000;
+  -webkit-box-shadow: 3px 3px 70px 20px #000000;
+  -moz-box-shadow: 3px 3px 70px 20px #000000;
+  box-shadow: 3px 3px 70px 20px #000000;
+  -webkit-box-shadow: 3px 3px 70px 20px #000000;
+  -moz-box-shadow: 3px 3px 70px 20px #000000;
+  box-shadow: 3px 3px 70px 20px #000000;
   padding-left: 1rem;
   padding-right: 1rem;
   min-height: 750px;
