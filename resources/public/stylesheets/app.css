@@ -2948,17 +2948,6 @@ div.container {
 p {
   line-height: 20px;
 }
-#chapter-nav {
-  margin-top: 30px;
-}
-#chapter-nav #next {
-  float: right;
-}
-#chapter-nav hr {
-  border-style: solid;
-  border-bottom-width: 3px;
-  border-color: #F0EBEB;
-}
 .fadeInLeft,
 .fadeOutLeft,
 .fadeInRight,
@@ -3076,6 +3065,26 @@ header#title {
 }
 #main h3 {
   margin-top: 20px;
+}
+#chapter-nav {
+  margin-top: 30px;
+  text-align: center;
+}
+#chapter-nav #next {
+  float: right;
+}
+#chapter-nav #previous {
+  float: left;
+}
+#chapter-nav hr {
+  border-style: solid;
+  border-bottom-width: 3px;
+  border-color: #F0EBEB;
+}
+#chapter-nav p {
+  display: inline-block;
+  font-weight: bold;
+  line-height: 40px;
 }
 #footer {
   display: inline;

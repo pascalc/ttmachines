@@ -27,7 +27,8 @@
         hiccup.element
         ttmachines.server.tools))
 
-(defpartial chapter-nav [& {:keys [chapter-next chapter-previous] 
+(defpartial chapter-nav [chapter-num chapter-length 
+                         & {:keys [chapter-next chapter-previous] 
                             :or   {chapter-next nil chapter-previous nil}}]
   [:hr]
   (when chapter-next
@@ -36,6 +37,7 @@
        :class "btn btn-large btn-success"} 
       chapter-next
       "Next"))
+  [:p (str chapter-num " of " chapter-length)]
   (when chapter-previous
     (link-to 
       {:id    "previous"
@@ -101,6 +103,8 @@
     (assoc-in 
       [:layout :chapter-nav]
       (chapter-nav 
+        chapter-num
+        chapter-length
         :chapter-next (next-link chapter-num chapter-length)
         :chapter-previous (previous-link chapter-num)))
     (assoc :route route)))
