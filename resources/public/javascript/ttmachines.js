@@ -15640,11 +15640,11 @@ cljs.core.prefers = function(a) {
 };
 var domina = {domina:{}};
 domina.domina.support = {};
-var div__128001 = document.createElement("div"), test_html__128002 = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";
-div__128001.innerHTML = test_html__128002;
-domina.domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null, div__128001.firstChild.nodeType, 3);
-domina.domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null, div__128001.getElementsByTagName("tbody").length, 0);
-domina.domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null, div__128001.getElementsByTagName("link").length, 0);
+var div__20917 = document.createElement("div"), test_html__20918 = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";
+div__20917.innerHTML = test_html__20918;
+domina.domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null, div__20917.firstChild.nodeType, 3);
+domina.domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null, div__20917.getElementsByTagName("tbody").length, 0);
+domina.domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null, div__20917.getElementsByTagName("link").length, 0);
 var clojure = {string:{}};
 clojure.string.seq_reverse = function(a) {
   return cljs.core.reduce.call(null, cljs.core.conj, cljs.core.List.EMPTY, a)
@@ -15775,9 +15775,9 @@ domina.domina.re_xhtml_tag = /<(?!area|br|col|embed|hr|img|input|link|meta|param
 domina.domina.re_tag_name = /<([\w:]+)/;
 domina.domina.re_no_inner_html = /<(?:script|style)/i;
 domina.domina.re_tbody = /<tbody/i;
-var opt_wrapper__128020 = cljs.core.Vector.fromArray([1, "<select multiple='multiple'>", "</select>"]), table_section_wrapper__128021 = cljs.core.Vector.fromArray([1, "<table>", "</table>"]), cell_wrapper__128022 = cljs.core.Vector.fromArray([3, "<table><tbody><tr>", "</tr></tbody></table>"]);
-domina.domina.wrap_map = cljs.core.ObjMap.fromObject("col,\ufdd0'default,tfoot,caption,optgroup,legend,area,td,thead,th,option,tbody,tr,colgroup".split(","), {col:cljs.core.Vector.fromArray([2, "<table><tbody></tbody><colgroup>", "</colgroup></table>"]), "\ufdd0'default":cljs.core.Vector.fromArray([0, "", ""]), tfoot:table_section_wrapper__128021, caption:table_section_wrapper__128021, optgroup:opt_wrapper__128020, legend:cljs.core.Vector.fromArray([1, "<fieldset>", "</fieldset>"]), area:cljs.core.Vector.fromArray([1, 
-"<map>", "</map>"]), td:cell_wrapper__128022, thead:table_section_wrapper__128021, th:cell_wrapper__128022, option:opt_wrapper__128020, tbody:table_section_wrapper__128021, tr:cljs.core.Vector.fromArray([2, "<table><tbody>", "</tbody></table>"]), colgroup:table_section_wrapper__128021});
+var opt_wrapper__20936 = cljs.core.Vector.fromArray([1, "<select multiple='multiple'>", "</select>"]), table_section_wrapper__20937 = cljs.core.Vector.fromArray([1, "<table>", "</table>"]), cell_wrapper__20938 = cljs.core.Vector.fromArray([3, "<table><tbody><tr>", "</tr></tbody></table>"]);
+domina.domina.wrap_map = cljs.core.ObjMap.fromObject("col,\ufdd0'default,tfoot,caption,optgroup,legend,area,td,thead,th,option,tbody,tr,colgroup".split(","), {col:cljs.core.Vector.fromArray([2, "<table><tbody></tbody><colgroup>", "</colgroup></table>"]), "\ufdd0'default":cljs.core.Vector.fromArray([0, "", ""]), tfoot:table_section_wrapper__20937, caption:table_section_wrapper__20937, optgroup:opt_wrapper__20936, legend:cljs.core.Vector.fromArray([1, "<fieldset>", "</fieldset>"]), area:cljs.core.Vector.fromArray([1, 
+"<map>", "</map>"]), td:cell_wrapper__20938, thead:table_section_wrapper__20937, th:cell_wrapper__20938, option:opt_wrapper__20936, tbody:table_section_wrapper__20937, tr:cljs.core.Vector.fromArray([2, "<table><tbody>", "</tbody></table>"]), colgroup:table_section_wrapper__20937});
 domina.domina.remove_extraneous_tbody_BANG_ = function(a, b) {
   var c = cljs.core.not.call(null, cljs.core.re_find.call(null, domina.domina.re_tbody, b)), d = cljs.core.truth_(function() {
     var a = cljs.core._EQ_.call(null, domina.domina.tag_name, "table");
@@ -15871,24 +15871,24 @@ domina.domina.by_id = function(a) {
   return goog.dom.getElement.call(null, cljs.core.name.call(null, a))
 };
 domina.domina.by_class = function by_class(b) {
-  if(cljs.core.truth_(void 0 === domina.domina.t128058)) {
-    domina.domina.t128058 = function(b, d, e) {
+  if(cljs.core.truth_(void 0 === domina.domina.t20974)) {
+    domina.domina.t20974 = function(b, d, e) {
       this.class_name = b;
       this.by_class = d;
       this.__meta = e
-    }, domina.domina.t128058.cljs$core$IPrintable$_pr_seq = function() {
-      return cljs.core.list.call(null, "domina.domina.t128058")
-    }, domina.domina.t128058.prototype.domina$domina$DomContent$ = !0, domina.domina.t128058.prototype.domina$domina$DomContent$nodes = function() {
+    }, domina.domina.t20974.cljs$core$IPrintable$_pr_seq = function() {
+      return cljs.core.list.call(null, "domina.domina.t20974")
+    }, domina.domina.t20974.prototype.domina$domina$DomContent$ = !0, domina.domina.t20974.prototype.domina$domina$DomContent$nodes = function() {
       return domina.domina.normalize_seq.call(null, goog.dom.getElementsByClass.call(null, cljs.core.name.call(null, this.class_name)))
-    }, domina.domina.t128058.prototype.domina$domina$DomContent$single_node = function() {
+    }, domina.domina.t20974.prototype.domina$domina$DomContent$single_node = function() {
       return domina.domina.normalize_seq.call(null, goog.dom.getElementByClass.call(null, cljs.core.name.call(null, this.class_name)))
-    }, domina.domina.t128058.prototype.cljs$core$IMeta$ = !0, domina.domina.t128058.prototype.cljs$core$IMeta$_meta = function() {
+    }, domina.domina.t20974.prototype.cljs$core$IMeta$ = !0, domina.domina.t20974.prototype.cljs$core$IMeta$_meta = function() {
       return this.__meta
-    }, domina.domina.t128058.prototype.cljs$core$IWithMeta$ = !0, domina.domina.t128058.prototype.cljs$core$IWithMeta$_with_meta = function(b, d) {
-      return new domina.domina.t128058(this.class_name, this.by_class, d)
+    }, domina.domina.t20974.prototype.cljs$core$IWithMeta$ = !0, domina.domina.t20974.prototype.cljs$core$IWithMeta$_with_meta = function(b, d) {
+      return new domina.domina.t20974(this.class_name, this.by_class, d)
     }
   }
-  return new domina.domina.t128058(b, by_class, null)
+  return new domina.domina.t20974(b, by_class, null)
 };
 domina.domina.children = function(a) {
   return cljs.core.mapcat.call(null, goog.dom.getChildren, domina.domina.nodes.call(null, a))
@@ -16375,31 +16375,31 @@ domina.domina.css.root_element = function() {
 };
 domina.domina.css.sel = function() {
   var a = null, b = function(b, d) {
-    if(cljs.core.truth_(void 0 === domina.domina.css.t127873)) {
-      domina.domina.css.t127873 = function(a, b, c, d) {
+    if(cljs.core.truth_(void 0 === domina.domina.css.t20789)) {
+      domina.domina.css.t20789 = function(a, b, c, d) {
         this.expr = a;
         this.base = b;
         this.sel = c;
         this.__meta = d
-      }, domina.domina.css.t127873.cljs$core$IPrintable$_pr_seq = function() {
-        return cljs.core.list.call(null, "domina.domina.css.t127873")
-      }, domina.domina.css.t127873.prototype.domina$domina$DomContent$ = !0, domina.domina.css.t127873.prototype.domina$domina$DomContent$nodes = function() {
+      }, domina.domina.css.t20789.cljs$core$IPrintable$_pr_seq = function() {
+        return cljs.core.list.call(null, "domina.domina.css.t20789")
+      }, domina.domina.css.t20789.prototype.domina$domina$DomContent$ = !0, domina.domina.css.t20789.prototype.domina$domina$DomContent$nodes = function() {
         var a = this;
         return cljs.core.mapcat.call(null, function(b) {
           return domina.domina.normalize_seq.call(null, goog.dom.query.call(null, a.expr, b))
         }, domina.domina.nodes.call(null, a.base))
-      }, domina.domina.css.t127873.prototype.domina$domina$DomContent$single_node = function() {
+      }, domina.domina.css.t20789.prototype.domina$domina$DomContent$single_node = function() {
         var a = this;
         return cljs.core.first.call(null, cljs.core.filter.call(null, cljs.core.complement.call(null, cljs.core.nil_QMARK_), cljs.core.mapcat.call(null, function(b) {
           return domina.domina.normalize_seq.call(null, goog.dom.query.call(null, a.expr, b))
         }, domina.domina.nodes.call(null, a.base))))
-      }, domina.domina.css.t127873.prototype.cljs$core$IMeta$ = !0, domina.domina.css.t127873.prototype.cljs$core$IMeta$_meta = function() {
+      }, domina.domina.css.t20789.prototype.cljs$core$IMeta$ = !0, domina.domina.css.t20789.prototype.cljs$core$IMeta$_meta = function() {
         return this.__meta
-      }, domina.domina.css.t127873.prototype.cljs$core$IWithMeta$ = !0, domina.domina.css.t127873.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
-        return new domina.domina.css.t127873(this.expr, this.base, this.sel, b)
+      }, domina.domina.css.t20789.prototype.cljs$core$IWithMeta$ = !0, domina.domina.css.t20789.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
+        return new domina.domina.css.t20789(this.expr, this.base, this.sel, b)
       }
     }
-    return new domina.domina.css.t127873(d, b, a, null)
+    return new domina.domina.css.t20789(d, b, a, null)
   };
   return a = function(c, d) {
     switch(arguments.length) {
@@ -16569,227 +16569,468 @@ ttmachines.client.history.push_state_BANG_ = function() {
   };
   return b
 }();
-clojure.zip = {};
-clojure.zip.zipper = function(a, b, c, d) {
-  return cljs.core.with_meta(cljs.core.Vector.fromArray([d, null]), cljs.core.ObjMap.fromObject(["\ufdd0'zip/make-node", "\ufdd0'zip/children", "\ufdd0'zip/branch?"], {"\ufdd0'zip/make-node":c, "\ufdd0'zip/children":b, "\ufdd0'zip/branch?":a}))
-};
-clojure.zip.seq_zip = function(a) {
-  return clojure.zip.zipper.call(null, cljs.core.seq_QMARK_, cljs.core.identity, function(a, c) {
-    return cljs.core.with_meta.call(null, c, cljs.core.meta.call(null, a))
-  }, a)
-};
-clojure.zip.vector_zip = function(a) {
-  return clojure.zip.zipper.call(null, cljs.core.vector_QMARK_, cljs.core.seq, function(a, c) {
-    return cljs.core.with_meta.call(null, cljs.core.vec.call(null, c), cljs.core.meta.call(null, a))
-  }, a)
-};
-clojure.zip.xml_zip = function(a) {
-  return clojure.zip.zipper.call(null, cljs.core.complement.call(null, cljs.core.string_QMARK_), cljs.core.comp.call(null, cljs.core.seq, "\ufdd0'content"), function(a, c) {
-    return cljs.core.assoc.call(null, a, "\ufdd0'content", cljs.core.truth_(c) ? cljs.core.apply.call(null, cljs.core.vector, c) : c)
-  }, a)
-};
-clojure.zip.node = function(a) {
-  return a.call(null, 0)
-};
-clojure.zip.branch_QMARK_ = function(a) {
-  return"\ufdd0'zip/branch?".call(null, cljs.core.meta.call(null, a)).call(null, clojure.zip.node.call(null, a))
-};
-clojure.zip.children = function(a) {
-  if(cljs.core.truth_(clojure.zip.branch_QMARK_.call(null, a))) {
-    return"\ufdd0'zip/children".call(null, cljs.core.meta.call(null, a)).call(null, clojure.zip.node.call(null, a))
+one.core = {};
+one.core.Startable = {};
+one.core.start = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.one$core$Startable$start : a)) {
+    a = a.one$core$Startable$start(a)
+  }else {
+    var b;
+    b = one.core.start[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = one.core.start._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Startable.start", a);
+    }
+    a = b.call(null, a)
   }
-  throw"called children on a leaf node";
+  return a
 };
-clojure.zip.make_node = function(a, b, c) {
-  return"\ufdd0'zip/make-node".call(null, cljs.core.meta.call(null, a)).call(null, b, c)
-};
-clojure.zip.path = function(a) {
-  return"\ufdd0'pnodes".call(null, a.call(null, 1))
-};
-clojure.zip.lefts = function(a) {
-  return cljs.core.seq.call(null, "\ufdd0'l".call(null, a.call(null, 1)))
-};
-clojure.zip.rights = function(a) {
-  return"\ufdd0'r".call(null, a.call(null, 1))
-};
-clojure.zip.down = function(a) {
-  if(cljs.core.truth_(clojure.zip.branch_QMARK_.call(null, a))) {
-    var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), d = clojure.zip.children.call(null, a), e = cljs.core.nth.call(null, d, 0, null), f = cljs.core.nthnext.call(null, d, 1);
-    return cljs.core.truth_(d) ? cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([e, cljs.core.ObjMap.fromObject(["\ufdd0'l", "\ufdd0'pnodes", "\ufdd0'ppath", "\ufdd0'r"], {"\ufdd0'l":cljs.core.Vector.fromArray([]), "\ufdd0'pnodes":cljs.core.truth_(c) ? cljs.core.conj.call(null, "\ufdd0'pnodes".call(null, c), b) : cljs.core.Vector.fromArray([b]), "\ufdd0'ppath":c, "\ufdd0'r":f})]), cljs.core.meta.call(null, a)) : null
+one.core.Disposable = {};
+one.core.dispose = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.one$core$Disposable$dispose : a)) {
+    a = a.one$core$Disposable$dispose(a)
+  }else {
+    var b;
+    b = one.core.dispose[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = one.core.dispose._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Disposable.dispose", a);
+    }
+    a = b.call(null, a)
   }
+  return a
+};
+one.core.get_style = function(a, b) {
+  return cljs.core.some.call(null, function(a) {
+    a = a.call(null);
+    return cljs.core.truth_(cljs.core.not_EQ_.call(null, "", a)) ? a : null
+  }, cljs.core.Vector.fromArray([function() {
+    return goog.style.getComputedStyle.call(null, a, b)
+  }, function() {
+    return goog.style.getStyle.call(null, a, b)
+  }, function() {
+    return a.currentStyle[b]
+  }, function() {
+    throw Error(cljs.core.str.call(null, "Could not retrieve value for style ", b));
+  }]))
+};
+clojure.browser = {};
+clojure.browser.event = {};
+clojure.browser.event.EventType = {};
+clojure.browser.event.event_types = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$event$EventType$event_types : a)) {
+    a = a.clojure$browser$event$EventType$event_types(a)
+  }else {
+    var b;
+    b = clojure.browser.event.event_types[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = clojure.browser.event.event_types._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "EventType.event-types", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
+};
+Element.prototype.clojure$browser$event$EventType$ = !0;
+Element.prototype.clojure$browser$event$EventType$event_types = function() {
+  return cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, function(a) {
+    var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
+    return cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b.toLowerCase()), a])
+  }, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.events.EventType))))
+};
+goog.events.EventTarget.prototype.clojure$browser$event$EventType$ = !0;
+goog.events.EventTarget.prototype.clojure$browser$event$EventType$event_types = function() {
+  return cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, function(a) {
+    var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
+    return cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b.toLowerCase()), a])
+  }, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.events.EventType))))
+};
+clojure.browser.event.listen = function() {
+  var a = null;
+  return a = function(b, c, d, e) {
+    switch(arguments.length) {
+      case 3:
+        return a.call(null, b, c, d, !1);
+      case 4:
+        return goog.events.listen.call(null, b, cljs.core.get.call(null, clojure.browser.event.event_types.call(null, b), c, c), d, e)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+clojure.browser.event.listen_once = function() {
+  var a = null;
+  return a = function(b, c, d, e) {
+    switch(arguments.length) {
+      case 3:
+        return a.call(null, b, c, d, !1);
+      case 4:
+        return goog.events.listenOnce.call(null, b, cljs.core.get.call(null, clojure.browser.event.event_types.call(null, b), c, c), d, e)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+clojure.browser.event.unlisten = function() {
+  var a = null;
+  return a = function(b, c, d, e) {
+    switch(arguments.length) {
+      case 3:
+        return a.call(null, b, c, d, !1);
+      case 4:
+        return goog.events.unlisten.call(null, b, cljs.core.get.call(null, clojure.browser.event.event_types.call(null, b), c, c), d, e)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+clojure.browser.event.unlisten_by_key = function(a) {
+  return goog.events.unlistenByKey.call(null, a)
+};
+clojure.browser.event.dispatch_event = function(a, b) {
+  return goog.events.dispatchEvent.call(null, a, b)
+};
+clojure.browser.event.expose = function(a) {
+  return goog.events.expose.call(null, a)
+};
+clojure.browser.event.fire_listeners = function() {
   return null
 };
-clojure.zip.up = function(a) {
-  var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), d = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, c = cljs.core.get.call(null, d, "\ufdd0'l"), e = cljs.core.get.call(null, d, "\ufdd0'ppath"), f = cljs.core.get.call(null, d, "\ufdd0'pnodes"), g = cljs.core.get.call(null, d, "\ufdd0'r"), d = cljs.core.get.call(null, d, "\ufdd0'changed?");
-  return cljs.core.truth_(f) ? (f = cljs.core.peek.call(null, f), cljs.core.with_meta.call(null, cljs.core.truth_(d) ? cljs.core.Vector.fromArray([clojure.zip.make_node.call(null, a, f, cljs.core.concat.call(null, c, cljs.core.cons.call(null, b, g))), cljs.core.truth_(e) ? cljs.core.assoc.call(null, e, "\ufdd0'changed?", !0) : e]) : cljs.core.Vector.fromArray([f, e]), cljs.core.meta.call(null, a))) : null
+clojure.browser.event.total_listener_count = function() {
+  return goog.events.getTotalListenerCount.call(null)
 };
-clojure.zip.root = function(a) {
-  for(;;) {
-    if(cljs.core.truth_(cljs.core._EQ_.call(null, "\ufdd0'end", a.call(null, 1)))) {
-      return clojure.zip.node.call(null, a)
+clojure.browser.event.get_listener = function() {
+  return null
+};
+clojure.browser.event.all_listeners = function() {
+  return null
+};
+clojure.browser.event.unique_event_id = function() {
+  return null
+};
+clojure.browser.event.has_listener = function() {
+  return null
+};
+clojure.browser.event.remove_all = function() {
+  return null
+};
+domina.domina.events = {};
+domina.domina.events.Event = {};
+domina.domina.events.prevent_default = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$prevent_default : a)) {
+    a = a.domina$domina$events$Event$prevent_default(a)
+  }else {
+    var b;
+    b = domina.domina.events.prevent_default[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.prevent_default._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.prevent-default", a);
     }
-    var b = clojure.zip.up.call(null, a);
-    if(cljs.core.truth_(b)) {
-      a = b
-    }else {
-      return clojure.zip.node.call(null, a)
+    a = b.call(null, a)
+  }
+  return a
+};
+domina.domina.events.stop_propagation = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$stop_propagation : a)) {
+    a = a.domina$domina$events$Event$stop_propagation(a)
+  }else {
+    var b;
+    b = domina.domina.events.stop_propagation[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.stop_propagation._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.stop-propagation", a);
     }
+    a = b.call(null, a)
+  }
+  return a
+};
+domina.domina.events.target = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$target : a)) {
+    a = a.domina$domina$events$Event$target(a)
+  }else {
+    var b;
+    b = domina.domina.events.target[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.target._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.target", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
+};
+domina.domina.events.current_target = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$current_target : a)) {
+    a = a.domina$domina$events$Event$current_target(a)
+  }else {
+    var b;
+    b = domina.domina.events.current_target[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.current_target._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.current-target", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
+};
+domina.domina.events.event_type = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$event_type : a)) {
+    a = a.domina$domina$events$Event$event_type(a)
+  }else {
+    var b;
+    b = domina.domina.events.event_type[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.event_type._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.event-type", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
+};
+domina.domina.events.raw_event = function(a) {
+  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$raw_event : a)) {
+    a = a.domina$domina$events$Event$raw_event(a)
+  }else {
+    var b;
+    b = domina.domina.events.raw_event[goog.typeOf.call(null, a)];
+    if(!cljs.core.truth_(b) && (b = domina.domina.events.raw_event._, !cljs.core.truth_(b))) {
+      throw cljs.core.missing_protocol.call(null, "Event.raw-event", a);
+    }
+    a = b.call(null, a)
+  }
+  return a
+};
+domina.domina.events.builtin_events = cljs.core.set.call(null, cljs.core.map.call(null, cljs.core.keyword, goog.object.getValues.call(null, goog.events.EventType)));
+domina.domina.events.root_element = window.document.documentElement;
+domina.domina.events.find_builtin_type = function(a) {
+  return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, domina.domina.events.builtin_events, a)) ? cljs.core.name.call(null, a) : a
+};
+domina.domina.events.create_listener_function = function create_listener_function(b) {
+  return function(c) {
+    b.call(null, function() {
+      if(cljs.core.truth_(void 0 === domina.domina.events.t20815)) {
+        domina.domina.events.t20815 = function(b, c, f, g) {
+          this.evt = b;
+          this.f = c;
+          this.create_listener_function = f;
+          this.__meta = g
+        }, domina.domina.events.t20815.cljs$core$IPrintable$_pr_seq = function() {
+          return cljs.core.list.call(null, "domina.domina.events.t20815")
+        }, domina.domina.events.t20815.prototype.cljs$core$ILookup$ = !0, domina.domina.events.t20815.prototype.cljs$core$ILookup$_lookup = function() {
+          var b = null;
+          return function(b, c, d) {
+            switch(arguments.length) {
+              case 2:
+                var h;
+                h = this.evt[c];
+                h = cljs.core.truth_(h) ? h : this.evt[cljs.core.name.call(null, c)];
+                return h;
+              case 3:
+                return h = cljs.core._lookup.call(null, b, c), cljs.core.truth_(h) ? h : d
+            }
+            throw"Invalid arity: " + arguments.length;
+          }
+        }(), domina.domina.events.t20815.prototype.domina$domina$events$Event$ = !0, domina.domina.events.t20815.prototype.domina$domina$events$Event$prevent_default = function() {
+          return this.evt.preventDefault()
+        }, domina.domina.events.t20815.prototype.domina$domina$events$Event$stop_propagation = function() {
+          return this.evt.stopPropagation()
+        }, domina.domina.events.t20815.prototype.domina$domina$events$Event$target = function() {
+          return this.evt.target
+        }, domina.domina.events.t20815.prototype.domina$domina$events$Event$current_target = function() {
+          return this.evt.currentTarget
+        }, domina.domina.events.t20815.prototype.domina$domina$events$Event$event_type = function() {
+          return this.evt.type
+        }, domina.domina.events.t20815.prototype.domina$domina$events$Event$raw_event = function() {
+          return this.evt
+        }, domina.domina.events.t20815.prototype.cljs$core$IMeta$ = !0, domina.domina.events.t20815.prototype.cljs$core$IMeta$_meta = function() {
+          return this.__meta
+        }, domina.domina.events.t20815.prototype.cljs$core$IWithMeta$ = !0, domina.domina.events.t20815.prototype.cljs$core$IWithMeta$_with_meta = function(b, c) {
+          return new domina.domina.events.t20815(this.evt, this.f, this.create_listener_function, c)
+        }
+      }
+      return new domina.domina.events.t20815(c, b, create_listener_function, null)
+    }());
+    return!0
   }
 };
-clojure.zip.right = function(a) {
-  var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, d = cljs.core.get.call(null, c, "\ufdd0'l"), e = cljs.core.get.call(null, c, "\ufdd0'r"), f = cljs.core.nth.call(null, e, 0, null), g = cljs.core.nthnext.call(null, e, 1);
-  return cljs.core.truth_(cljs.core.truth_(c) ? e : c) ? cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([f, cljs.core.assoc.call(null, c, "\ufdd0'l", cljs.core.conj.call(null, d, b), "\ufdd0'r", g)]), cljs.core.meta.call(null, a)) : null
+domina.domina.events.listen_internal_BANG_ = function(a, b, c, d, e) {
+  var f = domina.domina.events.create_listener_function.call(null, c), g = domina.domina.events.find_builtin_type.call(null, b);
+  return cljs.core.doall.call(null, function() {
+    return function i(a) {
+      return new cljs.core.LazySeq(null, !1, function() {
+        for(;;) {
+          if(cljs.core.truth_(cljs.core.seq.call(null, a))) {
+            var b = cljs.core.first.call(null, a);
+            return cljs.core.cons.call(null, cljs.core.truth_(e) ? goog.events.listenOnce.call(null, b, g, f, d) : goog.events.listen.call(null, b, g, f, d), i.call(null, cljs.core.rest.call(null, a)))
+          }
+          return null
+        }
+      })
+    }.call(null, domina.domina.nodes.call(null, a))
+  }())
 };
-clojure.zip.rightmost = function(a) {
-  var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, d = cljs.core.get.call(null, c, "\ufdd0'l"), e = cljs.core.get.call(null, c, "\ufdd0'r");
-  return cljs.core.truth_(cljs.core.truth_(c) ? e : c) ? cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([cljs.core.last.call(null, e), cljs.core.assoc.call(null, c, "\ufdd0'l", cljs.core.apply.call(null, cljs.core.conj, d, b, cljs.core.butlast.call(null, e)), "\ufdd0'r", null)]), cljs.core.meta.call(null, a)) : a
-};
-clojure.zip.left = function(a) {
-  var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, d = cljs.core.get.call(null, c, "\ufdd0'l"), e = cljs.core.get.call(null, c, "\ufdd0'r");
-  return cljs.core.truth_(cljs.core.truth_(c) ? cljs.core.seq.call(null, d) : c) ? cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([cljs.core.peek.call(null, d), cljs.core.assoc.call(null, c, "\ufdd0'l", cljs.core.pop.call(null, d), "\ufdd0'r", cljs.core.cons.call(null, b, e))]), cljs.core.meta.call(null, a)) : null
-};
-clojure.zip.leftmost = function(a) {
-  var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, d = cljs.core.get.call(null, c, "\ufdd0'l"), e = cljs.core.get.call(null, c, "\ufdd0'r");
-  return cljs.core.truth_(cljs.core.truth_(c) ? cljs.core.seq.call(null, d) : c) ? cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([cljs.core.first.call(null, d), cljs.core.assoc.call(null, c, "\ufdd0'l", cljs.core.Vector.fromArray([]), "\ufdd0'r", cljs.core.concat.call(null, cljs.core.rest.call(null, d), cljs.core.Vector.fromArray([b]), e))]), cljs.core.meta.call(null, a)) : a
-};
-clojure.zip.insert_left = function(a, b) {
-  var c = cljs.core.nth.call(null, a, 0, null), d = cljs.core.nth.call(null, a, 1, null), d = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, d)) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d, e = cljs.core.get.call(null, d, "\ufdd0'l");
-  if(cljs.core.truth_(cljs.core.nil_QMARK_.call(null, d))) {
-    throw"Insert at top";
+domina.domina.events.listen_BANG_ = function() {
+  var a = null;
+  return a = function(b, c, d) {
+    switch(arguments.length) {
+      case 2:
+        return a.call(null, domina.domina.events.root_element, b, c);
+      case 3:
+        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !1, !1)
+    }
+    throw"Invalid arity: " + arguments.length;
   }
-  return cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([c, cljs.core.assoc.call(null, d, "\ufdd0'l", cljs.core.conj.call(null, e, b), "\ufdd0'changed?", !0)]), cljs.core.meta.call(null, a))
-};
-clojure.zip.insert_right = function(a, b) {
-  var c = cljs.core.nth.call(null, a, 0, null), d = cljs.core.nth.call(null, a, 1, null), d = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, d)) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d, e = cljs.core.get.call(null, d, "\ufdd0'r");
-  if(cljs.core.truth_(cljs.core.nil_QMARK_.call(null, d))) {
-    throw"Insert at top";
-  }
-  return cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([c, cljs.core.assoc.call(null, d, "\ufdd0'r", cljs.core.cons.call(null, b, e), "\ufdd0'changed?", !0)]), cljs.core.meta.call(null, a))
-};
-clojure.zip.replace = function(a, b) {
-  cljs.core.nth.call(null, a, 0, null);
-  var c = cljs.core.nth.call(null, a, 1, null);
-  return cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([b, cljs.core.assoc.call(null, c, "\ufdd0'changed?", !0)]), cljs.core.meta.call(null, a))
-};
-clojure.zip.edit = function() {
-  var a = function(a, b, e) {
-    return clojure.zip.replace.call(null, a, cljs.core.apply.call(null, b, clojure.zip.node.call(null, a), e))
-  }, b = function(b, d, e) {
-    var f = null;
-    goog.isDef(e) && (f = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2), 0));
-    return a.call(this, b, d, f)
-  };
-  b.cljs$lang$maxFixedArity = 2;
-  b.cljs$lang$applyTo = function(b) {
-    var d = cljs.core.first(b), e = cljs.core.first(cljs.core.next(b)), b = cljs.core.rest(cljs.core.next(b));
-    return a.call(this, d, e, b)
-  };
-  return b
 }();
-clojure.zip.insert_child = function(a, b) {
-  return clojure.zip.replace.call(null, a, clojure.zip.make_node.call(null, a, clojure.zip.node.call(null, a), cljs.core.cons.call(null, b, clojure.zip.children.call(null, a))))
-};
-clojure.zip.append_child = function(a, b) {
-  return clojure.zip.replace.call(null, a, clojure.zip.make_node.call(null, a, clojure.zip.node.call(null, a), cljs.core.concat.call(null, clojure.zip.children.call(null, a), cljs.core.Vector.fromArray([b]))))
-};
-clojure.zip.next = function(a) {
-  if(cljs.core.truth_(cljs.core._EQ_.call(null, "\ufdd0'end", a.call(null, 1)))) {
-    return a
-  }
-  var b;
-  b = clojure.zip.branch_QMARK_.call(null, a);
-  b = cljs.core.truth_(b) ? clojure.zip.down.call(null, a) : b;
-  if(cljs.core.truth_(b)) {
-    return b
-  }
-  b = clojure.zip.right.call(null, a);
-  if(cljs.core.truth_(b)) {
-    return b
-  }
-  for(;;) {
-    if(cljs.core.truth_(clojure.zip.up.call(null, a))) {
-      b = clojure.zip.right.call(null, clojure.zip.up.call(null, a));
-      if(cljs.core.truth_(b)) {
-        return b
-      }
-      a = clojure.zip.up.call(null, a)
-    }else {
-      return cljs.core.Vector.fromArray([clojure.zip.node.call(null, a), "\ufdd0'end"])
+domina.domina.events.capture_BANG_ = function() {
+  var a = null;
+  return a = function(b, c, d) {
+    switch(arguments.length) {
+      case 2:
+        return a.call(null, domina.domina.events.root_element, b, c);
+      case 3:
+        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !0, !1)
     }
+    throw"Invalid arity: " + arguments.length;
   }
-};
-clojure.zip.prev = function(a) {
-  var b = clojure.zip.left.call(null, a);
-  if(cljs.core.truth_(b)) {
-    for(a = b;;) {
-      if(b = clojure.zip.branch_QMARK_.call(null, a), b = cljs.core.truth_(b) ? clojure.zip.down.call(null, a) : b, cljs.core.truth_(b)) {
-        a = clojure.zip.rightmost.call(null, b)
+}();
+domina.domina.events.listen_once_BANG_ = function() {
+  var a = null;
+  return a = function(b, c, d) {
+    switch(arguments.length) {
+      case 2:
+        return a.call(null, domina.domina.events.root_element, b, c);
+      case 3:
+        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !1, !0)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+domina.domina.events.capture_once_BANG_ = function() {
+  var a = null;
+  return a = function(b, c, d) {
+    switch(arguments.length) {
+      case 2:
+        return a.call(null, domina.domina.events.root_element, b, c);
+      case 3:
+        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !0, !0)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+domina.domina.events.unlisten_BANG_ = function() {
+  var a = null;
+  return a = function(b, c) {
+    switch(arguments.length) {
+      case 0:
+        return a.call(null, domina.domina.events.root_element);
+      case 1:
+        var d;
+        a: {
+          var e = cljs.core.seq.call(null, domina.domina.nodes.call(null, b));
+          if(cljs.core.truth_(e)) {
+            for(var f = cljs.core.first.call(null, e);;) {
+              if(goog.events.removeAll.call(null, f), f = cljs.core.next.call(null, e), cljs.core.truth_(f)) {
+                e = f, f = cljs.core.first.call(null, e)
+              }else {
+                d = null;
+                break a
+              }
+            }
+          }else {
+            d = null
+          }
+        }
+        return d;
+      case 2:
+        return d = domina.domina.events.find_builtin_type.call(null, c), goog.events.removeAll.call(null, domina.domina.events.node, d)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+domina.domina.events.ancestor_nodes = function() {
+  var a = null;
+  return a = function(b, c) {
+    switch(arguments.length) {
+      case 1:
+        return a.call(null, b, cljs.core.cons.call(null, b));
+      case 2:
+        var d;
+        a: {
+          for(var e = b, f = c;;) {
+            if(e = e.parentNode, cljs.core.truth_(e)) {
+              var g = e, e = g, f = cljs.core.cons.call(null, g, f)
+            }else {
+              d = f;
+              break a
+            }
+          }
+        }
+        return d
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+domina.domina.events.dispatch_browser_BANG_ = function(a, b) {
+  var c = domina.domina.events.ancestor_nodes.call(null, domina.domina.single_node.call(null, a)), d = cljs.core.seq.call(null, c);
+  if(cljs.core.truth_(d)) {
+    for(var e = cljs.core.first.call(null, d);;) {
+      if(!cljs.core.truth_(e.propagationStopped)) {
+        b.currentTarget = e, goog.events.fireListeners.call(null, e, b.type, !0, b)
+      }
+      e = cljs.core.next.call(null, d);
+      if(cljs.core.truth_(e)) {
+        d = e, e = cljs.core.first.call(null, d)
       }else {
-        return a
+        break
       }
     }
-  }else {
-    return clojure.zip.up.call(null, a)
   }
-};
-clojure.zip.end_QMARK_ = function(a) {
-  return cljs.core._EQ_.call(null, "\ufdd0'end", a.call(null, 1))
-};
-clojure.zip.remove = function(a) {
-  cljs.core.nth.call(null, a, 0, null);
-  var b = cljs.core.nth.call(null, a, 1, null), b = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, b, "\ufdd0'l"), d = cljs.core.get.call(null, b, "\ufdd0'ppath"), e = cljs.core.get.call(null, b, "\ufdd0'pnodes"), f = cljs.core.get.call(null, b, "\ufdd0'r");
-  if(cljs.core.truth_(cljs.core.nil_QMARK_.call(null, b))) {
-    throw"Remove at top";
-  }
-  if(cljs.core.truth_(0 < cljs.core.count.call(null, c))) {
-    for(a = cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([cljs.core.peek.call(null, c), cljs.core.assoc.call(null, b, "\ufdd0'l", cljs.core.pop.call(null, c), "\ufdd0'changed?", !0)]), cljs.core.meta.call(null, a));;) {
-      if(b = clojure.zip.branch_QMARK_.call(null, a), b = cljs.core.truth_(b) ? clojure.zip.down.call(null, a) : b, cljs.core.truth_(b)) {
-        a = clojure.zip.rightmost.call(null, b)
+  e = cljs.core.seq.call(null, cljs.core.reverse.call(null, c));
+  if(cljs.core.truth_(e)) {
+    for(c = cljs.core.first.call(null, e);;) {
+      if(!cljs.core.truth_(c.propagationStopped)) {
+        b.currentTarget = c, goog.events.fireListeners.call(null, c, b.type, !1, b)
+      }
+      c = cljs.core.next.call(null, e);
+      if(cljs.core.truth_(c)) {
+        e = c, c = cljs.core.first.call(null, e)
       }else {
-        return a
+        break
       }
     }
-  }else {
-    return cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([clojure.zip.make_node.call(null, a, cljs.core.peek.call(null, e), f), cljs.core.truth_(d) ? cljs.core.assoc.call(null, d, "\ufdd0'changed?", !0) : d]), cljs.core.meta.call(null, a))
   }
+  return b.returnValue_
 };
-clojure.walk = {};
-clojure.walk.walk = function(a, b, c) {
-  return cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? b.call(null, cljs.core.doall.call(null, cljs.core.map.call(null, a, c))) : cljs.core.truth_(cljs.core.coll_QMARK_.call(null, c)) ? b.call(null, cljs.core.into.call(null, cljs.core.empty.call(null, c), cljs.core.map.call(null, a, c))) : cljs.core.truth_("\ufdd0'else") ? b.call(null, c) : null
+domina.domina.events.dispatch_event_target_BANG_ = function(a, b) {
+  return goog.events.dispatchEvent.call(null, a, b)
 };
-clojure.walk.postwalk = function postwalk(b, c) {
-  return clojure.walk.walk.call(null, cljs.core.partial.call(null, postwalk, b), b, c)
+domina.domina.events.is_event_target_QMARK_ = function(a) {
+  var b = a.getParentEventTarget;
+  return cljs.core.truth_(b) ? a.dispatchEvent : b
 };
-clojure.walk.prewalk = function prewalk(b, c) {
-  return clojure.walk.walk.call(null, cljs.core.partial.call(null, prewalk, b), cljs.core.identity, b.call(null, c))
+domina.domina.events.dispatch_BANG_ = function() {
+  var a = null;
+  return a = function(b, c, d) {
+    switch(arguments.length) {
+      case 2:
+        return a.call(null, domina.domina.events.root_element, b, c);
+      case 3:
+        var e = new goog.events.Event(domina.domina.events.find_builtin_type.call(null, c)), f = cljs.core.seq.call(null, d);
+        if(cljs.core.truth_(f)) {
+          var g = cljs.core.first.call(null, f);
+          cljs.core.nth.call(null, g, 0, null);
+          for(cljs.core.nth.call(null, g, 1, null);;) {
+            var h = g, g = cljs.core.nth.call(null, h, 0, null), h = cljs.core.nth.call(null, h, 1, null);
+            e[g] = h;
+            f = cljs.core.next.call(null, f);
+            if(cljs.core.truth_(f)) {
+              g = f, f = cljs.core.first.call(null, g), h = g, g = f, f = h
+            }else {
+              break
+            }
+          }
+        }
+        return cljs.core.truth_(domina.domina.events.is_event_target_QMARK_.call(null, b)) ? domina.domina.events.dispatch_event_target_BANG_.call(null, b, e) : domina.domina.events.dispatch_browser_BANG_.call(null, b, e)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+domina.domina.events.unlisten_by_key_BANG_ = function(a) {
+  return goog.events.unlistenByKey.call(null, a)
 };
-clojure.walk.keywordize_keys = function(a) {
-  var b = function(a) {
-    var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
-    return cljs.core.truth_(cljs.core.string_QMARK_.call(null, b)) ? cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b), a]) : cljs.core.Vector.fromArray([b, a])
-  };
-  return clojure.walk.postwalk.call(null, function(a) {
-    return cljs.core.truth_(cljs.core.map_QMARK_.call(null, a)) ? cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, b, a)) : a
-  }, a)
-};
-clojure.walk.stringify_keys = function(a) {
-  var b = function(a) {
-    var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
-    return cljs.core.truth_(cljs.core.keyword_QMARK_.call(null, b)) ? cljs.core.Vector.fromArray([cljs.core.name.call(null, b), a]) : cljs.core.Vector.fromArray([b, a])
-  };
-  return clojure.walk.postwalk.call(null, function(a) {
-    return cljs.core.truth_(cljs.core.map_QMARK_.call(null, a)) ? cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, b, a)) : a
-  }, a)
-};
-clojure.walk.prewalk_replace = function(a, b) {
-  return clojure.walk.prewalk.call(null, function(b) {
-    return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, a, b)) ? a.call(null, b) : b
-  }, b)
-};
-clojure.walk.postwalk_replace = function(a, b) {
-  return clojure.walk.postwalk.call(null, function(b) {
-    return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, a, b)) ? a.call(null, b) : b
-  }, b)
+domina.domina.events.get_listeners = function(a, b) {
+  var c = domina.domina.events.find_builtin_type.call(null, b);
+  return cljs.core.mapcat.call(null, function(a) {
+    return goog.events.getListeners.call(null, a, c, !1)
+  }, domina.domina.nodes.call(null, a))
 };
 cljs.reader = {};
 cljs.reader.PushbackReader = {};
@@ -17119,921 +17360,6 @@ cljs.reader.read = function(a, b, c) {
 cljs.reader.read_string = function(a) {
   a = cljs.reader.push_back_reader.call(null, a);
   return cljs.reader.read.call(null, a, !0, null, !1)
-};
-clojure.set = {};
-clojure.set.bubble_max_key = function(a, b) {
-  var c = cljs.core.apply.call(null, cljs.core.max_key, a, b);
-  return cljs.core.cons.call(null, c, cljs.core.remove.call(null, function(a) {
-    return c === a
-  }, b))
-};
-clojure.set.union = function() {
-  var a = null, b = function() {
-    var a = function(a, b, c) {
-      a = clojure.set.bubble_max_key.call(null, cljs.core.count, cljs.core.conj.call(null, c, b, a));
-      return cljs.core.reduce.call(null, cljs.core.into, cljs.core.first.call(null, a), cljs.core.rest.call(null, a))
-    }, b = function(b, d, g) {
-      var h = null;
-      goog.isDef(g) && (h = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2), 0));
-      return a.call(this, b, d, h)
-    };
-    b.cljs$lang$maxFixedArity = 2;
-    b.cljs$lang$applyTo = function(b) {
-      var d = cljs.core.first(b), g = cljs.core.first(cljs.core.next(b)), b = cljs.core.rest(cljs.core.next(b));
-      return a.call(this, d, g, b)
-    };
-    return b
-  }(), a = function(a, d, e) {
-    switch(arguments.length) {
-      case 0:
-        return cljs.core.set([]);
-      case 1:
-        return a;
-      case 2:
-        return cljs.core.truth_(cljs.core.count.call(null, a) < cljs.core.count.call(null, d)) ? cljs.core.reduce.call(null, cljs.core.conj, d, a) : cljs.core.reduce.call(null, cljs.core.conj, a, d);
-      default:
-        return b.apply(this, arguments)
-    }
-    throw"Invalid arity: " + arguments.length;
-  };
-  a.cljs$lang$maxFixedArity = 2;
-  a.cljs$lang$applyTo = b.cljs$lang$applyTo;
-  return a
-}();
-clojure.set.intersection = function() {
-  var a = null, b = function(a, b) {
-    for(;;) {
-      if(cljs.core.truth_(cljs.core.count.call(null, b) < cljs.core.count.call(null, a))) {
-        var c = a, a = b, b = c
-      }else {
-        return cljs.core.reduce.call(null, function(a, b) {
-          return function(a, c) {
-            return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, b, c)) ? a : cljs.core.disj.call(null, a, c)
-          }
-        }(a, b), a, a)
-      }
-    }
-  }, c = function() {
-    var b = function(b, c, d) {
-      b = clojure.set.bubble_max_key.call(null, function(a) {
-        return-cljs.core.count.call(null, a)
-      }, cljs.core.conj.call(null, d, c, b));
-      return cljs.core.reduce.call(null, a, cljs.core.first.call(null, b), cljs.core.rest.call(null, b))
-    }, c = function(a, c, e) {
-      var i = null;
-      goog.isDef(e) && (i = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2), 0));
-      return b.call(this, a, c, i)
-    };
-    c.cljs$lang$maxFixedArity = 2;
-    c.cljs$lang$applyTo = function(a) {
-      var c = cljs.core.first(a), e = cljs.core.first(cljs.core.next(a)), a = cljs.core.rest(cljs.core.next(a));
-      return b.call(this, c, e, a)
-    };
-    return c
-  }(), a = function(a, e, f) {
-    switch(arguments.length) {
-      case 1:
-        return a;
-      case 2:
-        return b.call(this, a, e);
-      default:
-        return c.apply(this, arguments)
-    }
-    throw"Invalid arity: " + arguments.length;
-  };
-  a.cljs$lang$maxFixedArity = 2;
-  a.cljs$lang$applyTo = c.cljs$lang$applyTo;
-  return a
-}();
-clojure.set.difference = function() {
-  var a = null, b = function(a, b) {
-    return cljs.core.truth_(cljs.core.count.call(null, a) < cljs.core.count.call(null, b)) ? cljs.core.reduce.call(null, function(a, c) {
-      return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, b, c)) ? cljs.core.disj.call(null, a, c) : a
-    }, a, a) : cljs.core.reduce.call(null, cljs.core.disj, a, b)
-  }, c = function() {
-    var b = function(b, c, d) {
-      var h = null;
-      goog.isDef(d) && (h = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2), 0));
-      return cljs.core.reduce.call(null, a, b, cljs.core.conj.call(null, h, c))
-    };
-    b.cljs$lang$maxFixedArity = 2;
-    b.cljs$lang$applyTo = function(b) {
-      var c = cljs.core.first(b), d = cljs.core.first(cljs.core.next(b)), b = cljs.core.rest(cljs.core.next(b));
-      return cljs.core.reduce.call(null, a, c, cljs.core.conj.call(null, b, d))
-    };
-    return b
-  }(), a = function(a, e, f) {
-    switch(arguments.length) {
-      case 1:
-        return a;
-      case 2:
-        return b.call(this, a, e);
-      default:
-        return c.apply(this, arguments)
-    }
-    throw"Invalid arity: " + arguments.length;
-  };
-  a.cljs$lang$maxFixedArity = 2;
-  a.cljs$lang$applyTo = c.cljs$lang$applyTo;
-  return a
-}();
-clojure.set.select = function(a, b) {
-  return cljs.core.reduce.call(null, function(b, d) {
-    return cljs.core.truth_(a.call(null, d)) ? b : cljs.core.disj.call(null, b, d)
-  }, b, b)
-};
-clojure.set.project = function(a, b) {
-  return cljs.core.set.call(null, cljs.core.map.call(null, function(a) {
-    return cljs.core.select_keys.call(null, a, b)
-  }, a))
-};
-clojure.set.rename_keys = function(a, b) {
-  return cljs.core.reduce.call(null, function(a, b) {
-    var e = cljs.core.nth.call(null, b, 0, null), f = cljs.core.nth.call(null, b, 1, null);
-    return cljs.core.truth_(function() {
-      var b = cljs.core.not_EQ_.call(null, e, f);
-      return cljs.core.truth_(b) ? cljs.core.contains_QMARK_.call(null, a, e) : b
-    }()) ? cljs.core.dissoc.call(null, cljs.core.assoc.call(null, a, f, cljs.core.get.call(null, a, e)), e) : a
-  }, a, b)
-};
-clojure.set.rename = function(a, b) {
-  return cljs.core.set.call(null, cljs.core.map.call(null, function(a) {
-    return clojure.set.rename_keys.call(null, a, b)
-  }, a))
-};
-clojure.set.index = function(a, b) {
-  return cljs.core.reduce.call(null, function(a, d) {
-    var e = cljs.core.select_keys.call(null, d, b);
-    return cljs.core.assoc.call(null, a, e, cljs.core.conj.call(null, cljs.core.get.call(null, a, e, cljs.core.set([])), d))
-  }, cljs.core.ObjMap.fromObject([], {}), a)
-};
-clojure.set.map_invert = function(a) {
-  return cljs.core.reduce.call(null, function(a, c) {
-    var d = cljs.core.nth.call(null, c, 0, null), e = cljs.core.nth.call(null, c, 1, null);
-    return cljs.core.assoc.call(null, a, e, d)
-  }, cljs.core.ObjMap.fromObject([], {}), a)
-};
-clojure.set.join = function() {
-  var a = null, b = function(a, b) {
-    if(cljs.core.truth_(function() {
-      var c = cljs.core.seq.call(null, a);
-      return cljs.core.truth_(c) ? cljs.core.seq.call(null, b) : c
-    }())) {
-      var c = clojure.set.intersection.call(null, cljs.core.set.call(null, cljs.core.keys.call(null, cljs.core.first.call(null, a))), cljs.core.set.call(null, cljs.core.keys.call(null, cljs.core.first.call(null, b)))), g = cljs.core.truth_(cljs.core.count.call(null, a) <= cljs.core.count.call(null, b)) ? cljs.core.Vector.fromArray([a, b]) : cljs.core.Vector.fromArray([b, a]), h = cljs.core.nth.call(null, g, 0, null), g = cljs.core.nth.call(null, g, 1, null), i = clojure.set.index.call(null, h, c);
-      return cljs.core.reduce.call(null, function(a, b) {
-        var d = i.call(null, cljs.core.select_keys.call(null, b, c));
-        return cljs.core.truth_(d) ? cljs.core.reduce.call(null, function(a, c) {
-          return cljs.core.conj.call(null, a, cljs.core.merge.call(null, c, b))
-        }, a, d) : a
-      }, cljs.core.set([]), g)
-    }
-    return cljs.core.set([])
-  }, c = function(a, b, c) {
-    var a = cljs.core.truth_(cljs.core.count.call(null, a) <= cljs.core.count.call(null, b)) ? cljs.core.Vector.fromArray([a, b, clojure.set.map_invert.call(null, c)]) : cljs.core.Vector.fromArray([b, a, c]), b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), g = cljs.core.nth.call(null, a, 2, null), h = clojure.set.index.call(null, b, cljs.core.vals.call(null, g));
-    return cljs.core.reduce.call(null, function(a, b) {
-      var c = h.call(null, clojure.set.rename_keys.call(null, cljs.core.select_keys.call(null, b, cljs.core.keys.call(null, g)), g));
-      return cljs.core.truth_(c) ? cljs.core.reduce.call(null, function(a, c) {
-        return cljs.core.conj.call(null, a, cljs.core.merge.call(null, c, b))
-      }, a, c) : a
-    }, cljs.core.set([]), c)
-  };
-  return function(a, e, f) {
-    switch(arguments.length) {
-      case 2:
-        return b.call(this, a, e);
-      case 3:
-        return c.call(this, a, e, f)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-clojure.set.subset_QMARK_ = function(a, b) {
-  var c = cljs.core.count.call(null, a) <= cljs.core.count.call(null, b);
-  return cljs.core.truth_(c) ? cljs.core.every_QMARK_.call(null, function(a) {
-    return cljs.core.contains_QMARK_.call(null, b, a)
-  }, a) : c
-};
-clojure.set.superset_QMARK_ = function(a, b) {
-  var c = cljs.core.count.call(null, a) >= cljs.core.count.call(null, b);
-  return cljs.core.truth_(c) ? cljs.core.every_QMARK_.call(null, function(b) {
-    return cljs.core.contains_QMARK_.call(null, a, b)
-  }, b) : c
-};
-ttmachines.client.repl = {};
-ttmachines.client.repl.codemirrorify_BANG_ = function(a, b, c) {
-  if(cljs.core.truth_(domina.domina.get_data.call(null, a, "\ufdd0'codemirrorified"))) {
-    return null
-  }
-  domina.domina.set_data_BANG_.call(null, a, "\ufdd0'codemirrorified", !0);
-  return cljs.core.reset_BANG_.call(null, c, CodeMirror.fromTextArea(a, ttmachines.client.util.map__GT_js.call(null, b)))
-};
-ttmachines.client.repl.set_option = function(a, b, c) {
-  return a.setOption(cljs.core.name.call(null, b), c)
-};
-ttmachines.client.repl.editor_textarea = "editor-textarea";
-ttmachines.client.repl.editor = cljs.core.atom.call(null, null);
-ttmachines.client.repl.editor_settings = cljs.core.ObjMap.fromObject(["\ufdd0'theme", "\ufdd0'lineNumbers", "\ufdd0'matchBrackets"], {"\ufdd0'theme":"ambiance", "\ufdd0'lineNumbers":!0, "\ufdd0'matchBrackets":!0});
-ttmachines.client.repl.result_textarea = "result-textarea";
-ttmachines.client.repl.result = cljs.core.atom.call(null, null);
-ttmachines.client.repl.result_settings = cljs.core.ObjMap.fromObject(["\ufdd0'theme", "\ufdd0'readOnly", "\ufdd0'lineWrapping"], {"\ufdd0'theme":"ambiance", "\ufdd0'readOnly":!0, "\ufdd0'lineWrapping":!0});
-ttmachines.client.repl.code = cljs.core.atom.call(null, "");
-cljs.core.set_validator_BANG_.call(null, ttmachines.client.repl.code, ttmachines.client.repl.valid_code);
-cljs.core.add_watch.call(null, ttmachines.client.repl.code, "\ufdd0'process", function(a, b, c, d) {
-  return ttmachines.client.repl.process.call(null, d)
-});
-ttmachines.client.repl.update_code = function(a) {
-  var b = a.getValue();
-  return setTimeout.call(null, function() {
-    return cljs.core.truth_(cljs.core._EQ_.call(null, a.getValue(), b)) ? (cljs.core.deref.call(null, ttmachines.client.repl.result).setValue(""), cljs.core.reset_BANG_.call(null, ttmachines.client.repl.code, b)) : null
-  }, 200)
-};
-ttmachines.client.repl.get_selection_doc = function(a) {
-  a = a.getSelection();
-  return cljs.core.truth_(cljs.core._EQ_.call(null, "", a)) ? null : ttmachines.client.repl.get_doc.call(null, a)
-};
-ttmachines.client.repl.change_listeners = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'editor", "\ufdd0'result"], {"\ufdd0'editor":cljs.core.ObjMap.fromObject(["\ufdd0'update-code"], {"\ufdd0'update-code":ttmachines.client.repl.update_code}), "\ufdd0'result":cljs.core.ObjMap.fromObject([], {})}));
-ttmachines.client.repl.activity_listeners = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'editor", "\ufdd0'result"], {"\ufdd0'editor":cljs.core.ObjMap.fromObject(["\ufdd0'get-selection-doc"], {"\ufdd0'get-selection-doc":ttmachines.client.repl.get_selection_doc}), "\ufdd0'result":cljs.core.ObjMap.fromObject([], {})}));
-ttmachines.client.repl.init_editor_BANG_ = function(a) {
-  ttmachines.client.repl.codemirrorify_BANG_.call(null, a, ttmachines.client.repl.editor_settings, ttmachines.client.repl.editor);
-  ttmachines.client.repl.set_option.call(null, cljs.core.deref.call(null, ttmachines.client.repl.editor), "\ufdd0'onChange", function(a, c) {
-    var d = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.change_listeners).call(null, "\ufdd0'editor"));
-    if(cljs.core.truth_(d)) {
-      var e = cljs.core.first.call(null, d);
-      cljs.core.nth.call(null, e, 0, null);
-      for(cljs.core.nth.call(null, e, 1, null);;) {
-        if(cljs.core.nth.call(null, e, 0, null), e = cljs.core.nth.call(null, e, 1, null), e.call(null, a, c), e = cljs.core.next.call(null, d), cljs.core.truth_(e)) {
-          d = e, e = cljs.core.first.call(null, d)
-        }else {
-          return null
-        }
-      }
-    }else {
-      return null
-    }
-  });
-  return ttmachines.client.repl.set_option.call(null, cljs.core.deref.call(null, ttmachines.client.repl.editor), "\ufdd0'onCursorActivity", function(a) {
-    var c = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.activity_listeners).call(null, "\ufdd0'editor"));
-    if(cljs.core.truth_(c)) {
-      var d = cljs.core.first.call(null, c);
-      cljs.core.nth.call(null, d, 0, null);
-      for(cljs.core.nth.call(null, d, 1, null);;) {
-        if(cljs.core.nth.call(null, d, 0, null), d = cljs.core.nth.call(null, d, 1, null), d.call(null, a), d = cljs.core.next.call(null, c), cljs.core.truth_(d)) {
-          c = d, d = cljs.core.first.call(null, c)
-        }else {
-          return null
-        }
-      }
-    }else {
-      return null
-    }
-  })
-};
-ttmachines.client.repl.init_result_BANG_ = function(a) {
-  ttmachines.client.repl.codemirrorify_BANG_.call(null, a, ttmachines.client.repl.result_settings, ttmachines.client.repl.result);
-  ttmachines.client.repl.set_option.call(null, cljs.core.deref.call(null, ttmachines.client.repl.result), "\ufdd0'onChange", function(a, c) {
-    var d = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.change_listeners).call(null, "\ufdd0'result"));
-    if(cljs.core.truth_(d)) {
-      var e = cljs.core.first.call(null, d);
-      cljs.core.nth.call(null, e, 0, null);
-      for(cljs.core.nth.call(null, e, 1, null);;) {
-        if(cljs.core.nth.call(null, e, 0, null), e = cljs.core.nth.call(null, e, 1, null), e.call(null, a, c), e = cljs.core.next.call(null, d), cljs.core.truth_(e)) {
-          d = e, e = cljs.core.first.call(null, d)
-        }else {
-          return null
-        }
-      }
-    }else {
-      return null
-    }
-  });
-  return ttmachines.client.repl.set_option.call(null, cljs.core.deref.call(null, ttmachines.client.repl.result), "\ufdd0'onCursorActivity", function(a) {
-    var c = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.activity_listeners).call(null, "\ufdd0'result"));
-    if(cljs.core.truth_(c)) {
-      var d = cljs.core.first.call(null, c);
-      cljs.core.nth.call(null, d, 0, null);
-      for(cljs.core.nth.call(null, d, 1, null);;) {
-        if(cljs.core.nth.call(null, d, 0, null), d = cljs.core.nth.call(null, d, 1, null), d.call(null, a), d = cljs.core.next.call(null, c), cljs.core.truth_(d)) {
-          c = d, d = cljs.core.first.call(null, c)
-        }else {
-          return null
-        }
-      }
-    }else {
-      return null
-    }
-  })
-};
-ttmachines.client.repl.add_change_listener = function(a, b, c) {
-  return cljs.core.swap_BANG_.call(null, ttmachines.client.repl.change_listeners, cljs.core.assoc_in, cljs.core.Vector.fromArray([a, b]), c)
-};
-ttmachines.client.repl.add_activity_listener = function(a, b, c) {
-  return cljs.core.swap_BANG_.call(null, ttmachines.client.repl.activity_listeners, cljs.core.assoc_in, cljs.core.Vector.fromArray([a, b]), c)
-};
-ttmachines.client.repl.remove_change_listener = function(a, b) {
-  return cljs.core.swap_BANG_.call(null, ttmachines.client.repl.change_listeners, ttmachines.client.repl.dissoc_in, cljs.core.Vector.fromArray([a, b]))
-};
-ttmachines.client.repl.remove_activity_listener = function(a, b) {
-  return cljs.core.swap_BANG_.call(null, ttmachines.client.repl.activity_listeners, ttmachines.client.repl.dissoc_in, cljs.core.Vector.fromArray([a, b]))
-};
-ttmachines.client.repl.add_editor_change_listener = cljs.core.partial.call(null, ttmachines.client.repl.add_change_listener, "\ufdd0'editor");
-ttmachines.client.repl.add_result_change_listener = cljs.core.partial.call(null, ttmachines.client.repl.add_change_listener, "\ufdd0'result");
-ttmachines.client.repl.add_editor_activity_listener = cljs.core.partial.call(null, ttmachines.client.repl.add_activity_listener, "\ufdd0'editor");
-ttmachines.client.repl.add_result_activity_listener = cljs.core.partial.call(null, ttmachines.client.repl.add_activity_listener, "\ufdd0'result");
-ttmachines.client.repl.remove_editor_change_listener = cljs.core.partial.call(null, ttmachines.client.repl.remove_change_listener, "\ufdd0'editor");
-ttmachines.client.repl.remove_result_change_listener = cljs.core.partial.call(null, ttmachines.client.repl.remove_change_listener, "\ufdd0'result");
-ttmachines.client.repl.remove_editor_activity_listener = cljs.core.partial.call(null, ttmachines.client.repl.remove_activity_listener, "\ufdd0'editor");
-ttmachines.client.repl.remove_result_activity_listener = cljs.core.partial.call(null, ttmachines.client.repl.remove_activity_listener, "\ufdd0'result");
-ttmachines.client.repl.editor_text = function() {
-  return cljs.core.deref.call(null, ttmachines.client.repl.editor).getValue()
-};
-goog.exportSymbol("ttmachines.client.repl.editor_text", ttmachines.client.repl.editor_text);
-ttmachines.client.repl.set_editor_text_BANG_ = function(a) {
-  return cljs.core.deref.call(null, ttmachines.client.repl.editor).setValue(a)
-};
-goog.exportSymbol("ttmachines.client.repl.set_editor_text_BANG_", ttmachines.client.repl.set_editor_text_BANG_);
-ttmachines.client.repl.result_text = function() {
-  return cljs.core.deref.call(null, ttmachines.client.repl.result).getValue()
-};
-goog.exportSymbol("ttmachines.client.repl.result_text", ttmachines.client.repl.result_text);
-ttmachines.client.repl.char_count = function(a, b) {
-  return cljs.core.count.call(null, cljs.core.filter.call(null, function(a) {
-    return cljs.core._EQ_.call(null, a, b)
-  }, a))
-};
-ttmachines.client.repl.valid_code = function(a) {
-  var a = cljs.core.partial.call(null, ttmachines.client.repl.char_count, a), b = cljs.core._EQ_.call(null, a.call(null, "("), a.call(null, ")"));
-  return cljs.core.truth_(b) && (b = cljs.core._EQ_.call(null, a.call(null, "{"), a.call(null, "}")), cljs.core.truth_(b)) ? (b = cljs.core._EQ_.call(null, a.call(null, "["), a.call(null, "]")), cljs.core.truth_(b) ? cljs.core.even_QMARK_.call(null, a.call(null, '"')) : b) : b
-};
-ttmachines.client.repl.ns_alias_expansions = cljs.core.ObjMap.fromObject(["string", "dom", "css"], {string:"clojure.string", dom:"domina.domina", css:"domina.domina.css"});
-ttmachines.client.repl.ns_from_str = function(a) {
-  a = cljs.core.re_find.call(null, /^([\w.\-\?\!]+)\/[\w.\-\?\!]+$/, a);
-  return cljs.core.truth_(a) ? a.call(null, 1) : null
-};
-ttmachines.client.repl.expand_ns_aliases = function(a) {
-  var b = cljs.core.str.call(null, a), c = ttmachines.client.repl.ns_from_str.call(null, b), d = ttmachines.client.repl.ns_alias_expansions.call(null, c);
-  return cljs.core.truth_(cljs.core.truth_(c) ? d : c) ? cljs.core.symbol.call(null, clojure.string.replace.call(null, b, c, d)) : a
-};
-ttmachines.client.repl.pre_compile = function(a) {
-  return cljs.core.pr_str.call(null, clojure.walk.postwalk.call(null, ttmachines.client.repl.expand_ns_aliases, cljs.reader.read_string.call(null, cljs.core.str.call(null, "(do ", a, ")"))))
-};
-ttmachines.client.repl._STAR_cljs_ns_STAR_ = cljs.core.atom.call(null, "ttmachines.client.user");
-ttmachines.client.repl.go_compile = function(a) {
-  var b = cljs.core.atom.call(null, null), a = ttmachines.client.util.map__GT_js.call(null, cljs.core.ObjMap.fromObject("\ufdd0'url,\ufdd0'data,\ufdd0'contentType,\ufdd0'async,\ufdd0'type,\ufdd0'dataType,\ufdd0'success".split(","), {"\ufdd0'url":"/compile", "\ufdd0'data":cljs.core.str.call(null, "{:expr ", a, " :cljs-ns ", cljs.core.deref.call(null, ttmachines.client.repl._STAR_cljs_ns_STAR_), "}"), "\ufdd0'contentType":"application/clojure; charset=utf-8", "\ufdd0'async":!1, "\ufdd0'type":"POST", 
-  "\ufdd0'dataType":"text", "\ufdd0'success":function(a) {
-    return cljs.core.reset_BANG_.call(null, b, cljs.reader.read_string.call(null, a))
-  }}));
-  jQuery.ajax(a);
-  return cljs.core.deref.call(null, b)
-};
-ttmachines.client.repl.evaluate = function(a) {
-  var a = ttmachines.client.repl.go_compile.call(null, a), b = cljs.core.truth_(a) ? "\ufdd0'error".call(null, a) : a;
-  cljs.core.truth_(b) && cljs.core.str.call(null, "Compilation error: ", b);
-  try {
-    return eval.call(null, "\ufdd0'js".call(null, a))
-  }catch(c) {
-    if(cljs.core.truth_(cljs.core.instance_QMARK_.call(null, Error, c))) {
-      return cljs.core.str.call(null, "Compilation error: ", c)
-    }
-    if(cljs.core.truth_("\ufdd0'else")) {
-      throw c;
-    }
-    return null
-  }
-};
-ttmachines.client.repl.show_result = function(a) {
-  return cljs.core.deref.call(null, ttmachines.client.repl.result).setValue(ttmachines.client.util.finite_pr_str.call(null, a))
-};
-ttmachines.client.repl.process = function(a) {
-  a = ttmachines.client.repl.pre_compile.call(null, a);
-  a = ttmachines.client.repl.evaluate.call(null, a);
-  return ttmachines.client.repl.show_result.call(null, a)
-};
-ttmachines.client.repl.get_doc = function(a) {
-  cljs.core.atom.call(null, null);
-  a = ttmachines.client.util.map__GT_js.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'url", "\ufdd0'async", "\ufdd0'type", "\ufdd0'success"], {"\ufdd0'url":cljs.core.str.call(null, "/doc/", a), "\ufdd0'async":!0, "\ufdd0'type":"GET", "\ufdd0'success":function(a) {
-    return ttmachines.client.repl.show_doc.call(null, a)
-  }}));
-  jQuery.ajax(a);
-  return null
-};
-ttmachines.client.repl.show_doc = function(a) {
-  var b = jQuery.call(null, "#doc-name"), c = jQuery.call(null, "#doc-args"), d = jQuery.call(null, "#doc-body");
-  b.text(a.name);
-  c.html(clojure.string.join.call(null, cljs.core.map.call(null, function(a) {
-    return cljs.core.str.call(null, "<li>", a, "</li>")
-  }, a.arglists)));
-  return d.text(a.doc)
-};
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":1}), function(a, b) {
-  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data").call(null, "\ufdd0'cljs-ns");
-  return cljs.core.truth_(c) ? cljs.core.reset_BANG_.call(null, ttmachines.client.repl._STAR_cljs_ns_STAR_, c) : null
-});
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":2}), function(a, b) {
-  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b;
-  cljs.core.get.call(null, c, "\ufdd0'data");
-  return cljs.core.truth_(function() {
-    var a = domina.domina.by_id.call(null, ttmachines.client.repl.editor_textarea);
-    return cljs.core.truth_(a) ? domina.domina.by_id.call(null, ttmachines.client.repl.result_textarea) : a
-  }()) ? (ttmachines.client.repl.init_editor_BANG_.call(null, domina.domina.by_id.call(null, ttmachines.client.repl.editor_textarea)), ttmachines.client.repl.init_result_BANG_.call(null, domina.domina.by_id.call(null, ttmachines.client.repl.result_textarea)), cljs.core.set_validator_BANG_.call(null, ttmachines.client.repl.code, ttmachines.client.repl.valid_code), cljs.core.reset_BANG_.call(null, ttmachines.client.repl.code, ttmachines.client.repl.editor_text.call(null))) : null
-});
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function(a, b) {
-  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data").call(null, "\ufdd0'repl-text");
-  return cljs.core.truth_(c) ? ttmachines.client.repl.set_editor_text_BANG_.call(null, c) : null
-});
-ttmachines.client.chapter = {};
-ttmachines.client.chapter.one = {};
-ttmachines.client.chapter.one.my_name = cljs.core.atom.call(null, "User");
-ttmachines.client.chapter.one.greeting = function() {
-  return cljs.core.str.call(null, "It's nice to finally meet you, ", cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), "!")
-};
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function() {
-  var a = domina.domina.by_id.call(null, "hello-user");
-  return cljs.core.truth_(a) ? domina.domina.set_text_BANG_.call(null, a, ttmachines.client.chapter.one.greeting.call(null)) : null
-});
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function() {
-  var a = domina.domina.by_id.call(null, "def-my-name-again");
-  return cljs.core.truth_(a) ? ttmachines.client.util.code_highlight.call(null, cljs.core.str.call(null, '(def my-name "', cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), '")'), "def-my-name-again") : null
-});
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function() {
-  var a = domina.domina.by_id.call(null, "insert-name");
-  return cljs.core.truth_(a) ? domina.domina.set_text_BANG_.call(null, a, cljs.core.str.call(null, '"', cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), '"')) : null
-});
-ttmachines.client.chapter.one.str_with_symbols = function() {
-  return cljs.core.str.call(null, '(def my-name "', cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), '")\n\n(str "My name is " my-name)')
-};
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function(a, b) {
-  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data");
-  return cljs.core.truth_(cljs.core._EQ_.call(null, c.call(null, "\ufdd0'route"), "/chapter/1/3")) ? ttmachines.client.repl.set_editor_text_BANG_.call(null, ttmachines.client.chapter.one.str_with_symbols.call(null)) : null
-});
-ttmachines.client.chapter.one.nested_str = function() {
-  return cljs.core.str.call(null, '(def my-name "', cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), '")\n\n(str (str "My " "name " "is ") my-name)')
-};
-one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function(a, b) {
-  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data");
-  return cljs.core.truth_(cljs.core._EQ_.call(null, c.call(null, "\ufdd0'route"), "/chapter/1/4")) ? ttmachines.client.repl.set_editor_text_BANG_.call(null, ttmachines.client.chapter.one.nested_str.call(null)) : null
-});
-one.core = {};
-one.core.Startable = {};
-one.core.start = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.one$core$Startable$start : a)) {
-    a = a.one$core$Startable$start(a)
-  }else {
-    var b;
-    b = one.core.start[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = one.core.start._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Startable.start", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-one.core.Disposable = {};
-one.core.dispose = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.one$core$Disposable$dispose : a)) {
-    a = a.one$core$Disposable$dispose(a)
-  }else {
-    var b;
-    b = one.core.dispose[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = one.core.dispose._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Disposable.dispose", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-one.core.get_style = function(a, b) {
-  return cljs.core.some.call(null, function(a) {
-    a = a.call(null);
-    return cljs.core.truth_(cljs.core.not_EQ_.call(null, "", a)) ? a : null
-  }, cljs.core.Vector.fromArray([function() {
-    return goog.style.getComputedStyle.call(null, a, b)
-  }, function() {
-    return goog.style.getStyle.call(null, a, b)
-  }, function() {
-    return a.currentStyle[b]
-  }, function() {
-    throw Error(cljs.core.str.call(null, "Could not retrieve value for style ", b));
-  }]))
-};
-clojure.browser = {};
-clojure.browser.event = {};
-clojure.browser.event.EventType = {};
-clojure.browser.event.event_types = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.clojure$browser$event$EventType$event_types : a)) {
-    a = a.clojure$browser$event$EventType$event_types(a)
-  }else {
-    var b;
-    b = clojure.browser.event.event_types[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = clojure.browser.event.event_types._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "EventType.event-types", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-Element.prototype.clojure$browser$event$EventType$ = !0;
-Element.prototype.clojure$browser$event$EventType$event_types = function() {
-  return cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, function(a) {
-    var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
-    return cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b.toLowerCase()), a])
-  }, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.events.EventType))))
-};
-goog.events.EventTarget.prototype.clojure$browser$event$EventType$ = !0;
-goog.events.EventTarget.prototype.clojure$browser$event$EventType$event_types = function() {
-  return cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, function(a) {
-    var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
-    return cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b.toLowerCase()), a])
-  }, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.events.EventType))))
-};
-clojure.browser.event.listen = function() {
-  var a = null;
-  return a = function(b, c, d, e) {
-    switch(arguments.length) {
-      case 3:
-        return a.call(null, b, c, d, !1);
-      case 4:
-        return goog.events.listen.call(null, b, cljs.core.get.call(null, clojure.browser.event.event_types.call(null, b), c, c), d, e)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-clojure.browser.event.listen_once = function() {
-  var a = null;
-  return a = function(b, c, d, e) {
-    switch(arguments.length) {
-      case 3:
-        return a.call(null, b, c, d, !1);
-      case 4:
-        return goog.events.listenOnce.call(null, b, cljs.core.get.call(null, clojure.browser.event.event_types.call(null, b), c, c), d, e)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-clojure.browser.event.unlisten = function() {
-  var a = null;
-  return a = function(b, c, d, e) {
-    switch(arguments.length) {
-      case 3:
-        return a.call(null, b, c, d, !1);
-      case 4:
-        return goog.events.unlisten.call(null, b, cljs.core.get.call(null, clojure.browser.event.event_types.call(null, b), c, c), d, e)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-clojure.browser.event.unlisten_by_key = function(a) {
-  return goog.events.unlistenByKey.call(null, a)
-};
-clojure.browser.event.dispatch_event = function(a, b) {
-  return goog.events.dispatchEvent.call(null, a, b)
-};
-clojure.browser.event.expose = function(a) {
-  return goog.events.expose.call(null, a)
-};
-clojure.browser.event.fire_listeners = function() {
-  return null
-};
-clojure.browser.event.total_listener_count = function() {
-  return goog.events.getTotalListenerCount.call(null)
-};
-clojure.browser.event.get_listener = function() {
-  return null
-};
-clojure.browser.event.all_listeners = function() {
-  return null
-};
-clojure.browser.event.unique_event_id = function() {
-  return null
-};
-clojure.browser.event.has_listener = function() {
-  return null
-};
-clojure.browser.event.remove_all = function() {
-  return null
-};
-domina.domina.events = {};
-domina.domina.events.Event = {};
-domina.domina.events.prevent_default = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$prevent_default : a)) {
-    a = a.domina$domina$events$Event$prevent_default(a)
-  }else {
-    var b;
-    b = domina.domina.events.prevent_default[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.prevent_default._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.prevent-default", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.stop_propagation = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$stop_propagation : a)) {
-    a = a.domina$domina$events$Event$stop_propagation(a)
-  }else {
-    var b;
-    b = domina.domina.events.stop_propagation[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.stop_propagation._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.stop-propagation", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.target = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$target : a)) {
-    a = a.domina$domina$events$Event$target(a)
-  }else {
-    var b;
-    b = domina.domina.events.target[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.target._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.target", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.current_target = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$current_target : a)) {
-    a = a.domina$domina$events$Event$current_target(a)
-  }else {
-    var b;
-    b = domina.domina.events.current_target[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.current_target._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.current-target", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.event_type = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$event_type : a)) {
-    a = a.domina$domina$events$Event$event_type(a)
-  }else {
-    var b;
-    b = domina.domina.events.event_type[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.event_type._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.event-type", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.raw_event = function(a) {
-  if(cljs.core.truth_(cljs.core.truth_(a) ? a.domina$domina$events$Event$raw_event : a)) {
-    a = a.domina$domina$events$Event$raw_event(a)
-  }else {
-    var b;
-    b = domina.domina.events.raw_event[goog.typeOf.call(null, a)];
-    if(!cljs.core.truth_(b) && (b = domina.domina.events.raw_event._, !cljs.core.truth_(b))) {
-      throw cljs.core.missing_protocol.call(null, "Event.raw-event", a);
-    }
-    a = b.call(null, a)
-  }
-  return a
-};
-domina.domina.events.builtin_events = cljs.core.set.call(null, cljs.core.map.call(null, cljs.core.keyword, goog.object.getValues.call(null, goog.events.EventType)));
-domina.domina.events.root_element = window.document.documentElement;
-domina.domina.events.find_builtin_type = function(a) {
-  return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, domina.domina.events.builtin_events, a)) ? cljs.core.name.call(null, a) : a
-};
-domina.domina.events.create_listener_function = function create_listener_function(b) {
-  return function(c) {
-    b.call(null, function() {
-      if(cljs.core.truth_(void 0 === domina.domina.events.t127899)) {
-        domina.domina.events.t127899 = function(b, c, f, g) {
-          this.evt = b;
-          this.f = c;
-          this.create_listener_function = f;
-          this.__meta = g
-        }, domina.domina.events.t127899.cljs$core$IPrintable$_pr_seq = function() {
-          return cljs.core.list.call(null, "domina.domina.events.t127899")
-        }, domina.domina.events.t127899.prototype.cljs$core$ILookup$ = !0, domina.domina.events.t127899.prototype.cljs$core$ILookup$_lookup = function() {
-          var b = null;
-          return function(b, c, d) {
-            switch(arguments.length) {
-              case 2:
-                var h;
-                h = this.evt[c];
-                h = cljs.core.truth_(h) ? h : this.evt[cljs.core.name.call(null, c)];
-                return h;
-              case 3:
-                return h = cljs.core._lookup.call(null, b, c), cljs.core.truth_(h) ? h : d
-            }
-            throw"Invalid arity: " + arguments.length;
-          }
-        }(), domina.domina.events.t127899.prototype.domina$domina$events$Event$ = !0, domina.domina.events.t127899.prototype.domina$domina$events$Event$prevent_default = function() {
-          return this.evt.preventDefault()
-        }, domina.domina.events.t127899.prototype.domina$domina$events$Event$stop_propagation = function() {
-          return this.evt.stopPropagation()
-        }, domina.domina.events.t127899.prototype.domina$domina$events$Event$target = function() {
-          return this.evt.target
-        }, domina.domina.events.t127899.prototype.domina$domina$events$Event$current_target = function() {
-          return this.evt.currentTarget
-        }, domina.domina.events.t127899.prototype.domina$domina$events$Event$event_type = function() {
-          return this.evt.type
-        }, domina.domina.events.t127899.prototype.domina$domina$events$Event$raw_event = function() {
-          return this.evt
-        }, domina.domina.events.t127899.prototype.cljs$core$IMeta$ = !0, domina.domina.events.t127899.prototype.cljs$core$IMeta$_meta = function() {
-          return this.__meta
-        }, domina.domina.events.t127899.prototype.cljs$core$IWithMeta$ = !0, domina.domina.events.t127899.prototype.cljs$core$IWithMeta$_with_meta = function(b, c) {
-          return new domina.domina.events.t127899(this.evt, this.f, this.create_listener_function, c)
-        }
-      }
-      return new domina.domina.events.t127899(c, b, create_listener_function, null)
-    }());
-    return!0
-  }
-};
-domina.domina.events.listen_internal_BANG_ = function(a, b, c, d, e) {
-  var f = domina.domina.events.create_listener_function.call(null, c), g = domina.domina.events.find_builtin_type.call(null, b);
-  return cljs.core.doall.call(null, function() {
-    return function i(a) {
-      return new cljs.core.LazySeq(null, !1, function() {
-        for(;;) {
-          if(cljs.core.truth_(cljs.core.seq.call(null, a))) {
-            var b = cljs.core.first.call(null, a);
-            return cljs.core.cons.call(null, cljs.core.truth_(e) ? goog.events.listenOnce.call(null, b, g, f, d) : goog.events.listen.call(null, b, g, f, d), i.call(null, cljs.core.rest.call(null, a)))
-          }
-          return null
-        }
-      })
-    }.call(null, domina.domina.nodes.call(null, a))
-  }())
-};
-domina.domina.events.listen_BANG_ = function() {
-  var a = null;
-  return a = function(b, c, d) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, domina.domina.events.root_element, b, c);
-      case 3:
-        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !1, !1)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.capture_BANG_ = function() {
-  var a = null;
-  return a = function(b, c, d) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, domina.domina.events.root_element, b, c);
-      case 3:
-        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !0, !1)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.listen_once_BANG_ = function() {
-  var a = null;
-  return a = function(b, c, d) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, domina.domina.events.root_element, b, c);
-      case 3:
-        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !1, !0)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.capture_once_BANG_ = function() {
-  var a = null;
-  return a = function(b, c, d) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, domina.domina.events.root_element, b, c);
-      case 3:
-        return domina.domina.events.listen_internal_BANG_.call(null, b, c, d, !0, !0)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.unlisten_BANG_ = function() {
-  var a = null;
-  return a = function(b, c) {
-    switch(arguments.length) {
-      case 0:
-        return a.call(null, domina.domina.events.root_element);
-      case 1:
-        var d;
-        a: {
-          var e = cljs.core.seq.call(null, domina.domina.nodes.call(null, b));
-          if(cljs.core.truth_(e)) {
-            for(var f = cljs.core.first.call(null, e);;) {
-              if(goog.events.removeAll.call(null, f), f = cljs.core.next.call(null, e), cljs.core.truth_(f)) {
-                e = f, f = cljs.core.first.call(null, e)
-              }else {
-                d = null;
-                break a
-              }
-            }
-          }else {
-            d = null
-          }
-        }
-        return d;
-      case 2:
-        return d = domina.domina.events.find_builtin_type.call(null, c), goog.events.removeAll.call(null, domina.domina.events.node, d)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.ancestor_nodes = function() {
-  var a = null;
-  return a = function(b, c) {
-    switch(arguments.length) {
-      case 1:
-        return a.call(null, b, cljs.core.cons.call(null, b));
-      case 2:
-        var d;
-        a: {
-          for(var e = b, f = c;;) {
-            if(e = e.parentNode, cljs.core.truth_(e)) {
-              var g = e, e = g, f = cljs.core.cons.call(null, g, f)
-            }else {
-              d = f;
-              break a
-            }
-          }
-        }
-        return d
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.dispatch_browser_BANG_ = function(a, b) {
-  var c = domina.domina.events.ancestor_nodes.call(null, domina.domina.single_node.call(null, a)), d = cljs.core.seq.call(null, c);
-  if(cljs.core.truth_(d)) {
-    for(var e = cljs.core.first.call(null, d);;) {
-      if(!cljs.core.truth_(e.propagationStopped)) {
-        b.currentTarget = e, goog.events.fireListeners.call(null, e, b.type, !0, b)
-      }
-      e = cljs.core.next.call(null, d);
-      if(cljs.core.truth_(e)) {
-        d = e, e = cljs.core.first.call(null, d)
-      }else {
-        break
-      }
-    }
-  }
-  e = cljs.core.seq.call(null, cljs.core.reverse.call(null, c));
-  if(cljs.core.truth_(e)) {
-    for(c = cljs.core.first.call(null, e);;) {
-      if(!cljs.core.truth_(c.propagationStopped)) {
-        b.currentTarget = c, goog.events.fireListeners.call(null, c, b.type, !1, b)
-      }
-      c = cljs.core.next.call(null, e);
-      if(cljs.core.truth_(c)) {
-        e = c, c = cljs.core.first.call(null, e)
-      }else {
-        break
-      }
-    }
-  }
-  return b.returnValue_
-};
-domina.domina.events.dispatch_event_target_BANG_ = function(a, b) {
-  return goog.events.dispatchEvent.call(null, a, b)
-};
-domina.domina.events.is_event_target_QMARK_ = function(a) {
-  var b = a.getParentEventTarget;
-  return cljs.core.truth_(b) ? a.dispatchEvent : b
-};
-domina.domina.events.dispatch_BANG_ = function() {
-  var a = null;
-  return a = function(b, c, d) {
-    switch(arguments.length) {
-      case 2:
-        return a.call(null, domina.domina.events.root_element, b, c);
-      case 3:
-        var e = new goog.events.Event(domina.domina.events.find_builtin_type.call(null, c)), f = cljs.core.seq.call(null, d);
-        if(cljs.core.truth_(f)) {
-          var g = cljs.core.first.call(null, f);
-          cljs.core.nth.call(null, g, 0, null);
-          for(cljs.core.nth.call(null, g, 1, null);;) {
-            var h = g, g = cljs.core.nth.call(null, h, 0, null), h = cljs.core.nth.call(null, h, 1, null);
-            e[g] = h;
-            f = cljs.core.next.call(null, f);
-            if(cljs.core.truth_(f)) {
-              g = f, f = cljs.core.first.call(null, g), h = g, g = f, f = h
-            }else {
-              break
-            }
-          }
-        }
-        return cljs.core.truth_(domina.domina.events.is_event_target_QMARK_.call(null, b)) ? domina.domina.events.dispatch_event_target_BANG_.call(null, b, e) : domina.domina.events.dispatch_browser_BANG_.call(null, b, e)
-    }
-    throw"Invalid arity: " + arguments.length;
-  }
-}();
-domina.domina.events.unlisten_by_key_BANG_ = function(a) {
-  return goog.events.unlistenByKey.call(null, a)
-};
-domina.domina.events.get_listeners = function(a, b) {
-  var c = domina.domina.events.find_builtin_type.call(null, b);
-  return cljs.core.mapcat.call(null, function(a) {
-    return goog.events.getListeners.call(null, a, c, !1)
-  }, domina.domina.nodes.call(null, a))
 };
 clojure.browser.net = {};
 clojure.browser.net._STAR_timeout_STAR_ = 1E4;
@@ -18546,6 +17872,648 @@ one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.cor
   return ttmachines.client.layout.ajax_link.call(null, domina.domina.css.sel.call(null, "#chapter-nav a"))
 });
 ttmachines.client.layout.init.call(null);
+clojure.zip = {};
+clojure.zip.zipper = function(a, b, c, d) {
+  return cljs.core.with_meta(cljs.core.Vector.fromArray([d, null]), cljs.core.ObjMap.fromObject(["\ufdd0'zip/make-node", "\ufdd0'zip/children", "\ufdd0'zip/branch?"], {"\ufdd0'zip/make-node":c, "\ufdd0'zip/children":b, "\ufdd0'zip/branch?":a}))
+};
+clojure.zip.seq_zip = function(a) {
+  return clojure.zip.zipper.call(null, cljs.core.seq_QMARK_, cljs.core.identity, function(a, c) {
+    return cljs.core.with_meta.call(null, c, cljs.core.meta.call(null, a))
+  }, a)
+};
+clojure.zip.vector_zip = function(a) {
+  return clojure.zip.zipper.call(null, cljs.core.vector_QMARK_, cljs.core.seq, function(a, c) {
+    return cljs.core.with_meta.call(null, cljs.core.vec.call(null, c), cljs.core.meta.call(null, a))
+  }, a)
+};
+clojure.zip.xml_zip = function(a) {
+  return clojure.zip.zipper.call(null, cljs.core.complement.call(null, cljs.core.string_QMARK_), cljs.core.comp.call(null, cljs.core.seq, "\ufdd0'content"), function(a, c) {
+    return cljs.core.assoc.call(null, a, "\ufdd0'content", cljs.core.truth_(c) ? cljs.core.apply.call(null, cljs.core.vector, c) : c)
+  }, a)
+};
+clojure.zip.node = function(a) {
+  return a.call(null, 0)
+};
+clojure.zip.branch_QMARK_ = function(a) {
+  return"\ufdd0'zip/branch?".call(null, cljs.core.meta.call(null, a)).call(null, clojure.zip.node.call(null, a))
+};
+clojure.zip.children = function(a) {
+  if(cljs.core.truth_(clojure.zip.branch_QMARK_.call(null, a))) {
+    return"\ufdd0'zip/children".call(null, cljs.core.meta.call(null, a)).call(null, clojure.zip.node.call(null, a))
+  }
+  throw"called children on a leaf node";
+};
+clojure.zip.make_node = function(a, b, c) {
+  return"\ufdd0'zip/make-node".call(null, cljs.core.meta.call(null, a)).call(null, b, c)
+};
+clojure.zip.path = function(a) {
+  return"\ufdd0'pnodes".call(null, a.call(null, 1))
+};
+clojure.zip.lefts = function(a) {
+  return cljs.core.seq.call(null, "\ufdd0'l".call(null, a.call(null, 1)))
+};
+clojure.zip.rights = function(a) {
+  return"\ufdd0'r".call(null, a.call(null, 1))
+};
+clojure.zip.down = function(a) {
+  if(cljs.core.truth_(clojure.zip.branch_QMARK_.call(null, a))) {
+    var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), d = clojure.zip.children.call(null, a), e = cljs.core.nth.call(null, d, 0, null), f = cljs.core.nthnext.call(null, d, 1);
+    return cljs.core.truth_(d) ? cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([e, cljs.core.ObjMap.fromObject(["\ufdd0'l", "\ufdd0'pnodes", "\ufdd0'ppath", "\ufdd0'r"], {"\ufdd0'l":cljs.core.Vector.fromArray([]), "\ufdd0'pnodes":cljs.core.truth_(c) ? cljs.core.conj.call(null, "\ufdd0'pnodes".call(null, c), b) : cljs.core.Vector.fromArray([b]), "\ufdd0'ppath":c, "\ufdd0'r":f})]), cljs.core.meta.call(null, a)) : null
+  }
+  return null
+};
+clojure.zip.up = function(a) {
+  var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), d = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, c = cljs.core.get.call(null, d, "\ufdd0'l"), e = cljs.core.get.call(null, d, "\ufdd0'ppath"), f = cljs.core.get.call(null, d, "\ufdd0'pnodes"), g = cljs.core.get.call(null, d, "\ufdd0'r"), d = cljs.core.get.call(null, d, "\ufdd0'changed?");
+  return cljs.core.truth_(f) ? (f = cljs.core.peek.call(null, f), cljs.core.with_meta.call(null, cljs.core.truth_(d) ? cljs.core.Vector.fromArray([clojure.zip.make_node.call(null, a, f, cljs.core.concat.call(null, c, cljs.core.cons.call(null, b, g))), cljs.core.truth_(e) ? cljs.core.assoc.call(null, e, "\ufdd0'changed?", !0) : e]) : cljs.core.Vector.fromArray([f, e]), cljs.core.meta.call(null, a))) : null
+};
+clojure.zip.root = function(a) {
+  for(;;) {
+    if(cljs.core.truth_(cljs.core._EQ_.call(null, "\ufdd0'end", a.call(null, 1)))) {
+      return clojure.zip.node.call(null, a)
+    }
+    var b = clojure.zip.up.call(null, a);
+    if(cljs.core.truth_(b)) {
+      a = b
+    }else {
+      return clojure.zip.node.call(null, a)
+    }
+  }
+};
+clojure.zip.right = function(a) {
+  var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, d = cljs.core.get.call(null, c, "\ufdd0'l"), e = cljs.core.get.call(null, c, "\ufdd0'r"), f = cljs.core.nth.call(null, e, 0, null), g = cljs.core.nthnext.call(null, e, 1);
+  return cljs.core.truth_(cljs.core.truth_(c) ? e : c) ? cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([f, cljs.core.assoc.call(null, c, "\ufdd0'l", cljs.core.conj.call(null, d, b), "\ufdd0'r", g)]), cljs.core.meta.call(null, a)) : null
+};
+clojure.zip.rightmost = function(a) {
+  var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, d = cljs.core.get.call(null, c, "\ufdd0'l"), e = cljs.core.get.call(null, c, "\ufdd0'r");
+  return cljs.core.truth_(cljs.core.truth_(c) ? e : c) ? cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([cljs.core.last.call(null, e), cljs.core.assoc.call(null, c, "\ufdd0'l", cljs.core.apply.call(null, cljs.core.conj, d, b, cljs.core.butlast.call(null, e)), "\ufdd0'r", null)]), cljs.core.meta.call(null, a)) : a
+};
+clojure.zip.left = function(a) {
+  var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, d = cljs.core.get.call(null, c, "\ufdd0'l"), e = cljs.core.get.call(null, c, "\ufdd0'r");
+  return cljs.core.truth_(cljs.core.truth_(c) ? cljs.core.seq.call(null, d) : c) ? cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([cljs.core.peek.call(null, d), cljs.core.assoc.call(null, c, "\ufdd0'l", cljs.core.pop.call(null, d), "\ufdd0'r", cljs.core.cons.call(null, b, e))]), cljs.core.meta.call(null, a)) : null
+};
+clojure.zip.leftmost = function(a) {
+  var b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c, d = cljs.core.get.call(null, c, "\ufdd0'l"), e = cljs.core.get.call(null, c, "\ufdd0'r");
+  return cljs.core.truth_(cljs.core.truth_(c) ? cljs.core.seq.call(null, d) : c) ? cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([cljs.core.first.call(null, d), cljs.core.assoc.call(null, c, "\ufdd0'l", cljs.core.Vector.fromArray([]), "\ufdd0'r", cljs.core.concat.call(null, cljs.core.rest.call(null, d), cljs.core.Vector.fromArray([b]), e))]), cljs.core.meta.call(null, a)) : a
+};
+clojure.zip.insert_left = function(a, b) {
+  var c = cljs.core.nth.call(null, a, 0, null), d = cljs.core.nth.call(null, a, 1, null), d = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, d)) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d, e = cljs.core.get.call(null, d, "\ufdd0'l");
+  if(cljs.core.truth_(cljs.core.nil_QMARK_.call(null, d))) {
+    throw"Insert at top";
+  }
+  return cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([c, cljs.core.assoc.call(null, d, "\ufdd0'l", cljs.core.conj.call(null, e, b), "\ufdd0'changed?", !0)]), cljs.core.meta.call(null, a))
+};
+clojure.zip.insert_right = function(a, b) {
+  var c = cljs.core.nth.call(null, a, 0, null), d = cljs.core.nth.call(null, a, 1, null), d = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, d)) ? cljs.core.apply.call(null, cljs.core.hash_map, d) : d, e = cljs.core.get.call(null, d, "\ufdd0'r");
+  if(cljs.core.truth_(cljs.core.nil_QMARK_.call(null, d))) {
+    throw"Insert at top";
+  }
+  return cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([c, cljs.core.assoc.call(null, d, "\ufdd0'r", cljs.core.cons.call(null, b, e), "\ufdd0'changed?", !0)]), cljs.core.meta.call(null, a))
+};
+clojure.zip.replace = function(a, b) {
+  cljs.core.nth.call(null, a, 0, null);
+  var c = cljs.core.nth.call(null, a, 1, null);
+  return cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([b, cljs.core.assoc.call(null, c, "\ufdd0'changed?", !0)]), cljs.core.meta.call(null, a))
+};
+clojure.zip.edit = function() {
+  var a = function(a, b, e) {
+    return clojure.zip.replace.call(null, a, cljs.core.apply.call(null, b, clojure.zip.node.call(null, a), e))
+  }, b = function(b, d, e) {
+    var f = null;
+    goog.isDef(e) && (f = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2), 0));
+    return a.call(this, b, d, f)
+  };
+  b.cljs$lang$maxFixedArity = 2;
+  b.cljs$lang$applyTo = function(b) {
+    var d = cljs.core.first(b), e = cljs.core.first(cljs.core.next(b)), b = cljs.core.rest(cljs.core.next(b));
+    return a.call(this, d, e, b)
+  };
+  return b
+}();
+clojure.zip.insert_child = function(a, b) {
+  return clojure.zip.replace.call(null, a, clojure.zip.make_node.call(null, a, clojure.zip.node.call(null, a), cljs.core.cons.call(null, b, clojure.zip.children.call(null, a))))
+};
+clojure.zip.append_child = function(a, b) {
+  return clojure.zip.replace.call(null, a, clojure.zip.make_node.call(null, a, clojure.zip.node.call(null, a), cljs.core.concat.call(null, clojure.zip.children.call(null, a), cljs.core.Vector.fromArray([b]))))
+};
+clojure.zip.next = function(a) {
+  if(cljs.core.truth_(cljs.core._EQ_.call(null, "\ufdd0'end", a.call(null, 1)))) {
+    return a
+  }
+  var b;
+  b = clojure.zip.branch_QMARK_.call(null, a);
+  b = cljs.core.truth_(b) ? clojure.zip.down.call(null, a) : b;
+  if(cljs.core.truth_(b)) {
+    return b
+  }
+  b = clojure.zip.right.call(null, a);
+  if(cljs.core.truth_(b)) {
+    return b
+  }
+  for(;;) {
+    if(cljs.core.truth_(clojure.zip.up.call(null, a))) {
+      b = clojure.zip.right.call(null, clojure.zip.up.call(null, a));
+      if(cljs.core.truth_(b)) {
+        return b
+      }
+      a = clojure.zip.up.call(null, a)
+    }else {
+      return cljs.core.Vector.fromArray([clojure.zip.node.call(null, a), "\ufdd0'end"])
+    }
+  }
+};
+clojure.zip.prev = function(a) {
+  var b = clojure.zip.left.call(null, a);
+  if(cljs.core.truth_(b)) {
+    for(a = b;;) {
+      if(b = clojure.zip.branch_QMARK_.call(null, a), b = cljs.core.truth_(b) ? clojure.zip.down.call(null, a) : b, cljs.core.truth_(b)) {
+        a = clojure.zip.rightmost.call(null, b)
+      }else {
+        return a
+      }
+    }
+  }else {
+    return clojure.zip.up.call(null, a)
+  }
+};
+clojure.zip.end_QMARK_ = function(a) {
+  return cljs.core._EQ_.call(null, "\ufdd0'end", a.call(null, 1))
+};
+clojure.zip.remove = function(a) {
+  cljs.core.nth.call(null, a, 0, null);
+  var b = cljs.core.nth.call(null, a, 1, null), b = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, b, "\ufdd0'l"), d = cljs.core.get.call(null, b, "\ufdd0'ppath"), e = cljs.core.get.call(null, b, "\ufdd0'pnodes"), f = cljs.core.get.call(null, b, "\ufdd0'r");
+  if(cljs.core.truth_(cljs.core.nil_QMARK_.call(null, b))) {
+    throw"Remove at top";
+  }
+  if(cljs.core.truth_(0 < cljs.core.count.call(null, c))) {
+    for(a = cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([cljs.core.peek.call(null, c), cljs.core.assoc.call(null, b, "\ufdd0'l", cljs.core.pop.call(null, c), "\ufdd0'changed?", !0)]), cljs.core.meta.call(null, a));;) {
+      if(b = clojure.zip.branch_QMARK_.call(null, a), b = cljs.core.truth_(b) ? clojure.zip.down.call(null, a) : b, cljs.core.truth_(b)) {
+        a = clojure.zip.rightmost.call(null, b)
+      }else {
+        return a
+      }
+    }
+  }else {
+    return cljs.core.with_meta.call(null, cljs.core.Vector.fromArray([clojure.zip.make_node.call(null, a, cljs.core.peek.call(null, e), f), cljs.core.truth_(d) ? cljs.core.assoc.call(null, d, "\ufdd0'changed?", !0) : d]), cljs.core.meta.call(null, a))
+  }
+};
+clojure.walk = {};
+clojure.walk.walk = function(a, b, c) {
+  return cljs.core.truth_(cljs.core.seq_QMARK_.call(null, c)) ? b.call(null, cljs.core.doall.call(null, cljs.core.map.call(null, a, c))) : cljs.core.truth_(cljs.core.coll_QMARK_.call(null, c)) ? b.call(null, cljs.core.into.call(null, cljs.core.empty.call(null, c), cljs.core.map.call(null, a, c))) : cljs.core.truth_("\ufdd0'else") ? b.call(null, c) : null
+};
+clojure.walk.postwalk = function postwalk(b, c) {
+  return clojure.walk.walk.call(null, cljs.core.partial.call(null, postwalk, b), b, c)
+};
+clojure.walk.prewalk = function prewalk(b, c) {
+  return clojure.walk.walk.call(null, cljs.core.partial.call(null, prewalk, b), cljs.core.identity, b.call(null, c))
+};
+clojure.walk.keywordize_keys = function(a) {
+  var b = function(a) {
+    var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
+    return cljs.core.truth_(cljs.core.string_QMARK_.call(null, b)) ? cljs.core.Vector.fromArray([cljs.core.keyword.call(null, b), a]) : cljs.core.Vector.fromArray([b, a])
+  };
+  return clojure.walk.postwalk.call(null, function(a) {
+    return cljs.core.truth_(cljs.core.map_QMARK_.call(null, a)) ? cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, b, a)) : a
+  }, a)
+};
+clojure.walk.stringify_keys = function(a) {
+  var b = function(a) {
+    var b = cljs.core.nth.call(null, a, 0, null), a = cljs.core.nth.call(null, a, 1, null);
+    return cljs.core.truth_(cljs.core.keyword_QMARK_.call(null, b)) ? cljs.core.Vector.fromArray([cljs.core.name.call(null, b), a]) : cljs.core.Vector.fromArray([b, a])
+  };
+  return clojure.walk.postwalk.call(null, function(a) {
+    return cljs.core.truth_(cljs.core.map_QMARK_.call(null, a)) ? cljs.core.into.call(null, cljs.core.ObjMap.fromObject([], {}), cljs.core.map.call(null, b, a)) : a
+  }, a)
+};
+clojure.walk.prewalk_replace = function(a, b) {
+  return clojure.walk.prewalk.call(null, function(b) {
+    return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, a, b)) ? a.call(null, b) : b
+  }, b)
+};
+clojure.walk.postwalk_replace = function(a, b) {
+  return clojure.walk.postwalk.call(null, function(b) {
+    return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, a, b)) ? a.call(null, b) : b
+  }, b)
+};
+clojure.set = {};
+clojure.set.bubble_max_key = function(a, b) {
+  var c = cljs.core.apply.call(null, cljs.core.max_key, a, b);
+  return cljs.core.cons.call(null, c, cljs.core.remove.call(null, function(a) {
+    return c === a
+  }, b))
+};
+clojure.set.union = function() {
+  var a = null, b = function() {
+    var a = function(a, b, c) {
+      a = clojure.set.bubble_max_key.call(null, cljs.core.count, cljs.core.conj.call(null, c, b, a));
+      return cljs.core.reduce.call(null, cljs.core.into, cljs.core.first.call(null, a), cljs.core.rest.call(null, a))
+    }, b = function(b, d, g) {
+      var h = null;
+      goog.isDef(g) && (h = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2), 0));
+      return a.call(this, b, d, h)
+    };
+    b.cljs$lang$maxFixedArity = 2;
+    b.cljs$lang$applyTo = function(b) {
+      var d = cljs.core.first(b), g = cljs.core.first(cljs.core.next(b)), b = cljs.core.rest(cljs.core.next(b));
+      return a.call(this, d, g, b)
+    };
+    return b
+  }(), a = function(a, d, e) {
+    switch(arguments.length) {
+      case 0:
+        return cljs.core.set([]);
+      case 1:
+        return a;
+      case 2:
+        return cljs.core.truth_(cljs.core.count.call(null, a) < cljs.core.count.call(null, d)) ? cljs.core.reduce.call(null, cljs.core.conj, d, a) : cljs.core.reduce.call(null, cljs.core.conj, a, d);
+      default:
+        return b.apply(this, arguments)
+    }
+    throw"Invalid arity: " + arguments.length;
+  };
+  a.cljs$lang$maxFixedArity = 2;
+  a.cljs$lang$applyTo = b.cljs$lang$applyTo;
+  return a
+}();
+clojure.set.intersection = function() {
+  var a = null, b = function(a, b) {
+    for(;;) {
+      if(cljs.core.truth_(cljs.core.count.call(null, b) < cljs.core.count.call(null, a))) {
+        var c = a, a = b, b = c
+      }else {
+        return cljs.core.reduce.call(null, function(a, b) {
+          return function(a, c) {
+            return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, b, c)) ? a : cljs.core.disj.call(null, a, c)
+          }
+        }(a, b), a, a)
+      }
+    }
+  }, c = function() {
+    var b = function(b, c, d) {
+      b = clojure.set.bubble_max_key.call(null, function(a) {
+        return-cljs.core.count.call(null, a)
+      }, cljs.core.conj.call(null, d, c, b));
+      return cljs.core.reduce.call(null, a, cljs.core.first.call(null, b), cljs.core.rest.call(null, b))
+    }, c = function(a, c, e) {
+      var i = null;
+      goog.isDef(e) && (i = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2), 0));
+      return b.call(this, a, c, i)
+    };
+    c.cljs$lang$maxFixedArity = 2;
+    c.cljs$lang$applyTo = function(a) {
+      var c = cljs.core.first(a), e = cljs.core.first(cljs.core.next(a)), a = cljs.core.rest(cljs.core.next(a));
+      return b.call(this, c, e, a)
+    };
+    return c
+  }(), a = function(a, e, f) {
+    switch(arguments.length) {
+      case 1:
+        return a;
+      case 2:
+        return b.call(this, a, e);
+      default:
+        return c.apply(this, arguments)
+    }
+    throw"Invalid arity: " + arguments.length;
+  };
+  a.cljs$lang$maxFixedArity = 2;
+  a.cljs$lang$applyTo = c.cljs$lang$applyTo;
+  return a
+}();
+clojure.set.difference = function() {
+  var a = null, b = function(a, b) {
+    return cljs.core.truth_(cljs.core.count.call(null, a) < cljs.core.count.call(null, b)) ? cljs.core.reduce.call(null, function(a, c) {
+      return cljs.core.truth_(cljs.core.contains_QMARK_.call(null, b, c)) ? cljs.core.disj.call(null, a, c) : a
+    }, a, a) : cljs.core.reduce.call(null, cljs.core.disj, a, b)
+  }, c = function() {
+    var b = function(b, c, d) {
+      var h = null;
+      goog.isDef(d) && (h = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2), 0));
+      return cljs.core.reduce.call(null, a, b, cljs.core.conj.call(null, h, c))
+    };
+    b.cljs$lang$maxFixedArity = 2;
+    b.cljs$lang$applyTo = function(b) {
+      var c = cljs.core.first(b), d = cljs.core.first(cljs.core.next(b)), b = cljs.core.rest(cljs.core.next(b));
+      return cljs.core.reduce.call(null, a, c, cljs.core.conj.call(null, b, d))
+    };
+    return b
+  }(), a = function(a, e, f) {
+    switch(arguments.length) {
+      case 1:
+        return a;
+      case 2:
+        return b.call(this, a, e);
+      default:
+        return c.apply(this, arguments)
+    }
+    throw"Invalid arity: " + arguments.length;
+  };
+  a.cljs$lang$maxFixedArity = 2;
+  a.cljs$lang$applyTo = c.cljs$lang$applyTo;
+  return a
+}();
+clojure.set.select = function(a, b) {
+  return cljs.core.reduce.call(null, function(b, d) {
+    return cljs.core.truth_(a.call(null, d)) ? b : cljs.core.disj.call(null, b, d)
+  }, b, b)
+};
+clojure.set.project = function(a, b) {
+  return cljs.core.set.call(null, cljs.core.map.call(null, function(a) {
+    return cljs.core.select_keys.call(null, a, b)
+  }, a))
+};
+clojure.set.rename_keys = function(a, b) {
+  return cljs.core.reduce.call(null, function(a, b) {
+    var e = cljs.core.nth.call(null, b, 0, null), f = cljs.core.nth.call(null, b, 1, null);
+    return cljs.core.truth_(function() {
+      var b = cljs.core.not_EQ_.call(null, e, f);
+      return cljs.core.truth_(b) ? cljs.core.contains_QMARK_.call(null, a, e) : b
+    }()) ? cljs.core.dissoc.call(null, cljs.core.assoc.call(null, a, f, cljs.core.get.call(null, a, e)), e) : a
+  }, a, b)
+};
+clojure.set.rename = function(a, b) {
+  return cljs.core.set.call(null, cljs.core.map.call(null, function(a) {
+    return clojure.set.rename_keys.call(null, a, b)
+  }, a))
+};
+clojure.set.index = function(a, b) {
+  return cljs.core.reduce.call(null, function(a, d) {
+    var e = cljs.core.select_keys.call(null, d, b);
+    return cljs.core.assoc.call(null, a, e, cljs.core.conj.call(null, cljs.core.get.call(null, a, e, cljs.core.set([])), d))
+  }, cljs.core.ObjMap.fromObject([], {}), a)
+};
+clojure.set.map_invert = function(a) {
+  return cljs.core.reduce.call(null, function(a, c) {
+    var d = cljs.core.nth.call(null, c, 0, null), e = cljs.core.nth.call(null, c, 1, null);
+    return cljs.core.assoc.call(null, a, e, d)
+  }, cljs.core.ObjMap.fromObject([], {}), a)
+};
+clojure.set.join = function() {
+  var a = null, b = function(a, b) {
+    if(cljs.core.truth_(function() {
+      var c = cljs.core.seq.call(null, a);
+      return cljs.core.truth_(c) ? cljs.core.seq.call(null, b) : c
+    }())) {
+      var c = clojure.set.intersection.call(null, cljs.core.set.call(null, cljs.core.keys.call(null, cljs.core.first.call(null, a))), cljs.core.set.call(null, cljs.core.keys.call(null, cljs.core.first.call(null, b)))), g = cljs.core.truth_(cljs.core.count.call(null, a) <= cljs.core.count.call(null, b)) ? cljs.core.Vector.fromArray([a, b]) : cljs.core.Vector.fromArray([b, a]), h = cljs.core.nth.call(null, g, 0, null), g = cljs.core.nth.call(null, g, 1, null), i = clojure.set.index.call(null, h, c);
+      return cljs.core.reduce.call(null, function(a, b) {
+        var d = i.call(null, cljs.core.select_keys.call(null, b, c));
+        return cljs.core.truth_(d) ? cljs.core.reduce.call(null, function(a, c) {
+          return cljs.core.conj.call(null, a, cljs.core.merge.call(null, c, b))
+        }, a, d) : a
+      }, cljs.core.set([]), g)
+    }
+    return cljs.core.set([])
+  }, c = function(a, b, c) {
+    var a = cljs.core.truth_(cljs.core.count.call(null, a) <= cljs.core.count.call(null, b)) ? cljs.core.Vector.fromArray([a, b, clojure.set.map_invert.call(null, c)]) : cljs.core.Vector.fromArray([b, a, c]), b = cljs.core.nth.call(null, a, 0, null), c = cljs.core.nth.call(null, a, 1, null), g = cljs.core.nth.call(null, a, 2, null), h = clojure.set.index.call(null, b, cljs.core.vals.call(null, g));
+    return cljs.core.reduce.call(null, function(a, b) {
+      var c = h.call(null, clojure.set.rename_keys.call(null, cljs.core.select_keys.call(null, b, cljs.core.keys.call(null, g)), g));
+      return cljs.core.truth_(c) ? cljs.core.reduce.call(null, function(a, c) {
+        return cljs.core.conj.call(null, a, cljs.core.merge.call(null, c, b))
+      }, a, c) : a
+    }, cljs.core.set([]), c)
+  };
+  return function(a, e, f) {
+    switch(arguments.length) {
+      case 2:
+        return b.call(this, a, e);
+      case 3:
+        return c.call(this, a, e, f)
+    }
+    throw"Invalid arity: " + arguments.length;
+  }
+}();
+clojure.set.subset_QMARK_ = function(a, b) {
+  var c = cljs.core.count.call(null, a) <= cljs.core.count.call(null, b);
+  return cljs.core.truth_(c) ? cljs.core.every_QMARK_.call(null, function(a) {
+    return cljs.core.contains_QMARK_.call(null, b, a)
+  }, a) : c
+};
+clojure.set.superset_QMARK_ = function(a, b) {
+  var c = cljs.core.count.call(null, a) >= cljs.core.count.call(null, b);
+  return cljs.core.truth_(c) ? cljs.core.every_QMARK_.call(null, function(b) {
+    return cljs.core.contains_QMARK_.call(null, a, b)
+  }, b) : c
+};
+ttmachines.client.repl = {};
+ttmachines.client.repl.codemirrorify_BANG_ = function(a, b, c) {
+  if(cljs.core.truth_(domina.domina.get_data.call(null, a, "\ufdd0'codemirrorified"))) {
+    return null
+  }
+  domina.domina.set_data_BANG_.call(null, a, "\ufdd0'codemirrorified", !0);
+  return cljs.core.reset_BANG_.call(null, c, CodeMirror.fromTextArea(a, ttmachines.client.util.map__GT_js.call(null, b)))
+};
+ttmachines.client.repl.set_option = function(a, b, c) {
+  return a.setOption(cljs.core.name.call(null, b), c)
+};
+ttmachines.client.repl.editor_textarea = "editor-textarea";
+ttmachines.client.repl.editor = cljs.core.atom.call(null, null);
+ttmachines.client.repl.editor_settings = cljs.core.ObjMap.fromObject(["\ufdd0'theme", "\ufdd0'lineNumbers", "\ufdd0'matchBrackets"], {"\ufdd0'theme":"ambiance", "\ufdd0'lineNumbers":!0, "\ufdd0'matchBrackets":!0});
+ttmachines.client.repl.result_textarea = "result-textarea";
+ttmachines.client.repl.result = cljs.core.atom.call(null, null);
+ttmachines.client.repl.result_settings = cljs.core.ObjMap.fromObject(["\ufdd0'theme", "\ufdd0'readOnly", "\ufdd0'lineWrapping"], {"\ufdd0'theme":"ambiance", "\ufdd0'readOnly":!0, "\ufdd0'lineWrapping":!0});
+ttmachines.client.repl.code = cljs.core.atom.call(null, "");
+cljs.core.set_validator_BANG_.call(null, ttmachines.client.repl.code, ttmachines.client.repl.valid_code);
+cljs.core.add_watch.call(null, ttmachines.client.repl.code, "\ufdd0'process", function(a, b, c, d) {
+  return ttmachines.client.repl.process.call(null, d)
+});
+ttmachines.client.repl.update_code = function(a) {
+  var b = a.getValue();
+  return setTimeout.call(null, function() {
+    return cljs.core.truth_(cljs.core._EQ_.call(null, a.getValue(), b)) ? (cljs.core.deref.call(null, ttmachines.client.repl.result).setValue(""), cljs.core.reset_BANG_.call(null, ttmachines.client.repl.code, b)) : null
+  }, 200)
+};
+ttmachines.client.repl.get_selection_doc = function(a) {
+  a = a.getSelection();
+  return cljs.core.truth_(cljs.core._EQ_.call(null, "", a)) ? null : ttmachines.client.repl.get_doc.call(null, a)
+};
+ttmachines.client.repl.change_listeners = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'editor", "\ufdd0'result"], {"\ufdd0'editor":cljs.core.ObjMap.fromObject(["\ufdd0'update-code"], {"\ufdd0'update-code":ttmachines.client.repl.update_code}), "\ufdd0'result":cljs.core.ObjMap.fromObject([], {})}));
+ttmachines.client.repl.activity_listeners = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'editor", "\ufdd0'result"], {"\ufdd0'editor":cljs.core.ObjMap.fromObject(["\ufdd0'get-selection-doc"], {"\ufdd0'get-selection-doc":ttmachines.client.repl.get_selection_doc}), "\ufdd0'result":cljs.core.ObjMap.fromObject([], {})}));
+ttmachines.client.repl.init_editor_BANG_ = function(a) {
+  ttmachines.client.repl.codemirrorify_BANG_.call(null, a, ttmachines.client.repl.editor_settings, ttmachines.client.repl.editor);
+  ttmachines.client.repl.set_option.call(null, cljs.core.deref.call(null, ttmachines.client.repl.editor), "\ufdd0'onChange", function(a, c) {
+    var d = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.change_listeners).call(null, "\ufdd0'editor"));
+    if(cljs.core.truth_(d)) {
+      var e = cljs.core.first.call(null, d);
+      cljs.core.nth.call(null, e, 0, null);
+      for(cljs.core.nth.call(null, e, 1, null);;) {
+        if(cljs.core.nth.call(null, e, 0, null), e = cljs.core.nth.call(null, e, 1, null), e.call(null, a, c), e = cljs.core.next.call(null, d), cljs.core.truth_(e)) {
+          d = e, e = cljs.core.first.call(null, d)
+        }else {
+          return null
+        }
+      }
+    }else {
+      return null
+    }
+  });
+  return ttmachines.client.repl.set_option.call(null, cljs.core.deref.call(null, ttmachines.client.repl.editor), "\ufdd0'onCursorActivity", function(a) {
+    var c = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.activity_listeners).call(null, "\ufdd0'editor"));
+    if(cljs.core.truth_(c)) {
+      var d = cljs.core.first.call(null, c);
+      cljs.core.nth.call(null, d, 0, null);
+      for(cljs.core.nth.call(null, d, 1, null);;) {
+        if(cljs.core.nth.call(null, d, 0, null), d = cljs.core.nth.call(null, d, 1, null), d.call(null, a), d = cljs.core.next.call(null, c), cljs.core.truth_(d)) {
+          c = d, d = cljs.core.first.call(null, c)
+        }else {
+          return null
+        }
+      }
+    }else {
+      return null
+    }
+  })
+};
+ttmachines.client.repl.init_result_BANG_ = function(a) {
+  ttmachines.client.repl.codemirrorify_BANG_.call(null, a, ttmachines.client.repl.result_settings, ttmachines.client.repl.result);
+  ttmachines.client.repl.set_option.call(null, cljs.core.deref.call(null, ttmachines.client.repl.result), "\ufdd0'onChange", function(a, c) {
+    var d = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.change_listeners).call(null, "\ufdd0'result"));
+    if(cljs.core.truth_(d)) {
+      var e = cljs.core.first.call(null, d);
+      cljs.core.nth.call(null, e, 0, null);
+      for(cljs.core.nth.call(null, e, 1, null);;) {
+        if(cljs.core.nth.call(null, e, 0, null), e = cljs.core.nth.call(null, e, 1, null), e.call(null, a, c), e = cljs.core.next.call(null, d), cljs.core.truth_(e)) {
+          d = e, e = cljs.core.first.call(null, d)
+        }else {
+          return null
+        }
+      }
+    }else {
+      return null
+    }
+  });
+  return ttmachines.client.repl.set_option.call(null, cljs.core.deref.call(null, ttmachines.client.repl.result), "\ufdd0'onCursorActivity", function(a) {
+    var c = cljs.core.seq.call(null, cljs.core.deref.call(null, ttmachines.client.repl.activity_listeners).call(null, "\ufdd0'result"));
+    if(cljs.core.truth_(c)) {
+      var d = cljs.core.first.call(null, c);
+      cljs.core.nth.call(null, d, 0, null);
+      for(cljs.core.nth.call(null, d, 1, null);;) {
+        if(cljs.core.nth.call(null, d, 0, null), d = cljs.core.nth.call(null, d, 1, null), d.call(null, a), d = cljs.core.next.call(null, c), cljs.core.truth_(d)) {
+          c = d, d = cljs.core.first.call(null, c)
+        }else {
+          return null
+        }
+      }
+    }else {
+      return null
+    }
+  })
+};
+ttmachines.client.repl.add_change_listener = function(a, b, c) {
+  return cljs.core.swap_BANG_.call(null, ttmachines.client.repl.change_listeners, cljs.core.assoc_in, cljs.core.Vector.fromArray([a, b]), c)
+};
+ttmachines.client.repl.add_activity_listener = function(a, b, c) {
+  return cljs.core.swap_BANG_.call(null, ttmachines.client.repl.activity_listeners, cljs.core.assoc_in, cljs.core.Vector.fromArray([a, b]), c)
+};
+ttmachines.client.repl.remove_change_listener = function(a, b) {
+  return cljs.core.swap_BANG_.call(null, ttmachines.client.repl.change_listeners, ttmachines.client.repl.dissoc_in, cljs.core.Vector.fromArray([a, b]))
+};
+ttmachines.client.repl.remove_activity_listener = function(a, b) {
+  return cljs.core.swap_BANG_.call(null, ttmachines.client.repl.activity_listeners, ttmachines.client.repl.dissoc_in, cljs.core.Vector.fromArray([a, b]))
+};
+ttmachines.client.repl.add_editor_change_listener = cljs.core.partial.call(null, ttmachines.client.repl.add_change_listener, "\ufdd0'editor");
+ttmachines.client.repl.add_result_change_listener = cljs.core.partial.call(null, ttmachines.client.repl.add_change_listener, "\ufdd0'result");
+ttmachines.client.repl.add_editor_activity_listener = cljs.core.partial.call(null, ttmachines.client.repl.add_activity_listener, "\ufdd0'editor");
+ttmachines.client.repl.add_result_activity_listener = cljs.core.partial.call(null, ttmachines.client.repl.add_activity_listener, "\ufdd0'result");
+ttmachines.client.repl.remove_editor_change_listener = cljs.core.partial.call(null, ttmachines.client.repl.remove_change_listener, "\ufdd0'editor");
+ttmachines.client.repl.remove_result_change_listener = cljs.core.partial.call(null, ttmachines.client.repl.remove_change_listener, "\ufdd0'result");
+ttmachines.client.repl.remove_editor_activity_listener = cljs.core.partial.call(null, ttmachines.client.repl.remove_activity_listener, "\ufdd0'editor");
+ttmachines.client.repl.remove_result_activity_listener = cljs.core.partial.call(null, ttmachines.client.repl.remove_activity_listener, "\ufdd0'result");
+ttmachines.client.repl.editor_text = function() {
+  return cljs.core.deref.call(null, ttmachines.client.repl.editor).getValue()
+};
+goog.exportSymbol("ttmachines.client.repl.editor_text", ttmachines.client.repl.editor_text);
+ttmachines.client.repl.set_editor_text_BANG_ = function(a) {
+  return cljs.core.deref.call(null, ttmachines.client.repl.editor).setValue(a)
+};
+goog.exportSymbol("ttmachines.client.repl.set_editor_text_BANG_", ttmachines.client.repl.set_editor_text_BANG_);
+ttmachines.client.repl.result_text = function() {
+  return cljs.core.deref.call(null, ttmachines.client.repl.result).getValue()
+};
+goog.exportSymbol("ttmachines.client.repl.result_text", ttmachines.client.repl.result_text);
+ttmachines.client.repl.char_count = function(a, b) {
+  return cljs.core.count.call(null, cljs.core.filter.call(null, function(a) {
+    return cljs.core._EQ_.call(null, a, b)
+  }, a))
+};
+ttmachines.client.repl.valid_code = function(a) {
+  var a = cljs.core.partial.call(null, ttmachines.client.repl.char_count, a), b = cljs.core._EQ_.call(null, a.call(null, "("), a.call(null, ")"));
+  return cljs.core.truth_(b) && (b = cljs.core._EQ_.call(null, a.call(null, "{"), a.call(null, "}")), cljs.core.truth_(b)) ? (b = cljs.core._EQ_.call(null, a.call(null, "["), a.call(null, "]")), cljs.core.truth_(b) ? cljs.core.even_QMARK_.call(null, a.call(null, '"')) : b) : b
+};
+ttmachines.client.repl.ns_alias_expansions = cljs.core.ObjMap.fromObject(["string", "dom", "css"], {string:"clojure.string", dom:"domina.domina", css:"domina.domina.css"});
+ttmachines.client.repl.ns_from_str = function(a) {
+  a = cljs.core.re_find.call(null, /^([\w.\-\?\!]+)\/[\w.\-\?\!]+$/, a);
+  return cljs.core.truth_(a) ? a.call(null, 1) : null
+};
+ttmachines.client.repl.expand_ns_aliases = function(a) {
+  var b = cljs.core.str.call(null, a), c = ttmachines.client.repl.ns_from_str.call(null, b), d = ttmachines.client.repl.ns_alias_expansions.call(null, c);
+  return cljs.core.truth_(cljs.core.truth_(c) ? d : c) ? cljs.core.symbol.call(null, clojure.string.replace.call(null, b, c, d)) : a
+};
+ttmachines.client.repl.pre_compile = function(a) {
+  return cljs.core.pr_str.call(null, clojure.walk.postwalk.call(null, ttmachines.client.repl.expand_ns_aliases, cljs.reader.read_string.call(null, cljs.core.str.call(null, "(do ", a, ")"))))
+};
+ttmachines.client.repl._STAR_cljs_ns_STAR_ = cljs.core.atom.call(null, "ttmachines.client.user");
+ttmachines.client.repl.go_compile = function(a) {
+  var b = cljs.core.atom.call(null, null), a = ttmachines.client.util.map__GT_js.call(null, cljs.core.ObjMap.fromObject("\ufdd0'url,\ufdd0'data,\ufdd0'contentType,\ufdd0'async,\ufdd0'type,\ufdd0'dataType,\ufdd0'success".split(","), {"\ufdd0'url":"/compile", "\ufdd0'data":cljs.core.str.call(null, "{:expr ", a, " :cljs-ns ", cljs.core.deref.call(null, ttmachines.client.repl._STAR_cljs_ns_STAR_), "}"), "\ufdd0'contentType":"application/clojure; charset=utf-8", "\ufdd0'async":!1, "\ufdd0'type":"POST", 
+  "\ufdd0'dataType":"text", "\ufdd0'success":function(a) {
+    return cljs.core.reset_BANG_.call(null, b, cljs.reader.read_string.call(null, a))
+  }}));
+  jQuery.ajax(a);
+  return cljs.core.deref.call(null, b)
+};
+ttmachines.client.repl.evaluate = function(a) {
+  var a = ttmachines.client.repl.go_compile.call(null, a), b = cljs.core.truth_(a) ? "\ufdd0'error".call(null, a) : a;
+  cljs.core.truth_(b) && cljs.core.str.call(null, "Compilation error: ", b);
+  try {
+    return eval.call(null, "\ufdd0'js".call(null, a))
+  }catch(c) {
+    if(cljs.core.truth_(cljs.core.instance_QMARK_.call(null, Error, c))) {
+      return cljs.core.str.call(null, "Compilation error: ", c)
+    }
+    if(cljs.core.truth_("\ufdd0'else")) {
+      throw c;
+    }
+    return null
+  }
+};
+ttmachines.client.repl.show_result = function(a) {
+  return cljs.core.deref.call(null, ttmachines.client.repl.result).setValue(ttmachines.client.util.finite_pr_str.call(null, a))
+};
+ttmachines.client.repl.process = function(a) {
+  a = ttmachines.client.repl.pre_compile.call(null, a);
+  a = ttmachines.client.repl.evaluate.call(null, a);
+  return ttmachines.client.repl.show_result.call(null, a)
+};
+ttmachines.client.repl.get_doc = function(a) {
+  cljs.core.atom.call(null, null);
+  a = ttmachines.client.util.map__GT_js.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'url", "\ufdd0'async", "\ufdd0'type", "\ufdd0'success"], {"\ufdd0'url":cljs.core.str.call(null, "/doc/", a), "\ufdd0'async":!0, "\ufdd0'type":"GET", "\ufdd0'success":function(a) {
+    return ttmachines.client.repl.show_doc.call(null, a)
+  }}));
+  jQuery.ajax(a);
+  return null
+};
+ttmachines.client.repl.show_doc = function(a) {
+  var b = jQuery.call(null, "#doc-name"), c = jQuery.call(null, "#doc-args"), d = jQuery.call(null, "#doc-body");
+  b.text(a.name);
+  c.html(clojure.string.join.call(null, cljs.core.map.call(null, function(a) {
+    return cljs.core.str.call(null, "<li>", a, "</li>")
+  }, a.arglists)));
+  return d.text(a.doc)
+};
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":1}), function(a, b) {
+  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data").call(null, "\ufdd0'cljs-ns");
+  return cljs.core.truth_(c) ? cljs.core.reset_BANG_.call(null, ttmachines.client.repl._STAR_cljs_ns_STAR_, c) : null
+});
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":2}), function(a, b) {
+  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b;
+  cljs.core.get.call(null, c, "\ufdd0'data");
+  return cljs.core.truth_(function() {
+    var a = domina.domina.by_id.call(null, ttmachines.client.repl.editor_textarea);
+    return cljs.core.truth_(a) ? domina.domina.by_id.call(null, ttmachines.client.repl.result_textarea) : a
+  }()) ? (ttmachines.client.repl.init_editor_BANG_.call(null, domina.domina.by_id.call(null, ttmachines.client.repl.editor_textarea)), ttmachines.client.repl.init_result_BANG_.call(null, domina.domina.by_id.call(null, ttmachines.client.repl.result_textarea)), cljs.core.set_validator_BANG_.call(null, ttmachines.client.repl.code, ttmachines.client.repl.valid_code), cljs.core.reset_BANG_.call(null, ttmachines.client.repl.code, ttmachines.client.repl.editor_text.call(null))) : null
+});
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function(a, b) {
+  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data").call(null, "\ufdd0'repl-text");
+  return cljs.core.truth_(c) ? ttmachines.client.repl.set_editor_text_BANG_.call(null, c) : null
+});
 ttmachines.client.broadcast = {};
 ttmachines.client.broadcast.title = domina.domina.by_id.call(null, "title");
 ttmachines.client.animate = {};
@@ -18595,42 +18563,73 @@ one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.cor
   var c = cljs.core.get_in.call(null, b, cljs.core.Vector.fromArray(["\ufdd0'data", "\ufdd0'layout"]));
   return ttmachines.client.animate.slide_in_layout_elements_BANG_.call(null, c)
 });
-ttmachines.client.user = {};
-ttmachines.client.user.foo = function(a) {
-  return cljs.core.str.call(null, "foo ", a)
-};
-ttmachines.client.index = {};
-ttmachines.client.index.trim_element_text = function(a) {
+ttmachines.client.chapter = {};
+ttmachines.client.chapter.one = {};
+ttmachines.client.chapter.one.my_name = cljs.core.atom.call(null, "User");
+ttmachines.client.chapter.one.trim_element_text = function(a) {
   var b = domina.domina.text.call(null, a);
   return domina.domina.set_text_BANG_.call(null, a, clojure.string.trim.call(null, b))
 };
-ttmachines.client.index.enable_introduce_me_BANG_ = function() {
-  return domina.domina.remove_class_BANG_.call(null, domina.domina.css.sel.call(null, "#introduce-me"), "disabled")
+ttmachines.client.chapter.one.enable_introduce_me_BANG_ = function() {
+  return domina.domina.remove_class_BANG_.call(null, domina.domina.by_id.call(null, "introduce-me"), "disabled")
 };
 one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function() {
-  var a = domina.domina.by_id.call(null, "my-name");
+  var a = domina.domina.by_id.call(null, "enter-my-name");
   return cljs.core.truth_(a) ? (domina.domina.events.listen_BANG_.call(null, a, "\ufdd0'blur", function() {
     if(cljs.core.truth_(cljs.core._EQ_.call(null, "", clojure.string.trim.call(null, domina.domina.text.call(null, a))))) {
       return null
     }
-    ttmachines.client.index.trim_element_text.call(null, a);
-    return ttmachines.client.index.enable_introduce_me_BANG_.call(null)
-  }), document.getElementById("my-name").focus()) : null
+    ttmachines.client.chapter.one.trim_element_text.call(null, a);
+    return ttmachines.client.chapter.one.enable_introduce_me_BANG_.call(null)
+  }), document.getElementById("enter-my-name").focus()) : null
 });
 one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function() {
   var a = domina.domina.by_id.call(null, "introduce-me");
   if(cljs.core.truth_(a)) {
-    var b = domina.domina.css.sel.call(null, "#my-name");
+    var b = domina.domina.by_id.call(null, "enter-my-name");
     return domina.domina.events.listen_BANG_.call(null, a, "\ufdd0'click", function() {
       if(cljs.core.truth_(domina.domina.has_class_QMARK_.call(null, a, "disabled"))) {
         return null
       }
       cljs.core.reset_BANG_.call(null, ttmachines.client.chapter.one.my_name, domina.domina.text.call(null, b));
-      return ttmachines.client.history.push_state_BANG_.call(null, "\ufdd0'url", "/chapter/1/1")
+      return ttmachines.client.history.push_state_BANG_.call(null, "\ufdd0'url", "/chapter/1/2")
     })
   }
   return null
 });
+ttmachines.client.chapter.one.greeting = function() {
+  return cljs.core.str.call(null, "It's nice to finally meet you, ", cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), "!")
+};
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function() {
+  var a = domina.domina.by_id.call(null, "hello-user");
+  return cljs.core.truth_(a) ? domina.domina.set_text_BANG_.call(null, a, ttmachines.client.chapter.one.greeting.call(null)) : null
+});
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function() {
+  var a = domina.domina.by_id.call(null, "def-my-name-again");
+  return cljs.core.truth_(a) ? ttmachines.client.util.code_highlight.call(null, cljs.core.str.call(null, '(def my-name "', cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), '")'), "def-my-name-again") : null
+});
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function() {
+  var a = domina.domina.by_id.call(null, "insert-name");
+  return cljs.core.truth_(a) ? domina.domina.set_text_BANG_.call(null, a, cljs.core.str.call(null, '"', cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), '"')) : null
+});
+ttmachines.client.chapter.one.str_with_symbols = function() {
+  return cljs.core.str.call(null, '(def my-name "', cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), '")\n\n(str "My name is " my-name)')
+};
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function(a, b) {
+  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data");
+  return cljs.core.truth_(cljs.core._EQ_.call(null, c.call(null, "\ufdd0'route"), "/chapter/1/3")) ? ttmachines.client.repl.set_editor_text_BANG_.call(null, ttmachines.client.chapter.one.str_with_symbols.call(null)) : null
+});
+ttmachines.client.chapter.one.nested_str = function() {
+  return cljs.core.str.call(null, '(def my-name "', cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), '")\n\n(str (str "My " "name " "is ") my-name)')
+};
+one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function(a, b) {
+  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data");
+  return cljs.core.truth_(cljs.core._EQ_.call(null, c.call(null, "\ufdd0'route"), "/chapter/1/4")) ? ttmachines.client.repl.set_editor_text_BANG_.call(null, ttmachines.client.chapter.one.nested_str.call(null)) : null
+});
+ttmachines.client.user = {};
+ttmachines.client.user.foo = function(a) {
+  return cljs.core.str.call(null, "foo ", a)
+};
 one.logging = {};
 one.logging.ILogViewer = {};
 one.logging.start_display = function(a) {
@@ -19022,25 +19021,25 @@ domina.domina.xpath.root_element = function() {
 };
 domina.domina.xpath.xpath = function() {
   var a = null, b = function(b, d) {
-    if(cljs.core.truth_(void 0 === domina.domina.xpath.t128012)) {
-      domina.domina.xpath.t128012 = function(a, b, c, d) {
+    if(cljs.core.truth_(void 0 === domina.domina.xpath.t20928)) {
+      domina.domina.xpath.t20928 = function(a, b, c, d) {
         this.expr = a;
         this.base = b;
         this.xpath = c;
         this.__meta = d
-      }, domina.domina.xpath.t128012.cljs$core$IPrintable$_pr_seq = function() {
-        return cljs.core.list.call(null, "domina.domina.xpath.t128012")
-      }, domina.domina.xpath.t128012.prototype.domina$domina$DomContent$ = !0, domina.domina.xpath.t128012.prototype.domina$domina$DomContent$nodes = function() {
+      }, domina.domina.xpath.t20928.cljs$core$IPrintable$_pr_seq = function() {
+        return cljs.core.list.call(null, "domina.domina.xpath.t20928")
+      }, domina.domina.xpath.t20928.prototype.domina$domina$DomContent$ = !0, domina.domina.xpath.t20928.prototype.domina$domina$DomContent$nodes = function() {
         return cljs.core.mapcat.call(null, cljs.core.partial.call(null, domina.domina.xpath.select_nodes, this.expr), domina.domina.nodes.call(null, this.base))
-      }, domina.domina.xpath.t128012.prototype.domina$domina$DomContent$single_node = function() {
+      }, domina.domina.xpath.t20928.prototype.domina$domina$DomContent$single_node = function() {
         return cljs.core.first.call(null, cljs.core.filter.call(null, cljs.core.complement.call(null, cljs.core.nil_QMARK_), cljs.core.map.call(null, cljs.core.partial.call(null, domina.domina.xpath.select_node, this.expr), domina.domina.nodes.call(null, this.base))))
-      }, domina.domina.xpath.t128012.prototype.cljs$core$IMeta$ = !0, domina.domina.xpath.t128012.prototype.cljs$core$IMeta$_meta = function() {
+      }, domina.domina.xpath.t20928.prototype.cljs$core$IMeta$ = !0, domina.domina.xpath.t20928.prototype.cljs$core$IMeta$_meta = function() {
         return this.__meta
-      }, domina.domina.xpath.t128012.prototype.cljs$core$IWithMeta$ = !0, domina.domina.xpath.t128012.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
-        return new domina.domina.xpath.t128012(this.expr, this.base, this.xpath, b)
+      }, domina.domina.xpath.t20928.prototype.cljs$core$IWithMeta$ = !0, domina.domina.xpath.t20928.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
+        return new domina.domina.xpath.t20928(this.expr, this.base, this.xpath, b)
       }
     }
-    return new domina.domina.xpath.t128012(d, b, a, null)
+    return new domina.domina.xpath.t20928(d, b, a, null)
   };
   return a = function(c, d) {
     switch(arguments.length) {

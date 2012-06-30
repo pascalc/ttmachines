@@ -2882,6 +2882,7 @@ span#lost-robot-credit {
 #start-chapter {
   margin-top: 40px;
   text-align: center;
+  margin-bottom: 40px;
 }
 button#introduce-me {
   margin-top: 10px;
@@ -3062,7 +3063,7 @@ header#title {
 }
 #chapter-nav {
   margin-top: 30px;
-  text-align: center;
+  position: relative;
 }
 #chapter-nav #next {
   float: right;
@@ -3076,9 +3077,12 @@ header#title {
   border-color: #F0EBEB;
 }
 #chapter-nav p {
+  position: absolute;
+  right: 50%;
+  margin-bottom: 0px;
+  line-height: 40px;
   display: inline-block;
   font-weight: bold;
-  line-height: 40px;
 }
 #footer {
   display: inline;

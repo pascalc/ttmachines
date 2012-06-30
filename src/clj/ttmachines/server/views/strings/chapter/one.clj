@@ -22,6 +22,29 @@
 (ns ttmachines.server.views.strings.chapter.one
     (:use ttmachines.server.views.strings.core))
 
+(defstring tagline "Have you ever had a *conversation* with your computer?")
+
+(defstring intro
+    "
+Not many of us have. But we spend so much of our lives in the company
+ of our laptops, tablets and phones that the silence is deafening.
+
+We can't go on like this. 
+
+The best relationships are founded on communication, so we'd 
+better start talking to our machines.
+
+The good news is that it isn't so difficult. As foreign languages go, there are far worse.
+
+So break the ice. Write your name between the quotation marks and say hello.")
+
+(defstring enter-name
+    "(def my-name \"      \")")
+
+(defstring introduce-me "Introduce me!")
+
+(defstring lost-robot-credit "&copy; Jochem van Wetten")
+
 (defstring great-job
   "
   Great job! You just spoke your first words to your machine!

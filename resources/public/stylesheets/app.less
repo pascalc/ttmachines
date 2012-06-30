@@ -6,7 +6,6 @@
 
 // App stylesheet imports
 @import 'repl.less';
-@import 'index.less';
 @import 'chapter/one.less';
 
 ////////////
@@ -169,18 +168,23 @@ header#title {
 
 #chapter-nav {
     margin-top: 30px;
-    text-align: center;
     #next { float: right; }
     #previous { float: left; }
+    position: relative;
+
     hr {
         border-style: solid;
         border-bottom-width: 3px;
         border-color: #F0EBEB;
     }
     p { 
+        position: absolute;
+        right: 50%;
+        margin-bottom: 0px;
+        line-height: 40px;
+
         display: inline-block;
         font-weight: bold;
-        line-height: 40px;
     }
 }
 

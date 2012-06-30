@@ -20,13 +20,39 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.client.chapter.one
-  (:require [domina.domina :as dom]
+  (:require [clojure.string :as string]
+            [domina.domina :as dom]
+            [domina.domina.events :as events]
             [one.dispatch :as dispatch]
             [ttmachines.client.util :as util]
-            [ttmachines.client.repl :as repl])
+            [ttmachines.client.repl :as repl]
+            [ttmachines.client.history :as history])
   (:require-macros [ttmachines.client.macros :as macro]))
 
 (def my-name (atom "User"))
+
+(defn trim-element-text [el]
+  (let [current-text (dom/text el)]
+    (dom/set-text! el (string/trim current-text))))
+
+(defn enable-introduce-me! []
+  (dom/remove-class! (dom/by-id "introduce-me") "disabled"))
+
+(macro/set-up-element "enter-my-name"
+  (events/listen! enter-my-name :blur
+    (fn [evt]
+      (when-not (= "" (string/trim (dom/text enter-my-name)))
+        (trim-element-text enter-my-name)
+        (enable-introduce-me!))))
+  (.focus (.getElementById js/document "enter-my-name")))
+
+(macro/set-up-element "introduce-me"
+  (let [enter-my-name (dom/by-id "enter-my-name")]
+    (events/listen! introduce-me :click
+      (fn [evt]
+        (when-not (dom/has-class? introduce-me "disabled")
+          (reset! my-name (dom/text enter-my-name))
+          (history/push-state! :url "/chapter/1/2"))))))
 
 (defn greeting [] 
   (str "It's nice to finally meet you, " @my-name "!"))

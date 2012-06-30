@@ -22,9 +22,35 @@
 (ns ttmachines.server.views.chapter.one
   (:use [noir.core]
         [ttmachines.server.views.chapter :only [defchapter chapter-nav]])
-  (:require [ttmachines.server.views.strings.chapter.one :as strings]
+  (:require [hiccup.element :as el]
+            [ttmachines.server.views.strings.chapter.one :as strings]
             [ttmachines.server.views.repl :as repl]))
 
+(defpartial tagline []
+  [:h2 strings/tagline])
+
+(defpartial intro []
+  [:section#intro strings/intro])
+
+(defpartial highlighted-def-name []
+  [:span.cm-bracket "("]
+  [:span.cm-keyword "def "]
+  "my-name "
+  [:span.cm-string 
+    "\"" [:span#enter-my-name { :contenteditable "true" } "&nbsp;&nbsp;&nbsp;"] "\""]
+  [:span.cm-bracket ")"])
+
+(defpartial enter-name []
+  [:div#start-chapter
+    [:div#enter-name.cm-s-ambiance (highlighted-def-name)]
+    [:br]
+    [:button#introduce-me.btn.btn-large.btn-primary.disabled strings/introduce-me]])
+
+(defpartial lost-robot []
+  [:div#lost-robot
+    (el/image {:id "lost-robot-img"} "/images/lost_robot.jpg" "Lost robot by Jochem van Wetten")
+    [:span#lost-robot-credit strings/lost-robot-credit]])
+ 
 (defpartial hello-user []
   [:h2#hello-user])
 
@@ -54,6 +80,12 @@
   [:h2 strings/outro-title])
 
 (defchapter "/chapter/1"
+  {:layout {:headline     (tagline)
+            :text         nil
+            :main         (intro)       
+            :below-main   (enter-name)
+            :sidebar      (lost-robot)}}
+
   {:layout {:headline     (hello-user)
             :text         nil
             :main         (explain-def-my-name)

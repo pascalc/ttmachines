@@ -1,3 +1,42 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+#lost-robot {
+    position: relative;
+}
+
+img#lost-robot-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: solid 1px #000;
+}
+
+span#lost-robot-credit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    .transform-origin(right, 0);
+    .rotate(-90deg);
+
+    font-size: 12px;
+}
+
+#start-chapter {
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+button#introduce-me {
+    margin-top: 10px;
+}
+
+#enter-name {
+    display: inline-block;
+    padding: 10px;
+}
+
 #def-my-name-again {
     text-align: center;
     display: inline-block;
