@@ -26,15 +26,24 @@
             [domina.domina.css :as css]
             [ttmachines.client.layout :as layout]))
 
-(def ANIMATION-DURATION-MS 450)
+(def ANIMATION-DURATION-MS 400)
+
+(def opposite-direction
+  {:left :right
+   :right :left})
 
 (defn slide-in! [{:keys [direction] :or {direction :left}} selector]
-  (.show (js/$ selector)
-    "drop"
-    (map->js 
-      {"easing"      "easeInQuad"
-       "direction"   (name direction)})
-    ANIMATION-DURATION-MS))
+  (let [element         (css/sel selector)
+        opp-direction   (name (opposite-direction direction))
+        original-pos    (or (dom/style element opp-direction) 0)]
+    (dom/set-styles! element 
+      {"position"     "relative"
+       opp-direction  "750px"})
+    (.animate (js/$ selector)
+      (map->js 
+        {opp-direction  original-pos})
+      ANIMATION-DURATION-MS
+      "easeOutQuint")))
 
 (def slide-in-left! (partial slide-in! {}))
 (def slide-in-right! (partial slide-in! {:direction :right}))
@@ -53,14 +62,15 @@
 (defn slide-in-layout-elements! [layout-map]
   (doseq [k (incoming-keys layout-map)]
     (when (contains? entrances k)
-      (let [animation (entrances k)
-            selector (layout/targets k)]
+      (let [animation   (entrances k)
+            selector  (layout/targets k)]
         (animation selector)))))
 
 (defn scroll-window-to-top! []
   (.animate (js/$ "body, html")
       (map->js {:scrollTop 0})
-      500))
+      500
+      "easeOutQuint"))
 
 ;; Triggers
 
