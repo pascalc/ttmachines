@@ -21,6 +21,7 @@
 
 (ns ttmachines.server.views.chapter
   (:require [noir.request :as request]
+            [noir.response :as response]
             [ttmachines.server.views.layout :as view])
   (:use [noir.core :only [defpartial defpage]]
         hiccup.core
@@ -85,6 +86,10 @@
 
 (def ^:dynamic *base-url*)
 
+(defn redirect-base-url [base-url]
+  `(defpage ~base-url {}
+      (response/redirect ~(str base-url "/1"))))
+
 (defn generate-url [chapter-num]
   (str *base-url* "/" chapter-num))
 
@@ -131,4 +136,6 @@
 
 (defmacro defchapter [base-url & content-maps]
   (binding [*base-url* base-url]
-    `(do ~@(expand-def-chapter-content content-maps :chapter-acc (atom {})))))
+    `(do
+        ~(redirect-base-url base-url) 
+        ~@(expand-def-chapter-content content-maps :chapter-acc (atom {})))))
