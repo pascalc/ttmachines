@@ -2887,10 +2887,6 @@ span#lost-robot-credit {
   transform: rotate(-90deg);
   font-size: 12px;
 }
-#intro p {
-  line-height: 20px;
-  margin-bottom: 12px;
-}
 #start-chapter {
   margin-top: 40px;
   text-align: center;
@@ -2955,7 +2951,8 @@ div.container {
   margin: 2px 5px 2px 5px;
 }
 p {
-  line-height: 20px;
+  line-height: 1.5em;
+  margin-bottom: 20px;
 }
 .fadeInLeft,
 .fadeOutLeft,
@@ -3068,10 +3065,6 @@ header#title {
   margin: 0 1.0416666666666665%;
   margin-bottom: 1.2rem;
 }
-#text p {
-  line-height: 19px;
-  margin-bottom: 12px;
-}
 #main h3 {
   margin-top: 20px;
 }
@@ -3106,4 +3099,5 @@ header#title {
 }
 #footer p {
   font-size: 12px;
+  margin-bottom: 10px;
 }
