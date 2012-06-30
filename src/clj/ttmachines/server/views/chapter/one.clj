@@ -64,15 +64,22 @@
     strings/explain-my-name
     strings/explain-your-name])
 
+(defpartial example-defn []
+  [:div.code-wrapper  
+      strings/example-defn])
+
 (defpartial custom-functions []
   [:h2 strings/custom-functions])
 
 (defpartial explain-custom-functions []
   [:div
     strings/intro-custom-functions
-    [:div.code-wrapper  
-      strings/example-defn]
-    strings/explain-custom-functions
+    (example-defn)
+    strings/explain-custom-functions])
+
+(defpartial explain-custom-functions-2 []
+  [:div
+    strings/explain-fn
     strings/explain-args
     strings/explain-body])
 
@@ -110,6 +117,9 @@
             :below-main   nil
             :sidebar      nil}}
 
+  {:layout {:main         (example-defn)        
+            :below-main   (explain-custom-functions-2)}}
+
   {:layout {:headline     nil
             :text         strings/goodbye-ada
             :main         (repl/editor strings/repl-goodbye-ada)
@@ -119,6 +129,8 @@
   {:layout {:headline     nil
             :text         strings/introducing-defn}
    :repl-text strings/repl-goodbye-defn}
+
+  {:layout {:text         strings/greet-challenge}}
 
   {:layout {:headline     (outro-title)
             :text         nil

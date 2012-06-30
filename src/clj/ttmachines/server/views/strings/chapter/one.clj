@@ -145,8 +145,10 @@ So break the ice. Write your name between the quotation marks and say hello.")
 (defstring explain-custom-functions
   "
   Like earlier, we use `def` to associate the symbol `goodbye` with something. This something is the result
-  of calling the `fn` function with the arguments `[person]` and `(str \"Fare thee well, \" person)`.
-  
+  of calling the `fn` function with the arguments `[person]` and `(str \"Fare thee well, \" person)`.")
+
+(defstring explain-fn
+  "
   `fn` is rather special in that it is the function that makes other functions, according to the arguments
   you give it. Let's look at them now.")
 
@@ -183,9 +185,10 @@ So break the ice. Write your name between the quotation marks and say hello.")
 (defstring introducing-defn
   "
   Defining functions is so common that there is a shorthand for it - the `defn` function (note the n) that
-  combines `def` and `fn`. Below is how we would define `goodbye` with `defn`.
+  combines `def` and `fn`. Below is how we would define `goodbye` with `defn`.")
 
-  <h3> Now for a challenge </h3>
+(defstring greet-challenge
+  "### Now for a challenge
 
   Define a new function called `greet`, that takes a person's name as an
   argument and returns the words `\"Hello there, \"` followed by their name. 
