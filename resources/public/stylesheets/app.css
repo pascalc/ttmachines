@@ -2844,15 +2844,7 @@ img#lost-robot-img {
   position: absolute;
   top: 0;
   right: 0;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  border: solid 1px #000;
 }
 span#lost-robot-credit {
   position: absolute;
