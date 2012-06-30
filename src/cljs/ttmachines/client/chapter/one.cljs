@@ -73,7 +73,7 @@
 
 (str \"My name is \" my-name)"))
 
-(macro/set-up-route "/chapter/1/3"  
+(macro/set-up-route "/chapter/1/4"  
   (repl/set-editor-text! (str-with-symbols)))
 
 (defn nested-str []
@@ -81,6 +81,6 @@
 
 (str (str \"My \" \"name \" \"is \") my-name)"))
 
-(macro/set-up-route "/chapter/1/4"  
+(macro/set-up-route "/chapter/1/5"  
   (repl/set-editor-text! (nested-str)))
 

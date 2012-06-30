@@ -18616,14 +18616,14 @@ ttmachines.client.chapter.one.str_with_symbols = function() {
 };
 one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function(a, b) {
   var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data");
-  return cljs.core.truth_(cljs.core._EQ_.call(null, c.call(null, "\ufdd0'route"), "/chapter/1/3")) ? ttmachines.client.repl.set_editor_text_BANG_.call(null, ttmachines.client.chapter.one.str_with_symbols.call(null)) : null
+  return cljs.core.truth_(cljs.core._EQ_.call(null, c.call(null, "\ufdd0'route"), "/chapter/1/4")) ? ttmachines.client.repl.set_editor_text_BANG_.call(null, ttmachines.client.chapter.one.str_with_symbols.call(null)) : null
 });
 ttmachines.client.chapter.one.nested_str = function() {
   return cljs.core.str.call(null, '(def my-name "', cljs.core.deref.call(null, ttmachines.client.chapter.one.my_name), '")\n\n(str (str "My " "name " "is ") my-name)')
 };
 one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":3}), function(a, b) {
   var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, b)) ? cljs.core.apply.call(null, cljs.core.hash_map, b) : b, c = cljs.core.get.call(null, c, "\ufdd0'data");
-  return cljs.core.truth_(cljs.core._EQ_.call(null, c.call(null, "\ufdd0'route"), "/chapter/1/4")) ? ttmachines.client.repl.set_editor_text_BANG_.call(null, ttmachines.client.chapter.one.nested_str.call(null)) : null
+  return cljs.core.truth_(cljs.core._EQ_.call(null, c.call(null, "\ufdd0'route"), "/chapter/1/5")) ? ttmachines.client.repl.set_editor_text_BANG_.call(null, ttmachines.client.chapter.one.nested_str.call(null)) : null
 });
 ttmachines.client.user = {};
 ttmachines.client.user.foo = function(a) {
