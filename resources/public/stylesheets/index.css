@@ -51,10 +51,6 @@ span#lost-robot-credit {
   transform: rotate(-90deg);
   font-size: 12px;
 }
-#intro p {
-  line-height: 20px;
-  margin-bottom: 12px;
-}
 #start-chapter {
   margin-top: 40px;
   text-align: center;

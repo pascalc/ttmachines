@@ -42,15 +42,16 @@
     (map #(include-css (str "/stylesheets/" %)) *stylesheets*))
 
 (def ^:dynamic *javascripts*
-     ["/javascript/analytics.js" 
-      "/javascript/jquery.min.js"
-      "/javascript/spin.min.js"
-      "/javascript/native.history.js"
-      "/javascript/codemirror.js"
-      "/javascript/clojure.js"
-      "/javascript/runmode.js"])
+     ["analytics.js" 
+      "jquery.min.js"
+      "jquery-ui-1.8.21.custom.min.js"
+      "spin.min.js"
+      "native.history.js"
+      "codemirror.js"
+      "clojure.js"
+      "runmode.js"])
 (defpartial javascript-links []
-    (map include-js *javascripts*))
+    (map #(include-js (str "/javascript/" %)) *javascripts*))
 
 (def favicon [:link {:rel "icon" 
                      :type "image/x-icon"

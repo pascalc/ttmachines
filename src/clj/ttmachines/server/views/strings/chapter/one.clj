@@ -53,9 +53,8 @@
 
   The final argument is, of course, your name. The quotation marks around it tell the computer that it is
   text, or, in machinespeak, a **string**. The `def` command associates the symbol `my-name` with this string.
-
+  
   <br/>
-
   In other words, you have told your machine that `my-name` is
   <span id=\"insert-name\" class=\"cm-s-ambiance clojure code\"></span>.")
 

@@ -15640,11 +15640,11 @@ cljs.core.prefers = function(a) {
 };
 var domina = {domina:{}};
 domina.domina.support = {};
-var div__9090 = document.createElement("div"), test_html__9091 = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";
-div__9090.innerHTML = test_html__9091;
-domina.domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null, div__9090.firstChild.nodeType, 3);
-domina.domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null, div__9090.getElementsByTagName("tbody").length, 0);
-domina.domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null, div__9090.getElementsByTagName("link").length, 0);
+var div__38661 = document.createElement("div"), test_html__38662 = "   <link/><table></table><a href='/a' style='top:1px;float:left;opacity:.55;'>a</a><input type='checkbox'/>";
+div__38661.innerHTML = test_html__38662;
+domina.domina.support.leading_whitespace_QMARK_ = cljs.core._EQ_.call(null, div__38661.firstChild.nodeType, 3);
+domina.domina.support.extraneous_tbody_QMARK_ = cljs.core._EQ_.call(null, div__38661.getElementsByTagName("tbody").length, 0);
+domina.domina.support.unscoped_html_elements_QMARK_ = cljs.core._EQ_.call(null, div__38661.getElementsByTagName("link").length, 0);
 var clojure = {string:{}};
 clojure.string.seq_reverse = function(a) {
   return cljs.core.reduce.call(null, cljs.core.conj, cljs.core.List.EMPTY, a)
@@ -15775,9 +15775,9 @@ domina.domina.re_xhtml_tag = /<(?!area|br|col|embed|hr|img|input|link|meta|param
 domina.domina.re_tag_name = /<([\w:]+)/;
 domina.domina.re_no_inner_html = /<(?:script|style)/i;
 domina.domina.re_tbody = /<tbody/i;
-var opt_wrapper__9109 = cljs.core.Vector.fromArray([1, "<select multiple='multiple'>", "</select>"]), table_section_wrapper__9110 = cljs.core.Vector.fromArray([1, "<table>", "</table>"]), cell_wrapper__9111 = cljs.core.Vector.fromArray([3, "<table><tbody><tr>", "</tr></tbody></table>"]);
-domina.domina.wrap_map = cljs.core.ObjMap.fromObject("col,\ufdd0'default,tfoot,caption,optgroup,legend,area,td,thead,th,option,tbody,tr,colgroup".split(","), {col:cljs.core.Vector.fromArray([2, "<table><tbody></tbody><colgroup>", "</colgroup></table>"]), "\ufdd0'default":cljs.core.Vector.fromArray([0, "", ""]), tfoot:table_section_wrapper__9110, caption:table_section_wrapper__9110, optgroup:opt_wrapper__9109, legend:cljs.core.Vector.fromArray([1, "<fieldset>", "</fieldset>"]), area:cljs.core.Vector.fromArray([1, 
-"<map>", "</map>"]), td:cell_wrapper__9111, thead:table_section_wrapper__9110, th:cell_wrapper__9111, option:opt_wrapper__9109, tbody:table_section_wrapper__9110, tr:cljs.core.Vector.fromArray([2, "<table><tbody>", "</tbody></table>"]), colgroup:table_section_wrapper__9110});
+var opt_wrapper__38680 = cljs.core.Vector.fromArray([1, "<select multiple='multiple'>", "</select>"]), table_section_wrapper__38681 = cljs.core.Vector.fromArray([1, "<table>", "</table>"]), cell_wrapper__38682 = cljs.core.Vector.fromArray([3, "<table><tbody><tr>", "</tr></tbody></table>"]);
+domina.domina.wrap_map = cljs.core.ObjMap.fromObject("col,\ufdd0'default,tfoot,caption,optgroup,legend,area,td,thead,th,option,tbody,tr,colgroup".split(","), {col:cljs.core.Vector.fromArray([2, "<table><tbody></tbody><colgroup>", "</colgroup></table>"]), "\ufdd0'default":cljs.core.Vector.fromArray([0, "", ""]), tfoot:table_section_wrapper__38681, caption:table_section_wrapper__38681, optgroup:opt_wrapper__38680, legend:cljs.core.Vector.fromArray([1, "<fieldset>", "</fieldset>"]), area:cljs.core.Vector.fromArray([1, 
+"<map>", "</map>"]), td:cell_wrapper__38682, thead:table_section_wrapper__38681, th:cell_wrapper__38682, option:opt_wrapper__38680, tbody:table_section_wrapper__38681, tr:cljs.core.Vector.fromArray([2, "<table><tbody>", "</tbody></table>"]), colgroup:table_section_wrapper__38681});
 domina.domina.remove_extraneous_tbody_BANG_ = function(a, b) {
   var c = cljs.core.not.call(null, cljs.core.re_find.call(null, domina.domina.re_tbody, b)), d = cljs.core.truth_(function() {
     var a = cljs.core._EQ_.call(null, domina.domina.tag_name, "table");
@@ -15871,24 +15871,24 @@ domina.domina.by_id = function(a) {
   return goog.dom.getElement.call(null, cljs.core.name.call(null, a))
 };
 domina.domina.by_class = function by_class(b) {
-  if(cljs.core.truth_(void 0 === domina.domina.t9147)) {
-    domina.domina.t9147 = function(b, d, e) {
+  if(cljs.core.truth_(void 0 === domina.domina.t38718)) {
+    domina.domina.t38718 = function(b, d, e) {
       this.class_name = b;
       this.by_class = d;
       this.__meta = e
-    }, domina.domina.t9147.cljs$core$IPrintable$_pr_seq = function() {
-      return cljs.core.list.call(null, "domina.domina.t9147")
-    }, domina.domina.t9147.prototype.domina$domina$DomContent$ = !0, domina.domina.t9147.prototype.domina$domina$DomContent$nodes = function() {
+    }, domina.domina.t38718.cljs$core$IPrintable$_pr_seq = function() {
+      return cljs.core.list.call(null, "domina.domina.t38718")
+    }, domina.domina.t38718.prototype.domina$domina$DomContent$ = !0, domina.domina.t38718.prototype.domina$domina$DomContent$nodes = function() {
       return domina.domina.normalize_seq.call(null, goog.dom.getElementsByClass.call(null, cljs.core.name.call(null, this.class_name)))
-    }, domina.domina.t9147.prototype.domina$domina$DomContent$single_node = function() {
+    }, domina.domina.t38718.prototype.domina$domina$DomContent$single_node = function() {
       return domina.domina.normalize_seq.call(null, goog.dom.getElementByClass.call(null, cljs.core.name.call(null, this.class_name)))
-    }, domina.domina.t9147.prototype.cljs$core$IMeta$ = !0, domina.domina.t9147.prototype.cljs$core$IMeta$_meta = function() {
+    }, domina.domina.t38718.prototype.cljs$core$IMeta$ = !0, domina.domina.t38718.prototype.cljs$core$IMeta$_meta = function() {
       return this.__meta
-    }, domina.domina.t9147.prototype.cljs$core$IWithMeta$ = !0, domina.domina.t9147.prototype.cljs$core$IWithMeta$_with_meta = function(b, d) {
-      return new domina.domina.t9147(this.class_name, this.by_class, d)
+    }, domina.domina.t38718.prototype.cljs$core$IWithMeta$ = !0, domina.domina.t38718.prototype.cljs$core$IWithMeta$_with_meta = function(b, d) {
+      return new domina.domina.t38718(this.class_name, this.by_class, d)
     }
   }
-  return new domina.domina.t9147(b, by_class, null)
+  return new domina.domina.t38718(b, by_class, null)
 };
 domina.domina.children = function(a) {
   return cljs.core.mapcat.call(null, goog.dom.getChildren, domina.domina.nodes.call(null, a))
@@ -16375,31 +16375,31 @@ domina.domina.css.root_element = function() {
 };
 domina.domina.css.sel = function() {
   var a = null, b = function(b, d) {
-    if(cljs.core.truth_(void 0 === domina.domina.css.t8962)) {
-      domina.domina.css.t8962 = function(a, b, c, d) {
+    if(cljs.core.truth_(void 0 === domina.domina.css.t38533)) {
+      domina.domina.css.t38533 = function(a, b, c, d) {
         this.expr = a;
         this.base = b;
         this.sel = c;
         this.__meta = d
-      }, domina.domina.css.t8962.cljs$core$IPrintable$_pr_seq = function() {
-        return cljs.core.list.call(null, "domina.domina.css.t8962")
-      }, domina.domina.css.t8962.prototype.domina$domina$DomContent$ = !0, domina.domina.css.t8962.prototype.domina$domina$DomContent$nodes = function() {
+      }, domina.domina.css.t38533.cljs$core$IPrintable$_pr_seq = function() {
+        return cljs.core.list.call(null, "domina.domina.css.t38533")
+      }, domina.domina.css.t38533.prototype.domina$domina$DomContent$ = !0, domina.domina.css.t38533.prototype.domina$domina$DomContent$nodes = function() {
         var a = this;
         return cljs.core.mapcat.call(null, function(b) {
           return domina.domina.normalize_seq.call(null, goog.dom.query.call(null, a.expr, b))
         }, domina.domina.nodes.call(null, a.base))
-      }, domina.domina.css.t8962.prototype.domina$domina$DomContent$single_node = function() {
+      }, domina.domina.css.t38533.prototype.domina$domina$DomContent$single_node = function() {
         var a = this;
         return cljs.core.first.call(null, cljs.core.filter.call(null, cljs.core.complement.call(null, cljs.core.nil_QMARK_), cljs.core.mapcat.call(null, function(b) {
           return domina.domina.normalize_seq.call(null, goog.dom.query.call(null, a.expr, b))
         }, domina.domina.nodes.call(null, a.base))))
-      }, domina.domina.css.t8962.prototype.cljs$core$IMeta$ = !0, domina.domina.css.t8962.prototype.cljs$core$IMeta$_meta = function() {
+      }, domina.domina.css.t38533.prototype.cljs$core$IMeta$ = !0, domina.domina.css.t38533.prototype.cljs$core$IMeta$_meta = function() {
         return this.__meta
-      }, domina.domina.css.t8962.prototype.cljs$core$IWithMeta$ = !0, domina.domina.css.t8962.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
-        return new domina.domina.css.t8962(this.expr, this.base, this.sel, b)
+      }, domina.domina.css.t38533.prototype.cljs$core$IWithMeta$ = !0, domina.domina.css.t38533.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
+        return new domina.domina.css.t38533(this.expr, this.base, this.sel, b)
       }
     }
-    return new domina.domina.css.t8962(d, b, a, null)
+    return new domina.domina.css.t38533(d, b, a, null)
   };
   return a = function(c, d) {
     switch(arguments.length) {
@@ -17799,15 +17799,15 @@ domina.domina.events.find_builtin_type = function(a) {
 domina.domina.events.create_listener_function = function create_listener_function(b) {
   return function(c) {
     b.call(null, function() {
-      if(cljs.core.truth_(void 0 === domina.domina.events.t8988)) {
-        domina.domina.events.t8988 = function(b, c, f, g) {
+      if(cljs.core.truth_(void 0 === domina.domina.events.t38559)) {
+        domina.domina.events.t38559 = function(b, c, f, g) {
           this.evt = b;
           this.f = c;
           this.create_listener_function = f;
           this.__meta = g
-        }, domina.domina.events.t8988.cljs$core$IPrintable$_pr_seq = function() {
-          return cljs.core.list.call(null, "domina.domina.events.t8988")
-        }, domina.domina.events.t8988.prototype.cljs$core$ILookup$ = !0, domina.domina.events.t8988.prototype.cljs$core$ILookup$_lookup = function() {
+        }, domina.domina.events.t38559.cljs$core$IPrintable$_pr_seq = function() {
+          return cljs.core.list.call(null, "domina.domina.events.t38559")
+        }, domina.domina.events.t38559.prototype.cljs$core$ILookup$ = !0, domina.domina.events.t38559.prototype.cljs$core$ILookup$_lookup = function() {
           var b = null;
           return function(b, c, d) {
             switch(arguments.length) {
@@ -17821,25 +17821,25 @@ domina.domina.events.create_listener_function = function create_listener_functio
             }
             throw"Invalid arity: " + arguments.length;
           }
-        }(), domina.domina.events.t8988.prototype.domina$domina$events$Event$ = !0, domina.domina.events.t8988.prototype.domina$domina$events$Event$prevent_default = function() {
+        }(), domina.domina.events.t38559.prototype.domina$domina$events$Event$ = !0, domina.domina.events.t38559.prototype.domina$domina$events$Event$prevent_default = function() {
           return this.evt.preventDefault()
-        }, domina.domina.events.t8988.prototype.domina$domina$events$Event$stop_propagation = function() {
+        }, domina.domina.events.t38559.prototype.domina$domina$events$Event$stop_propagation = function() {
           return this.evt.stopPropagation()
-        }, domina.domina.events.t8988.prototype.domina$domina$events$Event$target = function() {
+        }, domina.domina.events.t38559.prototype.domina$domina$events$Event$target = function() {
           return this.evt.target
-        }, domina.domina.events.t8988.prototype.domina$domina$events$Event$current_target = function() {
+        }, domina.domina.events.t38559.prototype.domina$domina$events$Event$current_target = function() {
           return this.evt.currentTarget
-        }, domina.domina.events.t8988.prototype.domina$domina$events$Event$event_type = function() {
+        }, domina.domina.events.t38559.prototype.domina$domina$events$Event$event_type = function() {
           return this.evt.type
-        }, domina.domina.events.t8988.prototype.domina$domina$events$Event$raw_event = function() {
+        }, domina.domina.events.t38559.prototype.domina$domina$events$Event$raw_event = function() {
           return this.evt
-        }, domina.domina.events.t8988.prototype.cljs$core$IMeta$ = !0, domina.domina.events.t8988.prototype.cljs$core$IMeta$_meta = function() {
+        }, domina.domina.events.t38559.prototype.cljs$core$IMeta$ = !0, domina.domina.events.t38559.prototype.cljs$core$IMeta$_meta = function() {
           return this.__meta
-        }, domina.domina.events.t8988.prototype.cljs$core$IWithMeta$ = !0, domina.domina.events.t8988.prototype.cljs$core$IWithMeta$_with_meta = function(b, c) {
-          return new domina.domina.events.t8988(this.evt, this.f, this.create_listener_function, c)
+        }, domina.domina.events.t38559.prototype.cljs$core$IWithMeta$ = !0, domina.domina.events.t38559.prototype.cljs$core$IWithMeta$_with_meta = function(b, c) {
+          return new domina.domina.events.t38559(this.evt, this.f, this.create_listener_function, c)
         }
       }
-      return new domina.domina.events.t8988(c, b, create_listener_function, null)
+      return new domina.domina.events.t38559(c, b, create_listener_function, null)
     }());
     return!0
   }
@@ -18546,72 +18546,23 @@ one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.cor
   return ttmachines.client.layout.ajax_link.call(null, domina.domina.css.sel.call(null, "#chapter-nav a"))
 });
 ttmachines.client.layout.init.call(null);
-ttmachines.client.animate = {};
-ttmachines.client.animate.effects = {};
-ttmachines.client.animate.effects.effects = cljs.core.set("rotateIn,rotateInUpRight,fadeIn,bounceOutUp,rotateInUpLeft,rollIn,fadeInDown,fadeInUpBig,fadeInRightBig,flipInX,shake,bounceOut,flipInY,rotateOutDownRight,fadeOutLeftBig,fadeInLeft,bounceInUp,bounceOutDown,bounce,rotateInDownLeft,fadeOutRight,tada,wiggle,hinge,fadeOutDownBig,flip,bounceOutLeft,fadeOutUp,bounceIn,rotateOutUpRight,bounceInDown,bounceInRight,flash,wobble,rollOut,fadeOut,fadeOutUpBig,rotateOut,fadeOutDown,bounceInLeft,rotateOutUpLeft,lightSpeedIn,bounceOutRight,fadeOutRightBig,flipOutX,flipOutY,fadeInLeftBig,fadeOutLeft,pulse,rotateInDownRight,fadeInRight,rotateOutDownLeft,fadeInUp,lightSpeedOut,fadeInDownBig,swing".split(","));
 ttmachines.client.broadcast = {};
 ttmachines.client.broadcast.title = domina.domina.by_id.call(null, "title");
-ttmachines.client.animate.ANIMATION_DURATION_MS = 300;
-ttmachines.client.animate.ANIMATION_DELAY_MS = 1E3;
-ttmachines.client.animate.ANIMATION_COMPLETE = ttmachines.client.animate.ANIMATION_DURATION_MS + ttmachines.client.animate.ANIMATION_DELAY_MS;
-var G__9512__9513 = cljs.core.seq.call(null, cljs.core.vals.call(null, ttmachines.client.layout.targets));
-if(cljs.core.truth_(G__9512__9513)) {
-  for(var t__9514 = cljs.core.first.call(null, G__9512__9513), G__9512__9515 = G__9512__9513;;) {
-    var element__9516 = domina.domina.css.sel.call(null, t__9514);
-    domina.domina.add_class_BANG_.call(null, element__9516, "animated");
-    var temp__3698__auto____9517 = cljs.core.next.call(null, G__9512__9515);
-    if(cljs.core.truth_(temp__3698__auto____9517)) {
-      var G__9512__9518 = temp__3698__auto____9517, G__9519 = cljs.core.first.call(null, G__9512__9518), G__9520 = G__9512__9518, t__9514 = G__9519, G__9512__9515 = G__9520
-    }else {
-      break
-    }
-  }
-}
-ttmachines.client.animate.animate = function() {
-  var a = function(a, b) {
-    var e = cljs.core.seq.call(null, b);
-    if(cljs.core.truth_(e)) {
-      for(var f = cljs.core.first.call(null, e);;) {
-        var g = domina.domina.css.sel.call(null, f);
-        domina.domina.add_class_BANG_.call(null, g, a);
-        ttmachines.client.util.after.call(null, ttmachines.client.animate.ANIMATION_COMPLETE, function() {
-          return function() {
-            return domina.domina.remove_class_BANG_.call(null, g, a)
-          }
-        }(f, e));
-        f = cljs.core.next.call(null, e);
-        if(cljs.core.truth_(f)) {
-          e = f, f = cljs.core.first.call(null, e)
-        }else {
-          return null
-        }
-      }
-    }else {
-      return null
-    }
-  }, b = function(b, d) {
-    var e = null;
-    goog.isDef(d) && (e = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1), 0));
-    return a.call(this, b, e)
-  };
-  b.cljs$lang$maxFixedArity = 1;
-  b.cljs$lang$applyTo = function(b) {
-    var d = cljs.core.first(b), b = cljs.core.rest(b);
-    return a.call(this, d, b)
-  };
-  return b
-}();
-ttmachines.client.animate.fade_in_left = cljs.core.partial.call(null, ttmachines.client.animate.animate, "fadeInLeft");
-ttmachines.client.animate.fade_out_left = cljs.core.partial.call(null, ttmachines.client.animate.animate, "fadeOutLeft");
-ttmachines.client.animate.fade_in_right = cljs.core.partial.call(null, ttmachines.client.animate.animate, "fadeInRight");
-ttmachines.client.animate.fade_out_right = cljs.core.partial.call(null, ttmachines.client.animate.animate, "fadeOutRight");
-ttmachines.client.animate.entrances = cljs.core.ObjMap.fromObject(["\ufdd0'headline", "\ufdd0'text", "\ufdd0'main", "\ufdd0'below-main", "\ufdd0'sidebar"], {"\ufdd0'headline":ttmachines.client.animate.fade_in_left, "\ufdd0'text":ttmachines.client.animate.fade_in_left, "\ufdd0'main":ttmachines.client.animate.fade_in_left, "\ufdd0'below-main":ttmachines.client.animate.fade_in_left, "\ufdd0'sidebar":ttmachines.client.animate.fade_in_right});
+ttmachines.client.animate = {};
+ttmachines.client.animate.ANIMATION_DURATION_MS = 450;
+ttmachines.client.animate.slide_in_BANG_ = function(a, b) {
+  var c = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, a)) ? cljs.core.apply.call(null, cljs.core.hash_map, a) : a, c = cljs.core.get.call(null, c, "\ufdd0'direction", "\ufdd0'left");
+  return $.call(null, b).show("drop", ttmachines.client.util.map__GT_js.call(null, cljs.core.ObjMap.fromObject(["easing", "direction"], {easing:"easeInQuad", direction:cljs.core.name.call(null, c)})), ttmachines.client.animate.ANIMATION_DURATION_MS)
+};
+ttmachines.client.animate.slide_in_left_BANG_ = cljs.core.partial.call(null, ttmachines.client.animate.slide_in_BANG_, cljs.core.ObjMap.fromObject([], {}));
+ttmachines.client.animate.slide_in_right_BANG_ = cljs.core.partial.call(null, ttmachines.client.animate.slide_in_BANG_, cljs.core.ObjMap.fromObject(["\ufdd0'direction"], {"\ufdd0'direction":"\ufdd0'right"}));
+ttmachines.client.animate.entrances = cljs.core.ObjMap.fromObject(["\ufdd0'headline", "\ufdd0'text", "\ufdd0'main", "\ufdd0'below-main", "\ufdd0'sidebar"], {"\ufdd0'headline":ttmachines.client.animate.slide_in_left_BANG_, "\ufdd0'text":ttmachines.client.animate.slide_in_left_BANG_, "\ufdd0'main":ttmachines.client.animate.slide_in_left_BANG_, "\ufdd0'below-main":ttmachines.client.animate.slide_in_left_BANG_, "\ufdd0'sidebar":ttmachines.client.animate.slide_in_right_BANG_});
 ttmachines.client.animate.incoming_keys = function(a) {
   return cljs.core.keys.call(null, cljs.core.filter.call(null, function(a, c) {
     return cljs.core.not.call(null, cljs.core.nil_QMARK_.call(null, c))
   }, a))
 };
-ttmachines.client.animate.fade_in_layout_elements = function(a) {
+ttmachines.client.animate.slide_in_layout_elements_BANG_ = function(a) {
   var b = cljs.core.seq.call(null, ttmachines.client.animate.incoming_keys.call(null, a));
   if(cljs.core.truth_(b)) {
     for(a = cljs.core.first.call(null, b);;) {
@@ -18638,7 +18589,7 @@ one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.cor
 });
 one.dispatch.react_to.call(null, cljs.core.set(["\ufdd0'switch-page"]), cljs.core.ObjMap.fromObject(["\ufdd0'priority"], {"\ufdd0'priority":2}), function(a, b) {
   var c = cljs.core.get_in.call(null, b, cljs.core.Vector.fromArray(["\ufdd0'data", "\ufdd0'layout"]));
-  return ttmachines.client.animate.fade_in_layout_elements.call(null, c)
+  return ttmachines.client.animate.slide_in_layout_elements_BANG_.call(null, c)
 });
 ttmachines.client.user = {};
 ttmachines.client.user.foo = function(a) {
@@ -19067,25 +19018,25 @@ domina.domina.xpath.root_element = function() {
 };
 domina.domina.xpath.xpath = function() {
   var a = null, b = function(b, d) {
-    if(cljs.core.truth_(void 0 === domina.domina.xpath.t9101)) {
-      domina.domina.xpath.t9101 = function(a, b, c, d) {
+    if(cljs.core.truth_(void 0 === domina.domina.xpath.t38672)) {
+      domina.domina.xpath.t38672 = function(a, b, c, d) {
         this.expr = a;
         this.base = b;
         this.xpath = c;
         this.__meta = d
-      }, domina.domina.xpath.t9101.cljs$core$IPrintable$_pr_seq = function() {
-        return cljs.core.list.call(null, "domina.domina.xpath.t9101")
-      }, domina.domina.xpath.t9101.prototype.domina$domina$DomContent$ = !0, domina.domina.xpath.t9101.prototype.domina$domina$DomContent$nodes = function() {
+      }, domina.domina.xpath.t38672.cljs$core$IPrintable$_pr_seq = function() {
+        return cljs.core.list.call(null, "domina.domina.xpath.t38672")
+      }, domina.domina.xpath.t38672.prototype.domina$domina$DomContent$ = !0, domina.domina.xpath.t38672.prototype.domina$domina$DomContent$nodes = function() {
         return cljs.core.mapcat.call(null, cljs.core.partial.call(null, domina.domina.xpath.select_nodes, this.expr), domina.domina.nodes.call(null, this.base))
-      }, domina.domina.xpath.t9101.prototype.domina$domina$DomContent$single_node = function() {
+      }, domina.domina.xpath.t38672.prototype.domina$domina$DomContent$single_node = function() {
         return cljs.core.first.call(null, cljs.core.filter.call(null, cljs.core.complement.call(null, cljs.core.nil_QMARK_), cljs.core.map.call(null, cljs.core.partial.call(null, domina.domina.xpath.select_node, this.expr), domina.domina.nodes.call(null, this.base))))
-      }, domina.domina.xpath.t9101.prototype.cljs$core$IMeta$ = !0, domina.domina.xpath.t9101.prototype.cljs$core$IMeta$_meta = function() {
+      }, domina.domina.xpath.t38672.prototype.cljs$core$IMeta$ = !0, domina.domina.xpath.t38672.prototype.cljs$core$IMeta$_meta = function() {
         return this.__meta
-      }, domina.domina.xpath.t9101.prototype.cljs$core$IWithMeta$ = !0, domina.domina.xpath.t9101.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
-        return new domina.domina.xpath.t9101(this.expr, this.base, this.xpath, b)
+      }, domina.domina.xpath.t38672.prototype.cljs$core$IWithMeta$ = !0, domina.domina.xpath.t38672.prototype.cljs$core$IWithMeta$_with_meta = function(a, b) {
+        return new domina.domina.xpath.t38672(this.expr, this.base, this.xpath, b)
       }
     }
-    return new domina.domina.xpath.t9101(d, b, a, null)
+    return new domina.domina.xpath.t38672(d, b, a, null)
   };
   return a = function(c, d) {
     switch(arguments.length) {

@@ -24,44 +24,33 @@
   (:require [one.dispatch :as dispatch]
             [domina.domina :as dom]
             [domina.domina.css :as css]
-            [ttmachines.client.layout :as layout]
-            [ttmachines.client.animate.effects :as effects]))
+            [ttmachines.client.layout :as layout]))
 
-(def ANIMATION-DURATION-MS 300)
-(def ANIMATION-DELAY-MS 1000)
-(def ANIMATION-COMPLETE (+ ANIMATION-DURATION-MS ANIMATION-DELAY-MS))
+(def ANIMATION-DURATION-MS 450)
 
-;; We want to animate all our layout targets
-(doseq [t (vals layout/targets)]
-  (let [element (css/sel t)]
-    (dom/add-class! element "animated")))
+(defn slide-in! [{:keys [direction] :or {direction :left}} selector]
+  (.show (js/$ selector)
+    "drop"
+    (map->js 
+      {"easing"      "easeInQuad"
+       "direction"   (name direction)})
+    ANIMATION-DURATION-MS))
 
-(defn animate [effect & selectors]
-  (doseq [selector selectors]
-    (let [element (css/sel selector)]
-      (dom/add-class! element effect)
-      (after ANIMATION-COMPLETE
-        #(dom/remove-class! element effect)))))
-
-;; Convenience functions for popular effects
-
-(def fade-in-left (partial animate "fadeInLeft"))
-(def fade-out-left (partial animate "fadeOutLeft"))
-(def fade-in-right (partial animate "fadeInRight"))
-(def fade-out-right (partial animate "fadeOutRight"))
+(def slide-in-left! (partial slide-in! {}))
+(def slide-in-right! (partial slide-in! {:direction :right}))
 
 ;; Animate layout transitions
 
-(def entrances {:headline   fade-in-left
-                :text       fade-in-left
-                :main       fade-in-left
-                :below-main fade-in-left
-                :sidebar    fade-in-right})
+(def entrances {:headline   slide-in-left!
+                :text       slide-in-left!
+                :main       slide-in-left!
+                :below-main slide-in-left!
+                :sidebar    slide-in-right!})
 
 (defn incoming-keys [layout-map]
   (keys (filter (fn [k v] (not (nil? v))) layout-map)))
 
-(defn fade-in-layout-elements [layout-map]
+(defn slide-in-layout-elements! [layout-map]
   (doseq [k (incoming-keys layout-map)]
     (when (contains? entrances k)
       (let [animation (entrances k)
@@ -82,4 +71,4 @@
 (dispatch/react-to #{:switch-page} {:priority 2}
   (fn [_ page-data]
     (let [layout-map (get-in page-data [:data :layout])]
-      (fade-in-layout-elements layout-map))))
+      (slide-in-layout-elements! layout-map))))
