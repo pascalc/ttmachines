@@ -78,8 +78,8 @@
 (def ^:dynamic *title* "talking to machines")
 
 (defpartial title-header []
-    [:header#title
-        [:h1.fancy *title*]])
+  [:header#title
+    (link-to "/" [:h1.fancy *title*])])
 
 (def ^:dynamic *route*)
 
@@ -94,9 +94,8 @@
     [:nav#nav
         [:ul
             (map #(apply nav-link-for %)
-                [["/"           "start"]
+                [["/chapters"   "start"]
                  ["/repl"       "repl"]
-                 ["#"           "broadcast"]
                  ["#"           "about"]])]])
 
 (def app-js (include-js "/javascript/app.js"))
