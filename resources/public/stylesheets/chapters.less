@@ -1,4 +1,5 @@
 @import 'mixins.less';
+@import 'variables.less';
 
 .top-border-radius(@radius) {
     -webkit-border-top-left-radius: @radius;
@@ -21,17 +22,18 @@
                 padding-left: 10px;
                 padding-right: 10px; 
                 color: #eee;
+                text-shadow: 1px 1px 3px #000;
             }
+            .top-border-radius(8px);
         }
         p { 
             padding: 10px; 
             margin-bottom: 0px;
         }
         
-        border: solid 1px;
         color: #000;
-        background: #eee;
-        background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#e2e2e2));
-        background: -moz-linear-gradient(top,  #eee,  #e2e2e2);
+        background: #e4e4e4;
+        .border-radius(8px);
+        .box-shadow(@shadow);
     }
 }

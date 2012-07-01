@@ -29,15 +29,24 @@
   text-decoration: none;
 }
 #chapters article {
-  border: solid 1px;
   color: #000;
-  background: #eee;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#e2e2e2));
-  background: -moz-linear-gradient(top, #eeeeee, #e2e2e2);
+  background: #e4e4e4;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 2px 3px 1px #000000;
+  -moz-box-shadow: 0 2px 3px 1px #000000;
+  box-shadow: 0 2px 3px 1px #000000;
 }
 #chapters article header {
   padding: 10px 0 10px 0;
   background-color: #3D3D3D;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 #chapters article header h3 {
   margin-top: 0px;
@@ -45,6 +54,7 @@
   padding-left: 10px;
   padding-right: 10px;
   color: #eee;
+  text-shadow: 1px 1px 3px #000;
 }
 #chapters article p {
   padding: 10px;

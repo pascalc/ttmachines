@@ -1,5 +1,5 @@
-@import 'variables.less';
-@import 'mixins.less';
+@import '../mixins.less';
+@import '../variables.less';
 
 #lost-robot {
     position: relative;
@@ -9,13 +9,14 @@ img#lost-robot-img {
     position: absolute;
     top: 0;
     right: 0;
-    border: solid 1px #000;
+    .box-shadow(@shadow);
+    .border-radius(8px);
 }
 
 span#lost-robot-credit {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -5px;
     .transform-origin(right, 0);
     .rotate(-90deg);
 
