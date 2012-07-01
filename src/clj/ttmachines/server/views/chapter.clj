@@ -28,6 +28,9 @@
         hiccup.element
         ttmachines.server.tools))
 
+;; Every time a chapter is defined, store it here
+(def chapters (atom {}))
+
 (defpartial chapter-nav [chapter-num chapter-length 
                          & {:keys [chapter-next chapter-previous] 
                             :or   {chapter-next nil chapter-previous nil}}]
@@ -77,9 +80,9 @@
 
 ;; def-chapter-content expands to defpage that calls handle request
 
-(defn def-chapter-content [route content-map & {:keys [previous-chapters]}]
+(defn def-chapter-content [route content-map & {:keys [previous-pages]}]
   `(defpage ~route {:keys [~'initialize] :or {~'initialize false}} 
-    (binding [*previous-chapter-content* ~previous-chapters]
+    (binding [*previous-chapter-content* ~previous-pages]
       (handle-request ~'initialize ~content-map))))
 
 ;; Generate chapter links
@@ -114,7 +117,7 @@
         :chapter-previous (previous-link chapter-num)))
     (assoc :route route)))
 
-(defn expand-def-chapter-content [content-maps & {:keys [chapter-acc]}]
+(defn expand-def-chapter-content [content-maps & {:keys [page-acc]}]
   (let [chapter-length (count content-maps)]
     (doall
       (map 
@@ -123,19 +126,20 @@
                 full-content-map  (add-keys content-map :route route 
                                                         :chapter-num chapter-num
                                                         :chapter-length chapter-length)]
-            (swap! chapter-acc assoc chapter-num full-content-map)
+            (swap! page-acc assoc chapter-num full-content-map)
             (def-chapter-content 
               route
               full-content-map
-              :previous-chapters @chapter-acc)))
+              :previous-pages @page-acc)))
         (range 1 (inc chapter-length))
         content-maps))))
 
 ;; defchapter takes a sequence of content-maps and calls def-chapter-content
 ;; on each in turn, with the appropriate navigation inserted
 
-(defmacro defchapter [base-url & content-maps]
+(defmacro defchapter [base-url title & content-maps]
+  (swap! chapters assoc base-url title)
   (binding [*base-url* base-url]
     `(do
         ~(redirect-base-url base-url) 
-        ~@(expand-def-chapter-content content-maps :chapter-acc (atom {})))))
+        ~@(expand-def-chapter-content content-maps :page-acc (atom {})))))

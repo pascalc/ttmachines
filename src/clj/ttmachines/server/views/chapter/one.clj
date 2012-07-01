@@ -86,7 +86,7 @@
 (defpartial outro-title []
   [:h2 strings/outro-title])
 
-(defchapter "/chapter/1"
+(defchapter "/chapter/1" "Introductions"
   {:layout {:headline     (tagline)
             :text         nil
             :main         (intro)       
