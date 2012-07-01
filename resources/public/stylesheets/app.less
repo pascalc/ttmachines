@@ -4,10 +4,6 @@
 @import 'type.less';
 @import 'buttons.less';
 
-// App stylesheet imports
-@import 'repl.less';
-@import 'chapter/one.less';
-
 ////////////
 // MIXINS //
 ////////////
@@ -111,6 +107,10 @@ header#title {
     margin-top: 1.5rem;
 	margin-bottom: 1.2rem;
     margin-left: 10px;
+    a { 
+        text-decoration: none; 
+        color: #000;
+    }
 }
 
 #nav {
@@ -198,3 +198,8 @@ header#title {
         margin-bottom: 10px;
     }
 }
+
+// App stylesheet imports
+@import 'repl.less';
+@import 'chapters.less';
+@import 'chapter/one.less';
