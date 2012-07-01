@@ -31,7 +31,7 @@
 ;; Every time a chapter is defined, store it here
 (def chapters (atom {}))
 
-(defpartial chapter-nav [chapter-num chapter-length 
+(defpartial chapter-nav [page-num chapter-length 
                          & {:keys [chapter-next chapter-previous] 
                             :or   {chapter-next nil chapter-previous nil}}]
   [:hr]
@@ -41,7 +41,7 @@
        :class "btn btn-large btn-success"} 
       chapter-next
       "Next"))
-  [:p (str chapter-num " of " chapter-length)]
+  [:p (str page-num " of " chapter-length)]
   (when chapter-previous
     (link-to 
       {:id    "previous"
@@ -93,40 +93,40 @@
   `(defpage ~base-url {}
       (response/redirect ~(str base-url "/1"))))
 
-(defn generate-url [chapter-num]
-  (str *base-url* "/" chapter-num))
+(defn generate-url [page-num]
+  (str *base-url* "/" page-num))
 
-(defn next-link [chapter-num chapter-length]
-  (let [target (inc chapter-num)]
+(defn next-link [page-num chapter-length]
+  (let [target (inc page-num)]
     (when (<= target chapter-length)
       (str *base-url* "/" target))))
 
-(defn previous-link [chapter-num]
-  (let [target (dec chapter-num)]
+(defn previous-link [page-num]
+  (let [target (dec page-num)]
     (when (>= target 1)
       (str *base-url* "/" target "?initialize=true"))))  
 
-(defn add-keys [content-map & {:keys[route chapter-num chapter-length]}]
+(defn add-keys [content-map & {:keys[route page-num chapter-length]}]
   (-> content-map
     (assoc-in 
       [:layout :chapter-nav]
       (chapter-nav 
-        chapter-num
+        page-num
         chapter-length
-        :chapter-next (next-link chapter-num chapter-length)
-        :chapter-previous (previous-link chapter-num)))
+        :chapter-next (next-link page-num chapter-length)
+        :chapter-previous (previous-link page-num)))
     (assoc :route route)))
 
 (defn expand-def-chapter-content [content-maps & {:keys [page-acc]}]
   (let [chapter-length (count content-maps)]
     (doall
       (map 
-        (fn [chapter-num content-map]
-          (let [route             (generate-url chapter-num)
+        (fn [page-num content-map]
+          (let [route             (generate-url page-num)
                 full-content-map  (add-keys content-map :route route 
-                                                        :chapter-num chapter-num
+                                                        :page-num page-num
                                                         :chapter-length chapter-length)]
-            (swap! page-acc assoc chapter-num full-content-map)
+            (swap! page-acc assoc page-num full-content-map)
             (def-chapter-content 
               route
               full-content-map
@@ -137,9 +137,9 @@
 ;; defchapter takes a sequence of content-maps and calls def-chapter-content
 ;; on each in turn, with the appropriate navigation inserted
 
-(defmacro defchapter [base-url title & content-maps]
-  (swap! chapters assoc base-url title)
-  (binding [*base-url* base-url]
+(defmacro defchapter [{:keys [url number] :as info} & content-maps]
+  (binding [*base-url* url]
     `(do
-        ~(redirect-base-url base-url) 
+        (swap! chapters assoc ~number ~info)
+        ~(redirect-base-url url) 
         ~@(expand-def-chapter-content content-maps :page-acc (atom {})))))

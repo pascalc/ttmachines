@@ -22,6 +22,14 @@
 (ns ttmachines.server.views.strings.chapter.one
     (:use ttmachines.server.views.strings.core))
 
+(def title "Introductions")
+
+(defstring description 
+  "
+  The first steps in speaking any language are learning how to introduce yourself, say hello and goodbye.
+  This chapter begins with showing you how to define values such as your name and ends with you 
+  defining a function of your own.")
+
 (defstring tagline "Have you ever had a *conversation* with your computer?")
 
 (defstring intro
