@@ -22,6 +22,7 @@
 (ns ttmachines.client.chapter.one
   (:require [clojure.string :as string]
             [domina.domina :as dom]
+            [domina.domina.css :as css]
             [domina.domina.events :as events]
             [one.dispatch :as dispatch]
             [ttmachines.client.util :as util]
@@ -53,6 +54,10 @@
         (when-not (dom/has-class? introduce-me "disabled")
           (reset! my-name (dom/text enter-my-name))
           (history/push-state! :url "/chapter/1/2"))))))
+
+(macro/set-up-route "/chapter/1/1"
+  (dom/set-style! (css/sel "#chapter-nav a")
+    "display" "none"))
 
 (defn greeting [] 
   (str "It's nice to finally meet you, " @my-name "!"))
