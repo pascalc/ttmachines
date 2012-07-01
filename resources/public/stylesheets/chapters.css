@@ -1,0 +1,52 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#chapters a {
+  text-decoration: none;
+}
+#chapters article {
+  border: solid 1px;
+  color: #000;
+  background: #eee;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#e2e2e2));
+  background: -moz-linear-gradient(top, #eeeeee, #e2e2e2);
+}
+#chapters article header {
+  padding: 10px 0 10px 0;
+  background-color: #3D3D3D;
+}
+#chapters article header h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #eee;
+}
+#chapters article p {
+  padding: 10px;
+  margin-bottom: 0px;
+}
