@@ -89,3 +89,7 @@
 (macro/set-up-route "/chapter/1/5"  
   (repl/set-editor-text! (nested-str)))
 
+(macro/set-up-route "/chapter/1/7"
+  (dom/set-style! (css/sel ".code-wrapper")
+    "margin-top" "0px"))
+
