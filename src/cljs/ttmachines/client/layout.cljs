@@ -97,10 +97,11 @@
   (events/listen! link-nodes :click
     (fn [evt]
       (events/prevent-default evt)
-      (let [link  (events/target evt)
+      (let [link  (events/current-target evt)
             url   (dom/attr link :href)]
         (dispatch/fire :link-clicked {:url url})))))
 
+(ajax-link (css/sel "#title a"))
 (ajax-link (css/sel "#nav a"))
 
 ;; EVENT LISTENERS
