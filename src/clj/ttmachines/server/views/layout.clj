@@ -98,7 +98,7 @@
             (map #(apply nav-link-for %)
                 [["/chapters"   "start"]
                  ["/repl"       "repl"]
-                 ["#"           "about"]])]])
+                 ["/about"      "about"]])]])
 
 (def app-js (include-js "/javascript/app.js"))
 (def ttmachines-js 
