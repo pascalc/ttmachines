@@ -102,6 +102,42 @@ p {
 // CONTENT //
 /////////////
 
+/* Pillboxes */
+
+.pillbox {
+        header { 
+            padding: 10px 0 10px 0;
+            background-color: #3D3D3D; 
+            h3 { 
+                margin-top: 0px;
+                margin-bottom: 0px;
+                padding-left: 10px;
+                padding-right: 10px; 
+                color: #eee;
+                text-shadow: 1px 1px 3px #000;
+            }
+            .top-border-radius(8px);
+        }
+        p { 
+            padding: 10px; 
+            margin-bottom: 0px;
+        }
+        
+        color: #000;
+        background: #FAFAFA;
+        background: -moz-linear-gradient(#FAFAFA,#F1F1F1);
+        background: -webkit-linear-gradient(#FAFAFA,#F1F1F1);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#f1f1f1')";
+        border: 1px solid #DDD;
+        border-bottom: 1px solid #CCC;
+        .top-border-radius(10px);
+        .bottom-border-radius(8px);
+        text-shadow: 0 1px 0 white;
+        box-shadow: inset 0 1px 0 white,0 1px 5px #F1F1F1;
+    }
+
+/* Layout elements */
+
 header#title {
     .column(8);
     margin-top: 1.5rem;
@@ -163,7 +199,7 @@ header#title {
 }
 
 #main {
-    h3 { margin-top: 20px; }
+    h3:not(:first) { margin-top: 20px; }
 }
 
 #chapter-nav {
@@ -201,5 +237,6 @@ header#title {
 
 // App stylesheet imports
 @import 'repl.less';
+@import 'about.less';
 @import 'chapters.less';
 @import 'chapter/one.less';

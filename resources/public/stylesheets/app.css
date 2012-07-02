@@ -6,6 +6,7 @@ body {
   *zoom: 1;
   *zoom: 1;
   *zoom: 1;
+  *zoom: 1;
 }
 body:before,
 body:after {
@@ -27,6 +28,14 @@ body:before,
 body:after {
   display: table;
   content: "";
+}
+body:after {
+  clear: both;
+}
+body:before,
+body:after {
+  content: "";
+  display: table;
 }
 body:after {
   clear: both;
@@ -5442,9 +5451,17 @@ div.container {
   float: left;
   width: 64.58333333333334%;
   margin: 0 1.0416666666666665%;
+  display: inline;
+  float: left;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
   margin-bottom: 100px;
 }
 #sidebar {
+  display: inline;
+  float: left;
+  width: 31.25%;
+  margin: 0 1.0416666666666665%;
   display: inline;
   float: left;
   width: 31.25%;
@@ -5523,7 +5540,58 @@ p {
 #loading h1 {
   margin: 0;
 }
+/* Pillboxes */
+.pillbox {
+  color: #000;
+  background: #FAFAFA;
+  background: -moz-linear-gradient(#fafafa, #f1f1f1);
+  background: -webkit-linear-gradient(#fafafa, #f1f1f1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#f1f1f1')";
+  border: 1px solid #DDD;
+  border-bottom: 1px solid #CCC;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -moz-border-radius-bottomright: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  text-shadow: 0 1px 0 white;
+  box-shadow: inset 0 1px 0 white,0 1px 5px #F1F1F1;
+}
+.pillbox header {
+  padding: 10px 0 10px 0;
+  background-color: #3D3D3D;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.pillbox header h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #eee;
+  text-shadow: 1px 1px 3px #000;
+}
+.pillbox p {
+  padding: 10px;
+  margin-bottom: 0px;
+}
+/* Layout elements */
 header#title {
+  display: inline;
+  float: left;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
   display: inline;
   float: left;
   width: 64.58333333333334%;
@@ -5537,6 +5605,10 @@ header#title a {
   color: #000;
 }
 #nav {
+  display: inline;
+  float: left;
+  width: 31.25%;
+  margin: 0 1.0416666666666665%;
   display: inline;
   float: left;
   width: 31.25%;
@@ -5578,6 +5650,10 @@ header#title a {
   float: left;
   width: 64.58333333333334%;
   margin: 0 1.0416666666666665%;
+  display: inline;
+  float: left;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
 }
 #headline h2 {
   font-family: "Droid sans" "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -5588,9 +5664,13 @@ header#title a {
   float: left;
   width: 64.58333333333334%;
   margin: 0 1.0416666666666665%;
+  display: inline;
+  float: left;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
   margin-bottom: 1.2rem;
 }
-#main h3 {
+#main h3:not(:first) {
   margin-top: 20px;
 }
 #chapter-nav {
@@ -5617,6 +5697,10 @@ header#title a {
   font-weight: bold;
 }
 #footer {
+  display: inline;
+  float: left;
+  width: 97.91666666666666%;
+  margin: 0 1.0416666666666665%;
   display: inline;
   float: left;
   width: 97.91666666666666%;
@@ -5657,6 +5741,85 @@ header#title a {
 }
 #doc-args li {
   margin-bottom: 10px !important;
+}
+body {
+  width: 100%;
+  *zoom: 1;
+  *zoom: 1;
+  *zoom: 1;
+  *zoom: 1;
+  *zoom: 1;
+  *zoom: 1;
+}
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
+body:before,
+body:after {
+  display: table;
+  content: "";
+}
+body:after {
+  clear: both;
+}
+body:before,
+body:after {
+  display: table;
+  content: "";
+}
+body:after {
+  clear: both;
+}
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
+body:before,
+body:after {
+  display: table;
+  content: "";
+}
+body:after {
+  clear: both;
+}
+body:before,
+body:after {
+  display: table;
+  content: "";
+}
+body:after {
+  clear: both;
+}
+#faq {
+  display: inline;
+  float: left;
+  width: 89.58333333333334%;
+  margin: 0 1.0416666666666665%;
+  display: inline;
+  float: left;
+  width: 89.58333333333334%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 0;
+}
+#feedback header {
+  background: #FAFAFA;
+  background: -moz-linear-gradient(#fafafa, #f1f1f1);
+  background: -webkit-linear-gradient(#fafafa, #f1f1f1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#f1f1f1')";
+  border-bottom: 1px solid #DDD;
+}
+#feedback header h3 {
+  color: #000;
+  text-shadow: 0 1px 0 white;
 }
 .clearfix {
   *zoom: 1;
@@ -5699,56 +5862,6 @@ header#title a {
 }
 #chapters a {
   text-decoration: none;
-}
-#chapters article {
-  color: #000;
-  background: #e4e4e4;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  -webkit-box-shadow: 0 2px 3px 1px #000000;
-  -moz-box-shadow: 0 2px 3px 1px #000000;
-  box-shadow: 0 2px 3px 1px #000000;
-  -webkit-box-shadow: 0 2px 3px 1px #000000;
-  -moz-box-shadow: 0 2px 3px 1px #000000;
-  box-shadow: 0 2px 3px 1px #000000;
-  -webkit-box-shadow: 0 2px 3px 1px #000000;
-  -moz-box-shadow: 0 2px 3px 1px #000000;
-  box-shadow: 0 2px 3px 1px #000000;
-  -webkit-box-shadow: 0 2px 3px 1px #000000;
-  -moz-box-shadow: 0 2px 3px 1px #000000;
-  box-shadow: 0 2px 3px 1px #000000;
-}
-#chapters article header {
-  padding: 10px 0 10px 0;
-  background-color: #3D3D3D;
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
-  -moz-border-radius-topleft: 8px;
-  -moz-border-radius-topright: 8px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-#chapters article header h3 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #eee;
-  text-shadow: 1px 1px 3px #000;
-}
-#chapters article p {
-  padding: 10px;
-  margin-bottom: 0px;
 }
 .clearfix {
   *zoom: 1;

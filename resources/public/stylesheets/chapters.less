@@ -10,30 +10,15 @@
     border-top-right-radius: @radius;
 }
 
+.bottom-border-radius(@radius) {
+    -webkit-border-bottom-left-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-bottomleft: @radius;
+    -moz-border-radius-bottomright: @radius;
+    border-bottom-left-radius: @radius;
+    border-bottom-right-radius: @radius;
+}
+
 #chapters {
     a { text-decoration: none; }
-    article {
-        header { 
-            padding: 10px 0 10px 0;
-            background-color: #3D3D3D; 
-            h3 { 
-                margin-top: 0px;
-                margin-bottom: 0px;
-                padding-left: 10px;
-                padding-right: 10px; 
-                color: #eee;
-                text-shadow: 1px 1px 3px #000;
-            }
-            .top-border-radius(8px);
-        }
-        p { 
-            padding: 10px; 
-            margin-bottom: 0px;
-        }
-        
-        color: #000;
-        background: #e4e4e4;
-        .border-radius(8px);
-        .box-shadow(@shadow);
-    }
 }

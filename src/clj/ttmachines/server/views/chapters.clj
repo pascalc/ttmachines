@@ -39,7 +39,7 @@
       (map
         (fn [[number {:keys[url title description]}]]
           (link-to url 
-            [:article
+            [:article.pillbox
               [:header [:h3 (str "Chapter " number ": " title)]]
               description]))
         chapter-links)]))
