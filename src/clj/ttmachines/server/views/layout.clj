@@ -61,6 +61,8 @@
     [:head
         [:meta {:http-equiv "Content-Type"
                 :content    "text/html; charset=UTF-8"}]
+        [:meta {:name       "google-site-verification"
+                :content    "NnXS7VW5lq7tIUtzTVtsJ4PwutqxZqUw2Gn3ZZ7jClc"}]
         [:title *page-title*]
         favicon
         (stylesheet-links)
