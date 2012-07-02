@@ -26,7 +26,7 @@
 
 (defstring description 
   "
-  The first steps in speaking any language are learning how to introduce yourself, say hello and goodbye.
+  The first steps in speaking any language are learning how to say hello, goodbye and how to introduce yourself.
   This chapter begins with showing you how to define values such as your name and ends with you 
   defining a function of your own.")
 

@@ -40,7 +40,7 @@ Any forms you type in the editor will be evaluated and the results displayed bel
     (= 0 (mod n 15))  \"fizzbuzz\"
     (= 0 (mod n 3))   \"fizz\"
     (= 0 (mod n 5))   \"buzz\"
-    true              (str n)))
+    :else              (str n)))
 
 (map (fn [n] [n (fizzbuzz n)]) (range 1 101))")
 
