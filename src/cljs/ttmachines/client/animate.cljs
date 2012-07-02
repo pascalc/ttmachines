@@ -32,10 +32,14 @@
   {:left :right
    :right :left})
 
+;; NOTE: this means slide targets will have their coordinates
+;; set to 0 after the animation completes. If we reset to original
+;; position then concurrent slide-ins, as a result of a double click
+;; on a link, result in the animation ending prematurely.
 (defn slide-in! [{:keys [direction] :or {direction :left}} selector]
   (let [element         (css/sel selector)
         opp-direction   (name (opposite-direction direction))
-        original-pos    (or (dom/style element opp-direction) 0)]
+        original-pos    0] 
     (dom/set-styles! element 
       {"position"     "relative"
        opp-direction  "750px"})
