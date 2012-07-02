@@ -1,0 +1,30 @@
+body {
+  width: 100%;
+  *zoom: 1;
+}
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
+#faq {
+  display: inline;
+  float: left;
+  width: 860px;
+  margin: 0 10px;
+  margin-left: 0;
+}
+#feedback header {
+  background: #FAFAFA;
+  background: -moz-linear-gradient(#fafafa, #f1f1f1);
+  background: -webkit-linear-gradient(#fafafa, #f1f1f1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#f1f1f1')";
+  border-bottom: 1px solid #DDD;
+}
+#feedback header h3 {
+  color: #000;
+  text-shadow: 0 1px 0 white;
+}
