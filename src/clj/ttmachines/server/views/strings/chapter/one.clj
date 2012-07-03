@@ -219,4 +219,10 @@ So break the ice. Write your name between the quotation marks and say hello.")
   doing so you wrote your first computer program.
 
   Though there's a lot more to programming, we've actually covered the core principles: 
-  binding symbols to functions and values, and using them to derive results.")
+  binding symbols to functions and values, and using them to derive results.
+
+  <h3>So where to next?</h3>
+
+  See what you can build by playing around with the [editor](/repl), and keep an eye out for
+  new [chapters](/chapters)!")
+
