@@ -274,4 +274,6 @@
 (dispatch/react-to #{:switch-page} {:priority 3}
   (fn [_ {:keys[data]}]
     (when-let [text (data :repl-text)]
-      (set-editor-text! text))))
+      (when @editor 
+        (set-editor-text! text)))))
+
