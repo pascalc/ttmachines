@@ -84,7 +84,7 @@
 (defstring feedback-text
   "
   That's great! Talking to machines is an open-source project and a collaborative
-  endeavour so you're very welcome to send me a [mail](mailto:feedback@talkingtomachines.org), 
+  endeavour so you're very welcome to send me a [mail](mailto:pascal@talkingtomachines.org), 
   ping me on [Twitter](http://twitter.com/pkchatterjee) or send me a pull request on 
   [Github](http://github.com/pascalc/ttmachines).")
 
