@@ -92,18 +92,30 @@
       (when (= (dom/attr a-node :href) route)
         (dom/add-class! li-node "active")))))
 
-;; EVENT TRIGGERS
+;; Use AJAX to handle links
 
-(defn ajax-link [link-nodes]
-  (events/listen! link-nodes :click
-    (fn [evt]
-      (events/prevent-default evt)
-      (let [link  (events/current-target evt)
-            url   (dom/attr link :href)]
-        (dispatch/fire :link-clicked {:url url})))))
+(defn ajax-link! [link-nodes]
+  (let [to-link (filter 
+                  #(not (dom/get-data % :ajaxed?))
+                  link-nodes)]
+    
+    (events/listen! to-link :click
+      (fn [evt]
+        (events/prevent-default evt)
+        (let [link  (events/current-target evt)
+              url   (dom/attr link :href)]
+          (dispatch/fire :link-clicked {:url url}))))
 
-(ajax-link (css/sel "#title a"))
-(ajax-link (css/sel "#nav a"))
+    (doseq [n to-link]
+      (dom/set-data! n :ajaxed? true))))
+
+(defn ajax-link-internal! []
+  (->> (dom/nodes (css/sel "a"))
+    (filter
+      (fn [link]
+        (let [href (dom/attr link :href)]
+          (not (re-matches #"^http[s]?[\S]*" href)))))
+    (ajax-link!)))
 
 ;; EVENT LISTENERS
 
@@ -138,10 +150,10 @@
   (fn [_ page-data]
     (load-state (page-data :data))))
 
-;; Set up chapter navigation
+;; Ajaxify all internal links
 (dispatch/react-to #{:switch-page} {:priority 2}
   (fn [_ _]
-    (ajax-link (css/sel "#chapter-nav a"))))
+    (ajax-link-internal!)))
 
 ;; MAIN
 
