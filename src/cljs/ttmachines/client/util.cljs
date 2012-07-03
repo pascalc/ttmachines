@@ -64,6 +64,13 @@
 (defn parse-float [float-str]
   (js/parseFloat float-str))
 
+(defn hostname []
+  (.-hostname (.-location js/document)))
+
+;; Run in dev mode if running on localhost
+(defn dev-mode? []
+  (= (hostname) "localhost"))
+
 ;; Code highlighting
 
 (defn code-highlight [code-str target-id]

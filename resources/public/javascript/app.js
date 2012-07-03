@@ -31,5 +31,7 @@ $(document).ready(function() {
     goog.require('cljs.core');
     goog.provide('cljs.user');
 
-    // one.browser.repl_client.repl();
+    if(document.location.hostname == "localhost") {
+        one.browser.repl_client.repl();
+    }
 });

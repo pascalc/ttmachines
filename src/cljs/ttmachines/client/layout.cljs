@@ -20,7 +20,7 @@
 ; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (ns ttmachines.client.layout
-  (:use [ttmachines.client.util :only [path-name]])
+  (:use [ttmachines.client.util :only [path-name dev-mode?]])
   (:require [cljs.reader :as reader]
             [one.dispatch :as dispatch]
             [domina.domina :as dom]
@@ -33,8 +33,9 @@
 ;; INITIALISE
 
 (defn init []
-  (request/get-page (path-name) :initialize? true))
-  ;(repl/connect "http://localhost:9000/repl"))
+  (request/get-page (path-name) :initialize? true)
+  (when (dev-mode?)
+    (repl/connect "http://localhost:9000/repl")))
 
 ;; Alter DOM
 
