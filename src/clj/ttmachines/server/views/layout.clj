@@ -36,7 +36,6 @@
 (def ^:dynamic *stylesheets*
     #{"codemirror.css"
       "ambiance.css"
-      "animate.css"
       "app.css"})
 (defpartial stylesheet-links []
     (map #(include-css (str "/stylesheets/" %)) *stylesheets*))
@@ -96,7 +95,7 @@
     [:nav#nav
         [:ul
             (map #(apply nav-link-for %)
-                [["/chapters"   "start"]
+                [["/chapters"   "chapters"]
                  ["/repl"       "repl"]
                  ["/about"      "about"]])]])
 

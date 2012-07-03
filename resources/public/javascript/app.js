@@ -20,11 +20,9 @@ var opts = {
     left: -60 // Left position relative to parent in px
 };
 var spinner = new Spinner(opts).spin(target);
-$("#loading").css("visibility", "visible").addClass("animated fadeInLeft");
 
 function stopSpinner() { spinner.stop(); };
 function hideLoading() {
-    $("#loading").addClass("animated fadeOutRight");
     setTimeout(stopSpinner, 1000);
 };
 
