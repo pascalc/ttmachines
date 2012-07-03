@@ -5483,22 +5483,8 @@ p {
   line-height: 1.5em;
   margin-bottom: 20px;
 }
-.fadeInLeft,
-.fadeOutLeft,
-.fadeInRight,
-.fadeOutRight {
-  animation-duration: 0.3s !important;
-  -moz-animation-duration: 0.3s !important;
-  -webkit-animation-duration: 0.3s !important;
-  animation-duration: 0.3s !important;
-  -moz-animation-duration: 0.3s !important;
-  -webkit-animation-duration: 0.3s !important;
-  animation-duration: 0.3s !important;
-  -moz-animation-duration: 0.3s !important;
-  -webkit-animation-duration: 0.3s !important;
-  animation-duration: 0.3s !important;
-  -moz-animation-duration: 0.3s !important;
-  -webkit-animation-duration: 0.3s !important;
+a {
+  text-decoration: none;
 }
 #loading {
   visibility: hidden;
