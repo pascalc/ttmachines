@@ -29,6 +29,19 @@ If you have an improvement to an existing chapter or an idea for a new one, you'
 HTML elements used in the chapter are created here, using Hiccup and `defpartial`. Chapters themselves are defined as 
 a list of "content maps" that form the arguments to `defchapter`, together with a base url and associated metadata.
 
+### Text Content 
+
+*src/clj/ttmachines/server/views/strings/chapter/* **one.clj**
+
+All texts used in the chapter should be declared here, using `defstring` if preprocessing is required, and `def` otherwise.
+Check out strings/core.clj to see what preprocessing is available.
+
+### Interactivity
+
+*src/cljs/ttmachines/client/chapter/* **one.cljs**
+
+Event handlers, dynamic text etc can be declared here using `set-up-element` for specific DOM elements and `set-up-route` for actions specific to a certain page. Look at one.cljs for reference. 
+
 ## Plans
 
 * Glossary
