@@ -1,38 +1,27 @@
 # talking to machines
 
-A web app inspired by [Himera](https://github.com/fogus/himera) intended to help beginners learn programming through interactive lessons at the ClojureScript REPL.
+A website intended to help beginners learn programming through interactive lessons at the ClojureScript REPL.
 
-Right now the REPL functions, a lesson framework is in the works.
+[Try it online](http://talkingtomachines.org)
 
-[Try it](http://talkingtomachines.org)
+## Project Aim
 
-## Build
+**To show people that programming is an intensely creative way of building things through a dialogue with a machine.**
+
+## Run it locally
+
+### Build
 
     lein deps
     lein cljsbuild once
 
-## Usage
+### Usage
 
 To start talking to machines locally using [Leiningen](https://github.com/technomancy/leiningen), type the following from the project directory:
 
     lein run
     
 and then hit http://localhost:1337
-
-## Current limitations
-
-  * The same limitations as [Himera](https://github.com/fogus/himera)
-
-## Plans
-
-  * Create a framework for interactive lessons that react user input and the evaluated results.
-  * Lessons could be specified as state-machines in a ClojureScript DSL. 
-
-## Thanks
-
-  * Michael Fogus for his work on [Himera](https://github.com/fogus/himera)
-  * [CodeMirror](http://codemirror.net/) for their amazing editor
-  * The [Semantic Grid](http://semantic.gs/)
 
 ## License
 
