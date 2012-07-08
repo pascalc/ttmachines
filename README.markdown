@@ -42,6 +42,12 @@ Check out strings/core.clj to see what preprocessing is available.
 
 Event handlers, dynamic text etc can be declared here using `set-up-element` for specific DOM elements and `set-up-route` for actions specific to a certain page. Look at one.cljs for reference. 
 
+### Styling
+
+*resources/public/stylesheets/chapter/* **one.less**
+
+Styling for the HTML elements defined in chapter/one.clj should be specified here. Don't forget to add an import for this file in stylesheets/app.less.
+
 ## Plans
 
 * Glossary
