@@ -99,10 +99,14 @@
         end       "... & more)"]
     (str beginning end)))
 
+(defn pr-seq-head [x]
+  (let [limit-plus-one  (inc LAZY-SEQ-LIMIT)
+        head            (take limit-plus-one x)]
+    (if (= (count head) limit-plus-one)
+      (append-and-more (pr-str (drop-last head)))
+      (pr-str head))))
+
 (defn finite-pr-str [x]
-  (if (and 
-        (not (nil? x)) 
-        (satisfies? ISeq x) 
-        (> (count x) LAZY-SEQ-LIMIT))
-    (append-and-more (pr-str (take LAZY-SEQ-LIMIT x)))
+  (if (and (not (nil? x)) (seq? x))
+    (pr-seq-head x)
     (pr-str x)))
