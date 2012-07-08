@@ -1,6 +1,6 @@
 # talking to machines
 
-A website intended to help beginners learn programming through interactive lessons at the ClojureScript REPL.
+*Helping beginners learn programming through interactive lessons at the ClojureScript REPL.*
 
 [Try it online](http://talkingtomachines.org)
 
@@ -48,11 +48,6 @@ Event handlers, dynamic text etc can be declared here using `set-up-element` for
 
 Styling for the HTML elements defined in chapter/one.clj should be specified here. Don't forget to add an import for this file in stylesheets/app.less.
 
-## Plans
-
-* Glossary
-* More chapters!
-
 ## Run it locally
 
 ### Build
@@ -67,6 +62,12 @@ To start talking to machines locally using [Leiningen](https://github.com/techno
     lein run
     
 and then hit http://localhost:1337
+
+## Plans
+
+* Glossary - the texts in the chapters use a lot of specialist terms (*string*, *argument* etc). Explanations for these terms should appear in a pop-over on hover, and be collected in a searchable glossary page.
+                                                                                         
+* More chapters!
 
 ## License
 
