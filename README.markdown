@@ -18,6 +18,21 @@ I think we need to emphasise this feeling when we teach people what programming 
 
 By being as interactive as possible. Thanks to Javascript, everyone who browses the web has access to an environment in which they can evaluate arbitrary code. Thanks to ClojureScript, we have an extremely powerful language that can make the most of that environment. We just need to guide people through how to use it, and the quicker we can get them typing code the quicker we can show them all the fun things they can do.
 
+## How can I add and edit chapters?
+
+If you have an improvement to an existing chapter or an idea for a new one, you'll need to change (or create) the corresponding files for the chapter. Taking chapter one as an example, these are:
+
+### HTML Content 
+
+*src/clj/ttmachines/server/views/chapter/* **one.clj**
+
+HTML elements used in the chapter are created here, using Hiccup and `defpartial`. Chapters themselves are defined as 
+a list of "content maps" that form the arguments to `defchapter`, together with a base url and associated metadata.
+
+## Plans
+
+* Glossary
+* More chapters!
 
 ## Run it locally
 
