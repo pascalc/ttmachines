@@ -73,22 +73,22 @@
 
 ;; Code highlighting
 
-(defn code-highlight [code-str target-id]
+(defn code-highlight! [code-str target-id]
   (when-let [element (.getElementById js/document target-id)]
     (.runMode js/CodeMirror 
       code-str "clojure" element)))
 
-(defn highlight-code-nodes []
+(defn highlight-code-nodes! []
   (doseq [code-node (dom/nodes (css/sel ".clojure"))]
     (dom/set-attr! code-node :id "_clojure_code_")  
-    (code-highlight 
+    (code-highlight! 
       (dom/text code-node) 
       "_clojure_code_")
     (dom/remove-attr! code-node :id)))
 
 (dispatch/react-to #{:switch-page} {:priority 5}
   (fn [_ _] 
-    (highlight-code-nodes)))
+    (highlight-code-nodes!)))
 
 ;; Truncate lazy-seqs when printng if they exceed LAZY-SEQ-LIMIT
 
