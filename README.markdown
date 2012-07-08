@@ -14,6 +14,11 @@ For me and a lot of programmers I know, the thing that really *hooked* me about 
 
 I think we need to emphasise this feeling when we teach people what programming is, and that is what I would to do with this website. 
 
+## How can we achieve this?
+
+By being as interactive as possible. Thanks to Javascript, everyone who browses the web has access to an environment in which they can evaluate arbitrary code. Thanks to ClojureScript, we have an extremely powerful language that can make the most of that environment. We just need to guide people through how to use it, and the quicker we can get them typing code the quicker we can show them all the fun things they can do.
+
+
 ## Run it locally
 
 ### Build
