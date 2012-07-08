@@ -66,7 +66,7 @@
   (dom/set-text! hello-user (greeting)))
 
 (macro/set-up-element "def-my-name-again"
-  (util/code-highlight 
+  (util/code-highlight! 
     (str "(def my-name \"" @my-name "\")")
     "def-my-name-again"))
 
