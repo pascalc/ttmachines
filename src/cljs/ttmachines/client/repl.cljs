@@ -176,25 +176,25 @@
     "dom"     "domina.domina"
     "css"     "domina.domina.css" })
 
-(defn ns-from-str [s]
-  (when-let [match (re-find #"^([\w.\-\?\!]+)/[\w.\-\?\!]+$" s)]
-    (match 1)))
+(def ns-regex #"([\w.\-\?\!]+)/([\w.\-\?\!]+)")
 
-(defn expand-ns-aliases [sym]
-  (let [sym-str (str sym)
-        ns-str  (ns-from-str sym-str)
-        alias   (ns-alias-expansions ns-str)]
-    (if (and ns-str alias)
-    (-> sym-str
-        (str/replace ns-str alias)
-        (symbol))
-      sym)))
+(defn expand-ns-alias [ns-str ns-alias fun]
+  (if-let [ns-expansion (ns-alias-expansions ns-alias)]
+    (str ns-expansion "/" fun)
+    ns-str))
+
+(defn expand-ns-aliases [code-str]
+  (let [code-str-atom (atom code-str)]
+    (doseq [[ns-str ns-alias fun] (re-seq ns-regex code-str)]
+      (swap! code-str-atom 
+        str/replace 
+        ns-str
+        (expand-ns-alias ns-str ns-alias fun)))
+    @code-str-atom))
 
 (defn- pre-compile [code-str]
-  (->> (str "(do " code-str ")")
-    (reader/read-string)
-    (walk/postwalk expand-ns-aliases)
-    (pr-str)))
+  (let [precompiled-code (expand-ns-aliases code-str)]
+    (str "(do " precompiled-code ")")))
 
 ;; Compilation
 
