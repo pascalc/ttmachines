@@ -8,7 +8,7 @@
 
 ###To show people that programming is an intensely creative way of building things through a dialogue with a machine.
 
-I think programming is incredibly fun, and I think a lot more people would agree, if only they were given the chance to write some code and make something happen.
+I think programming is incredibly fun, and I think a lot more people would agree if only they were given the chance to write some code and make something happen.
 
 But there are usually a few barriers for beginners, such as:
 
