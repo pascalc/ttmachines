@@ -16,9 +16,11 @@ But there are usually a few barriers for beginners, such as:
 * Figuring out how to load their own code from files.
 * Becoming intimidated by theory before they've had any practical experience.
 
-### How can we achieve this?
+I've tried to avoid these issues by designing an interactive environment in which beginners can jump right into writing and editing code, prompted by textual cues, with the results evaluated in their browser before their eyes.
 
-By being as interactive as possible. Thanks to Javascript, everyone who browses the web has access to an environment in which they can evaluate arbitrary code. Thanks to ClojureScript, we have an extremely powerful language that can make the most of that environment. We just need to guide people through how to use it, and the quicker we can get them typing code the quicker we can show them all the fun things they can do.
+## Collaborators welcomed!
+
+I'm far from an expert in teaching people to program, and this is my first non-trivial project in Clojure/ClojureScript, so if anyone has suggestions for improvements to the site itself or for specific chapters, feel free to contact me or send me a pull request :)
 
 ## How can I add and edit chapters?
 
@@ -50,7 +52,7 @@ Event handlers, dynamic text etc can be declared here using `set-up-element` for
 
 Styling for the HTML elements defined in chapter/one.clj should be specified here. Don't forget to add an import for this file in stylesheets/app.less.
 
-## Run it locally
+## Running it locally
 
 ### Build
 
