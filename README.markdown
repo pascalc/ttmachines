@@ -8,11 +8,13 @@
 
 ###To show people that programming is an intensely creative way of building things through a dialogue with a machine.
 
-A lot of introductory texts about programming treat it as a purely theoretical pursuit - an extension of mathematics and logic. There is a lot of merit to this approach, but for many people this is something they come to realise later. 
+I think programming is incredibly fun, and I think a lot more people would agree, if only they were given the chance to write some code and make something happen.
 
-For me and a lot of programmers I know, the thing that really *hooked* me about programming is the fact that I can come up with an idea, describe it to a computer in a language it understands and then see it create something real from it, right before my eyes.
+But there are usually a few barriers for beginners, such as:
 
-I think we need to emphasise this feeling when we teach people what programming is, and that is what I would like to do with this website. 
+* Having to brave the terminal to start a REPL.
+* Figuring out how to load their own code from files.
+* Becoming intimidated by theory before they've had any practical experience.
 
 ### How can we achieve this?
 
