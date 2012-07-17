@@ -65,7 +65,9 @@ To start talking to machines locally using [Leiningen](https://github.com/techno
 
     lein run
     
-and then hit http://localhost:1337
+and then hit http://localhost:1337.
+
+If you're using Leiningen 2 don't forget to change `:source-path "src/clj"` to `:source-paths ["src/clj"]` in project.clj.
 
 ## Plans
 
