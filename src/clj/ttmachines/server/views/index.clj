@@ -21,7 +21,8 @@
 
 (ns ttmachines.server.views.index
     (:use [noir.core]
-          [noir.response]))
+          [noir.response])
+    (:refer-clojure :exclude [empty]))
 
 (defpage "/" {}
   (redirect "/chapter/1/1"))
